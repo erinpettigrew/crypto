@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user! #make sure user is signed in before manipulating reviews
+  
   # GET /reviews
   # GET /reviews.json
   def index
@@ -25,6 +26,7 @@ class ReviewsController < ApplicationController
   # POST /reviews.json
   def create
     @review = Review.new(review_params)
+    @review.user_id = current_user.id #set user id for review to the currently signed in user
 
     respond_to do |format|
       if @review.save
