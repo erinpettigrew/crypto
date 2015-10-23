@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :reviews
+  resources :reviews, except: [:show, :index] #deleted show and index pages
   devise_for :users
   resources :products
   get 'pages/about'
