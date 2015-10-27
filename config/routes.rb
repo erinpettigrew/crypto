@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  resources :reviews, except: [:show, :index] #deleted show and index pages
+
   devise_for :users
-  resources :products
+  resources :products do
+      resources :reviews, except: [:show, :index] #deleted show and index pages
+    end
+    
   get 'pages/about'
 
   get 'pages/contact'
