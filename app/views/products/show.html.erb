@@ -1,16 +1,33 @@
+<div class="row">
+	<div class="col-md-3">
+
 <%= image_tag @product.image_url %>
 
 <p>
-  <strong>Product brand:</strong>
-  <%= @product.product_brand %>
+  <h3><%= @product.product_name %></h3>
 </p>
 
 <p>
-  <strong>Product name:</strong>
-  <%= @product.product_name %>
+  by <%= @product.product_brand %>
 </p>
 
-<%= link_to "Add a Review", new_product_review_path(@product), class: "btn btn-primary" %>
+
+
+<%= link_to "Write a Review", new_product_review_path(@product), class: "btn btn-primary" %>
+
+	</div>
+
+	<div class="col-md-9">
+		<% if @reviews.blank? %>
+			<h3>There are no reviews yet. Be the first to write one!</h3>
+		<% else %>
+		<% @reviews.each do |review| %>
+<p><%= review.rating %></p>
+<p><%= review.comment %></p>
+<% end %>
+<% end %>
+	</div>
+</div>
 
 <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-link" %> |
 <%= link_to 'Back', products_path, class: "btn btn-link" %>
