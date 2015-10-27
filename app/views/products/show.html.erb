@@ -22,8 +22,8 @@
 			<h3>There are no reviews yet. Be the first to write one!</h3>
 		<% else %>
 		<% @reviews.each do |review| %>
-<p><%= review.rating %></p>
-<p><%= review.comment %></p>
+  		<div class="star-rating" data-score= <%= review.rating %> ></div>
+		<p><%= review.comment %></p>
 <% end %>
 <% end %>
 	</div>
@@ -31,3 +31,14 @@
 
 <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-link" %> |
 <%= link_to 'Back', products_path, class: "btn btn-link" %>
+
+
+<script>
+  $('.star-rating').raty({
+    path: 'https://s3.amazonaws.com/productbase/stars',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
+</script>
