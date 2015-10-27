@@ -3,14 +3,10 @@
 
 <%= image_tag @product.image_url %>
 
-<p>
-  <h3><%= @product.product_name %></h3>
-</p>
-
-<p>
-  by <%= @product.product_brand %>
-</p>
-
+<p><h3><%= @product.product_name %></h3></p>
+<p>by <%= @product.product_brand %></p>
+<div class="star-rating" data-score= <%= @avg_rating %> ></div>
+<p><%= "#{@reviews.length} reviews" %></p>
 
 
 <%= link_to "Write a Review", new_product_review_path(@product), class: "btn btn-primary" %>
@@ -21,11 +17,19 @@
 		<% if @reviews.blank? %>
 			<h3>There are no reviews yet. Be the first to write one!</h3>
 		<% else %>
-		<% @reviews.each do |review| %>
-  		<div class="star-rating" data-score= <%= review.rating %> ></div>
-		<p><%= review.comment %></p>
-<% end %>
-<% end %>
+		<table class="table">
+			<tbody>
+				<% @reviews.each do |review| %>
+					<tr>
+					<td>
+  						<div class="star-rating" data-score= <%= review.rating %> ></div>
+						<p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
+					</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+		<% end %>
 	</div>
 </div>
 
