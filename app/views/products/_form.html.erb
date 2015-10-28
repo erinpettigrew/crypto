@@ -1,7 +1,8 @@
 <%= form_for(@product, :html => { multipart: true }) do |f| %>
   <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+    <div id="error_explanation" class= "alert alert-danger alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h4>
 
       <ul>
       <% @product.errors.full_messages.each do |message| %>
@@ -14,11 +15,11 @@
 
   <div class="form-group">
     <%= f.label :product_brand %><br>
-    <%= f.text_field :product_brand, class: "form-control" %>
+    <%= f.text_field :product_brand, class: "form-control", placeholder: "My Beauty Diary" %>
   </div>
   <div class="form-group">
     <%= f.label :product_name %><br>
-    <%= f.text_field :product_name, class: "form-control" %>
+    <%= f.text_field :product_name, class: "form-control", placeholder: "Black Pearl Mask" %>
   </div>
   <div class="form-group">
     <%= f.label :image %><br>

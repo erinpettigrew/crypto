@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 
   #each user can have many reviews, and destroy any reviews that belong to a deleted user
   has_many :reviews, dependent: :destroy
+
+  validates :user_name, presence: true
 end
