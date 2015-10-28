@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: [:edit, :update, :destroy]
   before_action :set_product
   before_action :authenticate_user! #make sure user is signed in before manipulating reviews
-
+  before_action :check_user, only: [:edit, :update, :destroy]
  
 
   # GET /reviews/new
@@ -37,7 +37,7 @@ class ReviewsController < ApplicationController
   def update
     respond_to do |format|
       if @review.update(review_params)
-        format.html { redirect_to @review, notice: 'Review was successfully updated.' }
+        format.html { redirect_to product_path(@product), notice: 'Review was successfully updated.' }
         format.json { render :show, status: :ok, location: @review }
       else
         format.html { render :edit }
@@ -51,7 +51,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review.destroy
     respond_to do |format|
-      format.html { redirect_to reviews_url, notice: 'Review was successfully destroyed.' }
+      format.html { redirect_to product_path(@product), notice: 'Review was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,6 +64,12 @@ class ReviewsController < ApplicationController
 
     def set_product
       @product = Product.find(params[:product_id])
+    end
+
+    def check_user
+      unless (@review.user == current_user) || (@current_user.admin?) #check that current user is the review author or an admin
+        redirect_to root_url, alert: "Sorry, this review belongs to someone else"
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
