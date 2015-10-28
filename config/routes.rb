@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :products do
+      collection do #search will apply to more than one restaurant
+        get 'search'
+      end
       resources :reviews, except: [:show, :index] #deleted show and index pages
     end
     
