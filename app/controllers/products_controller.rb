@@ -14,13 +14,13 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products = Product.all.order("created_at DESC") #show most recently added product
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
-    @reviews = Review.where(product_id: @product.id).order("created_at DESC")
+    @reviews = Review.where(product_id: @product.id).order("created_at DESC") 
     if @reviews.blank?
       @avg_rating = 0
     else
