@@ -7,9 +7,9 @@
 <p>by <%= @product.product_brand %></p>
 <div class="star-rating" data-score= <%= @avg_rating %> ></div>
 <% if @reviews.length == 1 %>
-<p><%= "#{@reviews.length} review" %></p>
+	<p><%= "#{@reviews.length} review" %></p>
 <% else %>
-<p><%= "#{@reviews.length} reviews" %></p>
+	<p><%= "#{@reviews.length} reviews" %></p>
 <% end %>
 
 
