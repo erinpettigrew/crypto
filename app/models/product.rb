@@ -1,6 +1,18 @@
 class Product < ActiveRecord::Base
 	extend FriendlyId
-	friendly_id :product_name, use: :slugged
+	friendly_id :slug_candidates, use: :slugged
+
+	def slug_candidates
+		[
+			[:product_brand, :product_name]
+
+		]
+	end
+
+	def should_generate_new_friendly_id?
+		product_brand_changed? || product_name_changed?
+	end
+
 
 	mount_uploader :image, ImageUploader
 
