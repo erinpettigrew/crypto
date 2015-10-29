@@ -1,4 +1,7 @@
 class Product < ActiveRecord::Base
+	extend FriendlyId
+	friendly_id :product_name, use: :slugged
+
 	mount_uploader :image, ImageUploader
 
 	searchkick
