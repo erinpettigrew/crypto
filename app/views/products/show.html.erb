@@ -6,7 +6,11 @@
 <p><h3><%= @product.product_name %></h3></p>
 <p>by <%= @product.product_brand %></p>
 <div class="star-rating" data-score= <%= @avg_rating %> ></div>
+<% if @reviews.length == 1 %>
+<p><%= "#{@reviews.length} review" %></p>
+<% else %>
 <p><%= "#{@reviews.length} reviews" %></p>
+<% end %>
 
 
 <%= link_to "Write a Review", new_product_review_path(@product), class: "btn btn-primary" %>
