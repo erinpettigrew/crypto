@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- meta-tags gem call-->
+  <%= display_meta_tags %>
   <title>looklove - Reviews of Asian beauty products and skincare brands</title>
   <%= render 'layouts/bootstrap' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -8,6 +10,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% title 'looklove, skincare product reviews' %>
+<% description 'Get reviews and photos for Asian skincare and beauty brands' %>
+<% keywords 'reviews, community, forum, posts, asian, skincare, beauty, products, lists, regimen' %>
+<% nofollow %>
+<% noindex %>
 <%= render 'layouts/navbar' %>
 <div class="container-fluid">
     <% flash.each do |name, msg| %>
