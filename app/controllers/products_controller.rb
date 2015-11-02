@@ -15,6 +15,13 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all.order("created_at DESC") #show most recently added product
+
+    @reviews = Review.all #this is currently showing average of all reviews, not average of each product's reviews
+    if @reviews.blank?
+     @avg_rating = 0
+   else
+     @avg_rating = @reviews.average(:rating).round(2)
+    end
   end
 
   # GET /products/1
