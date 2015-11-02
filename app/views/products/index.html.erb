@@ -25,11 +25,11 @@
   </thead>
 
   <tbody>
-    <% @products.each do |product| %>
+    <% @products.each_with_index do |product, i| %>
       <tr>
         <td><%= product.product_brand %></td>
         <td><%= link_to product.product_name, product %></td>
-        <td><div class="star-rating-index"><div class="star-rating" data-score= <%= @avg_rating %> ></div></div></td>
+        <td><div class="star-rating-index"><div class="star-rating" data-score= <%= @avg_rating[i] %> ></div></div></td>
 </td>
         <td><div class="index-product-image"><%= link_to image_tag(product.image.url), product %></div></td>
               <% if user_signed_in? && current_user.admin? %>
