@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
+  resources :users, :only => [:show]
   resources :products do
       collection do #search will apply to more than one restaurant
         get 'search'
@@ -13,6 +14,9 @@ Rails.application.routes.draw do
   get 'pages/contact'
   #set homepage as product index list page
   root 'products#index'
+
+  #creat user show page
+  # get 'users/:id' => 'users#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
