@@ -3,11 +3,18 @@
 <div class="jumbotron">
 <p><h3>Hi, <%= current_user.user_name %></h3></p>
 <p>You joined us on <%= current_user.created_at.strftime("%-m/%-d/%-y") %>.</br>We're so glad to have you!</p>
-<h3>So far, you have written 
+<h3>
 <% if @current_user_reviews.length == 1 %>
-	<%= "#{@current_user_reviews.length} review." %>
+	So far, you have written <%= "#{@current_user_reviews.length} review." %>
+	<% elsif @current_user_reviews.length == 0 %>
+	<%= "Get started now!" %>
+<div class="new-product-panel"
+  <div class="form-group">
+  <%= link_to 'Add a new product', new_product_path, class: "btn btn-primary" %>
+</div>
+
 <% else %>
-	<%= "#{@current_user_reviews.length} reviews!" %>
+	So far, you have written <%= "#{@current_user_reviews.length} reviews!" %>
 <% end %></h3>
 </div>
 
