@@ -3,5 +3,53 @@
 <div class="jumbotron">
 <p><h3>Hi, <%= current_user.user_name %></h3></p>
 <p>You joined us on <%= current_user.created_at.strftime("%-m/%-d/%-y") %>.</br>We're so glad to have you!</p>
-
+<h3>So far, you have written 
+<% if @current_user_reviews.length == 1 %>
+	<%= "#{@current_user_reviews.length} review." %>
+<% else %>
+	<%= "#{@current_user_reviews.length} reviews!" %>
+<% end %></h3>
 </div>
+
+<table class="table">
+			<thead>
+				<tr>
+					<th class="col-md-3"></th>
+					<th class="col-md-9"></th>
+				</tr>
+			</thead>
+
+			<tbody>
+
+
+<% @current_user_reviews.each do |review| %>
+					<tr>
+						<td>
+							<h4><%= "#{review.product.product_name.titleize}" %></h4>
+							<p>by <%= "#{review.product.product_brand.titleize}" %></p>
+							<div class ="profile-product-image"><%= image_tag review.product.image_url %></div>
+						</td>
+						<td>
+  							<div class="star-rating" data-score= <%= review.rating %> ></div>
+							<p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
+							<p>Added on <%= review.created_at.strftime("%-m/%-d/%-y") %>
+							<% if user_signed_in? %>
+								(Edit Delete)
+							<% end %></p>
+						</td>
+					</tr>
+<% end %>
+			</tbody>
+		</table>
+
+
+<script>
+  $('.star-rating').raty({
+    path: 'https://s3.amazonaws.com/productbase/stars',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
+</script>
+
