@@ -42,11 +42,13 @@
 </table>
 
 <br>
+<% if user_signed_in? && current_user.admin? %>
 <div class="new-product-panel"
   <div class="form-group">
   <%= link_to 'Add a new product', new_product_path, class: "btn btn-primary" %>
 </div>
 </div>
+<% end %>
 
 <script>
   $('.star-rating').raty({

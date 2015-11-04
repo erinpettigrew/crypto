@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show, :search]
+  before_action :check_user, except: [:search, :index, :show]
   
 
   def search
@@ -91,6 +92,12 @@ end
     # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.friendly.find(params[:id])
+    end
+
+    def check_user
+      unless current_user.admin?
+        redirect_to root_url, alert: "Sorry, only admins can do that!"
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
