@@ -1,6 +1,7 @@
-<h2>Edit Account<!--<%= resource_name.to_s.humanize %>--></h2>
-<p>Go ahead, change is good! Here's where you can update your username, email, or even your password if you're having troubles.</p>
-
+<div class="jumbotron">
+<h3>Need to tweak something?</h3>
+<p><p>Go ahead, change is good!</p></p>
+</div>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
