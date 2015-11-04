@@ -18,6 +18,7 @@
       <th>Name</th>
       <th></th>
       <th></th>
+      <th></th>
       <% if user_signed_in? && current_user.admin? %>
       <th colspan="2"></th>
       <% end %>
@@ -30,11 +31,16 @@
         <td><%= product.product_brand %></td>
         <td><%= link_to product.product_name, product %></td>
         <td><div class="star-rating-index"><div class="star-rating" data-score= <%= @avg_rating[i] %> ></div></div></td>
-</td>
+                <td>
+                  <% if @review_count[i] == 1 %>
+                    <%= @review_count[i] %> review
+                    <% else %>
+                  <%= @review_count[i] %> reviews</td>
+                  <% end %>
         <td><div class="index-product-image"><%= link_to image_tag(product.image.url), product %></div></td>
               <% if user_signed_in? && current_user.admin? %>
-        <td><%= link_to 'Edit', edit_product_path(product), class: "btn btn-link" %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
+                  <td><%= link_to 'Edit', edit_product_path(product), class: "btn btn-link" %></td>
+                  <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
               <% end %>
       </tr>
     <% end %>

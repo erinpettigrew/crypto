@@ -18,12 +18,15 @@ class ProductsController < ApplicationController
     @products = Product.all.order("created_at DESC") #show most recently added product
 
     @avg_rating = []
+    @review_count = []
     for singleproduct in @products
       @reviews = Review.where(product_id: singleproduct.id)
       if @reviews.blank?
         @avg_rating << 0
+        @review_count << 0
       else
         @avg_rating << @reviews.average(:rating).round(2) 
+        @review_count << @reviews.size
       end
     end
 end
