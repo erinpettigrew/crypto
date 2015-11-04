@@ -22,6 +22,19 @@ html, body {height: 100%;}
 
 }
 
+/* modify bootstrap's button colors */
+
+.btn-primary {
+    background: #ffffff;
+    color: #000000;
+    border-color: #000000;
+    }
+
+ .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #33a6cc;
+    }
+
+
 .table-header {
 text-align:center;
 }
