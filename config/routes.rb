@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :photos
   devise_for :users
   resources :users, :only => [:show]
   resources :products do
