@@ -37,11 +37,11 @@ include CarrierWave::MiniMagick
 
   # Create different versions of your uploaded files:
   version :med_thumb do
-    process :resize_to_fit => [300, 300]
+    process :resize_to_fit => [300, 10000]
   end
 
   version :small_thumb do
-    process :resize_to_fit => [150, 150]
+    process :resize_to_fit => [150, 1000]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
