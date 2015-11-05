@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
-  resources :photos
   devise_for :users
   resources :users, :only => [:show]
   resources :products do
       collection do #search will apply to more than one restaurant
-        get 'search'
+          get 'search'
       end
-      resources :reviews, except: [:show, :index] #deleted show and index pages
+          resources :reviews, except: [:show, :index] #deleted show and index pages
+          resources :photos
     end
     
   get 'pages/about'

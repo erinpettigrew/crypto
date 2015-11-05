@@ -19,6 +19,7 @@ class Product < ActiveRecord::Base
 	searchkick
 
 	has_many :reviews, :dependent => :destroy
+	has_many :photos, :dependent => :destroy
 
 	validates :product_brand, :product_name, :image, presence: true
 

@@ -1,5 +1,6 @@
 class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
+  before_action :set_product
   before_action :authenticate_user!
 
   # GET /photos
@@ -27,10 +28,11 @@ class PhotosController < ApplicationController
   def create
     @photo = Photo.new(photo_params)
     @photo.user_id = current_user.id
+    @photo.product_id = @product.id
 
     respond_to do |format|
       if @photo.save
-        format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
+        format.html { redirect_to @product, notice: 'Photo was successfully created.' }
         format.json { render :show, status: :created, location: @photo }
       else
         format.html { render :new }
@@ -67,6 +69,10 @@ class PhotosController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_photo
       @photo = Photo.find(params[:id])
+    end
+
+    def set_product
+      @product = Product.friendly.find(params[:product_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
