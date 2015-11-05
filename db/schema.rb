@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151105002503) do
+ActiveRecord::Schema.define(version: 20151105181451) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -28,10 +28,11 @@ ActiveRecord::Schema.define(version: 20151105002503) do
 
   create_table "photos", force: :cascade do |t|
     t.text     "comment"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.integer  "user_id"
     t.integer  "product_id"
+    t.string   "product_photo"
   end
 
   create_table "products", force: :cascade do |t|

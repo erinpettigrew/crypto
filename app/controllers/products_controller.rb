@@ -35,11 +35,14 @@ end
   # GET /products/1.json
   def show
     @reviews = Review.where(product_id: @product.id).order("created_at DESC") 
+
     if @reviews.blank?
       @avg_rating = 0
     else
     @avg_rating = @reviews.average(:rating).round(2)
     end
+
+    @photos = Photo.where(product_id: @product.id).order("created_at DESC")
   end
 
   # GET /products/new

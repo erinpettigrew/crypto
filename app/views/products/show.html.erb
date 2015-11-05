@@ -33,6 +33,17 @@
 		<% if @reviews.blank? %>
 			<h3>There are no reviews yet. Be the first to write one!</h3>
 		<% else %>
+
+<!-- cycle through photos and display -->
+		<% @photos.each do |photo| %>
+  		<p><%= image_tag photo.product_photo_url %></p>
+  		<p><%= photo.comment %></p>
+		<% end %>
+
+
+
+<!-- cycle through reviews and display -->
+
 		<table class="table">
 			<thead>
 				<tr>

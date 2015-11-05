@@ -1,18 +1,15 @@
-# encoding: utf-8
-# ImageUploader is for admin-provided images of products, each Product has a field for one of these images
+# encoding: utf-8 
+#PhotoUploader is for user provided photos of Products, they are a nested resource inside Products
 
-class ImageUploader < CarrierWave::Uploader::Base
+class PhotoUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  include CarrierWave::MiniMagick
+  # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  if Rails.env.production?
-    storage :fog
-  else
-    storage :file
-  end
+  storage :file
+  # storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -29,7 +26,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  process :resize_to_fit => [200, 300]
+  # process :scale => [200, 300]
   #
   # def scale(width, height)
   #   # do something
