@@ -24,11 +24,20 @@
 	</div>
 
 	<h4>Photos</h4>
-	<!-- cycle through photos and display 300px wide thumbs-->
+<!-- cycle through photos and display 300px wide thumbs-->
+	<div class = "product-photos-product-page">
 	<% @photos.each do |photo| %>
   	<p><%= image_tag photo.product_photo_url(:med_thumb) %></p>
-  	<p><%= photo.comment %></p>
+  	<p><strong><%= "#{photo.user.user_name.capitalize}" %></strong>: <%= photo.comment %> - <small><%= photo.created_at.strftime("%-m/%-d/%-y") %></small>
+	<% if user_signed_in? %>
+		<% if (photo.user == current_user) || (current_user.admin?) %>
+			<%= link_to "Edit", edit_product_photo_path(@product, photo) %>
+			<%= link_to "Delete", product_photo_path(@product, photo), method: :delete %>
+		<% end %>
 	<% end %>
+	</p>
+	<% end %>
+	</div>
 
 </div>
 
@@ -74,8 +83,12 @@
 	</div>
 </div>
 
-<%= link_to 'Edit', edit_product_path(@product), class: "btn btn-link" %> |
-<%= link_to 'Back', products_path, class: "btn btn-link" %>
+<% if user_signed_in? %>
+	<% if current_user.admin? %>
+		<%= link_to 'Edit', edit_product_path(@product), class: "btn btn-link" %> |
+		<%= link_to 'Back', products_path, class: "btn btn-link" %>
+	<% end %>
+<% end %>
 
 
 <script>

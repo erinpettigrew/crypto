@@ -36,10 +36,11 @@ include CarrierWave::MiniMagick
   # end
 
   # Create different versions of your uploaded files:
+  # Medium version is 300px wide min and long maximum allowance
   version :med_thumb do
     process :resize_to_fit => [300, 10000]
   end
-
+  # Small version is 50px wide min and long maximum allowance
   version :small_thumb do
     process :resize_to_fit => [150, 1000]
   end
