@@ -30,6 +30,7 @@ include CarrierWave::MiniMagick
 
   # Process files as they are uploaded:
   process :resize_to_fit => [1000, 1000]
+  process :quality => 65
   #
   # def scale(width, height)
   #   # do something
@@ -39,10 +40,12 @@ include CarrierWave::MiniMagick
   # Medium version is 300px wide min and long maximum allowance
   version :med_thumb do
     process :resize_to_fit => [300, 10000]
+    process :quality => 65
   end
   # Small version is 50px wide min and long maximum allowance
   version :small_thumb do
     process :resize_to_fit => [150, 1000]
+    process :quality => 65
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

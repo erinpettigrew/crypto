@@ -5,4 +5,18 @@ CarrierWave.configure do |config|
     aws_secret_access_key: ENV["aws_secret_access_key"],                        # required
   }
   config.fog_directory  = ENV["fog_directory"]                     # required
+
+module CarrierWave
+	module MiniMagick
+		def quality(percentage)
+			manipulate! do |img|
+				img.quality(percentage.to_s)
+				img = yield(img) if block_given?
+				img
+			end
+		end
+	end
 end
+
+end
+
