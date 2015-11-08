@@ -1,15 +1,16 @@
 <% title 'looklove, reviews of Asian skincare and beauty products' %>
-<% description 'Reviews and photos of the best Asian skincare and beauty products' %>
+<% description 'Reviews and photos of the best Asian skincare products' %>
 <% keywords 'reviews, community, forum, posts, asian, skincare, beauty, products, lists, regimen' %>
 <% nofollow %>
 <% noindex %>
 
 <div class="jumbotron">
-  <h1>welcome to looklove!</h1>
-  <h3>Get reviews and photos of the best Asian skincare and beauty products. Grow the collection by writing your own review!</h3>
+  <h1>welcome to looklove</h1>
+  <h3>Share reviews and photos of the best Asian skincare products!</h3>
 </div>
 <div class="table-header">
-  <h3><%= Product.count %> Products, <%= Review.count %> Reviews</h3>
+  <h3><%= Product.count %> Products</h3>
+    <h4><%= Review.count + Photo.count %> Reviews & Photos</h4>
 </div>
 <table class="table">
   <thead>
