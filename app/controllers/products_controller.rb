@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all.order("created_at DESC") #show most recently added product
+    @products = Product.all.order("created_at ASC") #show most recently added product
 
     @avg_rating = []
     @review_count = []
