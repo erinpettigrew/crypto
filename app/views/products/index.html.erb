@@ -12,6 +12,7 @@
   <h3><%= Product.count %> Products</h3>
     <h4><%= Review.count + Photo.count %> Reviews & Photos</h4>
 </div>
+<div class="product-list">
 <table class="table">
   <thead>
     <tr>
@@ -50,7 +51,7 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 <% if user_signed_in? && current_user.admin? %>
 <div class="new-product-panel"
