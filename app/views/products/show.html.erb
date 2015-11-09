@@ -5,87 +5,83 @@
 <% noindex %>
 
 <div class="row">
-	
 	<div class="col-xs-12 col-md-4">
-<div class="product-panel">
-<%= image_tag @product.image_url %>
 
-<p><h3><%= @product.product_name %></h3></p>
-<p>by <%= @product.product_brand %></p>
-<div class="star-rating-product-page"><div class="star-rating" data-score= <%= @avg_rating %> ></div></div>
-	<% if @reviews.length == 1 %>
-	<p><%= "#{@reviews.length} review" %></p><% else %>
-	<p><%= "#{@reviews.length} reviews" %></p><% end %>
+		<div class="product-panel">
+			<%= image_tag @product.image_url %>
+			<p><h3><%= @product.product_name %></h3></p>
+			<p>by <%= @product.product_brand %></p>
+			<div class="star-rating-product-page"><div class="star-rating" data-score= <%= @avg_rating %> ></div></div>
+				<% if @reviews.length == 1 %>
+					<p><%= "#{@reviews.length} review" %></p>
+				<% else %>
+					<p><%= "#{@reviews.length} reviews" %></p>
+				<% end %>
 
-	<div class = "form-group">
-	<%= link_to "Write a Review", new_product_review_path(@product), class: "btn btn-primary" %> 
-	</div>
-	<div class="form-group">
-	<%= link_to "Add a Photo", new_product_photo_path(@product), class: "btn btn-primary" %>
-	</div>
+			<div class = "form-group">
+				<%= link_to "Write a Review", new_product_review_path(@product), class: "btn btn-primary" %> 
+			</div>
 
+			<div class="form-group">
+				<%= link_to "Add a Photo", new_product_photo_path(@product), class: "btn btn-primary" %>
+			</div>
+		</div>
 
-	<% if @photos.blank? != true %>
 		<div class = "photo-panel">
-		<h4>Photos</h4>
-	<!-- cycle through photos and display 300px wide thumbs-->
-		<div class = "product-photos-product-page">
-		<% @photos.each do |photo| %>
-	  	<p><%= image_tag photo.product_photo_url(:med_thumb) %></p>
-	  	<p><strong><%= "#{photo.user.user_name.capitalize}" %></strong>: <%= photo.comment %> - <small><%= photo.created_at.strftime("%-m/%-d/%-y") %></small>
-		<% if user_signed_in? %>
-			<% if (photo.user == current_user) || (current_user.admin?) %>
-				<%= link_to "Edit", edit_product_photo_path(@product, photo) %>
-				<%= link_to "Delete", product_photo_path(@product, photo), method: :delete %>
+			<% if @photos.blank? == false %>
+				<h4>Photos</h4>
+				<div class = "product-photos-product-page">
+					<% @photos.each do |photo| %>
+	  					<p><%= image_tag photo.product_photo_url(:med_thumb) %></p>
+	  					<p><strong><%= "#{photo.user.user_name.capitalize}" %></strong>: <%= photo.comment %> - <small><%= photo.created_at.strftime("%-m/%-d/%-y") %></small></p>
+						<% if user_signed_in? %>
+							<% if (photo.user == current_user) || (current_user.admin?) %>
+								<p><%= link_to "Edit", edit_product_photo_path(@product, photo) %>
+								<%= link_to "Delete", product_photo_path(@product, photo), method: :delete %></p>
+							<% end %>
+						<% end %>
+					<% end %>
+				</div>
 			<% end %>
-		<% end %>
-		</p>
-		<% end %>
+		</div>
 	</div>
-		</div>
-		</div>
-	<% end %>
-
-</div>
 
 	<div class="col-xs-12 col-md-8">
+
 		<% if @reviews.blank? %>
 			<h3>There are no reviews yet. Be the first to write one!</h3>
 		<% else %>
-
-
-<!-- cycle through reviews and display -->
-
-		<table class="table">
-			<thead>
-				<tr>
-					<th class="col-xs-12 col-md-12"></th>
-				</tr>
-			</thead>
-
-			<tbody>
-				<% @reviews.each do |review| %>
+			<table class="table">
+				<thead>
 					<tr>
-						<td>
-							<h4><%= "#{review.user.user_name.capitalize}" %></h4>
-  							<div class="star-rating-product-page"><div class="star-rating" data-score= <%= review.rating %> ></div></div>
-  							<p><%= review.created_at.strftime("%-m/%-d/%-y") %></p>
-							<p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
-
-						<% if user_signed_in? %>
-							<% if (review.user == current_user) || (current_user.admin?) %>
-								<%= link_to "Edit", edit_product_review_path(@product, review) %>
-								<%= link_to "Delete", product_review_path(@product, review), method: :delete %>
-							<% end %>
-						<% end %>
-					</td>
+						<th class="col-xs-12 col-md-12"></th>
 					</tr>
-				<% end %>
-			</tbody>
-		</table>
+				</thead>
+
+				<tbody>
+					<% @reviews.each do |review| %>
+						<tr>
+							<td>
+								<h4><%= "#{review.user.user_name.capitalize}" %></h4>
+	  							<div class="star-rating-product-page"><div class="star-rating" data-score= <%= review.rating %> ></div></div>
+	  							<p><%= review.created_at.strftime("%-m/%-d/%-y") %></p>
+								<p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
+
+								<% if user_signed_in? %>
+									<% if (review.user == current_user) || (current_user.admin?) %>
+										<%= link_to "Edit", edit_product_review_path(@product, review) %>
+										<%= link_to "Delete", product_review_path(@product, review), method: :delete %>
+									<% end %>
+								<% end %>
+							</td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
 		<% end %>
 	</div>
-</div>
+</div> <!-- end of row class -->
+
 
 <% if user_signed_in? %>
 	<% if current_user.admin? %>
