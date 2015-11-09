@@ -81,7 +81,15 @@
 		padding: 0px;
 	}
 
+	.product-list-header {
+		text-align:center;
+		padding:0px 0px 15px 0px;
+	}
+
 	.product-list {
+		.row {
+			padding:0px 0px 15px 0px;
+		}
 	}
 
 	.index-product-image {
@@ -89,8 +97,8 @@
 	}
 
 	.index-product-image img {
-		max-width:75%;
-		min-width:65px;
+		max-width:80%;
+		min-width:75px;
 	}
 
 
@@ -124,7 +132,7 @@
 	}
 
 	.star-rating-index img {
-		width:10px;
+		width:12px;
 	}
 
 	.footer-container {
