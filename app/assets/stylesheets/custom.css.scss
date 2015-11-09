@@ -302,30 +302,32 @@
 	.product-list {
 		.product-list-row {
 			padding:0px 0px 20px 0px;
-			font-size:120%;
+			font-size:100%;
 		}
 
 		.product-info {
-			font-size:120%;
+			font-size:110%;
 		}
 
 		.product-info h6 {
-			font-size: 125%;
+			font-size: 120%;
+			margin:0px 0px 10px 0px;
 		}
 
 		.review-info p {
 			font-size: 100%;
+			margin:0px;
 		}
 
 	}
 
 	.index-product-image {
-		margin:10px;
+		margin:10px 5px 10px 5px;
 	}
 
 	.index-product-image img {
-		max-width:75%;
-		min-width:65px;
+		max-width:100%;
+		min-width:120px;
 	}
 
 	.product-panel {
@@ -361,6 +363,7 @@
 
 	.star-rating-index img {
 		width:20px;
+		margin:0px 0px 10px 0px;
 	}
 
 	.footer-container {
