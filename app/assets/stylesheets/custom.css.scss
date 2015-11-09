@@ -73,23 +73,32 @@
 		padding: 10px 10px;
 	}
 
-	/* FIX THIS */
 	.new-product-panel {
 		width: 100%;
 		text-align: center;
 		height: auto;
-		padding: 0px;
+		padding: 20px 0px 20px 0px;
 	}
 
 	.product-list-header {
 		text-align:center;
-		padding:0px 0px 15px 0px;
+		padding:20px 0px 15px 0px;
 	}
 
 	.product-list {
 		.row {
-			padding:0px 0px 15px 0px;
-			font-size:95%;
+			padding:0px 0px 20px 0px;
+			font-size:97%;
+		}
+		.product-info {
+		}
+
+		.product-info h6 {
+			font-size:105%;
+		}
+
+		.review-info p {
+		font-size:85%;
 		}
 	}
 
@@ -98,8 +107,8 @@
 	}
 
 	.index-product-image img {
-		max-width:80%;
-		min-width:90px;
+		max-width:90%;
+		min-width:95px;
 	}
 
 
@@ -133,7 +142,7 @@
 	}
 
 	.star-rating-index img {
-		width:11px;
+		width:10px;
 		margin:0px 0px 0px 0px;
 		padding:0px 0px 0px 0px;
 	}
