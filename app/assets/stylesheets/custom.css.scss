@@ -2,7 +2,6 @@
 /* Custom, iPhone Retina -------------------------------------------------------- */
 @media screen and (min-width: 320px) {
 
-
 	.jumbotron {
 		background-color:#ffffff;
 		text-align:center;
@@ -15,9 +14,6 @@
 		}
 
 	}
-
-
-	/* modify bootstrap's button colors */
 
 	.btn-primary {
 	    background: #ffffff;
@@ -192,12 +188,31 @@
 		color:#ffffff;
 		text-decoration:underline;
 	}
-	.profile-product-image {
-		margin:10px;
-	}
 
-	.profile -product-image img {
-		width:130px;
+	.profile-panel {
+
+		.row {
+		margin:0px 0px 20px 0px;
+		}
+
+		.profile-product-image {
+			margin:5px;
+		}
+
+		.profile-product-image img {
+			max-width:90%;
+			min-width:95px;
+		}
+
+		.profile-product-info h5 {
+		text-align:center;
+		}
+
+		.stars img {
+			width:20px;
+			margin:0px 0px 10px 0px;
+			padding:0px 0px 0px 0px;
+		}
 	}
 
 }
@@ -391,8 +406,9 @@
 		margin:10px;
 	}
 
-	.profile -product-image img {
-		width:130px;
+	.profile-product-image img {
+		max-width:100%;
+		min-width:120px;
 	}
 
 }

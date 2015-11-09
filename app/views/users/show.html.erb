@@ -18,43 +18,43 @@
 <% end %></h3>
 </div>
 
-<table class="table">
-			<thead>
-				<tr>
-					<th class="col-md-3"></th>
-					<th class="col-md-9"></th>
-				</tr>
-			</thead>
-
-			<tbody>
-
-
-<% @current_user_reviews.each do |review| %>
-					<tr>
+<div class="row profile-panel">
+	<% @current_user_reviews.each do |review| %>
+		<div class="row">
+			<div class="col-xs-3 col-sm-3">
+				<div class ="profile-product-image"><%= image_tag review.product.image_url %></div>
+				<div class="profile-product-info">
+				</div>
+			</div>
+			<div class="col-xs-9 col-sm-9">
+				<table>
+					<tr class ="col-xs-12 col-sm-12">
 						<td>
+							<h4><%= "#{review.product.product_brand.titleize}" %></h4>
 							<h4><%= "#{review.product.product_name.titleize}" %></h4>
-							<p>by <%= "#{review.product.product_brand.titleize}" %></p>
-							<div class ="profile-product-image"><%= image_tag review.product.image_url %></div>
-						</td>
-						<td>
-  							<div class="star-rating" data-score= <%= review.rating %> ></div>
+		  					<div class="stars"><div class="star-rating" data-score= <%= review.rating %> ></div></div>
+		  				</td>
+		  			</tr>
+		  			<tr class="col-xs-12 col-sm-12">
+		  				<td>
 							<p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
-							<p>Added on <%= review.created_at.strftime("%-m/%-d/%-y") %>
-							<!-- If user is signed in, show edit link. If user is an admin, also show delete link. -->
+							<p><%= review.created_at.strftime("%-m/%-d/%-y") %>
 							<% if user_signed_in? %>
 								<% if (review.user == current_user) %>
 									<%= link_to "Edit", edit_product_review_path(review.product, review) %>
-										<% if (current_user.admin?) %>
-											<%= link_to "Delete", product_review_path(review.product, review), method: :delete %>
-										<% end %>
+									<% if (current_user.admin?) %>
+										<%= link_to "Delete", product_review_path(review.product, review), method: :delete %>
+									<% end %>
 								<% end %>
 							<% end %>
 							</p>
 						</td>
 					</tr>
-<% end %>
-			</tbody>
-		</table>
+				</table>
+			</div>
+		</div>
+	<% end %>
+</div>
 
 
 <script>
