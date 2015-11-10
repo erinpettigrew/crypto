@@ -11,9 +11,9 @@
 	<p>Member since <%= @profile.created_at.strftime("%-m/%-d/%-y") %>.</p>
 	<h3>
 	<% if @profile_reviews.length == 1 %>
-		<%= @profile.user_name %> has written <%= "#{@profile_reviews.length} review." %>
+		<%= @profile.user_name %> has written <%= "#{@profile_reviews.length} review!" %>
 		<% elsif @profile_reviews.length == 0 %>
-			<%= @profile.user_name %> is busy discovering products!
+			<%= @profile.user_name %> is discovering products!
 	</div>
 
 	<% else %>
