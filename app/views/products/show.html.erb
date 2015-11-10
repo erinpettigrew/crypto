@@ -32,7 +32,7 @@
 				<div class = "product-photos-product-page">
 					<% @photos.each do |photo| %>
 	  					<p><%= image_tag photo.product_photo_url(:med_thumb) %></p>
-	  					<p><strong><%= "#{photo.user.user_name.capitalize}" %></strong>: <%= photo.comment %> - <small><%= photo.created_at.strftime("%-m/%-d/%-y") %></small></p>
+	  					<p><strong><%= link_to "#{photo.user.user_name}", photo.user %></strong>: <%= photo.comment %> - <small><%= photo.created_at.strftime("%-m/%-d/%-y") %></small></p>
 						<% if user_signed_in? %>
 							<% if (photo.user == current_user) || (current_user.admin?) %>
 								<p><%= link_to "Edit", edit_product_photo_path(@product, photo) %>
@@ -62,7 +62,7 @@
 					<% @reviews.each do |review| %>
 						<tr>
 							<td>
-								<h4><%= "#{review.user.user_name.capitalize}" %></h4>
+								<h4><%= link_to "#{review.user.user_name}", review.user %></h4>
 	  							<div class="star-rating-product-page"><div class="star-rating" data-score= <%= review.rating %> ></div></div>
 	  							<p><%= review.created_at.strftime("%-m/%-d/%-y") %></p>
 								<p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
