@@ -5,18 +5,44 @@
 <% noindex %>
 
 <div class="jumbotron">
-<p><h3>Hi, <%= @profile.user_name %></h3></p>
-<p>You joined us on <%= @profile.created_at.strftime("%-m/%-d/%-y") %>.</br>We're so glad to have you!</p>
-<h3>
-<% if @profile_reviews.length == 1 %>
-	So far, you have written <%= "#{@profile_reviews.length} review." %>
-	<% elsif @profile_reviews.length == 0 %>
-	Get started now by</br>discovering and reviewing</br>products you have.
-</div>
+<% if @profile != current_user %>
 
-<% else %>
-	So far, you have written <%= "#{@profile_reviews.length} reviews!" %>
-<% end %></h3>
+	<p><h3><%= @profile.user_name %></h3></p>
+	<p>Member since <%= @profile.created_at.strftime("%-m/%-d/%-y") %>.</p>
+	<h3>
+	<% if @profile_reviews.length == 1 %>
+		So far, <%= @profile.user_name %> has written <%= "#{@profile_reviews.length} review." %>
+		<% elsif @profile_reviews.length == 0 %>
+			<%= @profile.user_name %> is busy discovering products!
+	</div>
+
+	<% else %>
+		<%= @profile.user_name %> has written <%= "#{@profile_reviews.length} reviews!" %>
+	<% end %></h3>
+
+<% elsif @profile == current_user %>
+
+	<p><h3>Hi, <%= @profile.user_name %></h3></p>
+	<p>You joined us on <%= @profile.created_at.strftime("%-m/%-d/%-y") %>.</br>We're so glad to have you!</p>
+	<h3>
+	<% if @profile_reviews.length == 1 %>
+		So far, you have written <%= "#{@profile_reviews.length} review." %>
+		<% elsif @profile_reviews.length == 0 %>
+			Get started now by</br>discovering and reviewing products.
+	</div>
+
+	<% else %>
+		So far, you have written <%= "#{@profile_reviews.length} reviews!" %>
+	<% end %></h3>
+
+<% end %>
+
+
+
+
+
+
+
 </div>
 
 <div class="row profile-panel">
