@@ -7,7 +7,7 @@
 <div class="jumbotron">
 <% if @profile != current_user %>
 
-	<p><h3><%= @profile.user_name %></h3></p>
+	<p><h1><%= @profile.user_name %></h1></p>
 	<p>Member since <%= @profile.created_at.strftime("%-m/%-d/%-y") %>.</p>
 	<h3>
 	<% if @profile_reviews.length == 1 %>
@@ -22,7 +22,7 @@
 
 <% elsif @profile == current_user %>
 
-	<p><h3>Hi, <%= @profile.user_name %></h3></p>
+	<p><h1>Hi, <%= @profile.user_name %></h1></p>
 	<p>You joined us on <%= @profile.created_at.strftime("%-m/%-d/%-y") %>.</br>We're so glad to have you!</p>
 	<h3>
 	<% if @profile_reviews.length == 1 %>

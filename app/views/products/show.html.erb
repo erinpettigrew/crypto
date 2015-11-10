@@ -28,7 +28,7 @@
 
 		<div class = "photo-panel">
 			<% if @photos.blank? == false %>
-				<h4>Photos</h4>
+				<h3>Photos</h3>
 				<div class = "product-photos-product-page">
 					<% @photos.each do |photo| %>
 	  					<p><%= image_tag photo.product_photo_url(:med_thumb) %></p>
@@ -50,7 +50,7 @@
 		<% if @reviews.blank? %>
 			<h3>There are no reviews yet. Be the first to write one!</h3>
 		<% else %>
-			<h4>Reviews</h4>
+			<h3>Reviews</h3>
 			<table class="table">
 				<thead>
 					<tr>
