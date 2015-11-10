@@ -1,8 +1,16 @@
 class UsersController < ApplicationController
+	before_action :set_profile
 
-# display reviews by the current user on their profile page in reverse chron
+
 def show
-	@current_user_reviews = Review.where(user: current_user).order("created_at DESC")
+	@profile_reviews = Review.where(user: @profile).order("created_at DESC")
 end
 	
+
+private
+	def set_profile
+	    @profile = User.find(params[:id])
+	end
 end
+
+

@@ -1,25 +1,22 @@
 <!-- show the profile of the currently logged in user -->
 
 <div class="jumbotron">
-<p><h3>Hi, <%= current_user.user_name %></h3></p>
-<p>You joined us on <%= current_user.created_at.strftime("%-m/%-d/%-y") %>.</br>We're so glad to have you!</p>
+<p><h3>Hi, <%= @profile.user_name %></h3></p>
+<p>You joined us on <%= @profile.created_at.strftime("%-m/%-d/%-y") %>.</br>We're so glad to have you!</p>
 <h3>
-<% if @current_user_reviews.length == 1 %>
-	So far, you have written <%= "#{@current_user_reviews.length} review." %>
-	<% elsif @current_user_reviews.length == 0 %>
-	<%= "Get started now!" %>
-<div class="new-product-panel"
-  <div class="form-group">
-  <%= link_to 'Add a new product', new_product_path, class: "btn btn-primary" %>
+<% if @profile_reviews.length == 1 %>
+	So far, you have written <%= "#{@profile_reviews.length} review." %>
+	<% elsif @profile_reviews.length == 0 %>
+	Get started now by</br>discovering and reviewing</br>products you have.
 </div>
 
 <% else %>
-	So far, you have written <%= "#{@current_user_reviews.length} reviews!" %>
+	So far, you have written <%= "#{@profile_reviews.length} reviews!" %>
 <% end %></h3>
 </div>
 
 <div class="row profile-panel">
-	<% @current_user_reviews.each do |review| %>
+	<% @profile_reviews.each do |review| %>
 		<div class="row">
 			<div class="col-xs-12 col-sm-3">
 				<div class = "row">
@@ -48,9 +45,9 @@
 								<p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
 								<p><%= review.created_at.strftime("%-m/%-d/%-y") %>
 								<% if user_signed_in? %>
-									<% if (review.user == current_user) %>
+									<% if (review.user == @profile) %>
 										<%= link_to "Edit", edit_product_review_path(review.product, review) %>
-										<% if (current_user.admin?) %>
+										<% if (@profile.admin?) %>
 											<%= link_to "Delete", product_review_path(review.product, review), method: :delete %>
 										<% end %>
 									<% end %>
