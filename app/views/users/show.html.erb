@@ -26,13 +26,13 @@
 	<p>You joined us on <%= @profile.created_at.strftime("%-m/%-d/%-y") %>.</br>We're so glad to have you!</p>
 	<h3>
 	<% if @profile_reviews.length == 1 %>
-		So far, you have written <%= "#{@profile_reviews.length} review." %>
+		So far, you've written <%= "#{@profile_reviews.length} review." %>
 		<% elsif @profile_reviews.length == 0 %>
 			Get started now by</br>discovering and reviewing products.
 	</div>
 
 	<% else %>
-		So far, you have written <%= "#{@profile_reviews.length} reviews!" %>
+		So far, you've written <%= "#{@profile_reviews.length} reviews!" %>
 	<% end %></h3>
 
 <% end %>
