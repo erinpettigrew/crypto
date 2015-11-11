@@ -198,6 +198,32 @@
 		}
 	}
 
+	.form-titles {
+		h1 {
+
+		}
+
+		text-align:center;
+
+	}
+
+	.product-panel-form {
+
+		margin: 25px 0px 25px 0px;
+
+		h4 {
+			margin:10px 0px 0px 0px;
+		}
+
+		img {
+			margin:5px;
+			max-width:70%;
+			min-width:75px;
+		}
+
+	}
+
+
 }
 
 /* Small Devices, Tablets -------------------------------------------------------- */
@@ -393,6 +419,33 @@
 		max-width:100%;
 		min-width:120px;
 	}
+
+
+	.form-titles {
+		h1 {
+
+		}
+
+		text-align:center;
+
+	}
+
+	.product-panel-form {
+
+		margin: 25px 0px 50px 0px;
+
+		h4 {
+			margin:10px 0px 0px 0px;
+		}
+
+		img {
+			margin:5px;
+			max-width:70%;
+			min-width:75px;
+		}
+
+	}
+
 
 }
 

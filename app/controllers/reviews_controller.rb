@@ -30,6 +30,10 @@ class ReviewsController < ApplicationController
         format.json { render json: @review.errors, status: :unprocessable_entity }
       end
     end
+
+
+
+
   end
 
   # PATCH/PUT /reviews/1
