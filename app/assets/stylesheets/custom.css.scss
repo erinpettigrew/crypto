@@ -276,7 +276,7 @@
 			background-color: #000000;
 			.navbar-nav > li > a {
 				color: #ffffff;
-				font-size: 15px;
+				font-size: 16px;
 				font-weight: bold;
 			}
 			.navbar-brand {
@@ -413,6 +413,8 @@
 
 	.product-panel-form {
 
+		text-align:center;
+
 		margin: 25px 0px 50px 0px;
 
 		h4 {
@@ -421,8 +423,8 @@
 
 		img {
 			margin:5px;
-			max-width:70%;
-			min-width:75px;
+			max-width:125px;
+			min-width:65px;
 		}
 
 	}
