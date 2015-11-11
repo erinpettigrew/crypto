@@ -93,13 +93,25 @@
 
 	.product-panel {
 		text-align:center;
+
+		.button-1 {
+			text-align:right;
+			margin:10px 0px 0px 0px;
+		}
+
+		.button-2 {
+			text-align:left;
+			margin:10px 0px 0px 0px;
+		}
 	}
 
 	.product-image img {
+		max-width:50%;
+		min-width:95px;
 	}
 
 	.photo-panel {
-		padding: 25px 0px 25px 0px;
+		padding: 25px 0px 0px 0px;
 		text-align:center;
 	}
 
@@ -343,11 +355,28 @@
 	}
 
 	.product-panel {
+
+	.product-image img {
+	max-width:100%;
+	min-width:120px;
+	}
 	text-align:left;
+
+		.button-1 {
+			text-align:left;
+			margin:15px 0px 20px 0px;
+		}
+		
+		.button-2 {
+			text-align:left;
+			margin:0px;
+		}
 	}
 
+
+
 	.photo-panel {
-		padding: 25px 0px 25px 0px;
+		padding: 25px 0px 0px 0px;
 		text-align:left;
 	}
 
