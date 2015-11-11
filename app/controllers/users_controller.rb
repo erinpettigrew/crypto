@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
 
 def show
+	@profile_photos = Photo.where(user: @profile).order("created_at DESC")
 	@profile_reviews = Review.where(user: @profile).order("created_at DESC")
 end
 	

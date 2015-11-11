@@ -39,6 +39,17 @@
 </div>
 
 <div class="row profile-panel">
+	<div class = "row">
+		<% @profile_photos.each do |photo| %>
+			<div class="col-xs-6 col-sm-3">
+				<div class="profile-product-photos"><%= link_to image_tag(photo.product_photo_url(:med_thumb)), photo.product %></div>
+				<!-- <%= photo.comment %> -->
+			</div>
+		<% end %>
+	</div>
+
+
+
 	<% @profile_reviews.each do |review| %>
 		<div class="row">
 			<div class="col-xs-12 col-sm-3">
