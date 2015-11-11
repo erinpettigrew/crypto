@@ -1,3 +1,14 @@
+<div class = "row product-panel-form">
+  <div class = "col-xs-4 col-sm-5">
+    <%= image_tag @product.image_url %>
+  </div>
+  <div class = "col-xs-8 col-sm-7">
+    <h4><%= @product.product_brand %></h4>
+    <p><%= @product.product_name %></p>
+
+  </div>
+</div>
+
 <%= form_for([@product, @photo], :html => { multipart: true}) do |f| %>
   <% if @photo.errors.any? %>
     <div id="error_explanation">
