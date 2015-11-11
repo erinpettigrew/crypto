@@ -9,7 +9,7 @@ end
 
 private
 	def set_profile
-	    @profile = User.find(params[:id])
+	    @profile = User.friendly.find(params[:id])
 	end
 end
 
