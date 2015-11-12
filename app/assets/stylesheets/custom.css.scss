@@ -143,8 +143,8 @@
 
 	.footer-container {
 		position:relative;
-		margin-top:-60px;
-		height:60px;
+		margin-top:-90px;
+		height:90px;
 		clear:both;
 	}
 
@@ -152,36 +152,19 @@
 		background-color:#000000;
 		color:#ffffff;
 		text-align:center;
-		height:80px;
+		height:90px;
 		margin:0px;
-		padding:11px 0px 0px 0px;
-	}
+		padding:10px 30px 0px 30px;
 
-	.footer-nav a {
-		color:#ffffff;
-		text-decoration:underline;
-	}
+		p {
+			font-weight:normal;
+			font-size:85%;
+		}
 
-
-	.footer-container {
-		position:relative;
-		margin-top:-80px;
-		height:80px;
-		clear:both;
-	}
-
-	.footer-nav {
-		background-color:#000000;
-		color:#ffffff;
-		text-align:center;
-		height:80px;
-		margin:0px;
-		padding:11px 0px 0px 0px;
-	}
-
-	.footer-nav a {
-		color:#ffffff;
-		text-decoration:underline;
+		a {
+			color:#ffffff;
+			text-decoration:underline;		
+		}
 	}
 
 	.profile-panel {
@@ -409,8 +392,8 @@
 
 	.footer-container {
 		position:relative;
-		margin-top:-80px;
-		height:80px;
+		margin-top:-90px;
+		height:90px;
 		clear:both;
 	}
 
@@ -418,14 +401,19 @@
 		background-color:#000000;
 		color:#ffffff;
 		text-align:center;
-		height:80px;
+		height:90px;
 		margin:0px;
-		padding:11px 0px 0px 0px;
-	}
+		padding:10px 30px 0px 30px;
 
-	.footer-nav a {
-		color:#ffffff;
-		text-decoration:underline;
+		p {
+			font-weight:normal;
+			font-size:110%;
+		}
+
+		a {
+			color:#ffffff;
+			text-decoration:underline;		
+		}
 	}
 
 	.profile-product-image {
