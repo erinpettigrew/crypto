@@ -23,7 +23,11 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
-        format.html { redirect_to @product, notice: 'Review was successfully created.' }
+        #if @product.id == unique
+          format.html { redirect_to @product, notice: 'Thank you for your review!' }
+        #else
+         # format.html { redirect_to @product, notice: 'Wow, you are the first to review this product. Thanks for helping out!' }
+        #end
         format.json { render :show, status: :created, location: @review }
       else
         format.html { render :new }
