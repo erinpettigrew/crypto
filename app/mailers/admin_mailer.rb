@@ -6,4 +6,16 @@ class AdminMailer < ApplicationMailer
 		@user = user
 		mail(subject: "New User: #{user.email}")
 	end
+
+	def new_review(product, user)
+		@product = product
+		@user = user
+		mail(subject: "New Review from #{user}")
+	end
+
+	def new_photo(product, user)
+		@product = product
+		@user = user
+		mail(subject: "New Photo from #{user}")
+	end
 end
