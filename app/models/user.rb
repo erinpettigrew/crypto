@@ -3,6 +3,12 @@ class User < ActiveRecord::Base
 extend FriendlyId
 	friendly_id :user_name, use: :slugged
 
+after_create :send_notification
+
+def send_notification
+	AdminMailer.new_user(self).deliver
+end
+
 def should_generate_new_friendly_id?
 	user_name_changed? || slug.blank?
 end
