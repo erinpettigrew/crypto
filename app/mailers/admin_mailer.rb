@@ -4,6 +4,6 @@ class AdminMailer < ApplicationMailer
 
 	def new_user(user)
 		@user = user
-		mail(subject: "New User: #{user.email}, #{user.user_name}")
+		mail(subject: "New User: #{user.email}")
 	end
 end

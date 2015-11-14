@@ -15,10 +15,12 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all.order("created_at ASC") #show most recently added product
+
+    @products = Product.all.order('updated_at DESC')
 
     @avg_rating = []
     @review_count = []
+
     for singleproduct in @products
       @reviews = Review.where(product_id: singleproduct.id)
       if @reviews.blank?
