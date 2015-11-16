@@ -9,6 +9,11 @@
   <h3>Share reviews and photos of Asian skincare products.</h3>
   <h1>&#9829;</h1>
 </div>
+<% if user_signed_in? %>
+<div class="new-product-panel"
+  <div class="form-group">
+  <%= link_to 'Add a new product', new_product_path, class: "btn btn-primary" %>
+</div>
 <div class="product-list-header">
   <p><h4><%= Product.count %> Products</br><%= Review.count + Photo.count %> Reviews & Photos</h4></p>
 </div>
@@ -38,11 +43,6 @@
   <% end %>
 </div>
 
-<% if user_signed_in? %>
-<div class="new-product-panel"
-  <div class="form-group">
-  <%= link_to 'Add a new product', new_product_path, class: "btn btn-primary" %>
-</div>
 </div>
 <% end %>
 
