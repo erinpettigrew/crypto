@@ -24,7 +24,7 @@ class ReviewsController < ApplicationController
     respond_to do |format|
       if @review.save
         #if @product.id == unique
-          format.html { redirect_to @product, notice: 'Thank you for your review!' }
+          format.html { redirect_to @product, notice: 'Thank you for your review! It helps all of us make better purchases.' }
         #else
          # format.html { redirect_to @product, notice: 'Wow, you are the first to review this product. Thanks for helping out!' }
         #end
