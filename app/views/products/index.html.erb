@@ -5,15 +5,17 @@
 <% noindex %>
 
 <div class="jumbotron">
-  <h1>Welcome!</h1>
-  <h3>Share reviews and photos of Asian skincare products.</h3>
-  <h1>&#9829;</h1>
-</p>
-  <% if user_signed_in? %>
-   <div class="new-product-panel"
-  <div class="form-group">
-  <%= link_to 'Add a new product', new_product_path, class: "btn btn-primary btn-lg" %>
-  </div>
+    <h1>Welcome!</h1>
+    <h3>Share reviews and photos of Asian skincare products.</h3>
+    <h1>&#9829;</h1>
+    </p>
+    <% if user_signed_in? %>
+      <div class= "new-product-panel">
+          <div class= "form-group">
+          <%= link_to 'Add a new product', new_product_path, class: "btn btn-primary btn-lg" %>
+          </div>
+      </div>
+     <% end %>
 </div>
 
 <div class="product-list-header">
@@ -44,9 +46,6 @@
     </div>               
   <% end %>
 </div>
-
-</div>
-<% end %>
 
 <script>
   $('.star-rating').raty({
