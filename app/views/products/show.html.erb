@@ -11,6 +11,9 @@
 			<div class="product-image"><%= image_tag @product.image_url %></div>
 			<p><h3><%= @product.product_name %></h3></p>
 			<p>by <%= @product.product_brand %></p>
+			<% if @product.category.id >1 %>
+				<p>in <%= link_to @product.category.name.titleize.pluralize, @product.category %></p>
+			<% end %>
 			<div class="star-rating-product-page"><div class="star-rating" data-score= <%= @avg_rating %> ></div></div>
 
 						<div class = "row">
