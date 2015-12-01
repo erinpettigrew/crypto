@@ -13,7 +13,11 @@
 
 
 <div class="product-list-header">
-  <p><h4><%= @products.count %> Products</h4></p>
+	<% if @products.count == 1 %>
+		  <p><h4><%= @products.count %> Product</h4></p>
+	<% elsif @products.count >=1 %>
+	  <p><h4><%= @products.count %> Product</h4></p>
+	<% end %>
 </div>
 
 <div class="product-list">
