@@ -20,6 +20,7 @@ class Product < ActiveRecord::Base
 
 	has_many :reviews, :dependent => :destroy
 	has_many :photos, :dependent => :destroy
+	belongs_to :category
 
 	validates :product_brand, :product_name, :image, presence: true
 
