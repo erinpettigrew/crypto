@@ -1,7 +1,12 @@
 <div class="jumbotron">
     <h1><%= @category.name.pluralize.titleize %></h1>
-    <h4><%= @category.description %></h4>
-    </p>
+    <% if @category.description.blank? %>
+    	</p>
+    <% else %>
+  		<h4><%= @category.description %></h4>
+   	<% end %>
+
+    <br>
     <% if user_signed_in? %>
       <div class= "new-product-panel">
           <div class= "form-group">
@@ -16,23 +21,49 @@
 	<% if @products.count == 1 %>
 		  <p><h4><%= @products.count %> Product</h4></p>
 	<% elsif @products.count >=1 %>
-	  <p><h4><%= @products.count %> Product</h4></p>
+	  <p><h4><%= @products.count %> Products</h4></p>
 	<% end %>
 </div>
 
 <div class="product-list">
   <% @products.each_with_index do |product, i| %>
+
     <div class="row product-list-row">
-      <div class="col-xs-4 col-md-3"><div class="index-product-image"><%= link_to image_tag(product.image.url), product %></div></div>
-      <div class="col-xs-4 col-md-5 product-info">
-      <div class="row product-list-row">
-          <div class="col-xs-12 col-md-5"><h6><%= product.product_brand %></div><div class="col-xs-12 col-md-7"><%= link_to product.product_name, product %></h6></div>
-      </div>
-    </div>
-      <div class="col-xs-4 col-md-4 review-info">
-        <div class="col-xs-12 col-md-8">Rating</div>
-        <div class="col-xs-12 col-md-4">Reviews</div>
-      </div>
-    </div>               
+      	<div class="col-xs-4 col-md-3">
+      		<div class="index-product-image"><%= link_to image_tag(product.image.url), product %></div>
+      	</div>
+      	<div class="col-xs-4 col-md-5 product-info">
+      		<div class="row product-list-row">
+          		<div class="col-xs-12 col-md-5"><h6><%= product.product_brand %></div>
+          		<div class="col-xs-12 col-md-7"><%= link_to product.product_name, product %></h6></div>
+      		</div>
+    	</div>
+
+    	<div class="col-xs-4 col-md-4 review-info">
+        	<div class="col-xs-12 col-md-8">
+        		<div class="star-rating-index"><div class="star-rating" data-score= <%= @avg_rating[i] %>></div></div>
+       		</div>
+        	<div class="col-xs-12 col-md-4">
+          		<% if @review_count[i] == 1 %>
+            		<p><%= @review_count[i] %> review<p>
+          		<% elsif @review_count[i] == 0 %>
+            		<p><%= link_to "Write a review!", product %></p>
+          		<% else %>
+            		<p><%= @review_count[i] %> reviews</p>
+	      		<% end %>
+	    	</div>
+		</div>
+	</div> <!-- end fo row -->
   <% end %>
 </div>
+
+
+<script>
+  $('.star-rating').raty({
+    path: 'https://s3.amazonaws.com/productbase/stars',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
+</script>
