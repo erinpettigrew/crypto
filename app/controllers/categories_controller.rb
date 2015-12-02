@@ -5,6 +5,14 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all.order('name ASC')
+
+    @product_previews = []
+
+    for singlecategory in @categories
+      @product_previews = Product.where(category_id: singlecategory.id)
+    end
+
+
   end
 
   # GET /categories/1

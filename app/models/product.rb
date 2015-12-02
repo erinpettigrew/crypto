@@ -22,7 +22,7 @@ class Product < ActiveRecord::Base
 	has_many :photos, :dependent => :destroy
 	belongs_to :category
 
-	validates :product_brand, :product_name, :image, presence: true
+	validates :product_brand, :product_name, :image, :category, presence: true
 
 
 end

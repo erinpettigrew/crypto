@@ -1,6 +1,6 @@
 <div class="jumbotron">
-    <h1>All Products by Category</h1>
-    <h4>What kind of product are you looking for? There's a product here for every step of your regimen &mdash; cleansing, moisturizing, treating &mdash; and everything in between.</h4>
+    <h1>Find a Product</h1>
+    <h4>There's a product here for every step of your regimen &mdash; cleansing, moisturizing, treating &mdash; and everything in between.</h4>
 </div>
 
 <table class="table">
@@ -16,7 +16,7 @@
     <% @categories.each do |category| %>
       <tr>
         <td><%= link_to category.name.titleize.pluralize, category %></td>
-        <td><%= category.description %></td>
+        <td><%= truncate(category.description, length: 75) %></td>
         <% if user_signed_in? %>
           <% if current_user.admin? %>
             <td><%= link_to 'Show', category %></td>
@@ -25,6 +25,7 @@
           <% end %>
         <% end %>
       </tr>
+
     <% end %>
   </tbody>
 </table>
