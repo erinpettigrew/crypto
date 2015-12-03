@@ -6,12 +6,11 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.all.order('name ASC')
 
-    @product_previews = []
+    @products = []
 
-    for singlecategory in @categories
-      @product_previews = Product.where(category_id: singlecategory.id)
-    end
-
+     @categories.each do |category|
+         @products << Product.where(category_id: category.id).take
+      end
 
   end
 
