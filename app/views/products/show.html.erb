@@ -12,7 +12,7 @@
 			<p><h3><%= @product.product_name %></h3></p>
 			<p>by <%= @product.product_brand %></p>
 
- 			<% if @product.category_id != 20 %>
+ 			<% if @product.category_id != 1 %>
 				<p>in <%= link_to @product.category.name.titleize.pluralize, @product.category %></p>
 			<% end %>
 
