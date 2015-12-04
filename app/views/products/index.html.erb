@@ -15,6 +15,11 @@
           <%= link_to 'Add a new product', new_product_path, class: "btn btn-primary btn-lg" %>
           </div>
       </div>
+      <% else %>
+      <div class="form-group">
+          <%= link_to 'Sign up!', new_user_registration_path, class: "btn btn-primary btn-lg" %>
+     </div>
+
       <% end %>
       <strong>Sneak Peek!</strong> Try the new <%= link_to "Product Categories", categories_path %> page</br>while I put the finishing touches on it. &#9829; Erin
 </div>
