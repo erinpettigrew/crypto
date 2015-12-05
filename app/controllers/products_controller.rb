@@ -37,7 +37,6 @@ class ProductsController < ApplicationController
 
         if @reviews.size >= 2
           @most_reviewed << true
-
         else
           @most_reviewed << false
         end

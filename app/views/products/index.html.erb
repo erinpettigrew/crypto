@@ -32,7 +32,6 @@
 <div class= "title">Most Reviewed</div>
     <% @products.each_with_index  do |product, i| %>
       <% if @most_reviewed[i] == true %>
-        <% if i < 6 %>
           <div class="row product-list-row">
             <div class="col-xs-4 col-md-3"><div class="index-product-image"><%= link_to image_tag(product.image.url), product %></div></div>
             <div class="col-xs-4 col-md-5 product-info">
@@ -53,7 +52,6 @@
               </div>
             </div>
           </div>               
-        <% end %>
       <% end %>
     <% end %>
 </div>
