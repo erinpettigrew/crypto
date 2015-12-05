@@ -50,6 +50,7 @@ end
   # GET /products/new
   def new
     @product = Product.new
+    @categories = Category.order(name: :ASC) #sort in alphabetical order
   end
 
   # GET /products/1/edit
