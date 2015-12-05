@@ -28,7 +28,7 @@
 
   <div class="form-group">
       <%= f.label :category_id %><br>
-      <%= f.select :category_id, Category.all.collect {|c| [ c.name.titleize, c.id ] }, class: "form-control" %> Not sure? Choose "Other" and we'll take care of it!
+      <%= f.select :category_id, @categories.collect {|c| [c.name.titleize, c.id]}, class: "form-control" %> <small>Not sure? Choose "Other" and we'll take care of it!</small>
   </div>
 
   <div class="form-group">

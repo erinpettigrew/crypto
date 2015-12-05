@@ -54,6 +54,7 @@ end
 
   # GET /products/1/edit
   def edit
+    @categories = Category.order(name: :ASC) #sort in alphabetical order
   end
 
   # POST /products
