@@ -31,8 +31,8 @@
 <div class="product-list">
 <div class= "title">Most Reviewed</div>
     <% @products.each_with_index  do |product, i| %>
-      <% if i < 3 %>
-        <% if @review_count[i] >= 2 %>
+      <% if @most_reviewed[i] == true %>
+        <% if i < 6 %>
           <div class="row product-list-row">
             <div class="col-xs-4 col-md-3"><div class="index-product-image"><%= link_to image_tag(product.image.url), product %></div></div>
             <div class="col-xs-4 col-md-5 product-info">
@@ -61,7 +61,8 @@
 <div class="product-list">
 <div class= "title">Newly Added</div>
     <% @products.each_with_index  do |product, i| %>
-    <% if i < 5 %>
+    <% if @new[i] == true %>
+    <% if i < 15 %>
     <% if @review_count[i] == 0 %>
       <div class="row product-list-row">
         <div class="col-xs-4 col-md-3"><div class="index-product-image"><%= link_to image_tag(product.image.url), product %></div></div>
@@ -84,6 +85,7 @@
         </div>
       </div>               
 
+    <% end %>
     <% end %>
     <% end %>
     <% end %>

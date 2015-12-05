@@ -20,18 +20,31 @@ class ProductsController < ApplicationController
 
     @avg_rating = []
     @review_count = []
+    @new = []
+    @most_reviewed = []
 
     for singleproduct in @products
       @reviews = Review.where(product_id: singleproduct.id)
-      if @reviews.blank?
-        @avg_rating << 0
-        @review_count << 0
-      else
-        @avg_rating << @reviews.average(:rating).round(2) 
-        @review_count << @reviews.size
+        if @reviews.blank?
+          @avg_rating << 0
+          @review_count << 0
+          @new << true
+        else
+          @avg_rating << @reviews.average(:rating).round(2) 
+          @review_count << @reviews.size
+          @new << false
+        end
+
+        if @reviews.size >= 2
+          @most_reviewed << true
+
+        else
+          @most_reviewed << false
+        end
       end
     end
-end
+
+
 
   # GET /products/1
   # GET /products/1.json
