@@ -5,7 +5,8 @@
 <% noindex %>
 
 <div class="jumbotron">
-    <h2>Share reviews and photos of Asian skincare products.</h2>
+    <h2>Share reviews of Asian skincare products.</h2></br>
+    <p><h4><%= Product.count %> products and <%= Review.count + Photo.count %> reviews so far!</h4>
     </p>
     <% if user_signed_in? %>
       <div class= "new-product-panel">
@@ -15,17 +16,14 @@
       </div>
       <% else %>
       <div class="form-group">
-          <%= link_to 'Sign up!', new_user_registration_path, class: "btn btn-primary btn-lg" %>
+          <%= link_to 'Sign up to share!', new_user_registration_path, class: "btn btn-primary btn-lg" %>
      </div>
 
       <% end %>
-      <strong>TIP!</strong> Try the new <%= link_to "Product Categories", categories_path %> page. &#9829; Erin
-</div>
+</br>
+      <strong>NEW!</strong> Browse by <%= link_to "product category", categories_path %>. &#9829; Erin
 
-<div class="product-list-header">
-  <p><h4><%= Product.count %> Products</br><%= Review.count + Photo.count %> Reviews & Photos</h4></p>
 </div>
-
 
 <div class="product-list">
 <div class= "title">Recently Reviewed</div>
