@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
     @most_reviewed = []
 
     for singleproduct in @products
-      @reviews = Review.where(product_id: singleproduct.id)
+      @reviews = Review.where(product_id: singleproduct.id).order('updated_at DESC')
         if @reviews.blank?
           @avg_rating << 0
           @review_count << 0

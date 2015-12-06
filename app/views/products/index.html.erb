@@ -28,6 +28,37 @@
   <p><h4><%= Product.count %> Products</br><%= Review.count + Photo.count %> Reviews & Photos</h4></p>
 </div>
 
+
+<div class="product-list">
+<div class= "title">Recently Reviewed</div>
+    <% @products.each_with_index  do |product, i| %>
+      <% if @review_count[i] >= 1 and i <=4 %>
+          <div class="row product-list-row">
+            <div class="col-xs-4 col-md-3"><div class="index-product-image"><%= link_to image_tag(product.image.url), product %></div></div>
+            <div class="col-xs-4 col-md-5 product-info">
+            <div class="row product-list-row">
+                <div class="col-xs-12 col-md-5"><h6><%= product.product_brand %></div><div class="col-xs-12 col-md-7"><%= link_to product.product_name, product %></h6></div>
+            </div>
+          </div>
+            <div class="col-xs-4 col-md-4 review-info">
+              <div class="col-xs-12 col-md-8"><div class="star-rating-index"><div class="star-rating" data-score= <%= @avg_rating[i] %>></div></div></div>
+              <div class="col-xs-12 col-md-4">
+                <% if @review_count[i] == 1 %>
+                  <p><%= @review_count[i] %> review<p>
+                <% elsif @review_count[i] == 0 %>
+                  <p><%= link_to "Write a review!", product %></p>
+                <% else %>
+                  <p><%= @review_count[i] %> reviews</p>
+                <% end %>
+              </div>
+            </div>
+          </div>               
+      <% end %>
+    <% end %>
+</div>
+
+
+
 <div class="product-list">
 <div class= "title">Most Reviewed</div>
     <% @products.each_with_index  do |product, i| %>
