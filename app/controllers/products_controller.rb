@@ -22,11 +22,14 @@ class ProductsController < ApplicationController
     @review_count = []
     @new = []
     @most_reviewed = []
+    @review = []
+    @user = []
 
     @looping = 0
 
     for singleproduct in @products
       @reviews = Review.where(product_id: singleproduct.id).order('updated_at DESC')
+
         if @reviews.blank?
           @avg_rating << 0
           @review_count << 0
@@ -35,6 +38,9 @@ class ProductsController < ApplicationController
           @avg_rating << @reviews.average(:rating).round(2) 
           @review_count << @reviews.size
           @new << false
+          @review << @reviews.first
+          @user << @reviews.first.user
+
         end
 
         if @reviews.size >= 2

@@ -73,21 +73,48 @@
 		padding:5px;
 		margin:0px 0px 20px 0px;
 		}
+
+		.product-card {
+			border: 0px solid #f0f0f0;
+			border-radius:5px;
+			padding:5px 0px 5px 0px;
+			margin:0px 0px 5px 0px;
+
+		}
+
 		.product-list-row {
-			padding:0px 0px 20px 0px;
-			font-size:97%;
+			margin:0px 0px 0px 0px;
+			padding:0px;
+			
 		}
 
 		.product-info {
-			font-size:110%;
+			font-size:95%;
+			margin:0px;
+			padding:0px;
 		}
 
 		.product-info h6 {
 			font-size:105%;
+			margin:5px 0px 5px 0px;
+			padding:0px;
 		}
 
 		.review-info p {
-		font-size:95%;
+			font-size:90%;
+			margin:0px;
+			padding:0px;
+		}
+
+		.review-info img {
+			margin:0px;
+			padding:0px;
+		}
+
+		.review-excerpt {
+			font-size:90%;
+			color:#888888;
+			padding:0px 20px 0px 20px;
 		}
 	}
 
@@ -96,8 +123,8 @@
 	}
 
 	.index-product-image img {
-		max-width:90%;
-		min-width:95px;
+		max-width:65%;
+		min-width:80px;
 	}
 
 
@@ -291,6 +318,10 @@
 
 	.navbar-default {
 		.container-fluid {
+			padding-top:5px;
+			padding-bottom:0px;
+
+
 			background-color: #000000;
 			.navbar-nav > li > a {
 				color: #ffffff;
@@ -299,7 +330,7 @@
 			}
 			.navbar-brand {
 			color: #ffffff;
-			font-size: 30px;
+			font-size: 20px;
 			font-weight: bold;
 			}
 		}
@@ -323,13 +354,23 @@
 	}
 
 	.product-list {
+
+		.product-card {
+			padding:20px 0px 0px 10px;
+			margin:0px 0px 10px 0px;
+
+		}
+
 		.product-list-row {
-			padding:0px 0px 40px 0px;
+			padding:0px 0px 0px 0px;
+			margin:0px;
 			font-size:100%;
 		}
 
 		.product-info {
 			font-size:110%;
+			margin:0px;
+			padding:0px;
 		}
 
 		.product-info h6 {
@@ -340,18 +381,29 @@
 		.review-info p {
 			font-size: 100%;
 			margin:0px;
+			padding:0px;
 		}
 
+		.review-excerpt {
+			font-size:100%;
+			padding: 10px 40px 10px 0px;
+		}
+
+
 	}
+
 
 	.index-product-image {
-		margin:10px 5px 10px 5px;
-	}
+		margin:0px;
+		padding:0px;
+		}
 
 	.index-product-image img {
-		max-width:100%;
-		min-width:120px;
-	}
+		max-width:75%;
+		min-width:80px;
+		padding:0px 0px 10px 0px;
+
+		}
 
 	.product-panel {
 

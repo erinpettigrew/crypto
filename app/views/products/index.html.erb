@@ -30,13 +30,14 @@
     <% @products.each_with_index  do |product, i| %>
       <% if @review_count[i] >= 1 and @looping < 6 %>
       <!--<%= @looping += 1 %>-->
+      <div class="product-card">
           <div class="row product-list-row">
             <div class="col-xs-4 col-md-3"><div class="index-product-image"><%= link_to image_tag(product.image.url), product %></div></div>
             <div class="col-xs-4 col-md-5 product-info">
-            <div class="row product-list-row">
+              <div class="row product-list-row">
                 <div class="col-xs-12 col-md-5"><h6><%= product.product_brand %></div><div class="col-xs-12 col-md-7"><%= link_to product.product_name, product %></h6></div>
-            </div>
-          </div>
+                </div>
+              </div>
             <div class="col-xs-4 col-md-4 review-info">
               <div class="col-xs-12 col-md-8"><div class="star-rating-index"><div class="star-rating" data-score= <%= @avg_rating[i] %>></div></div></div>
               <div class="col-xs-12 col-md-4">
@@ -49,7 +50,12 @@
                 <% end %>
               </div>
             </div>
-          </div>               
+            <div class="col-xs-12 col-md-8 review-excerpt">
+              "<%= truncate(@review[i].comment, length:115, separator: ' ') %>"
+              - <%= link_to @user[i].user_name, @user[i] %>
+            </div>
+          </div>   
+          </div>            
       <% end %>
     <% end %>
 </div>
@@ -60,6 +66,7 @@
 <div class= "title">Most Reviewed</div>
     <% @products.each_with_index  do |product, i| %>
       <% if @most_reviewed[i] == true %>
+      <div class="product-card">
           <div class="row product-list-row">
             <div class="col-xs-4 col-md-3"><div class="index-product-image"><%= link_to image_tag(product.image.url), product %></div></div>
             <div class="col-xs-4 col-md-5 product-info">
@@ -79,7 +86,8 @@
                 <% end %>
               </div>
             </div>
-          </div>               
+          </div>   
+          </div>            
       <% end %>
     <% end %>
 </div>
@@ -90,6 +98,7 @@
     <% if @new[i] == true %>
     <% if i < 15 %>
     <% if @review_count[i] == 0 %>
+    <div class="product-card">
       <div class="row product-list-row">
         <div class="col-xs-4 col-md-3"><div class="index-product-image"><%= link_to image_tag(product.image.url), product %></div></div>
         <div class="col-xs-4 col-md-5 product-info">
@@ -99,7 +108,8 @@
       </div>
         <div class="col-xs-4 col-md-4 review-info">
           <div class="col-xs-12 col-md-8"><div class="star-rating-index"><div class="star-rating" data-score= <%= @avg_rating[i] %>></div></div></div>
-          <div class="col-xs-12 col-md-4">
+          <div class="row product-list-row">
+          <div class="col-xs-8 col-md-8">
             <% if @review_count[i] == 1 %>
               <p><%= @review_count[i] %> review<p>
             <% elsif @review_count[i] == 0 %>
@@ -109,7 +119,9 @@
             <% end %>
           </div>
         </div>
-      </div>               
+        </div>
+      </div>      
+      </div>         
 
     <% end %>
     <% end %>
