@@ -23,6 +23,8 @@ class ProductsController < ApplicationController
     @new = []
     @most_reviewed = []
 
+    @looping = 0
+
     for singleproduct in @products
       @reviews = Review.where(product_id: singleproduct.id).order('updated_at DESC')
         if @reviews.blank?
