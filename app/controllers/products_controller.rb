@@ -24,6 +24,7 @@ class ProductsController < ApplicationController
     @most_reviewed = []
     @review = []
     @user = []
+    @time = []
 
     @looping = 0
 
@@ -40,6 +41,7 @@ class ProductsController < ApplicationController
           @new << false
           @review << @reviews.last
           @user << @reviews.last.user
+          @time << @reviews.last.updated_at
 
         end
 

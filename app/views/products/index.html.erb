@@ -64,7 +64,7 @@
 
                 <div class="col-xs-12 col-sm-8 col-md-8 review-excerpt">
                   "<%= truncate(@review[i].comment, length:50, separator: ' ') %>"
-                  - <%= link_to @user[i].user_name, @user[i] %>
+                  - <%= link_to @user[i].user_name, @user[i] %>, <%= time_ago_in_words(@time[i]).gsub('about','') %> ago
                 </div>
 
             </div>   <!-- /row product-list-row -->
