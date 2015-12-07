@@ -38,8 +38,8 @@ class ProductsController < ApplicationController
           @avg_rating << @reviews.average(:rating).round(2) 
           @review_count << @reviews.size
           @new << false
-          @review << @reviews.first
-          @user << @reviews.first.user
+          @review << @reviews.last
+          @user << @reviews.last.user
 
         end
 
