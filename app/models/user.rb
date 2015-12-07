@@ -17,6 +17,8 @@ end
     slugs.where(slug: slug).exists?
   end
 
+  mount_uploader :avatar, AvatarUploader
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -27,4 +29,5 @@ end
   has_many :photos, dependent: :destroy
 
   validates :user_name, presence: true
+
 end
