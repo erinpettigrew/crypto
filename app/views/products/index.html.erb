@@ -25,7 +25,7 @@
 <div class="product-list">
 <div class= "title">Recently Reviewed</div>
     <% @products.each_with_index  do |product, i| %>
-      <% if @review_count[i] >= 1 and @looping < 5 %>
+      <% if @review_count[i] >= 1 and @looping < 7 %>
         <!--<%= @looping += 1 %>-->
         <div class="product-card">
 
@@ -62,10 +62,10 @@
                   </div>
                 </div>
 
-               <!-- <div class="col-xs-12 col-sm-8 col-md-8 review-excerpt">
-                  "<%= truncate(@review[i].comment, length:50, separator: ' ') %>"
+               <div class="col-xs-12 col-sm-8 col-md-8 review-excerpt">
+                  "<%= truncate(@review[i].comment, length:110, separator: ' ') %>"
                   - <%= link_to @user[i].user_name, @user[i] %>, <%= time_ago_in_words(@time[i]).gsub('about','') %> ago
-                </div>-->
+                </div>
 
             </div>   <!-- /row product-list-row -->
         </div>   <!-- /product-card -->         
