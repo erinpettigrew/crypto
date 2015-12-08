@@ -3,7 +3,7 @@
     <% if @category.description.blank? %>
     	</p>
     <% else %>
-  		<h4><%= @category.description %></h4>
+  		<h4><%= h(@category.description).gsub(/\n/, '<br/>').html_safe %></h4>
    	<% end %>
 
     <br>
