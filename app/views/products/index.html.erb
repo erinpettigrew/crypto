@@ -25,7 +25,7 @@
 <div class="product-list">
 <div class= "title">Recently Reviewed</div>
     <% @products.each_with_index  do |product, i| %>
-      <% if @review_count[i] >= 1 and @looping < 7 %>
+      <% if @review_count[i] >= 1 and @looping < 5 %>
         <!--<%= @looping += 1 %>-->
         <div class="product-card">
 
@@ -110,7 +110,7 @@
 <div class= "title">Newly Added</div>
     <% @products.each_with_index  do |product, i| %>
     <% if @new[i] == true %>
-    <% if i < 15 %>
+    <% if i < 6 %>
     <% if @review_count[i] == 0 %>
     <div class="product-card">
       <div class="row product-list-row">
