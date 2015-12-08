@@ -25,13 +25,11 @@ class ProductsController < ApplicationController
     @new = []
     @most_reviewed = []
     @review = []
-    @user = []
-    @time = []
-    @id = [] #test var
+
 
     @looping = 0
 
-    for singleproduct in @products
+   for singleproduct in @products
       @reviews = Review.where(product_id: singleproduct.id)
       @review << Review.where(product_id: singleproduct.id).last
 
@@ -44,10 +42,6 @@ class ProductsController < ApplicationController
           @avg_rating << @reviews.average(:rating).round(2) 
           @review_count << @reviews.size
           @new << false
-          @user << @reviews.last.user
-          @time << @reviews.last.updated_at
-          @id << singleproduct.id
-
         end
 
         if @reviews.size >= 2
@@ -56,7 +50,6 @@ class ProductsController < ApplicationController
           @most_reviewed << false
         end
       end
-
 
     end
 
