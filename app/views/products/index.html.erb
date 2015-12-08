@@ -5,8 +5,8 @@
 <% noindex %>
 
 <div class="index-panel">
-    <h2>Share reviews of Asian skincare products.</h2>
-    <h3><%= Product.count %> products, <%= Review.count %> reviews until you...</h3>
+    <h1>Share reviews of Asian skincare products.</h1>
+    <p><%= Product.count %> products, <%= Review.count %> reviews. Add yours...</p>
     <% if user_signed_in? %>
       <div class= "new-product-panel">
           <div class= "form-group">

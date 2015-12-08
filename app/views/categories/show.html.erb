@@ -1,9 +1,9 @@
-<div class="jumbotron">
+<div class="index-panel">
     <h1><%= @category.name.pluralize.titleize %></h1>
     <% if @category.description.blank? %>
     	</p>
     <% else %>
-  		<h4><%= h(@category.description).gsub(/\n/, '<br/>').html_safe %></h4>
+  		<p><%= h(@category.description).gsub(/\n/, '<br/>').html_safe %></p>
    	<% end %>
 
     <br>
@@ -16,16 +16,14 @@
      <% end %>
 </div>
 
-
-<div class="product-list-header">
-	<% if @products.count == 1 %>
-		  <p><h4><%= @products.count %> Product</h4></p>
-	<% elsif @products.count >=1 %>
-	  <p><h4><%= @products.count %> Products</h4></p>
-	<% end %>
-</div>
-
 <div class="product-list">
+    <div class="title">
+      <% if @products.count == 1 %>
+        <%= @products.count %> Product
+      <% elsif @products.count >=1 %>
+        <%= @products.count %> Products
+      <% end %>
+  </div>
   <% @products.each_with_index do |product, i| %>
 
     <div class="row product-list-row">
