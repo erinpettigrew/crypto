@@ -15,19 +15,18 @@
 			<% if user_signed_in? %>
 				<% if current_user.liked_products.include?(@product) %>
 					<%= link_to image_tag("https://s3.amazonaws.com/productbase/hearts/heart-on-100.png"), like_product_path(@product, type:'unlike'), method: :put %>
-						<p><%= @number_of_likes %> likes</p>
+						<p><%= pluralize(@number_of_likes, "like") %></p>
 				<% else %>
 					<%= link_to image_tag("https://s3.amazonaws.com/productbase/hearts/heart-off-100.png"), like_product_path(@product, type:'like'), method: :put %>
-						<p><%= @number_of_likes %> likes</p>
+						<p><%= pluralize(@number_of_likes, "like") %></p>
 				<% end %>
 			<% else %>
-				<%= image_tag "https://s3.amazonaws.com/productbase/hearts/heart-off-100.png" %>
-				<p><%= @number_of_likes %> likes</p>
+				<%= link_to image_tag("https://s3.amazonaws.com/productbase/hearts/heart-off-100.png"), new_user_registration_path %>
+				<p><%= pluralize(@number_of_likes, "like") %></p>
 			<% end %>
 		</div>
-
-			<p><h3><%= @product.product_name %></h3></p>
-			<p>by <%= @product.product_brand %></p>
+			<p><h3><%= @product.product_brand %></br>
+			<%= @product.product_name %></h3></p>
 
  			<% if @product.category_id != 1 %>
 				<p>in <%= link_to @product.category.name.titleize.pluralize, @product.category %></p>
