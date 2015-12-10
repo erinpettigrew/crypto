@@ -4,16 +4,18 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, :only => [:show]
   resources :products do
-      collection do #search will apply to more than one restaurant
+      put :like, on: :member
+      collection do #search will apply to more than one product
           get 'search'
       end
           resources :reviews, except: [:show, :index] #deleted show and index pages
           resources :photos
+
     end
     
-  get 'pages/about'
+  # get 'pages/about'
 
-  get 'pages/contact'
+  # get 'pages/contact'
   #set homepage as product index list page
   root 'products#index'
 

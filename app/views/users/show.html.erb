@@ -4,6 +4,11 @@
 <% nofollow %>
 <% noindex %>
 
+<% current_user.liked_products.each do |product| %>
+<%= product.product_brand %> <%= product.product_name %>
+<br>
+<% end %>
+
 <div class="jumbotron">
 <% if @profile != current_user %>
 

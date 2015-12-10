@@ -18,8 +18,11 @@ class Product < ActiveRecord::Base
 
 	searchkick
 
-	has_many :reviews, :dependent => :destroy
-	has_many :photos, :dependent => :destroy
+	has_many :reviews, dependent: :destroy
+	has_many :photos, dependent: :destroy
+	has_many :likes
+	has_many :users, through: :likes
+	has_many :liked_by, through: :likes, source: :user #rename user_id to liked_by in likes table for referencing from products
 	belongs_to :category
 
 	validates :product_brand, :product_name, :image, :category, presence: true

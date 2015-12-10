@@ -7,6 +7,17 @@
 <div class="row">
 	<div class="col-xs-12 col-sm-4">
 
+		<div class="liking-panel">
+						<%= @number_of_likes %> likes
+			<% if user_signed_in? %>
+				<% if current_user.liked_products.include?(@product) %>
+					<%= link_to "unlike", like_product_path(@product, type:'unlike'), method: :put %>
+				<% else %>
+					<%= link_to "like", like_product_path(@product, type:'like'), method: :put %>
+				<% end %>
+			<% end %>
+		</div>
+
 		<div class="product-panel">
 			<div class="product-image"><%= image_tag @product.image_url %></div>
 			<p><h3><%= @product.product_name %></h3></p>
@@ -51,6 +62,7 @@
 				</div>
 			<% end %>
 		</div>
+
 	</div>
 
 	<div class="col-xs-12 col-sm-8">
@@ -102,8 +114,12 @@
 </div> <!-- end of row class -->
 
 
+
+
 <% if user_signed_in? %>
 	<% if current_user.admin? %>
+</br><p></br>
+		<p>Product Id: <%= @product.id %></p>
 		<%= link_to 'Edit', edit_product_path(@product), class: "btn btn-link" %> |
 		<%= link_to 'Product', products_path, class: "btn btn-link" %> |
 		<%= link_to 'New', new_product_path, class: "btn btn-link" %> |

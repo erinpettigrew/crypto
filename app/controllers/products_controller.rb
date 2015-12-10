@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :like, :destroy]
   before_action :authenticate_user!, except: [:index, :show, :search]
-  before_action :check_user, except: [:search, :index, :show, :create, :new, :update]
+  before_action :check_user, except: [:search, :index, :show, :create, :new, :like, :update]
   
 
   def search
@@ -59,6 +59,7 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @reviews = Review.where(product_id: @product.id).order("created_at DESC") 
+    @number_of_likes = Like.where(product_id: @product.id).size
 
     if @reviews.blank?
       @avg_rating = 0
@@ -68,6 +69,22 @@ class ProductsController < ApplicationController
 
     @photos = Photo.where(product_id: @product.id).order("created_at DESC")
   end
+
+  def like
+    type = params[:type]
+    if type == 'like'
+      current_user.liked_products << @product
+      redirect_to :back, notice: "You liked #{@product.product_brand} #{@product.product_name}"
+
+    elsif type == 'unlike'
+      current_user.liked_products.delete(@product)
+      redirect_to :back, notice: "You unliked #{@product.product_brand} #{@product.product_name}"
+
+    else
+      redirect_to :back, notice: 'Nothing happened.'
+    end
+  end
+
 
   # GET /products/new
   def new

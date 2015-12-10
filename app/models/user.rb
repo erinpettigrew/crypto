@@ -26,6 +26,9 @@ end
   #each user can have many reviews and many photos, and destroy any reviews and photos that belong to a deleted user
   has_many :reviews, dependent: :destroy
   has_many :photos, dependent: :destroy
+  has_many :likes
+  # has_many :products, through: :likes
+  has_many :liked_products, through: :likes, source: :product #rename product_id to likes in likes table for purpose of referencing from users
 
   validates :user_name, presence: true
 
