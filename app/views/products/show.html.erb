@@ -7,19 +7,25 @@
 <div class="row">
 	<div class="col-xs-12 col-sm-4">
 
-		<div class="liking-panel">
-						<%= @number_of_likes %> likes
+		<div class="product-panel">
+			<div class="product-image"><%= image_tag @product.image_url %></div>
+
+
+				<div class="liking-panel">
 			<% if user_signed_in? %>
 				<% if current_user.liked_products.include?(@product) %>
-					<%= link_to "unlike", like_product_path(@product, type:'unlike'), method: :put %>
+					<%= link_to image_tag("https://s3.amazonaws.com/productbase/hearts/heart-on-100.png"), like_product_path(@product, type:'unlike'), method: :put %>
+						<p><%= @number_of_likes %> likes</p>
 				<% else %>
-					<%= link_to "like", like_product_path(@product, type:'like'), method: :put %>
+					<%= link_to image_tag("https://s3.amazonaws.com/productbase/hearts/heart-off-100.png"), like_product_path(@product, type:'like'), method: :put %>
+						<p><%= @number_of_likes %> likes</p>
 				<% end %>
+			<% else %>
+				<%= image_tag "https://s3.amazonaws.com/productbase/hearts/heart-off-100.png" %>
+				<p><%= @number_of_likes %> likes</p>
 			<% end %>
 		</div>
 
-		<div class="product-panel">
-			<div class="product-image"><%= image_tag @product.image_url %></div>
 			<p><h3><%= @product.product_name %></h3></p>
 			<p>by <%= @product.product_brand %></p>
 
@@ -28,6 +34,7 @@
 			<% end %>
 
 			<div class="star-rating-product-page"><div class="star-rating" data-score= <%= @avg_rating %> ></div></div>
+
 
 						<div class = "row">
 							<div class = "form-group">
