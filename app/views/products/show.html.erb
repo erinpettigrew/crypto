@@ -15,14 +15,14 @@
 			<% if user_signed_in? %>
 				<% if current_user.liked_products.include?(@product) %>
 					<%= link_to image_tag("https://s3.amazonaws.com/productbase/hearts/heart-on-100.png"), like_product_path(@product, type:'unlike'), method: :put %>
-						<p><%= pluralize(@number_of_likes, "like") %></p>
+						<p><%= pluralize(@number_of_likes, "Like") %></p>
 				<% else %>
 					<%= link_to image_tag("https://s3.amazonaws.com/productbase/hearts/heart-off-100.png"), like_product_path(@product, type:'like'), method: :put %>
-						<p><%= pluralize(@number_of_likes, "like") %></p>
+						<p><%= pluralize(@number_of_likes, "Like") %></p>
 				<% end %>
 			<% else %>
 				<%= link_to image_tag("https://s3.amazonaws.com/productbase/hearts/heart-off-100.png"), new_user_registration_path %>
-				<p><%= pluralize(@number_of_likes, "like") %></p>
+				<p><%= pluralize(@number_of_likes, "Like") %></p>
 			<% end %>
 		</div>
 			<p><h3><%= @product.product_brand %></br>
