@@ -74,11 +74,15 @@ class ProductsController < ApplicationController
     type = params[:type]
     if type == 'like'
       current_user.liked_products << @product
-      redirect_to :back, notice: "You liked #{@product.product_brand} #{@product.product_name}"
+      redirect_to :back
+
+      #notice: "You liked #{@product.product_brand} #{@product.product_name}"
 
     elsif type == 'unlike'
       current_user.liked_products.delete(@product)
-      redirect_to :back, notice: "You unliked #{@product.product_brand} #{@product.product_name}"
+      redirect_to :back
+
+      #notice: "You unliked #{@product.product_brand} #{@product.product_name}"
 
     else
       redirect_to :back, notice: 'Nothing happened.'

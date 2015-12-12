@@ -4,91 +4,109 @@
 <% nofollow %>
 <% noindex %>
 
-<% current_user.liked_products.each do |product| %>
-<%= product.product_brand %> <%= product.product_name %>
-<br>
-<% end %>
-
 <div class="jumbotron">
 <% if @profile != current_user %>
 
 	<p><h1><%= @profile.user_name %></h1></p>
-	<p>Member since <%= @profile.created_at.strftime("%-m/%-d/%-y") %>.</p>
+	<p>Member since <%= @profile.created_at.strftime("%-m/%-d/%-y") %></p>
 	<h3>
-	<% if @profile_reviews.length == 1 %>
-		<%= @profile.user_name %> has written <%= "#{@profile_reviews.length} review!" %>
-		<% elsif @profile_reviews.length == 0 %>
-			<%= @profile.user_name %> is discovering products!
-	</div>
-
-	<% else %>
-		<%= @profile.user_name %> has written <%= "#{@profile_reviews.length} reviews!" %>
-	<% end %></h3>
-
 <% elsif @profile == current_user %>
 
 	<p><h1>Hi, <%= @profile.user_name %></h1></p>
-	<h3>
-	<% if @profile_reviews.length == 1 %>
-		You've added <%= "#{@profile_reviews.length} review!" %>
-		<% elsif @profile_reviews.length == 0 %>
-			Get started now by</br>discovering and reviewing products.
-	</div>
-
-	<% else %>
-		You've added <%= "#{@profile_reviews.length} reviews!" %>
-	<% end %></h3>
 
 <% end %>
 </div>
 
-<div class="row profile-panel">
+<% if @products.present? %>
+	<div class="product-list">
+	<div class= "title">Likes</div>
+	    <% @products.each_with_index  do |product, i| %>
+	        <div class="product-card">
 
-	<% @profile_reviews.each do |review| %>
-		<div class="row">
-			<div class="col-xs-12 col-sm-3">
-				<div class = "row">
-					<div class ="col-xs-4 col-sm-12">
-						<div class ="profile-product-image"><%= link_to image_tag(review.product.image_url), review.product %></div>
-					</div>
-					<div class = "col-xs-8 col-sm-12">
-						<div class="profile-product-info">
-							<h4><%= "#{review.product.product_brand}" %></h4>
-							<p><%= link_to review.product.product_name, review.product %><p>
-							<div class="stars"><div class="star-rating" data-score= <%= review.rating %> ></div></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-12 col-sm-9">
-					<table>
-						<tr class ="col-xs-12 col-sm-12">
-							<td>
-			
-			  				</td>
-			  			</tr>
-			  			<tr class="col-xs-12 col-sm-12">
-			  				<td>
-								<p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
-								<p><%= review.created_at.strftime("%-m/%-d/%-y") %>
-								<% if user_signed_in? %>
-									<% if (review.user == @profile) %>
-										<%= link_to "Edit", edit_product_review_path(review.product, review) %>
-										<% if (@profile.admin?) %>
-											<%= link_to "Delete", product_review_path(review.product, review), method: :delete %>
-										<% end %>
-									<% end %>
-								<% end %>
-								</p>
-							</td>
-						</tr>
-					</table>
-				</div>
-			</div>
-		</div>
-	<% end %>
-</div>
+	            <div class="row product-list-row">
+
+	              <div class="col-xs-4 col-md-3">
+	                <div class="index-product-image"><%= link_to image_tag(product.image.url), product %>
+	                </div>
+	              </div>
+
+	              <div class="col-xs-4 col-md-5 product-info">
+	                <div class="row product-list-row">
+	                  <div class="col-xs-12 col-md-5">
+	                    <h6><%= product.product_brand %></h6>
+	                    </div>
+	                    <div class="col-xs-12 col-md-7">
+	                      <h7><%= link_to product.product_name, product %></h7>
+	                    </div>
+	                  </div>
+	                </div>
+
+	                <div class="col-xs-4 col-md-4 review-info">
+	                  <div class="col-xs-12 col-md-8">
+	                    <div class="star-rating-index"><div class="star-rating" data-score= <%= @avg_rating[i] %>></div></div>
+	                  </div>
+	                  <div class="col-xs-12 col-md-4">
+	                    <% if @review_count[i] == 1 %>
+	                      <p><%= @review_count[i] %> review<p>
+	                    <% elsif @review_count[i] == 0 %>
+	                      <p><%= link_to "Write a review!", product %></p>
+	                    <% else %>
+	                      <p><%= @review_count[i] %> reviews</p>
+	                    <% end %>
+	                  </div>
+	                </div>
+
+
+	            </div>   <!-- /row product-list-row -->
+	        </div>   <!-- /product-card -->         
+	    <% end %>
+	</div>
+<% end %>
+
+
+
+<% if @profile_reviews.present? %>
+	<div class="product-list">
+		<div class= "title">Reviews</div>
+		    <% @profile_reviews.each do |review| %>
+		        <div class="product-card">
+		            <div class="row product-list-row">
+		              <div class="col-xs-4 col-md-3">
+		                <div class="index-product-image"><%= link_to image_tag(review.product.image_url), review.product %>
+		                </div>
+		              </div>
+
+		              <div class="col-xs-4 col-md-5 product-info">
+		                <div class="row product-list-row">
+		                  <div class="col-xs-12 col-md-5">
+		                    <h6><%= "#{review.product.product_brand}" %></h6>
+		                    </div>
+		                    <div class="col-xs-12 col-md-7">
+		                      <h7><%= link_to review.product.product_name, review.product %></h7>
+		                    </div>
+		                  </div>
+		                </div>
+
+		                <div class="col-xs-4 col-md-4 review-info">
+		                  <div class="col-xs-12 col-md-8">
+		                    <div class="star-rating-index"><div class="star-rating" data-score= <%= review.rating %>></div></div>
+		                  </div>
+
+		                </div>
+
+		                <div class="col-xs-12 col-sm-8 col-md-8 review-excerpt">
+		                   "<%= truncate(review.comment, length:200, separator: ' ') %>"
+		                  - <%= link_to review.user.user_name, review.user %>, <%= time_ago_in_words(review.updated_at).gsub('about','') %> ago
+		                </div>
+
+		            </div>   <!-- /row product-list-row -->
+		        </div>   <!-- /product-card -->         
+		      <% end %>
+	</div>
+<% end %>
+
+
+
 
 
 <script>

@@ -5,6 +5,40 @@ class UsersController < ApplicationController
 def show
 	@profile_photos = Photo.where(user: @profile).order("created_at DESC")
 	@profile_reviews = Review.where(user: @profile).order("created_at DESC")
+
+	@products = @profile.liked_products.order("created_at DESC")
+
+
+    @avg_rating = []
+    @review_count = []
+    @new = []
+    @most_reviewed = []
+    @review = []
+
+
+    @looping = 0
+
+   for singleproduct in @products
+      @reviews = Review.where(product_id: singleproduct.id)
+      @review << Review.where(product_id: singleproduct.id).last
+
+        if @reviews.blank?
+          @avg_rating << 0
+          @review_count << 0
+          @new << true
+
+        else
+          @avg_rating << @reviews.average(:rating).round(2) 
+          @review_count << @reviews.size
+          @new << false
+        end
+
+        if @reviews.size >= 2
+          @most_reviewed << true
+        else
+          @most_reviewed << false
+        end
+    end
 end
 	
 
