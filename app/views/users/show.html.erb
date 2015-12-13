@@ -95,8 +95,17 @@
 		                </div>
 
 		                <div class="col-xs-12 col-sm-8 col-md-8 review-excerpt">
-		                   "<%= truncate(review.comment, length:200, separator: ' ') %>"
+		                   <!--"<%= truncate(review.comment, length:200, separator: ' ') %>"-->
+		                   "<%= h(review.comment).gsub(/\n/, '<br/>').html_safe %>"
 		                  - <%= link_to review.user.user_name, review.user %>, <%= time_ago_in_words(review.updated_at).gsub('about','') %> ago
+		    
+		              				<% if user_signed_in? %>
+									<% if (review.user == current_user) || (current_user.admin?) %>
+										<p><%= link_to "Edit", edit_product_review_path(review.product, review) %>
+										<%= link_to "Delete", product_review_path(review.product, review), method: :delete %>
+										<%= review.created_at.strftime("%-m/%-d/%-y") %></p>
+									<% end %>
+								<% end %>
 		                </div>
 
 		            </div>   <!-- /row product-list-row -->
