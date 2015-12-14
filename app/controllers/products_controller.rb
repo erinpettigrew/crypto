@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
 
-    @products = Product.all.order('updated_at DESC')
+    @products = Product.all.order('updated_at DESC').take(10)
     @recent_reviews = Review.all.order('created_at DESC').take(5)
     @new_products = Product.all.order('created_at DESC').take(5)
 
