@@ -16,53 +16,17 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
 
-    @products = Product.all.order('updated_at DESC').take(10)
+    @products = Product.all.order('updated_at DESC').take(1)
     @recent_reviews = Review.all.order('created_at DESC').take(5)
     @new_products = Product.all.order('created_at DESC').take(5)
 
-    @avg_rating = []
-    @review_count = []
-    @most_reviewed = []
-    @review = []
-
-    @recent_product = []
     @avg_rating_recent = []
     @review_count_recent = []
-
-
-    @looping = 0
-
-   for singleproduct in @products
-      @reviews = Review.where(product_id: singleproduct.id)
-      @review << Review.where(product_id: singleproduct.id).last
-
-        if @reviews.blank?
-          @avg_rating << 0
-          @review_count << 0
-
-        else
-          @avg_rating << @reviews.average(:rating).round(2) 
-          @review_count << @reviews.size
-        end
-
-        if @reviews.size >= 2
-          @most_reviewed << true
-        else
-          @most_reviewed << false
-        end
-      end
-
 
     for singlerecent_review in @recent_reviews
       @avg_rating_recent << 3
       @review_count_recent << 4
     end
-
-    for singlenew_product in @new_products
-    end
-
-
-
 
     end
 
