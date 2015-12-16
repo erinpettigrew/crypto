@@ -5,13 +5,12 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all.order('name ASC')
-
     @products = []
 
-     @categories.each do |category|
-         @products << Product.where(category_id: category.id).take
-      end
-
+    for singlecategory in @categories
+      @products << Product.where(category_id: singlecategory.id).first
+      # as soon as the above turns into an array with first(n), I get problems
+    end
   end
 
   # GET /categories/1
