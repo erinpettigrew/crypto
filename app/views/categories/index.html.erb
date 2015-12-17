@@ -10,16 +10,21 @@
       <tr>
         <td><div class="category-table-cell"><h4><%= link_to category.name.titleize.pluralize, category %></h4></div></td>
         <td>
-          <% if category.products.any? %>
           <div class="category-table-cell">
-            <%= link_to image_tag(@products[i].image), @products[i] %>
+            <% if category.products.size >= 1 %>
+              <%= link_to image_tag(@product1[i].image), @product1[i] %>
             <% end %>
-            <% if category.products.size >=3 %>
-            <%= link_to image_tag(@product1[i].image), @product1[i] %>
-            <%= link_to image_tag(@product2[i].image), @product2[i] %>
-            <%= link_to image_tag(@product3[i].image), @product3[i] %>       
-          <% end %>
+            <% if category.products.size >= 2 %>
+              <%= link_to image_tag(@product2[i].image), @product2[i] %>
+            <% end %>
+            <% if category.products.size >= 3 %>
+              <%= link_to image_tag(@product3[i].image), @product3[i] %>       
+            <% end %>
         </div>
+        </td>
+        <td><div class="category-table-cell">
+            <p><%= link_to (pluralize(category.products.count, "product")), category %></p>
+          </div>
         </td>
         <!--<td><%= truncate(category.description, length: 65) %></td>-->
                             <% if user_signed_in? %>
