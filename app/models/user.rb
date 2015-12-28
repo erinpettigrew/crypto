@@ -29,7 +29,7 @@ end
   has_many :likes
   # has_many :products, through: :likes
   has_many :liked_products, through: :likes, source: :product #rename product_id to likes in likes table for purpose of referencing from users
-
+  has_one :avatar
   validates :user_name, presence: true
 
 end

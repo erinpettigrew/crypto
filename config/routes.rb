@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   resources :categories
   devise_for :users
-  resources :users, :only => [:show]
+  resources :users, :only => [:show] do
+      resources :avatars
+  end
   resources :products do
       put :like, on: :member
       collection do #search will apply to more than one product
@@ -10,6 +12,7 @@ Rails.application.routes.draw do
       end
           resources :reviews, except: [:show, :index] #deleted show and index pages
           resources :photos
+
 
     end
     
