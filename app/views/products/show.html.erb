@@ -94,6 +94,8 @@
 							<td>
 								<div class="row">
 									<div class="col-xs-9">
+
+										<div class="small-avatar"><%= image_tag(review.user.avatar.try(:image)) %></div>
 										<h4><%= link_to "#{review.user.user_name}", review.user %></h4>
 									</div>
 									<div class="col-xs-3">

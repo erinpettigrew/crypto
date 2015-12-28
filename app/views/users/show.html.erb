@@ -13,7 +13,7 @@
 	<h3>
 <% elsif @profile == current_user %>
 	<p><h1>Hi, <%= @profile.user_name %></h1></p>
-	<div class="big-avatar"><%= image_tag(@profile.avatar..try(:image)) %></div>
+	<div class="big-avatar"><%= image_tag(@profile.avatar.try(:image)) %></div>
 <% end %>
 </div>
 

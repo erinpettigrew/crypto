@@ -241,6 +241,17 @@
 		}
 	}
 
+
+	.big-avatar img{
+		max-width:45%;
+		border-radius:50%;
+	}
+
+	.small-avatar img{
+		max-width:25%;
+		border-radius:50%;
+	}
+
 	.profile-panel {
 
 		.row {
