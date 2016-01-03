@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'links/new'
+
+  get 'links/create'
+
+  get 'sites/new'
+
+  get 'sites/create'
+
   resources :categories
   devise_for :users
   resources :users, :only => [:show]

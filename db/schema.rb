@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151209170632) do
+ActiveRecord::Schema.define(version: 20160103125447) do
+
+  create_table "avatars", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.text     "name"
@@ -43,6 +50,14 @@ ActiveRecord::Schema.define(version: 20151209170632) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "links", force: :cascade do |t|
+    t.integer  "site_id"
+    t.integer  "product_id"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "photos", force: :cascade do |t|
     t.text     "comment"
     t.datetime "created_at",    null: false
@@ -60,6 +75,7 @@ ActiveRecord::Schema.define(version: 20151209170632) do
     t.string   "image"
     t.string   "slug"
     t.integer  "category_id"
+    t.text     "ingredients"
   end
 
   add_index "products", ["slug"], name: "index_products_on_slug", unique: true
@@ -71,6 +87,20 @@ ActiveRecord::Schema.define(version: 20151209170632) do
     t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.integer  "product_id"
+  end
+
+  create_table "sites", force: :cascade do |t|
+    t.text     "name"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "thanks", force: :cascade do |t|
+    t.integer  "review_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
