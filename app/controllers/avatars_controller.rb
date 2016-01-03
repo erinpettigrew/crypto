@@ -23,7 +23,7 @@ class AvatarsController < ApplicationController
 
     respond_to do |format|
       if @avatar.save
-        format.html { redirect_to user_path(current_user), notice: 'Avatar was successfully created.' }
+        format.html { redirect_to user_path(current_user), notice: 'Your photo was successfully created.' }
         format.json { render :show, status: :created, location: @avatar }
       else
         format.html { render :new }
@@ -35,7 +35,7 @@ class AvatarsController < ApplicationController
   def update
     respond_to do |format|
       if @avatar.update(avatar_params)
-        format.html { redirect_to user_path(current_user), notice: 'Avatar was successfully updated.' }
+        format.html { redirect_to user_path(current_user), notice: 'Your photo was successfully updated.' }
         format.json { render :show, status: :ok, location: @avatar }
       else
         format.html { render :edit }
@@ -48,7 +48,7 @@ class AvatarsController < ApplicationController
     def destroy
     @avatar.destroy
     respond_to do |format|
-      format.html { redirect_to user_path(current_user), notice: 'Avatar was successfully destroyed.' }
+      format.html { redirect_to user_path(current_user), notice: 'Your photo was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
