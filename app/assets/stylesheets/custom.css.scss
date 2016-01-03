@@ -259,9 +259,15 @@
 		border-radius:50%;
 	}
 
+	.small-avatar {
+		margin:0px 15px 0px 0px;
+	}
+
 	.small-avatar img{
-		max-width:25%;
+		max-width:65px;
 		border-radius:50%;
+		box-shadow:1px 1px 1px #999999;
+		margin-right:0px;
 	}
 
 	.profile-panel {
