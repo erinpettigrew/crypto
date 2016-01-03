@@ -1,7 +1,7 @@
 <div class="index-panel">
     <h1>Find a Product</h1>
-    <h4>Cleansing, moisturizing, treating &mdash; and everything in between.</h4></br>
-    <strong>TIP!</strong> New to Asian beauty?</br>Try an <%= link_to "Oil Cleanser", Category.find_by_slug("oil-cleanser") %>, <%= link_to "Sheet Mask", Category.find_by_slug("sheet-mask") %>, or <%= link_to "BB Cushion", Category.find_by_slug("bb-cushion") %>.</br>
+    <h4>Cleansing, moisturizing, treating &mdash; and everything in between!</h4></br>
+    <!--<strong>TIP!</strong> New to Asian beauty?</br>Try an <%= link_to "Oil Cleanser", Category.find_by_slug("oil-cleanser") %>, <%= link_to "Sheet Mask", Category.find_by_slug("sheet-mask") %>, or <%= link_to "BB Cushion", Category.find_by_slug("bb-cushion") %>.</br>-->
 </div>
 
 <table class="table table-hover">
@@ -9,7 +9,23 @@
     <% @categories.each_with_index do |category, i| %>
       <tr>
         <td><div class="category-table-cell"><h4><%= link_to category.name.titleize.pluralize, category %></h4></div></td>
-
+        <td>
+          <div class="category-table-cell">
+            <% if category.products.size >= 1 %>
+              <%= link_to image_tag(@product1[i].image), @product1[i] %>
+            <% end %>
+            <% if category.products.size >= 2 %>
+              <%= link_to image_tag(@product2[i].image), @product2[i] %>
+            <% end %>
+            <% if category.products.size >= 3 %>
+              <%= link_to image_tag(@product3[i].image), @product3[i] %>       
+            <% end %>
+        </div>
+        </td>
+        <td><div class="category-table-cell">
+            <p><%= link_to (pluralize(category.products.count, "product")), category %></p>
+          </div>
+        </td>
         <!--<td><%= truncate(category.description, length: 65) %></td>-->
                             <% if user_signed_in? %>
                               <% if current_user.admin? %>

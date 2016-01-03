@@ -17,7 +17,7 @@ before_action :set_category, only: [:destroy]
   def destroy
     @like.destroy
     respond_to do |format|
-      format.html { redirect_to product_url, notice: 'Category was successfully destroyed.' }
+      format.html { redirect_to product_url, notice: 'This was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
