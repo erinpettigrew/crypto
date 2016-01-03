@@ -82,6 +82,7 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
+    @categories = Category.order(name: :ASC)
 
     respond_to do |format|
       if @product.save

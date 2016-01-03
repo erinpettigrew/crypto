@@ -160,7 +160,19 @@
 
 
 	.category-table-cell {
-		text-align:center;
+		text-align:left;
+	}
+
+	.category-table-cell img {
+		max-width:40px;
+	}
+
+	.category-table-cell h4 {
+		font-size:92%;
+	}
+
+	.category-table-cell p {
+		font-size:75%;
 	}
 
 
@@ -376,6 +388,25 @@
 		padding: 10px 100px;
 	}
 
+
+	.category-table-cell {
+		text-align:left;
+		font-size:100%;
+	}
+
+	.category-table-cell img {
+		max-width:85px;
+		min-width:80px;
+		margin:5px 15px 5px 15px;
+	}
+
+	.category-table-cell h4 {
+		font-size:120%;
+	}
+
+	.category-table-cell p {
+		font-size:100%;
+	}
 
 	.new-product-panel {
 		width: 100%;
