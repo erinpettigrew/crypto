@@ -69,6 +69,10 @@
 			<% end %>
 		</div>
 
+		<div class="ingredients-list">
+			Ingredients: <%= @product.ingredients %>
+		</div>
+
 	</div>
 
 	<div class="col-xs-12 col-sm-8">
@@ -118,16 +122,6 @@
 		<% end %>
 	</div>
 </div> <!-- end of row class -->
-
-<div class="row">
-	<div class="col-xs-12 col-md-11">
-		<div class="ingredients-list">
-			Ingredients: <%= @product.ingredients %>
-		</div>
-	</div>
-</div>
-
-
 
 <% if user_signed_in? %>
 	<% if current_user.admin? %>
