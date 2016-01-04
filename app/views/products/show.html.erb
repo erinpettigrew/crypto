@@ -69,9 +69,12 @@
 			<% end %>
 		</div>
 
+		<% if !@product.ingredients.blank? %>
 		<div class="ingredients-list">
-			Ingredients: <%= @product.ingredients %>
+			<h4>Ingredients</h4> 
+			<%= @product.ingredients.downcase %>
 		</div>
+		<% end %>
 
 	</div>
 
