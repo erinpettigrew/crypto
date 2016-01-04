@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
 
     @products = Product.all.order('updated_at DESC').take(1)
     @recent_reviews = Review.all.order('created_at DESC').take(5)
-    @new_products = Product.all.order('created_at DESC').take(5)x
+    @new_products = Product.all.order('created_at DESC').take(5)
 
     @avg_rating_recent = []
     @review_count_recent = []
@@ -37,6 +37,7 @@ class ProductsController < ApplicationController
   def show
     @reviews = Review.where(product_id: @product.id).order("created_at DESC") 
     @number_of_likes = Like.where(product_id: @product.id).size
+    @links = Link.where(product_id: @product.id).order("created_at DESC")
 
     if @reviews.blank?
       @avg_rating = 0

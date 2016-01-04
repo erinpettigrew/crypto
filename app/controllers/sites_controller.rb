@@ -9,6 +9,16 @@ before_action :authenticate_user!
 
   def create
   	@site = Site.new(site_params)
+
+      respond_to do |format|
+      if @site.save
+        format.html { redirect_to sites_path, notice: 'Site was successfully created.' }
+        format.json { render :show, status: :created, location: @site }
+      else
+        format.html { render :new }
+        format.json { render json: @site.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def index
@@ -16,7 +26,6 @@ before_action :authenticate_user!
   end
 
   def destroy
-
   end
 
 
@@ -34,4 +43,6 @@ end
 
  def site_params
   	params.require(:site).permit(:name, :url)
+end
+
 end

@@ -1,16 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'links/new'
-
-  get 'links/create'
-
-  get 'sites/new'
-
-  get 'sites/create'
-
   resources :categories
   devise_for :users
   resources :users, :only => [:show]
+  resources :sites
   resources :products do
       put :like, on: :member
       collection do #search will apply to more than one product
@@ -18,6 +11,7 @@ Rails.application.routes.draw do
       end
           resources :reviews, except: [:show, :index] #deleted show and index pages
           resources :photos
+          resources :links
 
     end
     
