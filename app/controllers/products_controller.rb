@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
 
     @products = Product.all.order('updated_at DESC').take(1)
     @recent_reviews = Review.all.order('created_at DESC').take(5)
-    @new_products = Product.all.order('created_at DESC').take(5)
+    @new_products = Product.all.order('created_at DESC').take(5)x
 
     @avg_rating_recent = []
     @review_count_recent = []
