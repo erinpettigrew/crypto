@@ -1,6 +1,8 @@
 class LinksController < ApplicationController
  before_action :set_link, only: [:destroy]
  before_action :set_product
+ before_action :authenticate_user!
+ before_action :check_user
 
 
   def new
@@ -15,7 +17,7 @@ class LinksController < ApplicationController
 
     respond_to do |format|
       if @link.save
-        format.html { redirect_to products_path, notice: 'Link was successfully created.' }
+        format.html { redirect_to @product, notice: 'Link was successfully created.' }
         format.json { render :show, status: :created, location: @link }
       else
         format.html { render :new }
@@ -46,6 +48,12 @@ private
 
     def link_params
   	   params.require(:link).permit(:site_id, :url)
+    end
+
+    def check_user
+      unless current_user.admin?
+        redirect_to root_url, alert: "Sorry, only admins can do that!"
+      end
     end
 
 end

@@ -68,12 +68,14 @@
 				</div>
 			<% end %>
 		</div>
-
-		<h4>Blogs</h4>
-		<% @links.each_with_index do |link| %>
-			<p><%= link.excerpt %> - <%= link_to link.site.name, @product %></p> <!-- replace with link.url on go live -->
+	<% if user_signed_in? %>
+		<% if current_user.admin? %>
+			<h4>What People Are Saying</h4>
+			<% @links.each_with_index do |link| %>
+				<p><%= link.excerpt %> - <%= link_to link.site.name, @product %></p> <!-- replace with link.url on go live -->
+			<% end %>
 		<% end %>
-
+	<% end %>
 	</div>
 
 	<div class="col-xs-12 col-sm-8">
