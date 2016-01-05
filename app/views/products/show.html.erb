@@ -69,7 +69,7 @@
 			<% end %>
 		</div>
 	<% if user_signed_in? %>
-		<% if current_user.admin? %>
+		<% if current_user.admin? && @links.exists? %>
 			<h4>What People Are Saying</h4>
 			<% @links.each_with_index do |link| %>
 				<p><%= link.excerpt %> - <%= link_to link.site.name, @product %></p> <!-- replace with link.url on go live -->
