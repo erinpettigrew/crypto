@@ -14,6 +14,7 @@ class LinksController < ApplicationController
   	@link = Link.new(link_params)
   	@sites = Site.order(name: :ASC)
     @link.product_id = @product.id
+    @link.site_id = 1 #temporarily set default
 
     respond_to do |format|
       if @link.save
@@ -47,7 +48,7 @@ private
     end
 
     def link_params
-  	   params.require(:link).permit(:site_id, :excerpt, :url)
+  	   params.require(:link).permit(:site_id, :excerpt, :url, :site_name)
     end
 
     def check_user

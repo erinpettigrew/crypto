@@ -68,14 +68,17 @@
 				</div>
 			<% end %>
 		</div>
+
+<% unless @reviews.blank? %>
 	<% if user_signed_in? %>
 		<% if current_user.admin? && @links.exists? %>
 			<h4>What People Are Saying</h4>
 			<% @links.each_with_index do |link| %>
-				<p><%= link.excerpt %> - <%= link_to link.site.name, @product %></p> <!-- replace with link.url on go live -->
+				<p><%= link.excerpt %> - <%= link_to link.site_name, @product %></p> <!-- replace with link.url on go live -->
 			<% end %>
 		<% end %>
 	<% end %>
+<% end %>
 	</div>
 
 	<div class="col-xs-12 col-sm-8">
@@ -83,6 +86,14 @@
 
 		<% if @reviews.blank? %>
 			<h3>Have you tried this <%= @product.category.name %>? Be the first to add your review!</h3>
+			<% if user_signed_in? %>
+		<% if current_user.admin? && @links.exists? %>
+			<h4>What People Are Saying</h4>
+			<% @links.each_with_index do |link| %>
+				<p><%= link.excerpt %> - <%= link_to link.site_name, @product %></p> <!-- replace with link.url on go live -->
+			<% end %>
+		<% end %>
+	<% end %>
 		<% elsif @reviews.blank? == false %>
 			<% if @reviews.length == 1 %>
 				<h3><%= "#{@reviews.length}" %> Review</h3>
@@ -126,16 +137,9 @@
 		<% end %>
 	</div>
 
-	<div class="col-xs-12 col-sm-8">
-<% if user_signed_in? %>
-		<% if current_user.admin? && @links.exists? %>
-			<h4>What People Are Saying</h4>
-			<% @links.each_with_index do |link| %>
-				<p><%= link.excerpt %> - <%= link_to link.site.name, @product %></p> <!-- replace with link.url on go live -->
-			<% end %>
-		<% end %>
-	<% end %>
-	</div>
+
+
+
 
 
 </div> <!-- end of row class -->
