@@ -60,29 +60,19 @@
 		</div>
 
 
-<% unless @reviews.blank? %>
-	<% if user_signed_in? %>
-		<% if current_user.admin? && @links.exists? %>
-			<h4>What People Are Saying</h4>
-			<% @links.each_with_index do |link| %>
-				<p><%= link.excerpt %> - <%= link_to link.site_name, @product %></p> <!-- replace with link.url on go live -->
-			<% end %>
-		<% end %>
-	<% end %>
-<% end %>
 	</div>
 
 	<div class="col-xs-12 col-sm-8">
 
 
 		<% if @reviews.blank? %>
-			<h3>Have you tried this <%= @product.category.name %>? Be the first to add your review!</h3>
+			<center><h3>Have you tried this <%= @product.category.name %>? </br>Be the first to...</h3></center>
 
 
 					<div class = "row">
 						<div class = "form-group">
 							<div class= "col-xs-6 col-sm-6 button-1">
-								<%= link_to "Add a Review", new_product_review_path(@product), class: "btn btn-primary btn-lg" %> 
+								<%= link_to "Add a Review!", new_product_review_path(@product), class: "btn btn-primary btn-lg" %> 
 							</div>
 						
 							<div class = "col-xs-6 col-sm-6 button-2">
@@ -94,7 +84,7 @@
 
 			<% if user_signed_in? %>
 		<% if current_user.admin? && @links.exists? %>
-			<h4>What People Are Saying</h4>
+			<h4>Blog Posts</h4>
 			<% @links.each_with_index do |link| %>
 				<p><%= link.excerpt %> - <%= link_to link.site_name, @product %></p> <!-- replace with link.url on go live -->
 			<% end %>
@@ -105,7 +95,7 @@
 					<div class = "row">
 						<div class = "form-group">
 							<div class= "col-xs-6 col-sm-6 button-1">
-								<%= link_to "Add a Review", new_product_review_path(@product), class: "btn btn-primary btn-lg" %> 
+								<%= link_to "Add a Review!", new_product_review_path(@product), class: "btn btn-primary btn-lg" %> 
 							</div>
 						
 							<div class = "col-xs-6 col-sm-6 button-2">
