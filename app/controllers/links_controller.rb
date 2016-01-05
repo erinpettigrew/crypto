@@ -47,7 +47,7 @@ private
     end
 
     def link_params
-  	   params.require(:link).permit(:site_id, :url)
+  	   params.require(:link).permit(:site_id, :excerpt, :url)
     end
 
     def check_user
