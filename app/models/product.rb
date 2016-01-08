@@ -24,6 +24,7 @@ class Product < ActiveRecord::Base
 	has_many :users, through: :likes
 	has_many :liked_by, through: :likes, source: :user #rename user_id to liked_by in likes table for referencing from products
 	belongs_to :category
+	has_many :links
 
 	validates :product_brand, :product_name, :image, :category, presence: true
 

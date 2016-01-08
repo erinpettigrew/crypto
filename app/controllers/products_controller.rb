@@ -10,6 +10,22 @@ class ProductsController < ApplicationController
     else
       @products = Product.all? #show all restaurants if search is blank
     end
+
+     @search_term = params[:search]
+     @avg_rating = []
+     @review_count = []
+ 
+     for singleproduct in @products
+       @reviews = Review.where(product_id: singleproduct.id)
+      if @reviews.blank?
+         @avg_rating << 0
+         @review_count << 0
+       else
+         @avg_rating << @reviews.average(:rating).round(2) 
+         @review_count << @reviews.size
+     end
+     end
+ 
   end
 
   # GET /products
@@ -37,6 +53,7 @@ class ProductsController < ApplicationController
   def show
     @reviews = Review.where(product_id: @product.id).order("created_at DESC") 
     @number_of_likes = Like.where(product_id: @product.id).size
+    @links = Link.where(product_id: @product.id).order("created_at DESC")
 
     if @reviews.blank?
       @avg_rating = 0
