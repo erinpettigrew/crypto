@@ -126,7 +126,7 @@
 										<table>
 											<tr>
 												<td>
-													<div class="small-avatar"><%= link_to image_tag(review.user.avatar.try(:image)), review.user %>
+													<div class="small-avatar"><%= link_to image_tag(review.user.avatar.try(:image).try(:med_thumb)), review.user %>
 													</div>
 												</td>
 												<td>
