@@ -1,16 +1,11 @@
 <% title @product.product_brand + ' ' + @product.product_name + ', read reviews on looklove' %>
 <% description 'Reviews and photos of ' + @product.product_brand + ' ' + @product.product_name %>
-<% keywords @product.product_brand + ' ' + @product.product_name + ', reviews, community, forum, posts, asian, skincare, beauty, products, lists, regimen' %>
-<% nofollow %>
-<% noindex %>
-
+<% keywords @product.product_brand + ' ' + @product.product_name + ', ' + @product.category.name + ', reviews, community, forum, posts, asian, skincare, beauty, products' %>
 <div class="row">
 	<div class="col-xs-12 col-sm-4">
 
 		<div class="product-panel">
 			<div class="product-image"><%= image_tag @product.image_url %></div>
-
-
 				<div class="liking-panel">
 			<% if user_signed_in? %>
 				<% if current_user.liked_products.include?(@product) %>
