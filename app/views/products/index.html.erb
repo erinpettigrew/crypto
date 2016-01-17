@@ -24,31 +24,30 @@
 <div class= "title">Recently</div>
     <% @recent_reviews.each  do |review, i| %>
           <div class="row feed-item">
-                <div class="col-xs-8">
+                <div class="col-xs-12">
                   <div class="row">
-                    <div class="col-xs-4 col-sm-3">
+                    <div class="col-xs-3 col-sm-2">
                       <div class="small-avatar"><%= link_to image_tag(review.user.avatar.try(:image).try(:med_thumb)), review.user %></div>
                     </div>
-                    <div class="col-xs-8 col-sm-9 feed-action-text">
-                        <%= link_to "#{review.user.user_name}", review.user %> reviewed a new <%= link_to "#{review.product.category.name.titleize}", review.product.category %>
+                    <div class="col-xs-9 col-sm-10 feed-action-text">
+                        <strong><%= link_to "#{review.user.user_name}", review.user %></strong> reviewed <%= link_to image_tag(review.product.image.url), review.product %> <%= review.product.product_brand %> <%= link_to review.product.product_name, review.product %>
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-xs-12">
-                      <div class="star-rating-product-page"><div class="star-rating" data-score= <%= review.rating %> ></div></div>
-                          <%= truncate(review.comment, length:120, separator: ' ') %> - <%= time_ago_in_words(review.updated_at).gsub('about','') %> ago 
+                    <div class="col-xs-12 col-sm-12">
+                      <div class="review-excerpt">
+                        <div class="star-rating-product-page"><div class="star-rating" data-score= <%= review.rating %> ></div></div>
+                        <%= truncate(review.comment, length:120, separator: ' ') %> - <%= time_ago_in_words(review.updated_at).gsub('about','') %> ago 
+                      </div>
                     </div>
-                  </div>
+                  </div> <!-- /row -->
                 </div>
-                <div class="col-xs-4">
-                  <div class="product-card">
-                    <%= link_to image_tag(review.product.image.url), review.product %></div>
-                        <%= review.product.product_brand %></br>
-                        <%= link_to review.product.product_name, review.product %>
-                  </div>
+
+
           </div>  <!-- /row -->     
     <% end %><!-- /recent_reviews loop -->
 </div><!-- /product-list -->
+
 
 
 
