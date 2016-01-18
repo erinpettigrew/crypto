@@ -48,12 +48,15 @@
 			max-width:40px;
 			border-radius:5%;
 			box-shadow:1px 1px 1px #999999;
-			padding:5px;
+			padding:3px;
 		}
-
 		.feed-review-excerpt {
 			font-size:95%;
 			color:#000000;
+
+			.star-rating img {
+				max-width:15px;
+			}
 		}
 	}
 
@@ -89,6 +92,7 @@
 		}
 
 		.feed-action-text {
+			font-size:110%;
 			padding:20px 0px 0px 0px;
 
 		}
@@ -99,9 +103,25 @@
 			padding:0px;
 		}
 
+
+		.feed-product-image {
+			padding:0px;
+			margin:-40px 0px 0px 40px;
+		}
+
+		.feed-product-image img {
+			max-width:55px;
+			border-radius:5%;
+			box-shadow:1px 1px 1px #999999;
+		}
+
 		.feed-review-excerpt {
 			font-size:90%;
 			color:#000000;
+
+			.star-rating img {
+				max-width:100%;
+			}
 		}
 	}
 

@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
   def index
 
     @products = Product.all.order('updated_at DESC').take(1)
-    @recent_reviews = Review.all.order('created_at DESC').take(5)
+    @recent_reviews = Review.all.order('created_at DESC').take(15)
     @new_products = Product.all.order('created_at DESC').take(5)
 
     @avg_rating_recent = []
