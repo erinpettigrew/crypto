@@ -41,12 +41,14 @@
 
 		.feed-product-image {
 			padding:0px;
-			margin:-40px 0px 0px 40px;
+			margin:-35px 0px 0px 55px;
 		}
 
 		.feed-product-image img {
-			max-width:40px;
-			border-radius:5%;
+			max-width:50px;
+			border:1px solid #f2f3f4;
+			background:#ffffff;
+			border-radius:5px;
 			box-shadow:1px 1px 1px #999999;
 			padding:3px;
 		}
@@ -106,7 +108,7 @@
 
 		.feed-product-image {
 			padding:0px;
-			margin:-40px 0px 0px 40px;
+			margin:-35px 0px 0px 60px;
 		}
 
 		.feed-product-image img {
