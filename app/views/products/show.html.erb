@@ -24,7 +24,8 @@
 			<%= @product.product_name %></h3></p>
 
  			<% if @product.category_id != 1 %>
-				<p>in <%= link_to @product.category.name.titleize.pluralize, @product.category %></p>
+				<p>in <%= link_to @product.category.name.titleize.pluralize, @product.category %></br>
+				by <%= link_to "#{@product.product_brand}", 'http://www.looklove.com/products/search?utf8=%E2%9C%93&search=' + @product.product_brand %></p>
 			<% end %>
 
 			<div class="star-rating-product-page"><div class="star-rating" data-score= <%= @avg_rating %> ></div></div>
