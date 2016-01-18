@@ -27,9 +27,10 @@
         <%= @products.count %> Products
       <% end %>
   </div>
+  <table class="table">
   <% @products.each_with_index do |product, i| %>
-
-    <div class="row product-list-row">
+  <tr>
+    <td>
       	<div class="col-xs-4 col-md-3">
       		<div class="index-product-image"><%= link_to image_tag(product.image.url), product %></div>
       	</div>
@@ -62,8 +63,10 @@
                </div>
 	      		 <% end %>
 	    	  </div>
-	</div> <!-- end of row -->
+</td>
+</tr>
   <% end %>
+</table>
 </div>
 
 
