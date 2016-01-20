@@ -54,14 +54,12 @@
 				</div>
 			<% end %>
 		</div>
-
 		<% if !@product.ingredients.blank? %>
-		<div class="ingredients-list">
-			<h4>Ingredients</h4> 
-			<%= @product.ingredients.downcase %>
-		</div>
+			<div class="ingredients-list">
+				<p><div class="ingredients-button">Ingredients</div></p> 
+				<div class="ingredients"><p><%= @product.ingredients.downcase %></p></div>
+			</div>
 		<% end %>
-
 	</div>
 
 	<div class="col-xs-12 col-sm-8">
@@ -188,4 +186,9 @@
       return $(this).attr('data-score');
     }
   });
+
+    $(".ingredients-button").click(function(){
+        $(".ingredients").toggle(); 
+    });
+
 </script>
