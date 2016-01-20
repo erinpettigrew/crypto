@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160105002530) do
+ActiveRecord::Schema.define(version: 20160119220527) do
 
   create_table "avatars", force: :cascade do |t|
     t.integer  "user_id"
@@ -60,15 +60,6 @@ ActiveRecord::Schema.define(version: 20160105002530) do
     t.text     "site_name"
   end
 
-  create_table "listings", force: :cascade do |t|
-    t.integer  "product_id"
-    t.integer  "store_id"
-    t.string   "url"
-    t.decimal  "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "photos", force: :cascade do |t|
     t.text     "comment"
     t.datetime "created_at",    null: false
@@ -87,6 +78,7 @@ ActiveRecord::Schema.define(version: 20160105002530) do
     t.string   "slug"
     t.integer  "category_id"
     t.text     "ingredients"
+    t.integer  "user_id"
   end
 
   add_index "products", ["slug"], name: "index_products_on_slug", unique: true
@@ -101,13 +93,6 @@ ActiveRecord::Schema.define(version: 20160105002530) do
   end
 
   create_table "sites", force: :cascade do |t|
-    t.text     "name"
-    t.string   "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "stores", force: :cascade do |t|
     t.text     "name"
     t.string   "url"
     t.datetime "created_at", null: false
