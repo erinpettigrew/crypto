@@ -17,6 +17,29 @@
 		padding:0px 0px 25px 0px;
 	}
 
+	.ingredients-list {
+		font-size:14px;
+		text-align:center;
+	}
+
+	.ingredients-button {
+		font-size:14px;
+		text-align:center;
+		color:#337AB7;
+		display:inline;
+	}
+
+	.ingredients-button:hover {
+		text-decoration:underline;
+	}
+
+	.ingredients {
+		display:none;
+		padding:10px 0px 15px 0px;
+		font-size:80%;
+		text-align:center;
+	}
+
 	.product-list {
 
 		.title {
@@ -98,6 +121,20 @@
 	.product-list-header {
 		text-align:center;
 		padding:0px 0px 25px 0px;
+	}
+
+	.ingredients-list {
+		font-size:14px;
+		text-align:left;
+	}
+
+	.ingredients-button {
+		font-size:14px;
+		text-align:left;
+	}
+
+	.ingredients {
+		text-align:left;
 	}
 
 	.product-list {
