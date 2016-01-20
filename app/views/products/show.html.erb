@@ -30,6 +30,13 @@
 				<% end %>
 			</div> <!-- /product-image -->
 
+		<% if !@product.ingredients.blank? %>
+			<div class="ingredients-list">
+				see <div class="ingredients-button">Ingredients</div>
+				<div class="ingredients"><p><%= @product.ingredients.titleize %></p></div>
+			</div>
+		<% end %>
+
 			<% if @photos.blank? == false %>
 				<div class = "photo-panel">
 				<% if @photos.length == 1 %>
@@ -51,12 +58,6 @@
 				</div>
 				</div>
 			<% end %>
-		<% if !@product.ingredients.blank? %>
-			<div class="ingredients-list">
-				see <div class="ingredients-button">Ingredients</div>
-				<div class="ingredients"><p><%= @product.ingredients.titleize %></p></div>
-			</div>
-		<% end %>
 	</div>
 
 	<div class="col-xs-12 col-sm-8">
