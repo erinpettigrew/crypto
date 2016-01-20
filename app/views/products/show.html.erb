@@ -7,34 +7,31 @@
 		<div class="product-panel">
 			<div class="product-image"><%= image_tag @product.image_url %></div>
 				<div class="liking-panel">
-			<% if user_signed_in? %>
-				<% if current_user.liked_products.include?(@product) %>
-					<%= link_to image_tag("https://s3.amazonaws.com/productbase/hearts/heart-on-100.png"), like_product_path(@product, type:'unlike'), method: :put %>
+					<% if user_signed_in? %>
+						<% if current_user.liked_products.include?(@product) %>
+							<%= link_to image_tag("https://s3.amazonaws.com/productbase/hearts/heart-on-100.png"), like_product_path(@product, type:'unlike'), method: :put %>
+								<p><%= pluralize(@number_of_likes, "Love") %></p>
+						<% else %>
+							<%= link_to image_tag("https://s3.amazonaws.com/productbase/hearts/heart-off-100.png"), like_product_path(@product, type:'like'), method: :put %>
+								<p><%= pluralize(@number_of_likes, "Love") %></p>
+						<% end %>
+					<% else %>
+						<%= link_to image_tag("https://s3.amazonaws.com/productbase/hearts/heart-off-100.png"), new_user_registration_path %>
 						<p><%= pluralize(@number_of_likes, "Love") %></p>
-				<% else %>
-					<%= link_to image_tag("https://s3.amazonaws.com/productbase/hearts/heart-off-100.png"), like_product_path(@product, type:'like'), method: :put %>
-						<p><%= pluralize(@number_of_likes, "Love") %></p>
+					<% end %>
+				</div>
+				<p><h3><%= @product.product_brand %></br>
+				<%= @product.product_name %></h3></p>
+				<div class="star-rating-product-page"><div class="star-rating" data-score= <%= @avg_rating %> ></div></div>
+
+	 			<% if @product.category_id != 1 %>
+					<p><h5>in <%= link_to @product.category.name.titleize.pluralize, @product.category %></br>
+					by <%= link_to "#{@product.product_brand}", 'http://www.looklove.com/products/search?utf8=%E2%9C%93&search=' + @product.product_brand %></h5></p>
 				<% end %>
-			<% else %>
-				<%= link_to image_tag("https://s3.amazonaws.com/productbase/hearts/heart-off-100.png"), new_user_registration_path %>
-				<p><%= pluralize(@number_of_likes, "Love") %></p>
-			<% end %>
-		</div>
-			<p><h3><%= @product.product_brand %></br>
-			<%= @product.product_name %></h3></p>
+			</div> <!-- /product-image -->
 
- 			<% if @product.category_id != 1 %>
-				<p>in <%= link_to @product.category.name.titleize.pluralize, @product.category %></br>
-				by <%= link_to "#{@product.product_brand}", 'http://www.looklove.com/products/search?utf8=%E2%9C%93&search=' + @product.product_brand %></p>
-			<% end %>
-
-			<div class="star-rating-product-page"><div class="star-rating" data-score= <%= @avg_rating %> ></div></div>
-
-
-		</div>
-
-		<div class = "photo-panel">
 			<% if @photos.blank? == false %>
+				<div class = "photo-panel">
 				<% if @photos.length == 1 %>
 					<h3><%= "#{@photos.length}" %> Photo</h3>
 				<% elsif @photos.length >= 1 %>
@@ -52,12 +49,12 @@
 						<% end %>
 					<% end %>
 				</div>
+				</div>
 			<% end %>
-		</div>
 		<% if !@product.ingredients.blank? %>
 			<div class="ingredients-list">
-				<p><div class="ingredients-button">Ingredients</div></p> 
-				<div class="ingredients"><p><%= @product.ingredients.downcase %></p></div>
+				see <div class="ingredients-button">Ingredients</div>
+				<div class="ingredients"><p><%= @product.ingredients.titleize %></p></div>
 			</div>
 		<% end %>
 	</div>
