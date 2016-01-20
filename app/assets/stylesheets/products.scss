@@ -1,3 +1,161 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Custom, iPhone Retina -------------------------------------------------------- */
+@media screen and (min-width: 320px) {
+
+	.new-product-panel {
+		width: 100%;
+		text-align: center;
+		height: auto;
+		margin: 20px 0px 20px 0px;
+	}
+
+	.product-list-header {
+		text-align:center;
+		padding:0px 0px 25px 0px;
+	}
+
+	.product-list {
+
+		.title {
+			text-align:center;
+			text-transform:none;
+			font-size:90%;
+			color:#888888;
+			background-color:#f0f0f0;
+			padding:5px;
+			margin:0px 0px 20px 0px;
+			border-radius:5px;
+		}
+
+		.feed-user {
+			text-align:right;
+
+		}
+
+		.feed-action-text {
+			font-size:14px;
+			padding:20px 0px 0px 0px;
+		}
+
+		.feed-action-text img {
+			max-width:50px;
+		}
+
+		.feed-product-image {
+			padding:0px 0px 10px 0px;
+			margin:-35px 0px 0px 55px;
+		}
+
+		.feed-product-image img {
+			max-width:50px;
+			border:1px solid #f2f3f4;
+			background:#ffffff;
+			border-radius:5px;
+			box-shadow:1px 1px 1px #999999;
+			padding:3px;
+		}
+
+		.feed-product-image-alt {
+			padding:0px;
+			margin:15px 0px 0px 0px;
+		}
+
+		.feed-product-image-alt img {
+			max-width:100px;
+			border:1px solid #f2f3f4;
+			background:#ffffff;
+			border-radius:5px;
+			box-shadow:1px 1px 1px #999999;
+			padding:3px;
+		}
+
+		.feed-review-excerpt {
+			font-size:95%;
+			color:#000000;
+
+			.star-rating img {
+				max-width:15px;
+			}
+		}
+	}
+
+
+	/* Small Devices, Tablets -------------------------------------------------------- */
+
+@media screen and (min-width: 768px) {
+
+
+	.new-product-panel {
+		width: 100%;
+		text-align: center;
+		height: auto;
+		margin: 20px 0px 20px 0px;
+	}
+
+	.product-list-header {
+		text-align:center;
+		padding:0px 0px 25px 0px;
+	}
+
+	.product-list {
+
+		.title {
+			text-align:center;
+			text-transform:none;
+			font-size:90%;
+			color:#888888;
+			background-color:#f0f0f0;
+			padding:5px;
+			margin:0px 0px 20px 0px;
+			border-radius:5px;
+		}
+
+		.feed-action-text {
+			font-size:110%;
+			padding:20px 0px 0px 0px;
+
+		}
+
+		.review-info p {
+			font-size:90%;
+			margin:0px;
+			padding:0px;
+		}
+
+
+		.feed-product-image {
+			padding:0px;
+			margin:-35px 0px 0px 60px;
+		}
+
+		.feed-product-image img {
+			max-width:55px;
+			border-radius:5%;
+			box-shadow:1px 1px 1px #999999;
+		}
+
+		.feed-review-excerpt {
+			font-size:90%;
+			color:#000000;
+
+			.star-rating img {
+				max-width:100%;
+			}
+		}
+	}
+
+
+
+	}
+
+
+
+}
+
+
+
+
+

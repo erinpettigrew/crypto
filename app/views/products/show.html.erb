@@ -1,16 +1,11 @@
-<% title @product.product_brand + ' ' + @product.product_name + ', read reviews on looklove' %>
+<% title @product.product_brand + ' ' + @product.product_name + ', read and add reviews on looklove' %>
 <% description 'Reviews and photos of ' + @product.product_brand + ' ' + @product.product_name %>
-<% keywords @product.product_brand + ' ' + @product.product_name + ', reviews, community, forum, posts, asian, skincare, beauty, products, lists, regimen' %>
-<% nofollow %>
-<% noindex %>
-
+<% keywords @product.product_brand + ' ' + @product.product_name + ', ' + @product.category.name + ', reviews, community, forum, posts, asian, skincare, beauty, products' %>
 <div class="row">
 	<div class="col-xs-12 col-sm-4">
 
 		<div class="product-panel">
 			<div class="product-image"><%= image_tag @product.image_url %></div>
-
-
 				<div class="liking-panel">
 			<% if user_signed_in? %>
 				<% if current_user.liked_products.include?(@product) %>
@@ -29,22 +24,13 @@
 			<%= @product.product_name %></h3></p>
 
  			<% if @product.category_id != 1 %>
-				<p>in <%= link_to @product.category.name.titleize.pluralize, @product.category %></p>
+				<p>in <%= link_to @product.category.name.titleize.pluralize, @product.category %></br>
+				by <%= link_to "#{@product.product_brand}", 'http://www.looklove.com/products/search?utf8=%E2%9C%93&search=' + @product.product_brand %></p>
 			<% end %>
 
 			<div class="star-rating-product-page"><div class="star-rating" data-score= <%= @avg_rating %> ></div></div>
 
 
-						<div class = "row">
-							<div class = "form-group">
-								<div class= "col-xs-6 col-sm-12 button-1">
-									<%= link_to "Add a Review", new_product_review_path(@product), class: "btn btn-primary btn-lg" %> 
-								</div>
-								<div class = "col-xs-6 col-sm-12 button-2">
-									<%= link_to "Add a Photo", new_product_photo_path(@product), class: "btn btn-primary btn-lg" %>
-								</div>
-							</div>
-						</div>
 		</div>
 
 		<div class = "photo-panel">
@@ -80,15 +66,53 @@
 
 	<div class="col-xs-12 col-sm-8">
 
+
 		<% if @reviews.blank? %>
-			<h3>Have you tried this <%= @product.category.name %>? Be the first to add your review!</h3>
+			<center><h3>Have you tried this <%= @product.category.name %>? </br>Be the first to...</h3></center>
+
+
+					<div class = "row">
+						<div class = "form-group">
+							<div class= "col-xs-6 col-sm-6 button-1">
+								<%= link_to "Add a Review!", new_product_review_path(@product), class: "btn btn-primary btn-lg" %> 
+							</div>
+						
+							<div class = "col-xs-6 col-sm-6 button-2">
+								<%= link_to "Add a Photo", new_product_photo_path(@product), class: "btn btn-primary btn-lg" %>
+							</div>
+						</div>
+					</div>
+
+
+			<% if user_signed_in? %>
+		<% if current_user.admin? && @links.exists? %>
+			<h4>Blog Posts</h4>
+			<% @links.each_with_index do |link| %>
+				<p><%= link.excerpt %> - <%= link_to link.site_name, @product %></p> <!-- replace with link.url on go live -->
+			<% end %>
+		<% end %>
+	<% end %>
 		<% elsif @reviews.blank? == false %>
+
+					<div class = "row">
+						<div class = "form-group">
+							<div class= "col-xs-6 col-sm-6 button-1">
+								<%= link_to "Add a Review!", new_product_review_path(@product), class: "btn btn-primary btn-lg" %> 
+							</div>
+						
+							<div class = "col-xs-6 col-sm-6 button-2">
+								<%= link_to "Add a Photo", new_product_photo_path(@product), class: "btn btn-primary btn-lg" %>
+							</div>
+						</div>
+					</div>
+
+
 			<% if @reviews.length == 1 %>
 				<h3><%= "#{@reviews.length}" %> Review</h3>
 			<% elsif @reviews.length >= 1 %>
 				<h3><%= "#{@reviews.length}" %> Reviews</h3>
 			<% end %>
-			<table class="table">
+			<table class="table product-show">
 				<thead>
 					<tr>
 						<th class="col-xs-12 col-sm-12"></th>
@@ -100,15 +124,27 @@
 						<tr>
 							<td>
 								<div class="row">
-									<div class="col-xs-9">
-										<h4><%= link_to "#{review.user.user_name}", review.user %></h4>
+									<div class="col-xs-8">
+										<table>
+											<tr>
+												<td>
+													<div class="small-avatar"><%= link_to image_tag(review.user.avatar.try(:image).try(:med_thumb)), review.user %>
+													</div>
+												</td>
+												<td>
+													<h4><%= link_to "#{review.user.user_name}", review.user %></h4>
+													<div class="star-rating-product-page"><div class="star-rating" data-score= <%= review.rating %> ></div></div>
+												</td>
+											</tr>
+										</table>
 									</div>
-									<div class="col-xs-3">
+									<div class="col-xs-4">
 	  									<div class="timestamp"><small><%= time_ago_in_words(review.created_at).gsub('about','') %> ago</small></div>
 									</div>
 								</div>
-	  							<div class="star-rating-product-page"><div class="star-rating" data-score= <%= review.rating %> ></div></div>
-								<p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
+								<div class="col-xs-12">
+									<p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
+								</div>
 
 								<% if user_signed_in? %>
 									<% if (review.user == current_user) || (current_user.admin?) %>
@@ -124,6 +160,12 @@
 			</table>
 		<% end %>
 	</div>
+
+
+
+
+
+
 </div> <!-- end of row class -->
 
 <% if user_signed_in? %>

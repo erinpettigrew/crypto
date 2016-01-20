@@ -1,3 +1,6 @@
+<% title @category.name.pluralize.titleize + ' on looklove, reviews of new beauty products' %>
+<% description 'Reviews and photos of the best ' + @category.name.pluralize %>
+<% keywords @category.name.pluralize + ', skincare products, cosometics products, beauty reviews, community, forum, posts, asian beauty, korean beauty, skincare, beauty, products' %>
 <div class="index-panel">
     <h1><%= @category.name.pluralize.titleize %></h1>
     <% if @category.description.blank? %>
@@ -24,9 +27,10 @@
         <%= @products.count %> Products
       <% end %>
   </div>
+  <table class="table">
   <% @products.each_with_index do |product, i| %>
-
-    <div class="row product-list-row">
+  <tr>
+    <td>
       	<div class="col-xs-4 col-md-3">
       		<div class="index-product-image"><%= link_to image_tag(product.image.url), product %></div>
       	</div>
@@ -59,8 +63,10 @@
                </div>
 	      		 <% end %>
 	    	  </div>
-	</div> <!-- end of row -->
+</td>
+</tr>
   <% end %>
+</table>
 </div>
 
 

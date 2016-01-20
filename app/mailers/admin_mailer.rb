@@ -1,10 +1,10 @@
 class AdminMailer < ApplicationMailer
-	default from: "no-reply@gmail.com"
-	default to: "lookloveco@gmail.com"
+	default from: "hi@looklove.com"
+	default to: "hi@looklove.com"
 
 	def new_user(user)
 		@user = user
-		mail(subject: "New User: #{user.email}")
+		mail(subject: "New User: #{user.user_name} | #{user.email}")
 	end
 
 	def new_review(product, user)

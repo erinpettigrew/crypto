@@ -8,18 +8,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "tbd", root_path, class: "navbar-brand" %>
+      <%= link_to "looklove", root_path, class: "navbar-brand" %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <%= form_tag search_products_path, method: :get, class: "navbar-form navbar-left" do %>
-        <%= text_field_tag :search, params[:search], class: "form-control" %>
+        <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "brand, ingredient, name", size: 22 %>
         <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
         <% end %>
 
       <ul class="nav navbar-nav navbar-right">
-                      <li><%= link_to "Categories", categories_path %></li>
+                      <li><%= link_to "Products", categories_path %></li>
+                      <li><%= link_to "Blog", "http://blog.looklove.com" %></li>
         <% if user_signed_in? %>
                         <!--<li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi, <%= current_user.user_name %> <span class="caret"></span></a>

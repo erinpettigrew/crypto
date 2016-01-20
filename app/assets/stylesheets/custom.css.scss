@@ -30,6 +30,10 @@
 		}
 	}
 
+	.table th, .table td { 
+	     border-top: 1px solid #f2f3f4 !important; 
+	 }
+
 	.btn-primary {
 	    background: #ffffff;
 	    color: #000000;
@@ -52,6 +56,7 @@
 				color: #ffffff;
 				font-size: 14px;
 				font-weight: regular;
+				padding-right: 5px;
 			}
 			.navbar-brand {
 			color: #ffffff;
@@ -107,7 +112,7 @@
 			border: 0px solid #f0f0f0;
 			border-radius:5px;
 			padding:5px 0px 5px 0px;
-			margin:0px 0px 5px 0px;
+			margin:0px 0px 25px 0px;
 
 		}
 
@@ -148,9 +153,18 @@
 	}
 
 
+		.profile-product-image {
+			margin:5px;
+		}
+
+		.profile-product-image img {
+			max-width:80%;
+			min-width:80px;
+		}
+
 
 	.index-product-image {
-		margin:5px;
+		margin:0px 0px 5px 0px;
 	}
 
 	.index-product-image img {
@@ -175,19 +189,24 @@
 		font-size:75%;
 	}
 
+	.timestamp {
+		text-align:right;
+	}
+
+
+	.button-1 {
+			text-align:right;
+			margin:10px 0px 0px 0px;
+	}
+
+	.button-2 {
+			text-align:left;
+			margin:10px 0px 0px 0px;
+	}
 
 	.product-panel {
 		text-align:center;
 
-		.button-1 {
-			text-align:right;
-			margin:10px 0px 0px 0px;
-		}
-
-		.button-2 {
-			text-align:left;
-			margin:10px 0px 0px 0px;
-		}
 	}
 
 	.product-image img {
@@ -255,6 +274,48 @@
 			color:#000000;
 			text-decoration:underline;		
 		}
+	}
+
+
+	.big-avatar img{
+		max-width:35%;
+		border-radius:50%;
+	}
+
+	.small-avatar {
+		margin:10px 15px 15px 0px;
+	}
+
+	.small-avatar img{
+		max-width:65px;
+		border-radius:50%;
+		box-shadow:1px 1px 1px #999999;
+		margin-right:0px;
+		border:1px solid #f2f3f4;
+	}
+
+	.medium-avatar {
+		margin:10px 15px 15px 0px;
+	}
+
+	.medium-avatar img{
+		max-width:75px;
+		border-radius:50%;
+		box-shadow:1px 1px 1px #999999;
+		margin-right:0px;
+		border:1px solid #f2f3f4;
+	}
+
+	.large-avatar {
+		margin:10px 15px 15px 0px;
+	}
+
+	.large-avatar img {
+		max-width:100px;
+		border-radius:50%;
+		box-shadow:1px 1px 1px #999999;
+		margin-right:0px;
+		border:1px solid #f2f3f4;
 	}
 
 	.profile-panel {
@@ -434,6 +495,7 @@
 
 	.product-list {
 
+
 		.product-card {
 			padding:20px 0px 0px 10px;
 			margin:0px 0px 10px 0px;
@@ -478,7 +540,7 @@
 		}
 
 	.index-product-image img {
-		max-width:65%;
+		max-width:80px;
 		min-width:80px;
 		padding:0px 0px 10px 0px;
 
@@ -491,16 +553,16 @@
 	min-width:120px;
 	}
 	text-align:left;
+	}
 
-		.button-1 {
+	.button-1 {
+			text-align:right;
+			margin:20px 0px 10px 0px;
+	}
+
+	.button-2 {
 			text-align:left;
-			margin:8px 0px 15px 0px;
-		}
-		
-		.button-2 {
-			text-align:left;
-			margin:0px;
-		}
+			margin:20px 0px 10px 0px;
 	}
 
 

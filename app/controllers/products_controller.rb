@@ -10,6 +10,22 @@ class ProductsController < ApplicationController
     else
       @products = Product.all? #show all restaurants if search is blank
     end
+
+     @search_term = params[:search]
+     @avg_rating = []
+     @review_count = []
+ 
+     for singleproduct in @products
+       @reviews = Review.where(product_id: singleproduct.id)
+      if @reviews.blank?
+         @avg_rating << 0
+         @review_count << 0
+       else
+         @avg_rating << @reviews.average(:rating).round(2) 
+         @review_count << @reviews.size
+     end
+     end
+ 
   end
 
   # GET /products
@@ -17,7 +33,7 @@ class ProductsController < ApplicationController
   def index
 
     @products = Product.all.order('updated_at DESC').take(1)
-    @recent_reviews = Review.all.order('created_at DESC').take(5)
+    @recent_reviews = Review.all.order('created_at DESC').take(15)
     @new_products = Product.all.order('created_at DESC').take(5)
 
     @avg_rating_recent = []
@@ -37,6 +53,7 @@ class ProductsController < ApplicationController
   def show
     @reviews = Review.where(product_id: @product.id).order("created_at DESC") 
     @number_of_likes = Like.where(product_id: @product.id).size
+    @links = Link.where(product_id: @product.id).order("created_at DESC")
 
     if @reviews.blank?
       @avg_rating = 0
@@ -83,6 +100,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @categories = Category.order(name: :ASC)
+    @product.user_id = current_user.id
 
     respond_to do |format|
       if @product.save
@@ -133,6 +151,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:product_brand, :product_name, :image, :category_id, :ingredients)
+      params.require(:product).permit(:product_brand, :product_name, :image, :category_id, :user_id, :ingredients)
     end
 end
