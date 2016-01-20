@@ -153,9 +153,18 @@
 	}
 
 
+		.profile-product-image {
+			margin:5px;
+		}
+
+		.profile-product-image img {
+			max-width:80%;
+			min-width:80px;
+		}
+
 
 	.index-product-image {
-		margin:5px;
+		margin:0px 0px 5px 0px;
 	}
 
 	.index-product-image img {
