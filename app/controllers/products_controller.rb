@@ -100,6 +100,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @categories = Category.order(name: :ASC)
+    @product.user_id = current_user.id
 
     respond_to do |format|
       if @product.save
@@ -150,6 +151,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:product_brand, :product_name, :image, :category_id)
+      params.require(:product).permit(:product_brand, :product_name, :image, :category_id, :user_id, :ingredients)
     end
 end
