@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :like, :destroy]
   before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :check_user, except: [:search, :index, :show, :create, :new, :like, :update]
-  
+  before_action :set_categories, only: [:new, :edit, :create, :update]
 
   def search
     if params[:search].present?
@@ -87,19 +87,16 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
-    @categories = Category.order(name: :ASC) #sort in alphabetical order
   end
 
   # GET /products/1/edit
   def edit
-    @categories = Category.order(name: :ASC) #sort in alphabetical order
   end
 
   # POST /products
   # POST /products.json
   def create
     @product = Product.new(product_params)
-    @categories = Category.order(name: :ASC)
     @product.user_id = current_user.id
 
     respond_to do |format|
@@ -149,8 +146,13 @@ class ProductsController < ApplicationController
       end
     end
 
+    def set_categories
+      @categories = Category.all.order(name: :ASC)
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
       params.require(:product).permit(:product_brand, :product_name, :image, :category_id, :user_id, :ingredients)
     end
+
 end
