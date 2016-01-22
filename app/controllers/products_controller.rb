@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
     if params[:search].present?
       @products = Product.search(params[:search])
     else
-      @products = Product.all? #show all restaurants if search is blank
+      @products = Product.all? #show all products if search is blank
     end
 
      @search_term = params[:search]
