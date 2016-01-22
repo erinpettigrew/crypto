@@ -6,16 +6,9 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.all.order('name ASC')
     @products = []
-    @product1 = []
-    @product2 = []
-    @product3 = []
 
     for singlecategory in @categories
-      @products << Product.where(category_id: singlecategory.id).first
-      @product1 << Product.where(category_id: singlecategory.id).first
-      @product2 << Product.where(category_id: singlecategory.id).second
-      @product3 << Product.where(category_id: singlecategory.id).third
-      # as soon as the above turns into an array with first(n), I get problems
+      @products << Product.where(category_id: singlecategory.id).order("created_at DESC")
     end
   end
 

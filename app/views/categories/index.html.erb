@@ -26,15 +26,9 @@
         <td><div class="category-table-cell"><h4><%= link_to category.name.titleize.pluralize, category %></h4></div></td>
         <td>
           <div class="category-table-cell">
-            <% if category.products.size >= 1 %>
-              <%= link_to image_tag(@product1[i].image), @product1[i] %>
-            <% end %>
-            <% if category.products.size >= 2 %>
-              <%= link_to image_tag(@product2[i].image), @product2[i] %>
-            <% end %>
-            <% if category.products.size >= 3 %>
-              <%= link_to image_tag(@product3[i].image), @product3[i] %>       
-            <% end %>
+            <%= link_to image_tag(@products[i].first.try(:image)), @products[i].first %>
+            <%= link_to image_tag(@products[i].second.try(:image)), @products[i].second %>
+            <%= link_to image_tag(@products[i].third.try(:image)), @products[i].third %>
         </div>
         </td>
         <td><div class="category-table-cell">
