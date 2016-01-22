@@ -22,7 +22,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-    @products = Product.where(category_id: @category.id).order("created_at ASC") 
+    @products = Product.where(category_id: @category.id).order("created_at DESC") 
 
     @avg_rating = []
     @review_count = []
