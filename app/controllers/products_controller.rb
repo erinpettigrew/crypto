@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :like, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :like, :use, :destroy]
   before_action :authenticate_user!, except: [:index, :show, :search]
-  before_action :check_user, except: [:search, :index, :show, :create, :new, :like, :update]
+  before_action :check_user, except: [:search, :index, :show, :create, :new, :like, :use, :update]
   before_action :set_categories, only: [:new, :edit, :create, :update]
 
   def search
@@ -53,6 +53,7 @@ class ProductsController < ApplicationController
   def show
     @reviews = Review.where(product_id: @product.id).order("created_at DESC") 
     @number_of_likes = Like.where(product_id: @product.id).size
+    @number_of_uses = Use.where(product_id: @product.id).size
     @links = Link.where(product_id: @product.id).order("created_at DESC")
 
     if @reviews.blank?
@@ -77,6 +78,25 @@ class ProductsController < ApplicationController
       redirect_to :back
 
       #notice: "You unliked #{@product.product_brand} #{@product.product_name}"
+
+    else
+      redirect_to :back, notice: 'Nothing happened.'
+    end
+  end
+
+  def use
+    type = params[:type]
+    if type == 'use'
+      current_user.used_products << @product
+      redirect_to :back
+
+      #notice: "You started using #{@product.product_brand} #{@product.product_name}"
+
+    elsif type == 'unuse'
+      current_user.used_products.delete(@product)
+      redirect_to :back
+
+      #notice: "You started using #{@product.product_brand} #{@product.product_name}"
 
     else
       redirect_to :back, notice: 'Nothing happened.'

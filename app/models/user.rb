@@ -28,8 +28,10 @@ end
   has_many :photos, dependent: :destroy
   has_many :likes
   # has_many :products, through: :likes
-  has_many :liked_products, through: :likes, source: :product #rename product_id to likes in likes table for purpose of referencing from users
+  has_many :liked_products, through: :likes, source: :product #rename product_id to liked_products in likes table for purpose of referencing from users
   has_one :avatar
+  has_many :uses 
+  has_many :used_products, through: :uses, source: :product #rename product_id to used_products in uses table for purpose of referencing from users
   validates :user_name, presence: true
 
 end

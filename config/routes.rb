@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     end
   resources :sites
   resources :products do
+      put :use, on: :member
       put :like, on: :member
       collection do #search will apply to more than one product
           get 'search'

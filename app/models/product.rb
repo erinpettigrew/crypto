@@ -26,6 +26,8 @@ class Product < ActiveRecord::Base
 	belongs_to :category
 	has_one :ingredient
 	has_many :links
+	has_many :user
+	has_many :used_by, through: :uses, source: :user #rename user_id to used_by for referencing
 
 	validates :product_brand, :product_name, :image, :category, presence: true
 

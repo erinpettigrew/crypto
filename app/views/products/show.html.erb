@@ -48,6 +48,19 @@
 
 	<div class="col-xs-12 col-sm-8">
 
+ 					<% if user_signed_in? %>
+ 						<% if current_user.used_products.include?(@product) %>
+ 							<%= link_to "Stop using this", use_product_path(@product, type:'unuse'), method: :put %>
+ 								<p><%= pluralize(@number_of_uses, "person") %> use this</p>
+ 						<% else %>
+ 							<%= link_to "I use this", use_product_path(@product, type:'use'), method: :put %>
+ 								<p><%= pluralize(@number_of_uses, "person") %> use this</p>
+						<% end %>
+ 					<% else %>
+ 						<%= link_to "Sign up", new_user_registration_path %>
+ 						<p><%= pluralize(@number_of_likes, "person") %> use this</p>
+ 					<% end %>
+
 
 		<% if @reviews.blank? %>
 			<center><h3>Have you tried this <%= @product.category.name %>? </br>Be the first to...</h3></center>
