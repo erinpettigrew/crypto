@@ -3,32 +3,47 @@
 <% keywords 'beauty products, reviews, community, forum, posts, skincare, cosmetics' %>
 <% nofollow %>
 <% noindex %>
-<div class="jumbotron">
-	<p><h1><%= @profile.user_name %></h1></p>
-	<div class="big-avatar"><%= image_tag(@profile.avatar.try(:image)) %></div>
+
+<div class="profile-info">
+	<h1><%= @profile.user_name %></h1>
+	<div class="profile-avatar"><%= image_tag(@profile.avatar.try(:image)) %></div>
 	
-<% if @profile == current_user %>
-	<% if @profile.avatar.blank? %>
-		<small><%= link_to "Add photo", new_user_avatar_path(@profile) %></small>
-	<% else %>
-		<small><%= link_to "Edit photo", edit_user_avatar_path(@profile, @profile.avatar) %></br>
-		<%= link_to "Delete photo", [@profile, @profile.avatar], method: :delete %></small></p>
+	<% if @profile == current_user %>
+		<% if @profile.avatar.blank? %>
+			<small><%= link_to "Add photo", new_user_avatar_path(@profile) %></small>
+		<% else %>
+			<small><%= link_to "Edit photo", edit_user_avatar_path(@profile, @profile.avatar) %></br>
+			<%= link_to "Delete photo", [@profile, @profile.avatar], method: :delete %></small></p>
+		<% end %>
 	<% end %>
-<% end %>
-		<p>Joined <%= @profile.created_at.strftime("%-m/%-d/%-y") %></p>
+	<div class="activity-info">
+		Member #<%= @profile.id %></br>
+		Joined <%= @profile.created_at.strftime("%-m/%-d/%-y") %>
+		</div>
 </div>
 
-<div class="row">
-	<% @profile.used_products.each do |product| %>
-		<div class="col-xs-6 col-sm-4 col-med-3">
-			<div class="card">
-				<%= link_to image_tag(product.image), product %></br>
-				<%= product.product_brand %></br>
-				<%= link_to product.product_name, product %></br>
+<% if @profile.used_products.any? %>
+	<div class= "title">Currently Using</div>
+	<div class="row">
+		<% @profile.used_products.each do |product| %>
+			<div class="col-xs-6 col-sm-4">
+				<div class="card">
+					<div class="category">
+						<%= product.category.name.titleize %>
+					</div>
+					<div class="product-image">
+						<%= link_to image_tag(product.image), product %></br>
+					</div>
+					<div class="product-info">
+						<%= product.product_brand %></br>
+						<%= link_to product.product_name, product %></br>
+					</div>
+				</div>
 			</div>
-		</div>
-	<% end %>
-</div>
+		<% end %>
+	</div>
+<% end %>
+
 
 <% if @profile_reviews.present? %>
 	<div class="product-list">

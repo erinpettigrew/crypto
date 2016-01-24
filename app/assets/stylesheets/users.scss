@@ -1,0 +1,84 @@
+/* Custom, iPhone Retina -------------------------------------------------------- */
+@media screen and (min-width: 320px) {
+
+	.profile-info {
+		text-align:center;
+		padding-bottom: 50px;
+
+		.profile-avatar img{
+			max-width:30%;
+			border-radius:50%;
+			box-shadow:1px 1px 1px #999999;
+			margin-right:0px;
+			border:1px solid #f2f3f4;
+		}
+		
+	}
+
+	.activity-info {
+		display:none;
+	}
+
+	.card {
+
+		padding-bottom:20px;
+		border:5px solid #fafafa;
+		border-radius:10px;
+		margin-bottom:20px;
+
+		.category {
+			font-size:90%;
+			text-align:center;
+			color:#999999;
+			background-color:#fafafa;
+			padding-bottom:5px;
+		}
+
+		.product-image {
+			text-align:center;
+			background-color:#ffffff;
+			margin:20px;
+			height:100px;
+		}
+
+		.product-info {
+			font-size:115%;
+			text-align:center;
+			background-color:#ffffff;
+			height:75px;
+		}
+	}
+
+	.card img {
+		max-height:125px;
+		background-color:#fafafa;
+		align:center;
+	}
+
+}
+
+		/* Small Devices, Tablets -------------------------------------------------------- */
+
+@media screen and (min-width: 768px) {
+
+
+	.profile-info {
+		text-align:center;
+		padding-bottom: 50px;
+
+		.profile-avatar img{
+			max-width:25%;
+			border-radius:50%;
+			box-shadow:1px 1px 1px #999999;
+			margin-right:0px;
+			border:1px solid #f2f3f4;
+		}
+		
+	}
+
+	.activity-info {
+		display:inline;
+		text-align:right;
+	}
+
+}
