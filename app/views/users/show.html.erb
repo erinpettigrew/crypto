@@ -10,7 +10,7 @@
 	
 	<% if @profile == current_user %>
 		<% if @profile.avatar.blank? %>
-			<small><%= link_to "Add photo", new_user_avatar_path(@profile) %></small>
+			<small><%= link_to "Add photo", new_user_avatar_path(@profile) %></small></br>
 		<% else %>
 			<small><%= link_to "Edit photo", edit_user_avatar_path(@profile, @profile.avatar) %></br>
 			<%= link_to "Delete photo", [@profile, @profile.avatar], method: :delete %></small></p>

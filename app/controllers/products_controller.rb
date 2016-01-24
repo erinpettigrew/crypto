@@ -31,18 +31,9 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-
-    @products = Product.all.order('updated_at DESC').take(1)
     @recent_reviews = Review.all.order('created_at DESC').take(15)
-    @new_products = Product.all.order('created_at DESC').take(5)
-
-    @avg_rating_recent = []
-    @review_count_recent = []
-
-    for singlerecent_review in @recent_reviews
-      @avg_rating_recent << 3
-      @review_count_recent << 4
-    end
+    @recent_uses = Use.all.order('created_at DESC').take(10)
+    @recent_actions = (@recent_reviews + @recent_uses).sort_by(&:created_at).reverse
 
     end
 
