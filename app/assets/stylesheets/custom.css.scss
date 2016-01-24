@@ -9,10 +9,15 @@
 		text-align:center;
 		h2 {
 			color: #000000;
-			font-weight: bold;
+			font-weight: 300;
 		}
 		h3 {
 			color: #000000;
+			font-weight:200;
+		}
+
+		h4 {
+			font-weight:200;
 		}
 
 	}
@@ -30,7 +35,7 @@
 	}
 
 	.table th, .table td { 
-	     border-top: 1px solid #f2f3f4 !important; 
+	     border-top: 0px solid #f2f3f4 !important; 
 	 }
 
 	.btn-primary {
@@ -97,16 +102,6 @@
 
 	.product-list {
 
-		.title {
-		text-align:center;
-		text-transform:none;
-		font-size:90%;
-		color:#888888;
-		background-color:#f0f0f0;
-		padding:5px;
-		margin:0px 0px 20px 0px;
-		border-radius:5px;
-		}
 
 		.product-card {
 			border: 0px solid #f0f0f0;
@@ -192,6 +187,11 @@
 
 	.category-table-cell p {
 		font-size:95%;
+	}
+
+	.category-description {
+		font-size:18px;
+		font-weight:300;
 	}
 
 	.timestamp {

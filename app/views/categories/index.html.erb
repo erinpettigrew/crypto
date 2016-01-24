@@ -33,7 +33,7 @@
         </td>
         <td><div class="category-table-cell">
           <div class="product-count">
-            <p><%= link_to (pluralize(category.products.count, "product")), category %></p>
+            <p><%= pluralize(category.products.count, "product") %></p>
           </div>
           </div>
         </td>

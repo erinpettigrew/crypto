@@ -6,7 +6,7 @@
     <% if @category.description.blank? %>
     	</p>
     <% else %>
-  		<p><%= h(@category.description).gsub(/\n/, '<br/>').html_safe %></p>
+  		<p><h4><%= h(@category.description).gsub(/\n/, '<br/>').html_safe %></h4></p>
    	<% end %>
 
     <br>
@@ -20,12 +20,8 @@
 </div>
 
 <div class="product-list">
-    <div class="title">
-      <% if @products.count == 1 %>
-        <%= @products.count %> Product
-      <% elsif @products.count >=1 %>
-        <%= @products.count %> Products
-      <% end %>
+  <div class="title">
+      <%= pluralize(@products.count, "Product") %>
   </div>
   <table class="table">
   <% @products.each_with_index do |product, i| %>
