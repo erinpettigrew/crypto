@@ -22,25 +22,31 @@
 
 <div class="product-list">
 <table class="table feed">
-    <% @recent_reviews.each do |review, i| %>
+    <% @recent_actions.each do |action, i| %>
       <tr>
         <td>
                 <div class="col-xs-12">
                   <div class="row">
                     <div class="col-xs-4 col-sm-3 feed-user">
-                      <% if review.user.avatar.present? %>
-                      <div class="large-avatar"><%= link_to image_tag(review.user.avatar.try(:image).try(:med_thumb)), review.user %></div><div class="feed-product-image"><%= link_to image_tag(review.product.image.url), review.product %></div>
+                      <% if action.user.avatar.present? %>
+                      <div class="large-avatar"><%= link_to image_tag(action.user.avatar.try(:image).try(:med_thumb)), action.user %></div><div class="feed-product-image"><%= link_to image_tag(action.product.image.url), action.product %></div>
                       <% else %>
-                        <div class="feed-product-image-alt"><%= link_to image_tag(review.product.image.url), review.product %></div>
+                        <div class="feed-product-image-alt"><%= link_to image_tag(action.product.image.url), action.product %></div>
                       <% end %>
                     </div>
                     <div class="col-xs-8 col-sm-9">
                       <div class="feed-action-text">
-                        <strong><%= link_to "#{review.user.user_name}", review.user %></strong> reviewed <!--<%= link_to image_tag(review.product.image.url), review.product %>--> <%= review.product.product_brand %> <%= link_to review.product.product_name, review.product %>
-                      </div>
-                      <div class="feed-review-excerpt">
-                        <div class="star-rating-product-page"><div class="star-rating" data-score= <%= review.rating %> ></div></div>
-                        <%= truncate(review.comment, length:130, separator: ' ') %> </br>- <small><%= time_ago_in_words(review.updated_at).gsub('about','') %> ago in <%= link_to "#{review.product.category.name.titleize.pluralize}", review.product.category %></small>
+                        <% if action.is_a? (Review) %>
+                          <strong><%= link_to "#{action.user.user_name}", action.user %></strong> reviewed <%= action.product.product_brand %> <%= link_to action.product.product_name, action.product %>
+                        </div>
+                        <div class="feed-review-excerpt">
+                          <div class="star-rating-product-page"><div class="star-rating" data-score= <%= action.rating %> ></div></div>
+                          <%= truncate(action.comment, length:130, separator: ' ') %> </br>- <small><%= time_ago_in_words(action.updated_at).gsub('about','') %> ago in <%= link_to "#{action.product.category.name.titleize.pluralize}", action.product.category %></small>
+                        <% end %>
+                        <% if action.is_a? (Use) %>
+                          <strong><%= link_to "#{action.user.user_name}", action.user %></strong> started using <%= action.product.product_brand %> <%= link_to action.product.product_name, action.product %></br>
+                          - <small><%= time_ago_in_words(action.updated_at).gsub('about','') %> ago in <%= link_to "#{action.product.category.name.titleize.pluralize}", action.product.category %></small>
+                        <% end %>
                       </div>
                     </div>
                   </td>

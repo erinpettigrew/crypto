@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160119220527) do
+ActiveRecord::Schema.define(version: 20160123231115) do
 
   create_table "avatars", force: :cascade do |t|
     t.integer  "user_id"
@@ -60,15 +60,6 @@ ActiveRecord::Schema.define(version: 20160119220527) do
     t.text     "site_name"
   end
 
-  create_table "listings", force: :cascade do |t|
-    t.integer  "product_id"
-    t.integer  "store_id"
-    t.string   "url"
-    t.decimal  "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "photos", force: :cascade do |t|
     t.text     "comment"
     t.datetime "created_at",    null: false
@@ -108,13 +99,6 @@ ActiveRecord::Schema.define(version: 20160119220527) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "stores", force: :cascade do |t|
-    t.text     "name"
-    t.string   "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "thanks", force: :cascade do |t|
     t.integer  "review_id"
     t.integer  "user_id"
@@ -143,5 +127,12 @@ ActiveRecord::Schema.define(version: 20160119220527) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["slug"], name: "index_users_on_slug", unique: true
+
+  create_table "uses", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

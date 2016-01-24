@@ -1,0 +1,126 @@
+/* Custom, iPhone Retina -------------------------------------------------------- */
+@media screen and (min-width: 320px) {
+
+	.profile-info {
+		text-align:center;
+		padding-bottom: 50px;
+
+		.profile-avatar img{
+			max-width:30%;
+			border-radius:50%;
+			box-shadow:1px 1px 1px #999999;
+			margin-right:0px;
+			border:1px solid #f2f3f4;
+		}
+		
+	}
+
+	.activity-info {
+		display:none;
+	}
+
+	.card {
+
+		padding-bottom:20px;
+		border:0px;
+
+		.category {
+			font-size:110%;
+			font-weight:300;
+			text-align:center;
+			color:#000000;
+			background-color:#ffffff;
+		}
+
+		.product-image {
+			text-align:center;
+			background-color:#ffffff;
+			margin:10px;
+			padding:40px 0px 40px 0px;
+			border-radius:5%;
+			height:100%;
+			box-shadow:1px 1px 1px #999999;
+			margin-right:0px;
+			border:1px solid #f2f3f4;
+		}
+
+		.product-info {
+			font-size:125%;
+			text-align:center;
+			background-color:#ffffff;
+			height:75px;
+		}
+	}
+
+	.card img {
+		max-height:125px;
+		align:center;
+	}
+
+}
+
+		/* Small Devices, Tablets -------------------------------------------------------- */
+
+@media screen and (min-width: 768px) {
+
+
+	.profile-info {
+		text-align:center;
+		padding-bottom: 50px;
+
+		.profile-avatar img{
+			max-width:25%;
+			border-radius:50%;
+			box-shadow:1px 1px 1px #999999;
+			margin-right:0px;
+			border:1px solid #f2f3f4;
+		}
+		
+	}
+
+	.activity-info {
+		display:inline;
+		text-align:right;
+		font-weight:200;
+	}
+
+	.card {
+
+		padding-bottom:20px;
+		border:0px;
+
+
+		.category {
+			font-size:110%;
+			font-weight:300;
+			text-align:center;
+			color:#000000;
+			background-color:#ffffff;
+		}
+
+		.product-image {
+			text-align:center;
+			background-color:#ffffff;
+			margin:10px;
+			padding:50px 0px 50px 0px;
+			border-radius:5%;
+			height:100%;
+			box-shadow:1px 1px 1px #999999;
+			margin-right:0px;
+			border:1px solid #f2f3f4;
+		}
+
+		.product-info {
+			font-size:125%;
+			text-align:center;
+			background-color:#ffffff;
+			height:75px;
+		}
+	}
+
+	.card img {
+		max-height:125px;
+		align:center;
+	}
+
+}
