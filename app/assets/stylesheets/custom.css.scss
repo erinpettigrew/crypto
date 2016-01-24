@@ -4,7 +4,6 @@
 
 
 
-
 	.jumbotron {
 		background-color:#ffffff;
 		text-align:center;
@@ -54,9 +53,10 @@
 			background-color: #000000;
 			.navbar-nav > li > a {
 				color: #ffffff;
-				font-size: 14px;
+				font-size: 22px;
 				font-weight: regular;
-				padding-right: 5px;
+				padding-right:5px;
+				padding-bottom:10px;
 			}
 			.navbar-brand {
 			color: #ffffff;
@@ -175,6 +175,11 @@
 
 	.category-table-cell {
 		text-align:left;
+		font-size:22px;
+
+		.product-count {
+			display:none;
+		}
 	}
 
 	.category-table-cell img {
@@ -182,11 +187,11 @@
 	}
 
 	.category-table-cell h4 {
-		font-size:92%;
+		font-size:100%;
 	}
 
 	.category-table-cell p {
-		font-size:75%;
+		font-size:95%;
 	}
 
 	.timestamp {
@@ -244,7 +249,7 @@
 	}
 
 	.star-rating-index img {
-		width:10px;
+		width:12px;
 		margin:0px 0px 0px 0px;
 		padding:0px 0px 0px 0px;
 	}
@@ -452,12 +457,14 @@
 
 	.category-table-cell {
 		text-align:left;
-		font-size:100%;
+		font-size:130%;
+		.product-count {
+			display:inline;
+		}
 	}
 
 	.category-table-cell img {
-		max-width:85px;
-		min-width:80px;
+		max-width:100px;
 		margin:5px 15px 5px 15px;
 	}
 
@@ -466,7 +473,7 @@
 	}
 
 	.category-table-cell p {
-		font-size:100%;
+		font-size:110%;
 	}
 
 	.new-product-panel {
