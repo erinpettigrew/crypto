@@ -75,7 +75,6 @@
 		                </div>
 
 		                <div class="col-xs-12 col-sm-8 col-md-8 review-excerpt">
-		                   <!--"<%= truncate(review.comment, length:200, separator: ' ') %>"-->
 		                   "<%= h(review.comment).gsub(/\n/, '<br/>').html_safe %>"
 		                  - <%= link_to review.user.user_name, review.user %>, <%= time_ago_in_words(review.updated_at).gsub('about','') %> ago
 		    
