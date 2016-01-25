@@ -2,24 +2,12 @@
 <% description 'Reviews and photos of the best in new skincare and cosmetics products' %>
 <% keywords 'skincare products, cosometics products, beauty reviews, community, forum, posts, asian beauty, korean beauty, skincare, beauty, products, lists, regimen' %>
 <div class="index-panel">
-    <h1>The best in beauty</h1>
-    <h4>What's new? What's good?</h4>
-    <% if user_signed_in? %>
-      <div class= "new-product-panel">
-          <div class= "form-group">
-            <%= link_to 'Add a new product!', new_product_path, class: "btn btn-primary btn-lg" %>
-          </div>
-      </div>
-      <% else %>
-      <div class="new-product-panel">
-        <div class="form-group">
-            <%= link_to 'Sign up to share!', new_user_registration_path, class: "btn btn-primary btn-lg" %>
-       </div>
-     </div>
-      <% end %>
+    <h1>Find a product</h1>
+    <h4>Cleansing, moisturizing, treating, and everything in between.</h4>
 </div>
 
 <div class="category-index">
+  <div class="title">Products</div>
   <% @categories.each_with_index do |category, i | %>
     <div class="row category-row">
       <div class="col-xs-5 col-sm-3 category-name">
