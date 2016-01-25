@@ -61,6 +61,7 @@
 	</div>
 
 	<div class="col-xs-12 col-sm-8">
+		<div class="reviews">
 
 
 		<% if @reviews.blank? %>
@@ -139,7 +140,9 @@
 									</div>
 								</div>
 								<div class="col-xs-12">
-									<p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
+									<div class="comment">
+										<%= h(review.comment).gsub(/\n/, '<br/>').html_safe %>
+									</div>
 								</div>
 
 								<% if user_signed_in? %>
@@ -155,6 +158,7 @@
 				</tbody>
 			</table>
 		<% end %>
+	</div>
 	</div>
 
 
