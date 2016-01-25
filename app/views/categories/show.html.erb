@@ -23,47 +23,42 @@
   <div class="title">
       <%= pluralize(@products.count, "Product") %>
   </div>
-  <table class="table">
-  <% @products.each_with_index do |product, i| %>
-  <tr>
-    <td>
-      	<div class="col-xs-4 col-md-3">
-      		<div class="index-product-image"><%= link_to image_tag(product.image.url), product %></div>
-      	</div>
-      	<div class="col-xs-4 col-md-5 product-info">
-      		<div class="row product-list-row">
-          		<div class="col-xs-12 col-md-5"><h6><%= product.product_brand %></div>
-          		<div class="col-xs-12 col-md-7"><%= link_to product.product_name, product %></h6></div>
-      		</div>
-    	</div>
 
-    	<div class="col-xs-4 col-md-4 review-info">
-          <% if @review_count[i] >= 1 %>
-        	<div class="col-xs-12 col-md-8">
-        		<div class="star-rating-index"><div class="star-rating" data-score= <%= @avg_rating[i] %>></div></div>
-       		</div>
-        	<div class="col-xs-12 col-md-4">
-              <% if @review_count[i] > 1 %>
-            		<p><%= @review_count[i] %> reviews</p>
-              <% elsif @review_count[i] = 1 %>
-                <p><%= @review_count[i] %> review</p>
-                <% end %>
-            </div>
-          <% elsif @review_count[i] == 0 %>
-              <div class="col-xs-12 col-md-4">
-            		<p><%= link_to "Write a review!", product %></p>
+<div class="category-show">
+  <% @products.each_with_index do |product, i| %>
+    <div class="row product-row">
+        	<div class="col-xs-3 col-sm-3 col-md-3 product-image">
+              <%= link_to image_tag(product.image.url), product %>
+          </div>
+
+        	<div class="col-xs-5 col-sm-5 col-md-5">
+              <div class="col-xs-12 col-sm-12 col-md-12 product-brand">
+            		<%= product.product_brand %>
               </div>
-          		<% else %>
-                <div class="col-xs-12 col-md-4">
-            		  <p><%= @review_count[i] %> reviews</p>
-               </div>
-	      		 <% end %>
-	    	  </div>
-</td>
-</tr>
-  <% end %>
-</table>
+              <div class="col-xs-12 col-sm-12 col-md-12 product-name">
+                <%= link_to product.product_name, product %>
+              </div>
+          </div>
+
+      	  <div class="col-xs-4 col-sm-4 col-md-4 review-info">
+            <% if @review_count[i] >= 1 %>
+            	<div class="col-xs-12 col-sm-12 col-md-12">
+            		<div class="star-rating-index"><div class="star-rating" data-score= <%= @avg_rating[i] %>></div></div>
+           		</div>
+            	<div class="col-xs-12 col-sm-12 col-md-12">
+                <%= link_to pluralize(@review_count[i], "review"), product %>
+              </div>
+            <% elsif @review_count[i] == 0 %>
+                <div class="col-xs-12">
+              		<%= link_to "Add a review!", product %>
+                </div>
+  	      	<% end %>
+  	    	</div>
+        </div>
+    <% end %>
+  </div>
 </div>
+
 
 
 <script>

@@ -19,42 +19,32 @@
       <% end %>
 </div>
 
-<table class="table table-hover">
-  <tbody>
-    <% @categories.each_with_index do |category, i| %>
-      <tr>
-        <td><div class="category-table-cell"><h4><%= link_to category.name.titleize.pluralize, category %></h4></div></td>
-        <td>
-          <div class="category-table-cell">
-            <%= link_to image_tag(@products[i].first.try(:image)), @products[i].first %>
-            <%= link_to image_tag(@products[i].second.try(:image)), @products[i].second %>
-            <%= link_to image_tag(@products[i].third.try(:image)), @products[i].third %>
-        </div>
-        </td>
-        <td><div class="category-table-cell">
-          <div class="product-count">
-            <p><%= pluralize(category.products.count, "product") %></p>
-          </div>
-          </div>
-        </td>
-        <!--<td><%= truncate(category.description, length: 65) %></td>-->
-                            <% if user_signed_in? %>
-                              <% if current_user.admin? %>
-                                <td><%= link_to 'Show', category %></td>
-                                <td><%= link_to 'Edit', edit_category_path(category) %></td>
-                                <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                              <% end %>
-                            <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-  <% if user_signed_in? %>
-    <% if current_user.admin? %>
-      <tr><%= link_to 'New Category', new_category_path %></tr>
-    <% end %>
+<div class="category-index">
+  <% @categories.each_with_index do |category, i | %>
+    <div class="row category-row">
+      <div class="col-xs-5 col-sm-3 category-name">
+        <%= link_to category.name.titleize.pluralize, category %>
+      </div>
+      <div class="col-xs-7 col-sm-6 category-images">
+        <%= link_to image_tag(@products[i].first.try(:image)), @products[i].first %>
+        <%= link_to image_tag(@products[i].second.try(:image)), @products[i].second %>
+        <%= link_to image_tag(@products[i].third.try(:image)), @products[i].third %>       
+      </div>
+      <div class="col-xs-12 col-sm-3 category-count">
+          <%= link_to pluralize(category.products.count, "product"), category %>
+      </div>
+    </div> <!--/row-->
+     <% if user_signed_in? %>
+        <% if current_user.admin? %>
+          <%= link_to 'Show', category %></td>
+          <%= link_to 'Edit', edit_category_path(category) %></td>
+          <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      <% end %>
   <% end %>
 </div>
+
+
 
 
 
