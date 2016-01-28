@@ -6,7 +6,7 @@ extend FriendlyId
 after_create :send_notification
 
 def send_notification
-	AdminMailer.new_user(self).deliver
+	AdminMailer.new_user(self).deliver_now
 end
 
 def should_generate_new_friendly_id?

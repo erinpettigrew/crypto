@@ -41,4 +41,7 @@ Rails.application.configure do
 
   # Required for Devise gem
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  #Ensure that mail is sent in development
+  config.action_mailer.perform_deliveries = true
 end
