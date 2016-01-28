@@ -20,7 +20,26 @@
 		Member #<%= @profile.id %></br>
 		Joined <%= @profile.created_at.strftime("%-m/%-d/%-y") %>
 		</div>
+
+	<div class="invitations">
+		<% if user_signed_in? && @profile == current_user %>
+			<% unless current_user.invitation_limit == 0 %>
+				<div class="invite-info">
+					<% unless current_user.invitation_limit.nil? %>
+						You earned  <%= pluralize(current_user.invitation_limit, "invitation") %>.</br>
+					<% end %>
+					<%= link_to "Invite a friend!", new_user_invitation_path %>
+
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+
 </div>
+
+
+
+
 
 <% if @profile.used_products.any? %>
 	<div class= "title">Currently Using</div>

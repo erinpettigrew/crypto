@@ -1,0 +1,32 @@
+en:
+  devise:
+    failure:
+      invited: "You have a pending invitation, accept it to finish creating your account."
+    invitations:
+      send_instructions: "Success! You invited %{email}."
+      invitation_token_invalid: "Oops, that invitation has already been used."
+      updated: "You're all set. Thanks for joining us. Now take a look around!"
+      updated_not_active: "Your password was set successfully."
+      no_invitations_remaining: "No invitations remaining"
+      invitation_removed: "Your invitation was removed."
+      new:
+        header: "Invite a friend"
+        submit_button: "Send!"
+      edit:
+        header: "Join ♥ looklove"
+
+        submit_button: "Done!"
+    mailer:
+      invitation_instructions:
+        subject: "You're invited to ♥ looklove"
+        hello: "Hi there!" # %{email} to include their email within the  message
+        someone_invited_you: "Someone thinks you give great advice. They invited you to join looklove, a new beauty community. We're sharing our experiences with skincare and makeup products."
+        accept: "Join us!"
+        accept_until: ""
+        ignore: ""
+  time:
+    formats:
+      devise:
+        mailer:
+          invitation_instructions:
+            accept_until_format: "%B %d, %Y %I:%M %p"

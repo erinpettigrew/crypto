@@ -34,6 +34,7 @@ class ProductsController < ApplicationController
     @recent_reviews = Review.all.order('created_at DESC').take(15)
     @recent_uses = Use.all.order('created_at DESC').take(10)
     @recent_actions = (@recent_reviews + @recent_uses).sort_by(&:created_at).reverse
+    @categories = Category.all.order('name ASC')
 
     end
 

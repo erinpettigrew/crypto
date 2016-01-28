@@ -11,5 +11,7 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :user_name
     devise_parameter_sanitizer.for(:account_update) << :user_name
+    # override defaults and force user name to be accepted on devise accept invitation method
+    devise_parameter_sanitizer.for(:accept_invitation) << :user_name
   end
 end
