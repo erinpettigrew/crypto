@@ -1,6 +1,8 @@
 <% title @product.product_brand + ' ' + @product.product_name + ', read and add reviews on looklove' %>
 <% description 'Reviews and photos of ' + @product.product_brand + ' ' + @product.product_name %>
 <% keywords @product.product_brand + ' ' + @product.product_name + ', ' + @product.category.name + ', reviews, community, forum, posts, asian, skincare, beauty, products' %>
+
+
 <div class="row">
 	<div class="col-xs-12 col-sm-4">
 
@@ -179,7 +181,6 @@
 	<% end %>
 <% end %>
 
-
 <script>
   $('.star-rating').raty({
     path: 'https://s3.amazonaws.com/productbase/stars',
@@ -191,4 +192,8 @@
     $(".ingredients-button").click(function(){
         $(".ingredients").toggle(); 
     });
+</script>
+
+<script>
+	mixpanel.track("Viewed Product", {"Product Name": "<%= @product.product_name %>", "Product ID": <%= @product.id %>});
 </script>

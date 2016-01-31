@@ -70,3 +70,7 @@
     }
   });
 </script>
+
+<script>
+  mixpanel.track("Viewed Category", {"Category Name": "<%= @category.name %>", "Category ID": <%= @category.id %>});
+</script>
