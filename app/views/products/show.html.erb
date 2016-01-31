@@ -8,17 +8,15 @@
 			<div class="product-image"><%= image_tag @product.image_url %></div>
 
 
-
-					<% if user_signed_in? %>
- 						<% if current_user.used_products.include?(@product) %>
- 							<%= link_to "I use this!", use_product_path(@product, type:'unuse'), class: "btn btn-info btn-lg", method: :put %>
- 						<% else %>
- 							<%= link_to "I use this!", use_product_path(@product, type:'use'), class: "btn btn-primary btn-lg", method: :put %>
-						<% end %>
- 					<% else %>
- 						<%= link_to "I use this!", new_user_registration_path, class: "btn btn-primary btn-lg" %>
- 					<% end %>
-
+		<% if user_signed_in? %>
+			<% if current_user.used_products.include?(@product) %>
+ 				<%= link_to "I use this!", use_product_path(@product, type:'unuse'), class: "btn btn-info btn-lg", method: :put %>
+ 			<% else %>
+ 				<%= link_to "I use this!", use_product_path(@product, type:'use'), class: "btn btn-primary btn-lg", method: :put %>
+ 			<% end %>
+ 		<% else %>
+ 			<%= link_to "I use this!", use_product_path(@product, type:'use'), class: "btn btn-primary btn-lg", method: :put %>
+ 		<% end %>
 
 				<p><h3><%= @product.product_brand %></br>
 				<%= @product.product_name %></h3></p>
