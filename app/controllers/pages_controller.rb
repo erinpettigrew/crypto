@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+	  before_action :authenticate_user!
  # def about
  # 	@page_title = "looklove - About"
  # 	@page_description = "About looklove, the community for reviews of Asian skincare and beauty products"

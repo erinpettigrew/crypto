@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 	before_action :set_profile
+	before_action :authenticate_user! #remove when out of preview beta
 
 
 def show
