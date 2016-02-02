@@ -16,14 +16,13 @@ Rails.application.routes.draw do
           resources :photos
           resources :links
 
-
     end
     
-  # get 'pages/about'
+  get 'pages/about'
 
   # get 'pages/contact'
-  #set homepage as product index list page
-  root 'products#index'
+  #set homepage as login / signup page
+  root 'pages#about'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

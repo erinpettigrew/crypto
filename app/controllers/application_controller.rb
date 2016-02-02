@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-	before_action :authenticate_user! #require all users to login before using the site
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
