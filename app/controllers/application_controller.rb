@@ -8,6 +8,9 @@ class ApplicationController < ActionController::Base
 
  protected
 
+#	def after_sign_in_path_for(resource_or_scope)
+#	end
+
 	# after sign out, keep user on same page (rather than redirecting away)
 
 	def after_sign_out_path_for(resource_or_scope)
