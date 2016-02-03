@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :applicants
   resources :categories
   devise_for :users
   resources :users, :only => [:show] do
@@ -19,6 +20,10 @@ Rails.application.routes.draw do
     end
     
   get 'pages/about'
+
+  get '/join', to: 'applicants#new'
+
+  get '/thanks', to: 'pages#thanks'
 
   # get 'pages/contact'
   #set homepage as login / signup page

@@ -17,7 +17,7 @@
 <% nofollow %>
 <% noindex %>
 <div class = "meta-container">
-<%= render 'layouts/navbar' %>
+<%= render 'layouts/navbar' unless @disable_nav %>
 <div class="main-container">
   <div class="container-fluid">
       <% flash.each do |name, msg| %>
@@ -33,7 +33,7 @@
   </div>
 </div>
 <div class="footer-container">
-<%= render 'layouts/footer' %>
+<%= render 'layouts/footer' unless @disable_footer %>
 <%= render 'layouts/google_analytics' %>
 </div>
 </body>
