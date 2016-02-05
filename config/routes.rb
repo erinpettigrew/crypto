@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :applicants
   resources :categories
   devise_for :users
   resources :users, :only => [:show] do
@@ -16,14 +17,22 @@ Rails.application.routes.draw do
           resources :photos
           resources :links
 
-
     end
     
-  # get 'pages/about'
+  get 'pages/about'
+
+  get '/join', to: 'applicants#new'
+
+  get '/thanks', to: 'pages#thanks'
 
   # get 'pages/contact'
-  #set homepage as product index list page
-  root 'products#index'
+  #set homepage as login / signup page
+  authenticated :user do
+    root to: 'products#index', as: :authenticated_root
+  end
+
+  root to: 'pages#about'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
