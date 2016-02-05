@@ -67,6 +67,15 @@ ActiveRecord::Schema.define(version: 20160202234922) do
     t.text     "site_name"
   end
 
+  create_table "listings", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "store_id"
+    t.string   "url"
+    t.decimal  "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "photos", force: :cascade do |t|
     t.text     "comment"
     t.datetime "created_at",    null: false
@@ -106,6 +115,13 @@ ActiveRecord::Schema.define(version: 20160202234922) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "stores", force: :cascade do |t|
+    t.text     "name"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "thanks", force: :cascade do |t|
     t.integer  "review_id"
     t.integer  "user_id"
@@ -113,11 +129,11 @@ ActiveRecord::Schema.define(version: 20160202234922) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "themes", force: :cascade do |t|
-    t.text     "name"
-    t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+  create_table "used_products", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
