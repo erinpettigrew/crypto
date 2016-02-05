@@ -27,7 +27,12 @@ Rails.application.routes.draw do
 
   # get 'pages/contact'
   #set homepage as login / signup page
-  root 'pages#about'
+  authenticated :user do
+    root to: 'products#index', as: :authenticated_root
+  end
+
+  root to: 'pages#about'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
