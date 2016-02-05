@@ -9,6 +9,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= render 'layouts/analytics' %>
 </head>
 <body>
 <% title 'looklove, reviews of new beauty products' %>
@@ -34,7 +35,6 @@
 </div>
 <div class="footer-container">
 <%= render 'layouts/footer' unless @disable_footer %>
-<%= render 'layouts/google_analytics' %>
 </div>
 </body>
 </html>
