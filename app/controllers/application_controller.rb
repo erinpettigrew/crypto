@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -6,7 +7,27 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
 
-  protected
+  def disable_nav
+  	@disable_nav = true
+  end
+
+  def disable_footer
+  	@disable_footer = true
+  end
+
+protected
+
+	def after_sign_in_path_for(resource_or_scope)
+		products_path
+	end
+
+	# after sign out, keep user on same page (rather than redirecting away)
+
+	def after_sign_out_path_for(resource_or_scope)
+		root_path
+#		URI.parse(request.referer).path if request.referer #when no longer under preview mode
+	end
+
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :user_name

@@ -9,6 +9,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= render 'layouts/analytics' %>
 </head>
 <body>
 <% title 'looklove, reviews of new beauty products' %>
@@ -17,7 +18,7 @@
 <% nofollow %>
 <% noindex %>
 <div class = "meta-container">
-<%= render 'layouts/navbar' %>
+<%= render 'layouts/navbar' unless @disable_nav %>
 <div class="main-container">
   <div class="container-fluid">
       <% flash.each do |name, msg| %>
@@ -33,8 +34,7 @@
   </div>
 </div>
 <div class="footer-container">
-<%= render 'layouts/footer' %>
-<%= render 'layouts/google_analytics' %>
+<%= render 'layouts/footer' unless @disable_footer %>
 </div>
 </body>
 </html>

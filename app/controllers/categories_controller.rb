@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user! #remove when out of preview beta
 
   # GET /categories
   # GET /categories.json

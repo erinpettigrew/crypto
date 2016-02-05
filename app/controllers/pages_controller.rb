@@ -1,9 +1,15 @@
 class PagesController < ApplicationController
- # def about
- # 	@page_title = "looklove - About"
- # 	@page_description = "About looklove, the community for reviews of Asian skincare and beauty products"
- # 	@page_keywords = "looklove reviews about site founder company startup"
- # end
+	before_action :disable_nav, only: [:about, :thanks]
+	before_action :disable_footer, only: [:about, :thanks]
+
+ def about
+ # 	@page_title = "looklove"
+ # 	@page_description = "looklove, a new beauty community"
+ # 	@page_keywords = "looklove reviews beauty skincare makeup products recommendations best products"
+ end
+
+ def thanks
+ end
 
  # def contact
  # 	  	@page_title = "looklove - contact"
