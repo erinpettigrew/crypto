@@ -2,12 +2,11 @@
 <% description 'Reviews and photos of the best in new skincare and cosmetics products' %>
 <% keywords 'the best beauty products, reviews, community, forum, posts, asian beauty, korean beauty, skincare' %>
 <div class="index-panel">
-    <h1>The best in beauty</h1>
-    <h4>What are you using?</h4>
+    <h1>What beauty products are you using?</h1>
     <% if user_signed_in? %>
       <div class= "new-product-panel">
           <div class= "form-group">
-            <%= link_to 'Add a new product!', new_product_path, class: "btn btn-primary btn-lg" %>
+            <%= link_to 'Add product!', new_product_path, class: "btn btn-primary btn-lg" %>
           </div>
       </div>
       <% else %>
