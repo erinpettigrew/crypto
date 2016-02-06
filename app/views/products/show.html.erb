@@ -36,6 +36,8 @@
 				<div class="ingredients"><p><%= @product.ingredients.titleize %></p></div>
 			</div>
 		<% end %>
+
+
 <!-- hide photo panel
 			<% if @photos.blank? == false %>
 				<div class = "photo-panel">
@@ -65,8 +67,27 @@
 		<div class="reviews">
 
 
-		<% if @reviews.blank? %>
-			<center><h3>Have you tried this <%= @product.category.name %>? </br>Be the first to...</h3></center>
+
+	<% if @reviews.blank? %>
+
+	<% unless @number_of_uses == 0 %>
+		<div class="uses">
+			<div class="row">
+				<h3><%= pluralize(@number_of_uses, "User") %></h3>
+				<% @uses.each_with_index do |use, j| %>
+					<% if @uses[j].user.avatar.present? %>
+						<div class="col-xs-2">
+							<div class="small-avatar">
+								<%= link_to image_tag(@uses[j].user.try(:avatar).try(:image).try(:small_thumb)), @uses[j].user %>
+							</div>
+						</div>
+					<% end %>
+				<% end %>
+			</div>
+		</div>
+	<% end %>
+
+	<center><h3>Have you tried this <%= @product.category.name %>? </br>Be the first to...</h3></center>
 
 					<div class = "row">
 						<div class = "form-group">
@@ -79,7 +100,7 @@
 					</div>
 
 
-			<% if user_signed_in? %>
+	<% if user_signed_in? %>
 		<% if current_user.admin? && @links.exists? %>
 			<h4>Blog Posts</h4>
 			<% @links.each_with_index do |link| %>
@@ -97,6 +118,22 @@
 						</div>
 					</div>
 
+	<% unless @number_of_uses == 0 %>
+		<div class="uses">
+			<div class="row">
+				<h3><%= pluralize(@number_of_uses, "User") %></h3>
+				<% @uses.each_with_index do |use, j| %>
+					<% if @uses[j].user.avatar.present? %>
+						<div class="col-xs-2">
+							<div class="small-avatar">
+								<%= link_to image_tag(@uses[j].user.try(:avatar).try(:image).try(:small_thumb)), @uses[j].user %>
+							</div>
+						</div>
+					<% end %>
+				<% end %>
+			</div>
+		</div>
+	<% end %>
 
 			<% if @reviews.length == 1 %>
 				<h3><%= "#{@reviews.length}" %> Review</h3>

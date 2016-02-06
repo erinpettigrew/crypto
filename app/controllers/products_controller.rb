@@ -46,8 +46,9 @@ class ProductsController < ApplicationController
   def show
     @reviews = Review.where(product_id: @product.id).order("created_at DESC") 
     @number_of_likes = Like.where(product_id: @product.id).size
-    @number_of_uses = Use.where(product_id: @product.id).size
     @links = Link.where(product_id: @product.id).order("created_at DESC")
+    @uses = Use.where(product_id: @product.id).order("created_at DESC")
+    @number_of_uses = @uses.size
 
     if @reviews.blank?
       @avg_rating = 0

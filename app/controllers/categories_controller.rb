@@ -17,12 +17,17 @@ class CategoriesController < ApplicationController
   # GET /categories/1.json
   def show
     @products = Product.where(category_id: @category.id).order("created_at DESC") 
-
     @avg_rating = []
     @review_count = []
+    @use_count = []
+    @total_uses = []
+    @uses = []
 
     for singleproduct in @products
-      @reviews = Review.where(product_id: singleproduct.id)
+        @reviews = Review.where(product_id: singleproduct.id)
+        @uses << Use.where(product_id: singleproduct.id).order("created_at DESC")
+        @use_count << @uses.size
+
       if @reviews.blank?
         @avg_rating << 0
         @review_count << 0
