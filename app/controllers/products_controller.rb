@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_user! #switch to below version when moving out of preview beta
   #before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :check_user, except: [:search, :index, :show, :create, :new, :like, :use, :update]
-  before_action :set_categories, only: [:new, :edit, :create, :update]
+  before_action :set_themes, only: [:new, :edit, :create, :update]
 
   def search
     if params[:search].present?
@@ -160,8 +160,8 @@ class ProductsController < ApplicationController
       end
     end
 
-    def set_categories
-      @categories = Category.all.order(name: :ASC)
+    def set_themes
+      @themes = Theme.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

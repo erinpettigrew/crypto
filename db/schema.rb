@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160202234922) do
+ActiveRecord::Schema.define(version: 20160208024426) do
 
   create_table "applicants", force: :cascade do |t|
     t.string   "email"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20160202234922) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "slug"
+    t.integer  "theme_id"
   end
 
   add_index "categories", ["slug"], name: "index_categories_on_slug", unique: true
@@ -125,6 +126,13 @@ ActiveRecord::Schema.define(version: 20160202234922) do
   create_table "thanks", force: :cascade do |t|
     t.integer  "review_id"
     t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "themes", force: :cascade do |t|
+    t.text     "name"
+    t.text     "info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
