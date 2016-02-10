@@ -46,6 +46,11 @@
                           "product"><%= link_to action.product.product_brand + ' ' + action.product.product_name, action.product %></div></br>
                           <div class="feed-timestamp"><%= time_ago_in_words(action.updated_at).gsub('about','') %> ago in <div class="category"><%= link_to "#{action.product.category.name.titleize.pluralize}", action.product.category %></div></div>
                         <% end %>
+                        <% if action.is_a? (Want) %>
+                          <strong><%= link_to "#{action.user.user_name}", action.user %></strong> wants to try <div class=
+                          "product"><%= link_to action.product.product_brand + ' ' + action.product.product_name, action.product %></div></br>
+                          <div class="feed-timestamp"><%= time_ago_in_words(action.updated_at).gsub('about','') %> ago in <div class="category"><%= link_to "#{action.product.category.name.titleize.pluralize}", action.product.category %></div></div>
+                        <% end %>
                       </div>
                     </div>
                   </td>

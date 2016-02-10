@@ -20,6 +20,16 @@
  			<%= link_to "I use this!", use_product_path(@product, type:'use'), class: "btn btn-primary btn-lg", method: :put %>
  		<% end %>
 
+ 		<% if user_signed_in? %>
+			<% if current_user.wanted_products.include?(@product) %>
+ 				<%= link_to "I want this!", want_product_path(@product, type:'unwant'), class: "btn btn-info btn-lg", method: :put %>
+ 			<% else %>
+ 				<%= link_to "I want this!", want_product_path(@product, type:'want'), class: "btn btn-primary btn-lg", method: :put %>
+ 			<% end %>
+ 		<% else %>
+ 			<%= link_to "I want this!", want_product_path(@product, type:'want'), class: "btn btn-primary btn-lg", method: :put %>
+ 		<% end %>
+
 				<p><h3><%= @product.product_brand %></br>
 				<%= @product.product_name %></h3></p>
 				<div class="star-rating-product-page"><div class="star-rating" data-score= <%= @avg_rating %> ></div></div>
@@ -36,6 +46,40 @@
 				<div class="ingredients"><p><%= @product.ingredients.titleize %></p></div>
 			</div>
 		<% end %>
+
+	<% unless @number_of_uses == 0 %>
+		<div class="uses">
+			<div class="row">
+				<h3><%= pluralize(@number_of_uses, "User") %></h3>
+				<% @uses.each_with_index do |use, j| %>
+					<% if @uses[j].user.avatar.present? %>
+						<div class="col-xs-2">
+							<div class="small-avatar">
+								<%= link_to image_tag(@uses[j].user.try(:avatar).try(:image).try(:small_thumb)), @uses[j].user %>
+							</div>
+						</div>
+					<% end %>
+				<% end %>
+			</div>
+		</div>
+	<% end %>
+
+	<% unless @number_of_wants == 0 %>
+		<div class="wants">
+			<div class="row">
+				<h3><%= pluralize(@number_of_uses, "Want") %></h3>
+				<% @wants.each_with_index do |want, j| %>
+					<% if @wants[j].user.avatar.present? %>
+						<div class="col-xs-2">
+							<div class="small-avatar">
+								<%= link_to image_tag(@wants[j].user.try(:avatar).try(:image).try(:small_thumb)), @wants[j].user %>
+							</div>
+						</div>
+					<% end %>
+				<% end %>
+			</div>
+		</div>
+	<% end %>
 
 
 <!-- hide photo panel
@@ -86,6 +130,22 @@
 			</div>
 		</div>
 	<% end %>
+	<% unless @number_of_wants == 0 %>
+	<div class="wants">
+		<div class="row">
+				<h3><%= pluralize(@number_of_wants, "Want") %></h3>
+				<% @wants.each_with_index do |want, j| %>
+					<% if @wants[j].user.avatar.present? %>
+						<div class="col-xs-2">
+							<div class="small-avatar">
+								<%= link_to image_tag(@wants[j].user.try(:avatar).try(:image).try(:small_thumb)), @wants[j].user %>
+							</div>
+						</div>
+					<% end %>
+				<% end %>
+		</div>
+	</div>
+	<% end %>
 
 	<center><h3>Have you tried this <%= @product.category.name %>? </br>Be the first to...</h3></center>
 
@@ -118,22 +178,6 @@
 						</div>
 					</div>
 
-	<% unless @number_of_uses == 0 %>
-		<div class="uses">
-			<div class="row">
-				<h3><%= pluralize(@number_of_uses, "User") %></h3>
-				<% @uses.each_with_index do |use, j| %>
-					<% if @uses[j].user.avatar.present? %>
-						<div class="col-xs-2">
-							<div class="small-avatar">
-								<%= link_to image_tag(@uses[j].user.try(:avatar).try(:image).try(:small_thumb)), @uses[j].user %>
-							</div>
-						</div>
-					<% end %>
-				<% end %>
-			</div>
-		</div>
-	<% end %>
 
 			<% if @reviews.length == 1 %>
 				<h3><%= "#{@reviews.length}" %> Review</h3>
