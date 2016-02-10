@@ -42,7 +42,7 @@
 
 
 <% if @profile.used_products.any? %>
-	<div class= "title">Currently Using</div>
+	<div class= "title">Using</div>
 	<div class="row">
 		<% @profile.used_products.each do |product| %>
 			<div class="col-xs-6 col-sm-4">
@@ -63,10 +63,33 @@
 	</div>
 <% end %>
 
+<% if @profile.wanted_products.any? %>
+	<div class= "title">Wants</div>
+	<div class="row">
+		<% @profile.wanted_products.each do |product| %>
+			<div class="col-xs-6 col-sm-4">
+				<div class="card">
+					<div class="category">
+						<%= product.category.name.titleize %>
+					</div>
+					<div class="product-image">
+						<%= link_to image_tag(product.image), product %></br>
+					</div>
+					<div class="product-info">
+						<%= product.product_brand %></br>
+						<%= link_to product.product_name, product %></br>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
+<% end %>
 
-<% if @profile_reviews.present? %>
-	<div class="product-list">
-		<div class= "title"><%= pluralize(@reviews_added, "Review") %></div>
+
+
+<% if @profile_reviews.present? %>	
+	<div class= "title"><%= pluralize(@reviews_added, "Review") %></div>
+		<div class="product-list">
 		    <% @profile_reviews.each do |review| %>
 		        <div class="product-card">
 		            <div class="row product-list-row">

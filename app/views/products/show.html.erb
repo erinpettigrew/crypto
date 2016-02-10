@@ -9,7 +9,7 @@
 		<div class="product-panel">
 			<div class="product-image"><%= image_tag @product.image_url %></div>
 
-
+<div class="col-xs-6 col-sm-6 button-use">
 		<% if user_signed_in? %>
 			<% if current_user.used_products.include?(@product) %>
  				<%= link_to "I use this!", use_product_path(@product, type:'unuse'), class: "btn btn-info btn-lg", method: :put %>
@@ -19,16 +19,18 @@
  		<% else %>
  			<%= link_to "I use this!", use_product_path(@product, type:'use'), class: "btn btn-primary btn-lg", method: :put %>
  		<% end %>
-
+ 	</div>
+ 	<div class="col-xs-6 col-sm-6 button-want">
  		<% if user_signed_in? %>
 			<% if current_user.wanted_products.include?(@product) %>
- 				<%= link_to "I want this!", want_product_path(@product, type:'unwant'), class: "btn btn-info btn-lg", method: :put %>
+ 				<%= link_to "I want this", want_product_path(@product, type:'unwant'), class: "btn btn-info btn-lg", method: :put %>
  			<% else %>
- 				<%= link_to "I want this!", want_product_path(@product, type:'want'), class: "btn btn-primary btn-lg", method: :put %>
+ 				<%= link_to "I want this", want_product_path(@product, type:'want'), class: "btn btn-primary btn-lg", method: :put %>
  			<% end %>
  		<% else %>
- 			<%= link_to "I want this!", want_product_path(@product, type:'want'), class: "btn btn-primary btn-lg", method: :put %>
+ 			<%= link_to "I want this", want_product_path(@product, type:'want'), class: "btn btn-primary btn-lg", method: :put %>
  		<% end %>
+ 	</div>
 
 				<p><h3><%= @product.product_brand %></br>
 				<%= @product.product_name %></h3></p>
@@ -47,27 +49,10 @@
 			</div>
 		<% end %>
 
-	<% unless @number_of_uses == 0 %>
-		<div class="uses">
-			<div class="row">
-				<h3><%= pluralize(@number_of_uses, "User") %></h3>
-				<% @uses.each_with_index do |use, j| %>
-					<% if @uses[j].user.avatar.present? %>
-						<div class="col-xs-2">
-							<div class="small-avatar">
-								<%= link_to image_tag(@uses[j].user.try(:avatar).try(:image).try(:small_thumb)), @uses[j].user %>
-							</div>
-						</div>
-					<% end %>
-				<% end %>
-			</div>
-		</div>
-	<% end %>
-
 	<% unless @number_of_wants == 0 %>
 		<div class="wants">
 			<div class="row">
-				<h3><%= pluralize(@number_of_uses, "Want") %></h3>
+				<h3><%= pluralize(@number_of_wants, "Want") %></h3>
 				<% @wants.each_with_index do |want, j| %>
 					<% if @wants[j].user.avatar.present? %>
 						<div class="col-xs-2">
@@ -129,22 +114,6 @@
 				<% end %>
 			</div>
 		</div>
-	<% end %>
-	<% unless @number_of_wants == 0 %>
-	<div class="wants">
-		<div class="row">
-				<h3><%= pluralize(@number_of_wants, "Want") %></h3>
-				<% @wants.each_with_index do |want, j| %>
-					<% if @wants[j].user.avatar.present? %>
-						<div class="col-xs-2">
-							<div class="small-avatar">
-								<%= link_to image_tag(@wants[j].user.try(:avatar).try(:image).try(:small_thumb)), @wants[j].user %>
-							</div>
-						</div>
-					<% end %>
-				<% end %>
-		</div>
-	</div>
 	<% end %>
 
 	<center><h3>Have you tried this <%= @product.category.name %>? </br>Be the first to...</h3></center>
