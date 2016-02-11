@@ -99,22 +99,22 @@
 
 	<% if @reviews.blank? %>
 
-	<% unless @number_of_uses == 0 %>
-		<div class="uses">
-			<div class="row">
-				<h3><%= pluralize(@number_of_uses, "User") %></h3>
-				<% @uses.each_with_index do |use, j| %>
-					<% if @uses[j].user.avatar.present? %>
-						<div class="col-xs-2">
-							<div class="small-avatar">
-								<%= link_to image_tag(@uses[j].user.try(:avatar).try(:image).try(:small_thumb)), @uses[j].user %>
+		<% unless @number_of_uses == 0 %>
+			<div class="uses">
+				<div class="row">
+					<h3><%= pluralize(@number_of_uses, "User") %></h3>
+					<% @uses.each_with_index do |use, j| %>
+						<% if @uses[j].user.avatar.present? %>
+							<div class="col-xs-2">
+								<div class="small-avatar">
+									<%= link_to image_tag(@uses[j].user.try(:avatar).try(:image).try(:small_thumb)), @uses[j].user %>
+								</div>
 							</div>
-						</div>
+						<% end %>
 					<% end %>
-				<% end %>
+				</div>
 			</div>
-		</div>
-	<% end %>
+		<% end %>
 
 	<center><h3>Have you tried this <%= @product.category.name %>? </br>Be the first to...</h3></center>
 
@@ -138,6 +138,23 @@
 		<% end %>
 	<% end %>
 		<% elsif @reviews.blank? == false %>
+
+		<% unless @number_of_uses == 0 %>
+			<div class="uses">
+				<div class="row">
+					<h3><%= pluralize(@number_of_uses, "User") %></h3>
+					<% @uses.each_with_index do |use, j| %>
+						<% if @uses[j].user.avatar.present? %>
+							<div class="col-xs-2">
+								<div class="small-avatar">
+									<%= link_to image_tag(@uses[j].user.try(:avatar).try(:image).try(:small_thumb)), @uses[j].user %>
+								</div>
+							</div>
+						<% end %>
+					<% end %>
+				</div>
+			</div>
+		<% end %>
 
 					<div class = "row">
 						<div class = "form-group">
