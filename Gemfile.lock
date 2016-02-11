@@ -231,6 +231,7 @@ GEM
     mini_magick (4.3.6)
     mini_portile2 (2.0.0)
     minitest (5.8.3)
+    mixpanel-ruby (2.2.0)
     multi_json (1.11.2)
     multipart-post (2.0.0)
     nokogiri (1.6.7.1)
@@ -347,6 +348,7 @@ DEPENDENCIES
   jquery-rails
   meta-tags (~> 2.1)!
   mini_magick
+  mixpanel-ruby
   pg
   pry
   rails (= 4.2.4)

@@ -4,7 +4,6 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user! #make sure user is signed in before manipulating reviews
   before_action :check_user, only: [:edit, :update, :destroy]
  
-
   # GET /reviews/new
   def new
     @review = Review.new
