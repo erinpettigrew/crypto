@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20160210043305) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "slug"
+    t.integer  "theme_id"
   end
 
   add_index "categories", ["slug"], name: "index_categories_on_slug", unique: true
@@ -65,6 +66,15 @@ ActiveRecord::Schema.define(version: 20160210043305) do
     t.integer  "product_id"
     t.text     "excerpt"
     t.text     "site_name"
+  end
+
+  create_table "listings", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "store_id"
+    t.string   "url"
+    t.decimal  "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "photos", force: :cascade do |t|
@@ -106,6 +116,13 @@ ActiveRecord::Schema.define(version: 20160210043305) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "stores", force: :cascade do |t|
+    t.text     "name"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "thanks", force: :cascade do |t|
     t.integer  "review_id"
     t.integer  "user_id"
@@ -115,12 +132,12 @@ ActiveRecord::Schema.define(version: 20160210043305) do
 
   create_table "themes", force: :cascade do |t|
     t.text     "name"
-    t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.text     "info"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "tries", force: :cascade do |t|
+  create_table "used_products", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "product_id"
     t.datetime "created_at", null: false
