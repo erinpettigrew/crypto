@@ -1,6 +1,23 @@
 /* Custom, iPhone Retina -------------------------------------------------------- */
 @media screen and (min-width: 320px) {
 
+
+
+.user-index {
+	text-align:center;
+	
+	.name {
+		font-weight:500;
+		font-size:125%;
+		padding-bottom:20px;
+	}
+
+	.name a {
+		color:#000000;
+	}
+
+}
+
 	.profile-info {
 		text-align:center;
 		padding-bottom: 50px;

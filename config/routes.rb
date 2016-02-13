@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :applicants
   resources :categories
   devise_for :users
-  resources :users, :only => [:show] do
+  resources :users, :only => [:show, :index] do
       resources :avatars
     end
   resources :sites
