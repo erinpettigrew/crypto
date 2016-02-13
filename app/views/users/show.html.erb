@@ -149,3 +149,14 @@
   });
 </script>
 
+
+
+<% if @profile == current_user %>
+  <script>
+    	mixpanel.track("Viewed Own Profile", {"Username": "<%= @profile.user_name %>", "User ID": <%= @profile.id %>});
+  </script>
+<% else %>
+  <script>
+    mixpanel.track("Viewed Profile", {"Username": "<%= @profile.user_name %>", "User ID": <%= @profile.id %>});
+  </script>
+<% end %>
