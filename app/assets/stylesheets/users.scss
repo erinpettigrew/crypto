@@ -38,6 +38,12 @@
 		
 	}
 
+	.skin-info {
+		font-weight:400;
+		font-size:110%;
+		text-align:center;
+	}
+
 	.activity-info {
 		display:none;
 	}
@@ -121,10 +127,18 @@
 		
 	}
 
+	.skin-info {
+		display:inline;
+		text-align:left;
+		font-weight:400;
+		font-size:110%;
+	}
+
 	.activity-info {
 		display:inline;
 		text-align:right;
 		font-weight:200;
+		font-size:110%;
 	}
 
 	.card {

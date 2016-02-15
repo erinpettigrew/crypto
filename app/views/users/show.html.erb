@@ -16,10 +16,25 @@
 			<%= link_to "Delete photo", [@user, @user.avatar], method: :delete %></small></p>
 		<% end %>
 	<% end %>
+
 	<div class="activity-info">
-		Member #<%= @user.id %></br>
-		Joined <%= @user.created_at.strftime("%-m/%-d/%-y") %>
-		</div>
+
+		<small>Member #<%= @user.id %></br>
+		Joined <%= @user.created_at.strftime("%-m/%-d/%-y") %></small></br>
+
+	</div>
+	<div class="skin-info">
+			<% if @user.profile.present? %>
+				</br><%= @user.try(:profile).try(:skin_type).titleize %> Skin</br>
+				<% if @user == current_user %>
+					<small><%= link_to "Edit Skin Info", edit_user_profile_path(@user, @user.profile) %></small>
+					<% end %>
+			<% else %>
+				<% if @user == current_user %>
+					<%= link_to "Add your skin info!", new_user_profile_path(@user) %>
+				<% end %>
+			<% end %>
+	</div>
 
 	<div class="invitations">
 		<% if user_signed_in? && @user == current_user %>
@@ -34,11 +49,7 @@
 			<% end %>
 		<% end %>
 	</div>
-
 </div>
-
-
-
 
 
 <% if @user.used_products.any? %>

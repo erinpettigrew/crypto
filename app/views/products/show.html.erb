@@ -197,7 +197,10 @@
 										</table>
 									</div>
 									<div class="col-xs-4">
-	  									<div class="timestamp"><small><%= time_ago_in_words(review.created_at).gsub('about','') %> ago</small></div>
+										<div class="reviewer-info">
+											<%= review.user.try(:profile).try(:skin_type) %></br>
+											<%= time_ago_in_words(review.created_at).gsub('about','') %> ago
+										</div>
 									</div>
 								</div>
 								<div class="col-xs-12">

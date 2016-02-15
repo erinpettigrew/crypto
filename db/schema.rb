@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160214235216) do
+ActiveRecord::Schema.define(version: 20160215205311) do
 
   create_table "applicants", force: :cascade do |t|
     t.string   "email"
@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 20160214235216) do
 
   create_table "profiles", force: :cascade do |t|
     t.integer  "user_id"
-    t.text     "type"
+    t.text     "skin_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
