@@ -25,9 +25,9 @@
 	</div>
 	<div class="skin-info">
 			<% if @user.profile.present? %>
-				</br><%= @user.try(:profile).try(:skin_type).titleize %> Skin</br>
+				</br><%= @user.try(:profile).try(:skin_type).titleize %> Skin 
 				<% if @user == current_user %>
-					<small><%= link_to "Edit Skin Info", edit_user_profile_path(@user, @user.profile) %></small>
+					<small><%= link_to "Edit", edit_user_profile_path(@user, @user.profile) %></small>
 					<% end %>
 			<% else %>
 				<% if @user == current_user %>

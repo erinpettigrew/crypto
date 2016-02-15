@@ -44,7 +44,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    @reviews = Review.where(product_id: @product.id).order("created_at DESC") 
+    @reviews = Review.where(product_id: @product.id).order("created_at DESC")
     @number_of_likes = Like.where(product_id: @product.id).size
     @links = Link.where(product_id: @product.id).order("created_at DESC")
     @uses = Use.where(product_id: @product.id).order("created_at DESC")
