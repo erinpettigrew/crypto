@@ -1,0 +1,4 @@
+<h1>Skin types</h1>
+<% @skin_types.each do |skin_type| %>
+	<p><%= link_to skin_type.name, skin_type %>, <%= link_to "edit", edit_skin_type_path(skin_type) %></p>
+<% end %>

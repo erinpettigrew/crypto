@@ -35,6 +35,7 @@ end
   has_many :wants, dependent: :destroy
   has_many :wanted_products, through: :wants, source: :product
   has_one :profile
+  has_one :skin_type, through: :profiles, source: :skin_type
   validates :user_name, presence: true
 
 end

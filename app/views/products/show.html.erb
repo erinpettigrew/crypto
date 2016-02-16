@@ -198,7 +198,7 @@
 									</div>
 									<div class="col-xs-4">
 										<div class="reviewer-info">
-											<%= review.user.try(:profile).try(:skin_type) %></br>
+											<%= SkinType.find_by(id: review.user.try(:profile).try(:skin_type_id)).try(:name).try(:titleize) %></br>
 											<%= time_ago_in_words(review.created_at).gsub('about','') %> ago
 										</div>
 									</div>

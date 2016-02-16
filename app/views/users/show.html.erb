@@ -12,8 +12,8 @@
 		<% if @user.avatar.blank? %>
 			<small><%= link_to "Add photo", new_user_avatar_path(@user) %></small></br>
 		<% else %>
-			<small><%= link_to "Edit photo", edit_user_avatar_path(@user, @user.avatar) %></br>
-			<%= link_to "Delete photo", [@user, @user.avatar], method: :delete %></small></p>
+			<small><%= link_to "Edit", edit_user_avatar_path(@user, @user.avatar) %>, 
+			<%= link_to "Delete", [@user, @user.avatar], method: :delete %></small></p>
 		<% end %>
 	<% end %>
 
@@ -23,20 +23,23 @@
 		Joined <%= @user.created_at.strftime("%-m/%-d/%-y") %></small></br>
 
 	</div>
+
 	<div class="skin-info">
-			<% if @user.profile.present? %>
-				</br><%= @user.try(:profile).try(:skin_type).titleize %> Skin 
-				<% if @user == current_user %>
-					<%= link_to edit_user_profile_path(@user, @user.profile) do %>
-    					<i class="glyphicon glyphicon-edit"></i>
-					<% end %>
-					<% end %>
-			<% else %>
-				<% if @user == current_user %>
-					<%= link_to "Add your skin info!", new_user_profile_path(@user) %>
-				<% end %>
+		<% if @skin_type.present? %>
+			<%= @skin_type.name.titleize %>
+			<% if @user == current_user %>
+				</br><small><%= link_to "Edit", edit_user_profile_path(@user, @user.profile) %></smalL>
+				<!--<%= link_to edit_user_profile_path(@user, @user.profile) do %>
+					<i class="glyphicon glyphicon-edit"></i>
+				<% end %>-->
 			<% end %>
-	</div>
+		<% else %>
+			<% if @user == current_user %>
+				<%= link_to "Add your skin info!", new_user_profile_path(@user) %>
+			<% end %>
+		<% end %>
+	</div> 
+
 
 	<div class="invitations">
 		<% if user_signed_in? && @user == current_user %>

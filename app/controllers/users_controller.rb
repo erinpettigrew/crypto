@@ -7,6 +7,10 @@ def show
 	@user_photos = Photo.where(user: @user).order("created_at DESC")
 	@user_reviews = Review.where(user: @user).order("created_at DESC")
 
+	if @user.profile.present? && @user.profile.skin_type_id.present?
+		@skin_type = SkinType.find_by(id: @user.profile.skin_type_id)
+	end
+
   @products_added = Product.where(user_id: @user).count
   @reviews_added = @user_reviews.count
 end
