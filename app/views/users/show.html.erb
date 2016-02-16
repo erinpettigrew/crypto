@@ -27,7 +27,9 @@
 			<% if @user.profile.present? %>
 				</br><%= @user.try(:profile).try(:skin_type).titleize %> Skin 
 				<% if @user == current_user %>
-					<small><%= link_to "Edit", edit_user_profile_path(@user, @user.profile) %></small>
+					<%= link_to edit_user_profile_path(@user, @user.profile) do %>
+    					<i class="glyphicon glyphicon-edit"></i>
+					<% end %>
 					<% end %>
 			<% else %>
 				<% if @user == current_user %>
