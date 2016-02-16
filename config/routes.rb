@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, :only => [:show, :index] do
       resources :avatars
-      resources :profiles
     end
   resources :sites
   resources :products do
