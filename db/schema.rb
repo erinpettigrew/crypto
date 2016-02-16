@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160210043305) do
+ActiveRecord::Schema.define(version: 20160216194250) do
 
   create_table "applicants", force: :cascade do |t|
     t.string   "email"
@@ -100,6 +100,13 @@ ActiveRecord::Schema.define(version: 20160210043305) do
 
   add_index "products", ["slug"], name: "index_products_on_slug", unique: true
 
+  create_table "profiles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "skin_type_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.integer  "rating"
     t.text     "comment"
@@ -112,6 +119,12 @@ ActiveRecord::Schema.define(version: 20160210043305) do
   create_table "sites", force: :cascade do |t|
     t.text     "name"
     t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "skin_types", force: :cascade do |t|
+    t.text     "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
