@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :skin_types
   resources :applicants
   resources :categories
   devise_for :users
   resources :users, :only => [:show, :index] do
       resources :avatars
+      resources :profiles
     end
   resources :sites
   resources :products do

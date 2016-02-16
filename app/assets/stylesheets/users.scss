@@ -18,11 +18,11 @@
 
 }
 
-	.profile-info {
+	.user-info {
 		text-align:center;
 		padding-bottom: 50px;
 
-		.profile-avatar img{
+		.user-avatar img{
 			max-width:30%;
 			border-radius:50%;
 			box-shadow:1px 1px 1px #e5e5e5;
@@ -36,6 +36,12 @@
 			display:none; 
 		}
 		
+	}
+
+	.skin-info {
+		font-weight:400;
+		font-size:110%;
+		text-align:center;
 	}
 
 	.activity-info {
@@ -107,11 +113,11 @@
 @media screen and (min-width: 768px) {
 
 
-	.profile-info {
+	.user-info {
 		text-align:center;
 		padding-bottom: 50px;
 
-		.profile-avatar img{
+		.user-avatar img{
 			max-width:25%;
 			border-radius:50%;
 			box-shadow:1px 1px 1px #e5e5e5;
@@ -121,10 +127,18 @@
 		
 	}
 
+	.skin-info {
+		display:inline;
+		text-align:left;
+		font-weight:400;
+		font-size:110%;
+	}
+
 	.activity-info {
 		display:inline;
 		text-align:right;
 		font-weight:200;
+		font-size:110%;
 	}
 
 	.card {
