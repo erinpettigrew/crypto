@@ -29,7 +29,6 @@ class ThemesController < ApplicationController
   	@themes = Theme.all()
   end
 
-
   def destroy
   	@theme.destroy
   	  respond_to do |format|
