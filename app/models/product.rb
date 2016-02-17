@@ -28,8 +28,10 @@ class Product < ActiveRecord::Base
 	has_many :links
 	has_many :uses, dependent: :destroy
 	has_many :used_by, through: :uses, source: :user #rename user_id to used_by for referencing
-
+	has_many :wants, dependent: :destroy
+	has_many :wanted_by, through: :wants, source: :user
 	validates :product_brand, :product_name, :image, :category, presence: true
+
 
 
 end

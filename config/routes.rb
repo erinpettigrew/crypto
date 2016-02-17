@@ -1,16 +1,20 @@
 Rails.application.routes.draw do
 
+
   resources :themes
+  resources :skin_types
   resources :applicants
   resources :categories
   devise_for :users
-  resources :users, :only => [:show] do
+  resources :users, :only => [:show, :index] do
       resources :avatars
+      resources :profiles
     end
   resources :sites
   resources :products do
       put :use, on: :member
       put :like, on: :member
+      put :want, on: :member
       collection do #search will apply to more than one product
           get 'search'
       end

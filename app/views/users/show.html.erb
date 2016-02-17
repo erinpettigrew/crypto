@@ -1,28 +1,48 @@
-<% title @profile.user_name + ' on looklove' %>
+<% title @user.user_name + ' on looklove' %>
 <% description 'Reviews and photos of the best beauty products' %>
 <% keywords 'beauty products, reviews, community, forum, posts, skincare, cosmetics' %>
 <% nofollow %>
 <% noindex %>
 
-<div class="profile-info">
-	<h1><%= @profile.user_name %></h1>
-	<div class="profile-avatar"><%= image_tag(@profile.avatar.try(:image)) %></div>
+<div class="user-info">
+	<h1><%= @user.user_name %></h1>
+	<div class="user-avatar"><%= image_tag(@user.avatar.try(:image)) %></div>
 	
-	<% if @profile == current_user %>
-		<% if @profile.avatar.blank? %>
-			<small><%= link_to "Add photo", new_user_avatar_path(@profile) %></small></br>
+	<% if @user == current_user %>
+		<% if @user.avatar.blank? %>
+			<small><%= link_to "Add photo", new_user_avatar_path(@user) %></small></br>
 		<% else %>
-			<small><%= link_to "Edit photo", edit_user_avatar_path(@profile, @profile.avatar) %></br>
-			<%= link_to "Delete photo", [@profile, @profile.avatar], method: :delete %></small></p>
+			<small><%= link_to "Edit", edit_user_avatar_path(@user, @user.avatar) %>, 
+			<%= link_to "Delete", [@user, @user.avatar], method: :delete %></small></p>
 		<% end %>
 	<% end %>
+
 	<div class="activity-info">
-		Member #<%= @profile.id %></br>
-		Joined <%= @profile.created_at.strftime("%-m/%-d/%-y") %>
-		</div>
+
+		<small>Member #<%= @user.id %></br>
+		Joined <%= @user.created_at.strftime("%-m/%-d/%-y") %></small></br>
+
+	</div>
+
+	<div class="skin-info">
+		<% if @skin_type.present? %>
+			<%= @skin_type.name.titleize %>
+			<% if @user == current_user %>
+				</br><small><%= link_to "Edit", edit_user_profile_path(@user, @user.profile) %></smalL>
+				<!--<%= link_to edit_user_profile_path(@user, @user.profile) do %>
+					<i class="glyphicon glyphicon-edit"></i>
+				<% end %>-->
+			<% end %>
+		<% else %>
+			<% if @user == current_user %>
+				<%= link_to "Add your skin type!", new_user_profile_path(@user) %>
+			<% end %>
+		<% end %>
+	</div> 
+
 
 	<div class="invitations">
-		<% if user_signed_in? && @profile == current_user %>
+		<% if user_signed_in? && @user == current_user %>
 			<% unless current_user.invitation_limit == 0 %>
 				<div class="invite-info">
 					<% unless current_user.invitation_limit.nil? %>
@@ -34,17 +54,35 @@
 			<% end %>
 		<% end %>
 	</div>
-
 </div>
 
 
-
-
-
-<% if @profile.used_products.any? %>
-	<div class= "title">Currently Using</div>
+<% if @user.used_products.any? %>
+	<div class= "title">Using</div>
 	<div class="row">
-		<% @profile.used_products.each do |product| %>
+		<% @user.used_products.each do |product| %>
+			<div class="col-xs-6 col-sm-4">
+				<div class="card">
+					<div class="category">
+						<%= product.category.name.titleize %>
+					</div>
+					<div class="product-image">
+						<%= link_to image_tag(product.image), product %></br>
+					</div>
+					<div class="product-info">
+						<%= product.product_brand %></br>
+						<%= link_to product.product_name, product %></br>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
+<% end %>
+
+<% if @user.wanted_products.any? %>
+	<div class= "title">Wants</div>
+	<div class="row">
+		<% @user.wanted_products.each do |product| %>
 			<div class="col-xs-6 col-sm-4">
 				<div class="card">
 					<div class="category">
@@ -64,14 +102,15 @@
 <% end %>
 
 
-<% if @profile_reviews.present? %>
-	<div class="product-list">
-		<div class= "title"><%= pluralize(@reviews_added, "Review") %></div>
-		    <% @profile_reviews.each do |review| %>
+
+<% if @user_reviews.present? %>	
+	<div class= "title"><%= pluralize(@reviews_added, "Review") %></div>
+		<div class="product-list">
+		    <% @user_reviews.each do |review| %>
 		        <div class="product-card">
 		            <div class="row product-list-row">
 		              <div class="col-xs-3 col-md-3">
-		                <div class="profile-product-image"><%= link_to image_tag(review.product.image_url), review.product %>
+		                <div class="user-product-image"><%= link_to image_tag(review.product.image_url), review.product %>
 		                </div>
 		              </div>
 
@@ -126,3 +165,14 @@
   });
 </script>
 
+
+
+<% if @user == current_user %>
+  <script>
+    	mixpanel.track("Viewed Own Profile", {"Username": "<%= @user.user_name %>", "User ID": <%= @user.id %>});
+  </script>
+<% else %>
+  <script>
+    mixpanel.track("Viewed Profile", {"Username": "<%= @user.user_name %>", "User ID": <%= @user.id %>});
+  </script>
+<% end %>

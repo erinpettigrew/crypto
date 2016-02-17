@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160208024426) do
+=======
+ActiveRecord::Schema.define(version: 20160216194250) do
+>>>>>>> 03b946eed706941937f2feba264a8358c30d85e5
 
   create_table "applicants", force: :cascade do |t|
     t.string   "email"
@@ -100,6 +104,13 @@ ActiveRecord::Schema.define(version: 20160208024426) do
 
   add_index "products", ["slug"], name: "index_products_on_slug", unique: true
 
+  create_table "profiles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "skin_type_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.integer  "rating"
     t.text     "comment"
@@ -112,6 +123,12 @@ ActiveRecord::Schema.define(version: 20160208024426) do
   create_table "sites", force: :cascade do |t|
     t.text     "name"
     t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "skin_types", force: :cascade do |t|
+    t.text     "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -178,6 +195,13 @@ ActiveRecord::Schema.define(version: 20160208024426) do
   add_index "users", ["slug"], name: "index_users_on_slug", unique: true
 
   create_table "uses", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "wants", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "product_id"
     t.datetime "created_at", null: false

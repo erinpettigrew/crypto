@@ -1,9 +1,11 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :like, :use, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :like, :use, :want, :destroy]
   before_action :authenticate_user! #switch to below version when moving out of preview beta
   #before_action :authenticate_user!, except: [:index, :show, :search]
-  before_action :check_user, except: [:search, :index, :show, :create, :new, :like, :use, :update]
+  before_action :check_user, except: [:search, :index, :show, :create, :new, :like, :use, :want, :update]
+  before_action :set_categories, only: [:new, :edit, :create, :update]
   before_action :set_themes, only: [:new, :edit, :create, :update]
+
 
   def search
     if params[:search].present?
@@ -15,9 +17,13 @@ class ProductsController < ApplicationController
      @search_term = params[:search]
      @avg_rating = []
      @review_count = []
+     @use_count = []
+     @uses = []
  
      for singleproduct in @products
        @reviews = Review.where(product_id: singleproduct.id)
+       @uses << Use.where(product_id: singleproduct.id).order("created_at DESC")
+       @use_count << @uses.size
       if @reviews.blank?
          @avg_rating << 0
          @review_count << 0
@@ -32,10 +38,10 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @recent_reviews = Review.all.order('created_at DESC').take(15)
+    @recent_reviews = Review.all.order('created_at DESC').take(14)
     @recent_uses = Use.all.order('created_at DESC').take(10)
-    @recent_actions = (@recent_reviews + @recent_uses).sort_by(&:created_at).reverse
-    @categories = Category.all.order('name ASC')
+    @recent_wants = Want.all.order('created_at DESC').take(10)
+    @recent_actions = (@recent_reviews + @recent_uses + @recent_wants).sort_by(&:created_at).reverse
 
     end
 
@@ -44,11 +50,13 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    @reviews = Review.where(product_id: @product.id).order("created_at DESC") 
+    @reviews = Review.where(product_id: @product.id).order("created_at DESC")
     @number_of_likes = Like.where(product_id: @product.id).size
     @links = Link.where(product_id: @product.id).order("created_at DESC")
     @uses = Use.where(product_id: @product.id).order("created_at DESC")
     @number_of_uses = @uses.size
+    @wants = Want.where(product_id: @product.id).order("created_at DESC")
+    @number_of_wants = @wants.size
 
     if @reviews.blank?
       @avg_rating = 0
@@ -91,6 +99,25 @@ class ProductsController < ApplicationController
       redirect_to :back
 
       #notice: "You started using #{@product.product_brand} #{@product.product_name}"
+
+    else
+      redirect_to :back, notice: 'Nothing happened.'
+    end
+  end
+
+  def want
+    type = params[:type]
+    if type == 'want'
+      current_user.wanted_products << @product
+      redirect_to :back
+
+      #notice: "You want #{@product.product_brand} #{@product.product_name}"
+
+    elsif type == 'unwant'
+      current_user.wanted_products.delete(@product)
+      redirect_to :back
+
+      #notice: "You stopped wanting #{@product.product_brand} #{@product.product_name}"
 
     else
       redirect_to :back, notice: 'Nothing happened.'

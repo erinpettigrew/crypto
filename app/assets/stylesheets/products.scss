@@ -6,6 +6,20 @@
 @media screen and (min-width: 320px) {
 
 
+
+	.button-use {
+		text-align:right;
+		padding-top:10px;
+		padding-bottom:10px;
+	}
+
+	.button-want {
+		text-align:left;
+		padding-top:10px;
+		padding-bottom:10px;
+	}
+
+
 	.card {
 
 		padding-bottom:20px;
@@ -92,8 +106,7 @@
 		}
 
 		.feed-user {
-			text-align:right;
-
+			text-align:left;
 		}
 
 		.feed-action-text {
@@ -116,18 +129,19 @@
 		}
 
 		.feed-product-image {
-			padding:0px 0px 10px 0px;
-			margin:-35px 0px 0px 55px;
+			padding:10px 0px 10px 0px;
+			margin:0px;
 		}
 
 		.feed-product-image img {
-			max-width:50px;
+			max-width:175px;
 			border:1px solid #ffffff;
 			background:#ffffff;
 			border-radius:5px;
 			box-shadow:1px 1px 1px #e5e5e5;
-			padding:3px;
+			padding:5px;
 		}
+
 
 		.feed-product-image-alt {
 			padding:0px;
@@ -140,16 +154,16 @@
 			background:#ffffff;
 			border-radius:5px;
 			box-shadow:1px 1px 1px #e5e5e5;
-			padding:3px;
+			padding:5px;
 		}
 
 		.feed-review-excerpt {
 			font-size:110%;
-			font-weight:300;
+			font-weight:200;
 			color:#000000;
 
 			.star-rating img {
-				max-width:15px;
+				max-width:20px;
 			}
 		}
 
@@ -173,9 +187,13 @@
 				font-size:16px;
 			}
 
-			.timestamp {
-				margin-top:17px;
+			.reviewer-info {
+				margin-top:10px;
+				text-align:right;
+				font-size:90%;
+				font-weight:200;
 			}
+
 		}
 
 		.reviews a {
@@ -187,7 +205,9 @@
 			margin-left:15px;
 		}
 
-
+		.wants {
+			margin-left:15px;
+		}
 
 
 }
@@ -202,6 +222,18 @@
 		text-align: center;
 		height: auto;
 		margin: 20px 0px 20px 0px;
+	}
+
+	.button-use {
+		text-align:right;
+		padding-top:10px;
+		padding-bottom:10px;
+	}
+
+	.button-want {
+		text-align:left;
+		padding-top:10px;
+		padding-bottom:10px;
 	}
 
 	.product-list-header {
@@ -225,6 +257,11 @@
 
 	.product-list {
 
+		.feed-user {
+			text-align:right;
+
+		}
+
 		.feed-action-text {
 			padding:20px 0px 0px 0px;
 
@@ -238,13 +275,14 @@
 
 		.feed-product-image {
 			padding:0px;
-			margin:-35px 0px 0px 60px;
+			margin:0px;
 		}
 
 		.feed-product-image img {
-			max-width:55px;
+			max-width:225px;
 			border-radius:5%;
 			box-shadow:1px 1px 1px #e5e5e5;
+			padding:20px;
 		}
 
 		.feed-review-excerpt {
@@ -253,6 +291,13 @@
 			.star-rating img {
 				max-width:100%;
 			}
+		}
+
+
+		.feed-timestamp {
+			font-size:75%;
+			font-weight:300;
+			padding-top:5px;
 		}
 	}
 

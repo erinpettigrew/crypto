@@ -1,0 +1,24 @@
+<% title 'looklove, reviews of new beauty products' %>
+<% description 'Reviews and photos of the best in new skincare and cosmetics products' %>
+<% keywords 'skincare products, cosometics products, beauty reviews, community, forum, posts, korean beauty, skincare, beauty, products, lists, regimen' %>
+<div class="index-panel">
+    <h1>Members</h1>
+    <h4>Your friends, IRL or by skin type and product similarity</h4>
+</div>
+
+<!-- Display users who have accepted invitations and supply avatars for those who don't have one -->
+<div class="user-index">
+	<% @users.each do |user| %>
+		<% if user.avatar.blank? %>
+			<div class="col-xs-4 col-sm-3 col-md-2">
+				<div class="large-avatar"><%= link_to image_tag("https://s3.amazonaws.com/productbase/hearts/black-heart.png"), user %></div>
+				<div class="name"><%= link_to truncate(user.user_name, length:12), user %></div>
+			</div>
+		<% else %>
+			<div class="col-xs-4 col-sm-3 col-md-2">
+				<div class="large-avatar"><%= link_to image_tag(user.try(:avatar).try(:image).try(:med_thumb)), user %></div>
+				<div class="name"><%= link_to truncate(user.user_name, length:12), user %></div>
+			</div>
+		<% end %>
+	<% end %>
+</div>

@@ -17,9 +17,10 @@ class ApplicationController < ActionController::Base
 
 protected
 
-	def after_sign_in_path_for(resource_or_scope)
-		products_path
-	end
+#previously was redirecting people to product feed upon sign in
+	#def after_sign_in_path_for(resource_or_scope)
+		#products_path
+	#end
 
 	# after sign out, keep user on same page (rather than redirecting away)
 
