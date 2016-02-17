@@ -8,16 +8,16 @@
 
 <div class="category-index">
   <% @themes.each do |theme| %>
-    <div class="title"><%= theme.name %></div>
+    <div class="title"><%= theme.name.titleize %></div>
     <% Category.where(theme_id: theme.id).each_with_index do |category, i | %>
       <div class="row category-row">
         <div class="col-xs-5 col-sm-3 category-name">
           <%= link_to category.name.titleize.pluralize, category %>
         </div>
         <div class="col-xs-7 col-sm-6 category-images">
-          <%= link_to image_tag(@products[i].first.try(:image)), @products[i].first %>
-          <%= link_to image_tag(@products[i].second.try(:image)), @products[i].second %>
-          <%= link_to image_tag(@products[i].third.try(:image)), @products[i].third %>       
+          <%= link_to image_tag(category.products.first.try(:image)), category.products.last %>
+          <%= link_to image_tag(category.products.second.try(:image)), category.products.last %>
+          <%= link_to image_tag(category.products.third.try(:image)), category.products.last %>     
         </div>
         <div class="col-xs-12 col-sm-3 category-count">
             <%= link_to pluralize(category.products.count, "product"), category %>
