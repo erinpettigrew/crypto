@@ -15,9 +15,13 @@ class ProductsController < ApplicationController
      @search_term = params[:search]
      @avg_rating = []
      @review_count = []
+     @use_count = []
+     @uses = []
  
      for singleproduct in @products
        @reviews = Review.where(product_id: singleproduct.id)
+       @uses << Use.where(product_id: singleproduct.id).order("created_at DESC")
+       @use_count << @uses.size
       if @reviews.blank?
          @avg_rating << 0
          @review_count << 0
