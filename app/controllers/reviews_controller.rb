@@ -20,6 +20,10 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id #set user id for review to the currently signed in user
     @review.product_id = @product.id
 
+    require 'mixpanel-ruby'
+    @tracker = Mixpanel::Tracker.new('a0443529993e5be524d60dae5e645abf')
+    @tracker.track(current_user.id, "Added Review")
+
     respond_to do |format|
       if @review.save
         #if @product.id == unique
