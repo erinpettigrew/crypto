@@ -51,8 +51,8 @@
 	 .title {
 			width:100%;
 			text-align:center;
-			font-weight:200;
-			font-size:120%;
+			font-weight:500;
+			font-size:140%;
 			text-transform:none;
 			border-bottom:1px solid black;
 			padding:5px;
@@ -153,11 +153,11 @@
 	}
 
 
-		.profile-product-image {
+		.user-product-image {
 			margin:5px;
 		}
 
-		.profile-product-image img {
+		.user-product-image img {
 			max-width:80%;
 			min-width:80px;
 		}
@@ -170,11 +170,6 @@
 	.index-product-image img {
 		max-width:65%;
 		min-width:80px;
-	}
-
-
-	.timestamp {
-		text-align:right;
 	}
 
 
@@ -315,29 +310,29 @@
 		border:1px solid #ffffff;
 	}
 
-	.profile-panel {
+	.user-panel {
 
 		.row {
 		margin:0px 0px 20px 0px;
 		}
 
-		.profile-product-photos img {
+		.user-product-photos img {
 		margin:0px 0px 20px 0px;
 		max-width:100%;
 		min-width:130px;
 		border-radius:5px;
 		}
 
-		.profile-product-image {
+		.user-product-image {
 			margin:5px;
 		}
 
-		.profile-product-image img {
+		.user-product-image img {
 			max-width:90%;
 			min-width:95px;
 		}
 
-		.profile-product-info h5 {
+		.user-product-info h5 {
 		text-align:center;
 		}
 
@@ -519,7 +514,7 @@
 	.product-panel {
 
 	.product-image img {
-	max-width:100%;
+	max-width:300px;
 	min-width:120px;
 	}
 	text-align:left;
@@ -601,11 +596,11 @@
 		}
 	}
 
-	.profile-product-image {
+	.user-product-image {
 		margin:10px;
 	}
 
-	.profile-product-image img {
+	.user-product-image img {
 		max-width:100%;
 		min-width:120px;
 	}

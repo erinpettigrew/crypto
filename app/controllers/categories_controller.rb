@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_themes, only: [:new, :show, :index, :edit, :create, :update]
   before_action :authenticate_user! #remove when out of preview beta
 
   # GET /categories
@@ -11,6 +12,7 @@ class CategoriesController < ApplicationController
     for singlecategory in @categories
       @products << Product.where(category_id: singlecategory.id).order("created_at DESC")
     end
+
   end
 
   # GET /categories/1
@@ -94,8 +96,12 @@ class CategoriesController < ApplicationController
       @category = Category.friendly.find(params[:id])
     end
 
+    def set_themes
+      @themes = Theme.all
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:name, :description)
+      params.require(:category).permit(:name, :description, :theme_id)
     end
 end

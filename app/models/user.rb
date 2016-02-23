@@ -32,6 +32,10 @@ end
   has_one :avatar
   has_many :uses, dependent: :destroy
   has_many :used_products, through: :uses, source: :product #rename product_id to used_products in uses table for purpose of referencing from users
+  has_many :wants, dependent: :destroy
+  has_many :wanted_products, through: :wants, source: :product
+  has_one :profile
+  has_one :skin_type, through: :profiles, source: :skin_type
   validates :user_name, presence: true
 
 end

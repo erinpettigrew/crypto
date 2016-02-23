@@ -7,25 +7,22 @@
 </div>
 
 <div class="category-index">
-  <div class="title">Products</div>
-  <% @categories.each_with_index do |category, i | %>
-    <div class="row category-row">
-      <div class="col-xs-5 col-sm-3 category-name">
-        <%= link_to category.name.titleize.pluralize, category %>
-      </div>
-      <div class="col-xs-7 col-sm-6 category-images">
-        <%= link_to image_tag(@products[i].first.try(:image)), @products[i].first %>
-        <%= link_to image_tag(@products[i].second.try(:image)), @products[i].second %>
-        <%= link_to image_tag(@products[i].third.try(:image)), @products[i].third %>       
-      </div>
-      <div class="col-xs-12 col-sm-3 category-count">
-          <%= link_to pluralize(category.products.count, "product"), category %>
-      </div>
-    </div> <!--/row-->
+  <% @themes.each do |theme| %>
+    <div class="title"><%= theme.name.titleize %></div>
+    <% Category.where(theme_id: theme.id).each_with_index do |category, i | %>
+      <div class="row category-row">
+        <div class="col-xs-5 col-sm-3 category-name">
+          <%= link_to category.name.titleize.pluralize, category %>
+        </div>
+        <div class="col-xs-7 col-sm-6 category-images">
+          <%= link_to image_tag(category.products.last.try(:image)), category.products.last %>
+          <%= link_to image_tag(category.products[-2].try(:image)), category.products[-2] %>
+          <%= link_to image_tag(category.products[-3].try(:image)), category.products[-3] %>     
+        </div>
+        <div class="col-xs-12 col-sm-3 category-count">
+            <%= link_to pluralize(category.products.count, "product"), category %>
+        </div>
+      </div> <!--/row-->
+    <% end %>
   <% end %>
 </div>
-
-
-
-
-
