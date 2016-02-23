@@ -166,7 +166,6 @@
 </script>
 
 
-
 <% if @user == current_user %>
   <script>
     	mixpanel.track("Viewed Own Profile", {"Username": "<%= @user.user_name %>", "User ID": <%= @user.id %>});
@@ -176,3 +175,4 @@
     mixpanel.track("Viewed Profile", {"Username": "<%= @user.user_name %>", "User ID": <%= @user.id %>});
   </script>
 <% end %>
+
