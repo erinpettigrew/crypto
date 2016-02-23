@@ -15,7 +15,7 @@
           <%= link_to category.name.titleize.pluralize, category %>
         </div>
         <div class="col-xs-7 col-sm-6 category-images">
-          <%= link_to image_tag(category.products.last.try(:image)), category.products.last %>
+          <%= link_to image_tag(category.products[-1].try(:image)), category.products[-1] %>
           <%= link_to image_tag(category.products[-2].try(:image)), category.products[-2] %>
           <%= link_to image_tag(category.products[-3].try(:image)), category.products[-3] %>     
         </div>
