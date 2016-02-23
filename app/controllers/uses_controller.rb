@@ -12,6 +12,7 @@ class UsesController < ApplicationController
 		@want = Want.new(use_params)
     	@want.user_id = current_user.id
     	@want.product_id = @product.id
+
 	end
 
   def destroy

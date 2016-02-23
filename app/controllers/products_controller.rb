@@ -92,6 +92,12 @@ class ProductsController < ApplicationController
       current_user.used_products << @product
       redirect_to :back
 
+    tracker = Mixpanel::Tracker.new('a0443529993e5be524d60dae5e645abf')
+    tracker.track(current_user.id, 'Added Use', {
+    'Product ID' => @product.id,
+    'Product Name' => @product.product_brand + " " + @product.product_name
+      })
+
       #notice: "You started using #{@product.product_brand} #{@product.product_name}"
 
     elsif type == 'unuse'
@@ -111,6 +117,12 @@ class ProductsController < ApplicationController
       current_user.wanted_products << @product
       redirect_to :back
 
+    tracker = Mixpanel::Tracker.new('a0443529993e5be524d60dae5e645abf')
+    tracker.track(current_user.id, 'Added Want', {
+    'Product ID' => @product.id,
+    'Product Name' => @product.product_brand + " " + @product.product_name
+      })
+
       #notice: "You want #{@product.product_brand} #{@product.product_name}"
 
     elsif type == 'unwant'
@@ -128,10 +140,6 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
-
-    require 'mixpanel-ruby'
-    @tracker = Mixpanel::Tracker.new('a0443529993e5be524d60dae5e645abf')
-    @tracker.track(current_user.id, "Added Product")
   end
 
   # GET /products/1/edit
@@ -148,6 +156,12 @@ class ProductsController < ApplicationController
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
+
+    tracker = Mixpanel::Tracker.new('a0443529993e5be524d60dae5e645abf')
+    tracker.track(current_user.id, 'Added Product', {
+    'Product ID' => @product.id,
+    'Product Name' => @product.product_brand + " " + @product.product_name
+      })
       else
         format.html { render :new }
         format.json { render json: @product.errors, status: :unprocessable_entity }
