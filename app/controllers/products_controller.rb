@@ -101,6 +101,10 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+
+    require 'mixpanel-ruby'
+    @tracker = Mixpanel::Tracker.new('a0443529993e5be524d60dae5e645abf')
+    @tracker.track(current_user.id, "Added Product")
   end
 
   # GET /products/1/edit

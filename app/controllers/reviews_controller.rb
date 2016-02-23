@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
   # POST /reviews.json
   def create
     @review = Review.new(review_params)
-    @review.user_id = current_user.id #set user id for review to the currently signed in user
+    @review.user_id = current_user.id 
     @review.product_id = @product.id
 
     require 'mixpanel-ruby'
