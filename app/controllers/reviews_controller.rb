@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id 
     @review.product_id = @product.id
 
-    tracker = Mixpanel::Tracker.new('a0443529993e5be524d60dae5e645abf')
+    tracker = Mixpanel::Tracker.new(ENV['MIXPANEL_TOKEN'])
     tracker.track(current_user.id, 'Added Review', {
     'Product ID' => @product.id,
     'Product Name' => @product.product_brand + " " + @product.product_name

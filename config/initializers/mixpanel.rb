@@ -6,3 +6,4 @@ if Rails.env.development?
 		http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 	end
 end
+
