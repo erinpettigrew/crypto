@@ -6,19 +6,18 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all.order('name ASC')
+    @categories = Category.all.includes(:products).order('name ASC')
     @products = []
 
     for singlecategory in @categories
-      @products << Product.where(category_id: singlecategory.id).order("created_at DESC")
+      @products << singlecategory.products
     end
-
   end
 
   # GET /categories/1
   # GET /categories/1.json
   def show
-    @products = Product.where(category_id: @category.id).order("created_at DESC") 
+    @products = @category.products.includes(:reviews, :uses)
     @avg_rating = []
     @review_count = []
     @use_count = []
@@ -26,8 +25,8 @@ class CategoriesController < ApplicationController
     @uses = []
 
     for singleproduct in @products
-        @reviews = Review.where(product_id: singleproduct.id)
-        @uses << Use.where(product_id: singleproduct.id).order("created_at DESC")
+        @reviews = singleproduct.reviews
+        @uses << singleproduct.uses
         @use_count << @uses.size
 
       if @reviews.blank?
