@@ -20,13 +20,13 @@ class CategoriesController < ApplicationController
     @products = @category.products.includes(:reviews, :uses)
     @avg_rating = []
     @review_count = []
-    @use_count = []
     @total_uses = []
     @uses = []
+    @use_count = []
 
     for singleproduct in @products
         @reviews = singleproduct.reviews
-        @uses << singleproduct.uses
+        @uses = singleproduct.uses
         @use_count << @uses.size
 
       if @reviews.blank?
