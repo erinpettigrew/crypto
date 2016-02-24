@@ -32,7 +32,7 @@
           <div class="feed-action-text">
             <% if action.is_a? (Review) %>
               <strong><%= link_to "#{action.user.user_name}", action.user %></strong> reviewed <div class="product"><%= link_to action.product.product_brand + ' ' + action.product.product_name, action.product %></div>
-              <div class="feed-product-image"><%= link_to image_tag(action.product.image.url), action.product %></div>
+              <div class="feed-product-image"><%= link_to image_tag(action.product.image.url(:med_thumb)), action.product %></div>
               <div class="feed-review-excerpt">
                 <div class="star-rating-product-page"><div class="star-rating" data-score= <%= action.rating %> ></div></div>
                 <%= truncate(action.comment, length:60, separator: ' ') %></br><div class="feed-timestamp"><%= time_ago_in_words(action.updated_at).gsub('about','') %> ago in <div class="category"><%= link_to "#{action.product.category.name.titleize.pluralize}", action.product.category %></div></div>
@@ -42,13 +42,13 @@
             <% if action.is_a? (Use) %>
               <strong><%= link_to "#{action.user.user_name}", action.user %></strong> started using <div class=
                           "product"><%= link_to action.product.product_brand + ' ' + action.product.product_name, action.product %></div></br>
-              <div class="feed-product-image"><%= link_to image_tag(action.product.image.url), action.product %></div>
+              <div class="feed-product-image"><%= link_to image_tag(action.product.image.url(:med_thumb)), action.product %></div>
               <div class="feed-timestamp"><%= time_ago_in_words(action.updated_at).gsub('about','') %> ago in <div class="category"><%= link_to "#{action.product.category.name.titleize.pluralize}", action.product.category %></div></div>
             <% end %>
             <% if action.is_a? (Want) %>
               <strong><%= link_to "#{action.user.user_name}", action.user %></strong> wants to try <div class=
                           "product"><%= link_to action.product.product_brand + ' ' + action.product.product_name, action.product %></div></br>
-              <div class="feed-product-image"><%= link_to image_tag(action.product.image.url), action.product %></div>
+              <div class="feed-product-image"><%= link_to image_tag(action.product.image.url(:med_thumb)), action.product %></div>
               <div class="feed-timestamp"><%= time_ago_in_words(action.updated_at).gsub('about','') %> ago in <div class="category"><%= link_to "#{action.product.category.name.titleize.pluralize}", action.product.category %></div></div>
             <% end %>
           </div>
