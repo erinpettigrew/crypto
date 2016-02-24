@@ -38,9 +38,9 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @recent_reviews = Review.all.order('created_at DESC').take(14)
-    @recent_uses = Use.all.order('created_at DESC').take(10)
-    @recent_wants = Want.all.order('created_at DESC').take(10)
+    @recent_reviews = Review.all.order('created_at DESC').take(16)
+    @recent_uses = Use.all.order('created_at DESC').take(12)
+    @recent_wants = Want.all.order('created_at DESC').take(12)
     @recent_actions = (@recent_reviews + @recent_uses + @recent_wants).sort_by(&:created_at).reverse
 
     end
@@ -50,21 +50,21 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    @reviews = Review.where(product_id: @product.id).order("created_at DESC")
-    @number_of_likes = Like.where(product_id: @product.id).size
-    @links = Link.where(product_id: @product.id).order("created_at DESC")
-    @uses = Use.where(product_id: @product.id).order("created_at DESC")
+    @reviews = @product.reviews.order("created_at DESC")
+    # @number_of_likes = @product.likes.size
+    @links = @product.links.order("created_at DESC")
+    @uses = @product.uses.order("created_at DESC")
     @number_of_uses = @uses.size
-    @wants = Want.where(product_id: @product.id).order("created_at DESC")
+    @wants = @product.wants.order("created_at DESC")
     @number_of_wants = @wants.size
+    # @photos = @product.photos.order("created_at DESC")
 
     if @reviews.blank?
       @avg_rating = 0
     else
-    @avg_rating = @reviews.average(:rating).round(2)
+      @avg_rating = @reviews.average(:rating).round(2)
     end
 
-    @photos = Photo.where(product_id: @product.id).order("created_at DESC")
   end
 
   def like
