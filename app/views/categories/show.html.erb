@@ -58,7 +58,7 @@
                 </div>
   	      	<% end %>
 
-              <% if @uses[i].present? %>
+              <% if @use_count[i] > 0 %>
               <div class="uses">
                 <div class="tiny-avatar">
                     <%= image_tag(product.uses.first.try(:user).try(:avatar).try(:image).try(:small_thumb)) %>
@@ -74,10 +74,6 @@
     <% end %>
   </div>
 </div>
-
-
-
-
 
 <script>
   $('.star-rating').raty({
