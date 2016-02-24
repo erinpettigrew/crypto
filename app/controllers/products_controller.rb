@@ -9,9 +9,9 @@ class ProductsController < ApplicationController
 
   def search
     if params[:search].present?
-      @products = Product.search(params[:search])
+      @products = Product.includes(:reviews, :uses).search(params[:search])
     else
-      @products = Product.all? #show all products if search is blank
+      @products = Product.includes(:reviews, :uses).all? #show all products if search is blank
     end
 
      @search_term = params[:search]
@@ -21,8 +21,8 @@ class ProductsController < ApplicationController
      @uses = []
  
      for singleproduct in @products
-       @reviews = Review.where(product_id: singleproduct.id)
-       @uses << Use.where(product_id: singleproduct.id).order("created_at DESC")
+       @reviews = singleproduct.reviews
+       @uses = singleproduct.uses
        @use_count << @uses.size
       if @reviews.blank?
          @avg_rating << 0
