@@ -17,7 +17,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-    @products = @category.products.includes(:reviews, :uses)
+    @products = @category.products.includes(:reviews, :uses).order('created_at DESC')
     @avg_rating = []
     @review_count = []
     @total_uses = []
