@@ -36,7 +36,7 @@
                 <div class="col-xs-12">
                   <!--<%= link_to "Add a review!", product %></br>-->
                   <% unless @use_count[i] == 0 %>
-                    <%= pluralize(@uses[i].length, "user") %>
+                    <%= pluralize(@use_count[i], "user") %>
                     <% end %>
                 </div>
             <% end %>
