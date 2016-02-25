@@ -30,8 +30,6 @@ class Product < ActiveRecord::Base
 	has_many :used_by, through: :uses, source: :user #rename user_id to used_by for referencing
 	has_many :wants, dependent: :destroy
 	has_many :wanted_by, through: :wants, source: :user
+	belongs_to :theme, through: :category, source: :theme_id #each product has one theme
 	validates :product_brand, :product_name, :image, :category, presence: true
-
-
-
 end

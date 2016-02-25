@@ -38,6 +38,13 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    @profile_products = []
+    @themes = Theme.first(3)
+
+    for singletheme in @themes
+      @profile_products << current_user.used_products.where(:theme => singletheme)
+    end
+
     @recent_reviews = Review.all.order('created_at DESC').take(16)
     @recent_uses = Use.all.order('created_at DESC').take(12)
     @recent_wants = Want.all.order('created_at DESC').take(12)

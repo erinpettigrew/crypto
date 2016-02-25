@@ -1,6 +1,32 @@
 <% title 'looklove, reviews of new beauty products' %>
 <% description 'Reviews and photos of the best in new skincare and cosmetics products' %>
 <% keywords 'the best beauty products, reviews, community, forum, posts, asian beauty, korean beauty, skincare' %>
+
+
+<div class = "profile-panel">
+    <div class="col-xs-6 col-sm-3">
+      <div class="large-avatar">
+        <%= image_tag current_user.try(:avatar).try(:image) %></br>
+        <%= current_user.user_name %>
+      </div>
+      Add your skincare products to complete your profile
+    </div>
+    <%  %>
+      <div class="col-xs-6 col-sm-3">
+        if user has any products matching this theme
+              <div class="profile-product">
+                <%= current_user.liked_products.last.category.name.titleize %></br>
+                <%= image_tag current_user.used_products.last.image %></div></br>
+                <%= current_user.used_products.last.product_name + " " + current_user.used_products.last.product_brand %>
+              </div>
+        else
+          <%= link_to "Add your cleanser", root_path %>
+        end
+      </div>
+    <% end %>
+
+</div> <!-- .profile-panel -->
+
 <div class="index-panel">
     <h1>What beauty products are you using?</h1>
     <% if user_signed_in? %>
