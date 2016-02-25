@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :posts
   resources :themes
   resources :skin_types
   resources :applicants

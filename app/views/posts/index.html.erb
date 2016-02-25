@@ -1,0 +1,25 @@
+
+<p><%= link_to "New Post", new_post_path, class: "btn btn-primary btn-large" %></p>
+<hr>
+<% @posts.each do |post| %>
+<div class="row post-list">
+  <div class="col-xs-5 col-sm-2">
+    <div class="medium-avatar">
+      <%= image_tag(post.user.avatar.image) %>
+    </div>
+    <%= post.user.user_name %></br>
+    <%= post.created_at.strftime("%m/%d/%Y at %I:%M%p") %>
+  </div>
+
+  <div class="col-xs-7 col-sm-4 post-image">
+    <%= link_to image_tag(post.image), post.url %>
+  </div>
+
+  <div class="col-xs-12 col-sm-6">
+    <strong><%= link_to "#{post.title}", post.url %></strong></br>
+    <%= post.excerpt %></br>
+    <%= link_to "Edit", edit_post_path(post) %> | <%= link_to "Destroy", post, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>
+<hr>
+<% end %>

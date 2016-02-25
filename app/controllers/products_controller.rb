@@ -41,9 +41,9 @@ class ProductsController < ApplicationController
     @recent_reviews = Review.all.order('created_at DESC').take(16)
     @recent_uses = Use.all.order('created_at DESC').take(12)
     @recent_wants = Want.all.order('created_at DESC').take(12)
-    @recent_actions = (@recent_reviews + @recent_uses + @recent_wants).sort_by(&:created_at).reverse
-
-    end
+    @recent_posts = Post.all.order('created_at DESC').take(4)
+    @recent_actions = (@recent_reviews + @recent_uses + @recent_wants + @recent_posts).sort_by(&:created_at).reverse
+  end
 
 
 

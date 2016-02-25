@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160216194250) do
+ActiveRecord::Schema.define(version: 20160225061348) do
 
   create_table "applicants", force: :cascade do |t|
     t.string   "email"
@@ -68,6 +68,15 @@ ActiveRecord::Schema.define(version: 20160216194250) do
     t.text     "site_name"
   end
 
+  create_table "listings", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "store_id"
+    t.string   "url"
+    t.decimal  "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "photos", force: :cascade do |t|
     t.text     "comment"
     t.datetime "created_at",    null: false
@@ -75,6 +84,16 @@ ActiveRecord::Schema.define(version: 20160216194250) do
     t.integer  "user_id"
     t.integer  "product_id"
     t.string   "product_photo"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "title"
+    t.string   "image"
+    t.text     "excerpt"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|
@@ -120,6 +139,13 @@ ActiveRecord::Schema.define(version: 20160216194250) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "stores", force: :cascade do |t|
+    t.text     "name"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "thanks", force: :cascade do |t|
     t.integer  "review_id"
     t.integer  "user_id"
@@ -134,7 +160,7 @@ ActiveRecord::Schema.define(version: 20160216194250) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "tries", force: :cascade do |t|
+  create_table "used_products", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "product_id"
     t.datetime "created_at", null: false
