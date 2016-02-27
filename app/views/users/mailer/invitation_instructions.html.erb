@@ -1,15 +1,12 @@
+<center>
+Hi!
 
+<p><strong><%= @resource.invited_by.user_name %></strong> invited you to <strong>looklove</strong>,</br> a place for sharing our skincare routines.</p>
 
+<strong><p><%= link_to "Join!", accept_invitation_url(@resource, :invitation_token => @token) %></p></strong>
+</center>
 
-
-
-Hi there!
-
-<p><strong><%= @resource.invited_by.user_name %></strong> invited you to <strong>looklove</strong> a place for sharing our skincare routines and trusted products.</p>
-
-<p><%= link_to "Join!", accept_invitation_url(@resource, :invitation_token => @token) %></p>
-
-<%= link_to image_tag("https://s3.amazonaws.com/productbase/email/email-image-draft-2.jpg"), accept_invitation_url(@resource, :invitation_token => @token) %>
+<%= link_to image_tag("https://s3.amazonaws.com/productbase/email/image-square-looklove.png"), accept_invitation_url(@resource, :invitation_token => @token) %>
 
 <!-- Original mailer from devise is here --
 
