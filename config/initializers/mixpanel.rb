@@ -1,5 +1,7 @@
 require 'mixpanel-ruby'
 
+$tracker = Mixpanel::Tracker.new(ENV['MIXPANEL_TOKEN'])
+
 # f Rails.env.development?
 	#silence local SSL errors
 	Mixpanel.config_http do |http|
