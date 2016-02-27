@@ -41,9 +41,9 @@ class ProductsController < ApplicationController
     @recent_reviews = Review.all.order('created_at DESC').take(16)
     @recent_uses = Use.all.order('created_at DESC').take(12)
     @recent_wants = Want.all.order('created_at DESC').take(12)
-    @recent_actions = (@recent_reviews + @recent_uses + @recent_wants).sort_by(&:created_at).reverse
-
-    end
+    @recent_posts = Post.all.order('created_at DESC').take(4)
+    @recent_actions = (@recent_reviews + @recent_uses + @recent_wants + @recent_posts).sort_by(&:created_at).reverse
+  end
 
 
 
@@ -92,8 +92,7 @@ class ProductsController < ApplicationController
       current_user.used_products << @product
       redirect_to :back
 
-    tracker = Mixpanel::Tracker.new(ENV['MIXPANEL_TOKEN'])
-    tracker.track(current_user.id, 'Added Use', {
+    $tracker.track(current_user.id, 'Added Use', {
     'Product ID' => @product.id,
     'Product Name' => @product.product_brand + " " + @product.product_name
       })
@@ -117,8 +116,7 @@ class ProductsController < ApplicationController
       current_user.wanted_products << @product
       redirect_to :back
 
-   tracker = Mixpanel::Tracker.new(ENV['MIXPANEL_TOKEN'])
-    tracker.track(current_user.id, 'Added Want', {
+    $tracker.track(current_user.id, 'Added Want', {
     'Product ID' => @product.id,
     'Product Name' => @product.product_brand + " " + @product.product_name
       })
@@ -157,8 +155,7 @@ class ProductsController < ApplicationController
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
 
-    tracker = Mixpanel::Tracker.new(ENV['MIXPANEL_TOKEN'])
-    tracker.track(current_user.id, 'Added Product', {
+    $tracker.track(current_user.id, 'Added Product', {
     'Product ID' => @product.id,
     'Product Name' => @product.product_brand + " " + @product.product_name
       })

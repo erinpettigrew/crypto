@@ -36,6 +36,7 @@ end
   has_many :wanted_products, through: :wants, source: :product
   has_one :profile
   has_one :skin_type, through: :profiles, source: :skin_type
+  has_many :posts
   validates :user_name, presence: true
 
 end
