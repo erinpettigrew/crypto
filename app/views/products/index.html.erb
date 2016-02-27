@@ -2,33 +2,29 @@
 <% description 'Reviews and photos of the best in new skincare and cosmetics products' %>
 <% keywords 'the best beauty products, reviews, community, forum, posts, asian beauty, korean beauty, skincare' %>
 
-
 <div class = "profile-panel">
     <div class="col-xs-6 col-sm-3">
-      <div class="large-avatar">
-        <%= image_tag current_user.try(:avatar).try(:image) %></br>
-        <%= current_user.user_name %>
-      </div>
-      Add your skincare products to complete your profile
+        <div class="user-avatar"><div class="extra-medium-avatar"><%= image_tag current_user.try(:avatar).try(:image) %></div></div>
+        <div class="user-greeting">Hi, <%= current_user.user_name %>!</div>
+    <div class="user-instructions">Add your </br>skincare routine:</div>
     </div>
-    <%  %>
-      <div class="col-xs-6 col-sm-3">
-        if user has any products matching this theme
-              <div class="profile-product">
-                <%= current_user.liked_products.last.category.name.titleize %></br>
-                <%= image_tag current_user.used_products.last.image %></div></br>
-                <%= current_user.used_products.last.product_name + " " + current_user.used_products.last.product_brand %>
+      <% @themes.each_with_index do |theme, i| %>
+          <div class="col-xs-6 col-sm-3 card">
+            <div class="category"><%= theme.name.titleize %></div>
+              <% if @profile_products[i].present? %>
+                      <div class="product-image"><%= link_to image_tag(@profile_products[i].image), @profile_products[i] %></div>
+                      <div class="product-info"><%= @profile_products[i].product_name + " " + @profile_products[i].product_brand %></div>
+              <% else %>
+              <div class="profile-add">
+                <%= link_to "+ Add your product", categories_path %>
               </div>
-        else
-          <%= link_to "Add your cleanser", root_path %>
-        end
-      </div>
-    <% end %>
-
+              <% end %>
+          </div>
+      <% end %>
 </div> <!-- .profile-panel -->
 
 <div class="index-panel">
-    <h1>What beauty products are you using?</h1>
+    <!--<h1>What beauty products are you using?</h1>
     <% if user_signed_in? %>
       <div class= "new-product-panel">
           <div class= "form-group">
@@ -42,7 +38,7 @@
        </div>
      </div>
       <% end %>
-</div>
+</div>-->
 
 <div class="title">Recently</div>
 <div class="product-list">
