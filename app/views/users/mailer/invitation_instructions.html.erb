@@ -1,3 +1,18 @@
+
+
+
+
+
+Hi there!
+
+<p><strong><%= @resource.invited_by.user_name %></strong> invited you to <strong>looklove</strong> a place for sharing our skincare routines and trusted products.</p>
+
+<p><%= link_to "Join!", accept_invitation_url(@resource, :invitation_token => @token) %></p>
+
+<%= link_to image_tag("https://s3.amazonaws.com/productbase/email/email-image-draft-2.jpg"), accept_invitation_url(@resource, :invitation_token => @token) %>
+
+<!-- Original mailer from devise is here --
+
 <p><%= t("devise.mailer.invitation_instructions.hello", email: @resource.email) %></p>
 
 <p><%= t("devise.mailer.invitation_instructions.someone_invited_you", url: root_url) %></p>
@@ -9,3 +24,4 @@
 <% end %>
 
 <p><%= t("devise.mailer.invitation_instructions.ignore").html_safe %></p>
+-->

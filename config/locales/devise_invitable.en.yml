@@ -20,7 +20,7 @@ en:
       invitation_instructions:
         subject: "You're invited to ♥ looklove"
         hello: "Hi there!" # %{email} to include their email within the  message
-        someone_invited_you: "Someone thinks you give great advice. They invited you to join looklove, a new beauty community. We're sharing our experiences with skincare and makeup products."
+        someone_invited_you: "%Someone thinks you give great advice. They invited you to join looklove, a new beauty community. We're sharing our experiences with skincare and makeup products."
         accept: "Join us!"
         accept_until: ""
         ignore: ""
