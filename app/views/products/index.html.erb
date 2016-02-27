@@ -3,25 +3,24 @@
 <% keywords 'the best beauty products, reviews, community, forum, posts, asian beauty, korean beauty, skincare' %>
 
 <div class = "profile-panel">
-    <div class="col-xs-6 col-sm-3">
-        <div class="user-avatar"><div class="extra-medium-avatar"><%= image_tag current_user.try(:avatar).try(:image) %></div></div>
-        <div class="user-greeting">Hi, <%= current_user.user_name %>!</div>
+  <div class="col-xs-6 col-sm-3">
+    <div class="user-avatar"><div class="extra-medium-avatar"><%= image_tag current_user.try(:avatar).try(:image) %></div></div>
+    <div class="user-greeting">Hi, <%= current_user.user_name %>!</div>
     <div class="user-instructions">Add your </br>skincare routine:</div>
+  </div>
+  <% @themes.each_with_index do |theme, i| %>
+    <div class="col-xs-6 col-sm-3 card">
+      <div class="category"><%= theme.name.titleize %></div>
+        <% if @profile_products[i].present? %>
+          <div class="product-image"><%= link_to image_tag(@profile_products[i].image), @profile_products[i] %></div>
+          <div class="product-info"><%= @profile_products[i].product_brand + " " + @profile_products[i].product_name %></div>
+        <% else %>
+          <div class="profile-add"><%= link_to "+ Add your product", categories_path %></div>
+        <% end %>
     </div>
-      <% @themes.each_with_index do |theme, i| %>
-          <div class="col-xs-6 col-sm-3 card">
-            <div class="category"><%= theme.name.titleize %></div>
-              <% if @profile_products[i].present? %>
-                      <div class="product-image"><%= link_to image_tag(@profile_products[i].image), @profile_products[i] %></div>
-                      <div class="product-info"><%= @profile_products[i].product_name + " " + @profile_products[i].product_brand %></div>
-              <% else %>
-              <div class="profile-add">
-                <%= link_to "+ Add your product", categories_path %>
-              </div>
-              <% end %>
-          </div>
-      <% end %>
-</div> <!-- .profile-panel -->
+  <% end %>
+  </div> <!-- /.column -->
+</div> <!--  /.profile-panel -->
 
 <div class="index-panel">
     <!--<h1>What beauty products are you using?</h1>
