@@ -27,10 +27,10 @@ class ProductsController < ApplicationController
       if @reviews.blank?
          @avg_rating << 0
          @review_count << 0
-       else
+      else
          @avg_rating << @reviews.average(:rating).round(2) 
          @review_count << @reviews.size
-     end
+      end
      end
  
   end
@@ -38,6 +38,23 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    @used_basic_products = []
+    @used_advanced_products = []
+    @basic_products_count = 0
+    @themes = Theme.first(3)
+    @categories = Category.order("RANDOM()").first(3)
+
+    for singletheme in @themes
+        @used_basic_products << current_user.used_products.where(theme_id: singletheme.id).first
+        if @used_basic_products.last != nil
+          @basic_products_count += 1
+        end
+    end
+
+    for singlecategory in @categories
+      @used_advanced_products << current_user.used_products.where(category_id: singlecategory.id).first
+    end
+
     @recent_reviews = Review.all.order('created_at DESC').take(16)
     @recent_uses = Use.all.order('created_at DESC').take(12)
     @recent_wants = Want.all.order('created_at DESC').take(12)
@@ -58,13 +75,11 @@ class ProductsController < ApplicationController
     @wants = @product.wants.order("created_at DESC")
     @number_of_wants = @wants.size
     # @photos = @product.photos.order("created_at DESC")
-
     if @reviews.blank?
       @avg_rating = 0
     else
       @avg_rating = @reviews.average(:rating).round(2)
     end
-
   end
 
   def like
@@ -72,15 +87,11 @@ class ProductsController < ApplicationController
     if type == 'like'
       current_user.liked_products << @product
       redirect_to :back
-
       #notice: "You liked #{@product.product_brand} #{@product.product_name}"
-
     elsif type == 'unlike'
       current_user.liked_products.delete(@product)
       redirect_to :back
-
       #notice: "You unliked #{@product.product_brand} #{@product.product_name}"
-
     else
       redirect_to :back, notice: 'Nothing happened.'
     end
@@ -149,6 +160,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.user_id = current_user.id
+    @product.theme_id = @product.category.theme_id
 
     respond_to do |format|
       if @product.save
@@ -212,7 +224,7 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:product_brand, :product_name, :image, :category_id, :user_id, :ingredients)
+      params.require(:product).permit(:product_brand, :product_name, :image, :category_id, :user_id, :ingredients, :theme_id)
     end
 
 end

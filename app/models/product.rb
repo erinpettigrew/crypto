@@ -31,7 +31,4 @@ class Product < ActiveRecord::Base
 	has_many :wants, dependent: :destroy
 	has_many :wanted_by, through: :wants, source: :user
 	validates :product_brand, :product_name, :image, :category, presence: true
-
-
-
 end

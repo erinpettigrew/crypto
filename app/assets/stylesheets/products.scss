@@ -5,12 +5,64 @@
 /* Custom, iPhone Retina -------------------------------------------------------- */
 @media screen and (min-width: 320px) {
 
-
 .add-product {
 	text-align:center;
 	padding-top: 10px;
 	padding-bottom: 20px;
 	}
+
+		.profile-panel {
+			height:375px;
+		}
+
+		.profile-panel a {
+			color:#000000;
+		}
+
+		.user-avatar {
+			padding-5op:30px;
+			text-align:center;
+		}
+
+		.user-greeting {
+			font-weight:500;
+			font-size:200%;
+			text-align:center;
+		}
+
+		.user-instructions {
+			font-size: 150%;
+			font-weight:300;
+			text-align:center;
+		}
+
+		.profile-product {
+			padding:10px 0px 10px 0px;
+			margin:0px;
+			height:100%;
+		}
+
+		.profile-add {
+			margin-top:-125px;
+			font-size:125%;
+			text-align:center;
+		}
+
+		.profile-product img {
+			max-width:175px;
+			border:1px solid #ffffff;
+			background:#ffffff;
+			border-radius:5px;
+			box-shadow:1px 1px 1px #e5e5e5;
+			padding:20px;
+		}
+
+		.product-info {
+			font-size:150%;
+			font-weight:500;
+		}
+
+
 
 	.button-use {
 		text-align:right;
