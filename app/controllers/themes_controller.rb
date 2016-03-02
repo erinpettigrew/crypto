@@ -28,7 +28,7 @@ class ThemesController < ApplicationController
 
   def show
     @categories = Category.where(theme_id: @theme.id)
-    @products = Product.where(theme_id: @theme.id)
+    @products = Product.where(theme_id: @theme.id).includes(:reviews, :uses)
     @avg_rating = []
     @review_count = []
     @total_uses = []
