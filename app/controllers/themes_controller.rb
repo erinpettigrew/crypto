@@ -1,5 +1,5 @@
 class ThemesController < ApplicationController
- before_action :set_theme, only: [:show, :destroy]
+ before_action :set_theme, only: [:show, :edit, :destroy]
  before_action :authenticate_user!
  before_action :check_user, except: [:show]
 
