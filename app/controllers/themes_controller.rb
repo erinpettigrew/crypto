@@ -1,5 +1,5 @@
 class ThemesController < ApplicationController
- before_action :set_theme, only: [:show, :edit, :destroy]
+ before_action :set_theme, only: [:show, :edit, :update, :destroy]
  before_action :authenticate_user!
  before_action :check_user, except: [:show]
 
@@ -46,6 +46,18 @@ class ThemesController < ApplicationController
       else
         @avg_rating << @reviews.average(:rating).round(2) 
         @review_count << @reviews.size
+      end
+    end
+  end
+
+  def update
+    respond_to do |format|
+      if @theme.update(theme_params)
+        format.html { redirect_to @theme, notice: 'Theme was successfully updated.' }
+        format.json { render :show, status: :ok, location: @theme }
+      else
+        format.html { render :edit }
+        format.json { render json: @theme.errors, status: :unprocessable_entity }
       end
     end
   end
