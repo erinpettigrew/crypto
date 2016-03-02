@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160227061208) do
+ActiveRecord::Schema.define(version: 20160302172449) do
 
   create_table "applicants", force: :cascade do |t|
     t.string   "email"
@@ -159,7 +159,10 @@ ActiveRecord::Schema.define(version: 20160227061208) do
     t.text     "info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "slug"
   end
+
+  add_index "themes", ["slug"], name: "index_themes_on_slug", unique: true
 
   create_table "used_products", force: :cascade do |t|
     t.integer  "user_id"

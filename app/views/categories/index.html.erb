@@ -8,7 +8,7 @@
 
 <div class="category-index">
   <% @themes.each do |theme| %>
-    <div class="title"><%= theme.name.titleize %></div>
+    <div class="title"><%= link_to "#{theme.name.titleize}", theme_path(theme) %></div>
     <% Category.where(theme_id: theme.id).each_with_index do |category, i | %>
       <div class="row category-row">
         <div class="col-xs-5 col-sm-3 category-name">

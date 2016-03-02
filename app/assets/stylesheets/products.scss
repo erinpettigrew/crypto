@@ -7,6 +7,11 @@
 
 
 		.profile-panel {
+			height:375px;
+		}
+
+		.profile-panel a {
+			color:#000000;
 		}
 
 		.user-avatar {
@@ -29,13 +34,13 @@
 		.profile-product {
 			padding:10px 0px 10px 0px;
 			margin:0px;
+			height:100%;
 		}
 
 		.profile-add {
-			padding-top:100px;
-			font-size:150%;
+			margin-top:-125px;
+			font-size:125%;
 			text-align:center;
-			padding-bottom:75px;
 		}
 
 		.profile-product img {
@@ -45,6 +50,11 @@
 			border-radius:5px;
 			box-shadow:1px 1px 1px #e5e5e5;
 			padding:20px;
+		}
+
+		.product-info {
+			font-size:150%;
+			font-weight:500;
 		}
 
 

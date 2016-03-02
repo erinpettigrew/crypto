@@ -38,11 +38,21 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @profile_products = []
+    @used_basic_products = []
+    @used_advanced_products = []
+    @basic_products_count = 0
     @themes = Theme.first(3)
+    @categories = Category.order("RANDOM()").first(3)
 
     for singletheme in @themes
-      @profile_products << current_user.used_products.where(theme_id: singletheme.id).first
+        @used_basic_products << current_user.used_products.where(theme_id: singletheme.id).first
+        if @used_basic_products.last != nil
+          @basic_products_count += 1
+        end
+    end
+
+    for singlecategory in @categories
+      @used_advanced_products << current_user.used_products.where(category_id: singlecategory.id).first
     end
 
     @recent_reviews = Review.all.order('created_at DESC').take(16)

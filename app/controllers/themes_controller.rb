@@ -1,7 +1,7 @@
 class ThemesController < ApplicationController
  before_action :set_theme, only: [:show, :destroy]
  before_action :authenticate_user!
- before_action :check_user
+ before_action :check_user, except: [:show]
 
 
   def new
@@ -26,6 +26,30 @@ class ThemesController < ApplicationController
   	@themes = Theme.all()
   end
 
+  def show
+    @categories = Category.where(theme_id: @theme.id)
+    @products = Product.where(theme_id: @theme.id)
+    @avg_rating = []
+    @review_count = []
+    @total_uses = []
+    @uses = []
+    @use_count = []
+
+    for singleproduct in @products
+        @reviews = singleproduct.reviews
+        @uses = singleproduct.uses
+        @use_count << @uses.size
+
+      if @reviews.blank?
+        @avg_rating << 0
+        @review_count << 0
+      else
+        @avg_rating << @reviews.average(:rating).round(2) 
+        @review_count << @reviews.size
+      end
+    end
+  end
+
   def destroy
   	@theme.destroy
   	  respond_to do |format|
@@ -38,7 +62,7 @@ class ThemesController < ApplicationController
 private
 
   	def set_theme
-      @theme = Theme.find(params[:id])
+      @theme = Theme.friendly.find(params[:id])
     end
 
     def theme_params
