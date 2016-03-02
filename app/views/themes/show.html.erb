@@ -2,7 +2,7 @@
 <% description 'Reviews and photos of the best ' + @theme.name.pluralize %>
 <% keywords @theme.name.pluralize + ', skincare products, cosometics products, beauty reviews, community, forum, posts, asian beauty, korean beauty, skincare, beauty, products' %>
 <div class="index-panel">
-    <h1><%= @theme.name.titleize %></h1>
+    <h1><%= @theme.name.pluralize.titleize %></h1>
     <% if @theme.info.blank? %>
       </p>
     <% else %>
