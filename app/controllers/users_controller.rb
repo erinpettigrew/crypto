@@ -17,6 +17,9 @@ end
 	
 def index
 	@users = User.where.not(slug: nil).order("created_at DESC") #only show users with a username slug to avoid showing /users# instead
+	if current_user.profile.present? && current_user.profile.skin_type_id.present?
+		@skin_type = SkinType.find_by(id: current_user.profile.skin_type_id)
+	end
 end
 
 private

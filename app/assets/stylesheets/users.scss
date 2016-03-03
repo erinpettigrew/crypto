@@ -12,16 +12,43 @@
 	padding-bottom:15px;
 }
 
+	.legend {
+		background:#EEEAF2;
+		border-radius:5px;
+		font-weight:500;
+		font-size:100%;
+		padding:7px 10px 7px 10px;
+		text-align:center;
+		width:170px;
+	}
+
+	.legend a {
+		color:#000000;
+	}
+
 .user-index {
 	text-align:center;
+	padding-top:30px;
 	
 	.name {
 		font-weight:500;
 		font-size:125%;
-		padding-bottom:20px;
+		padding:5px;
 	}
 
 	.name a {
+		color:#000000;
+	}
+
+	.match-name {
+		background:#EEEAF2;
+		border-radius:5px;
+		font-weight:500;
+		font-size:125%;
+		padding:5px;
+	}
+
+	.match-name a {
 		color:#000000;
 	}
 
