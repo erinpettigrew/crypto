@@ -18,29 +18,24 @@
 	<% end %>
 
 	<div class="activity-info">
-
 		<small>Member #<%= @user.id %></br>
 		Joined <%= @user.created_at.strftime("%-m/%-d/%-y") %></small></br>
-
 	</div>
-
-	<div class="skin-info">
+</p>
 		<% if @skin_type.present? %>
-			<%= @skin_type.name.titleize %>
 			<% if @user == current_user %>
-				</br><small><%= link_to "Edit", edit_user_profile_path(@user, @user.profile) %></smalL>
-				<!--<%= link_to edit_user_profile_path(@user, @user.profile) do %>
-					<i class="glyphicon glyphicon-edit"></i>
-				<% end %>-->
+					<div class="skin-info"><small><i class="glyphicon glyphicon-tasks"></i></small> <%=link_to "#{@skin_type.name.capitalize}", edit_user_profile_path(@user, @user.profile) %></div>
+			<% else %>
+				<div class="skin-info"><small><i class="glyphicon glyphicon-tasks"></i></small> <%= @skin_type.name.titleize %></div>
 			<% end %>
 		<% else %>
 			<% if @user == current_user %>
-				<%= link_to "Add your skin type!", new_user_profile_path(@user) %>
+				<div class="skin-info"><small><i class="glyphicon glyphicon-tasks"></i></small> <%=link_to "Add your skin type!", new_user_profile_path(@user) %></div>
 			<% end %>
 		<% end %>
 	</div> 
 
-
+<!--
 	<div class="invitations">
 		<% if user_signed_in? && @user == current_user %>
 			<% unless current_user.invitation_limit == 0 %>
@@ -55,6 +50,7 @@
 		<% end %>
 	</div>
 </div>
+-->
 
 
 <% if @user.used_products.any? %>
