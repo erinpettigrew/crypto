@@ -20,8 +20,9 @@
 	<div class="activity-info">
 		<small>Member #<%= @user.id %></br>
 		Joined <%= @user.created_at.strftime("%-m/%-d/%-y") %></small></br>
-	</div>
+	</div><!-- .activity-info -->
 </p>
+<div class="row skin">
 		<% if @skin_type.present? %>
 			<% if @user == current_user %>
 					<div class="skin-info"><small><i class="glyphicon glyphicon-tasks"></i></small> <%=link_to "#{@skin_type.name.capitalize}", edit_user_profile_path(@user, @user.profile) %></div>
@@ -33,24 +34,16 @@
 				<div class="skin-info"><small><i class="glyphicon glyphicon-tasks"></i></small> <%=link_to "Add your skin type!", new_user_profile_path(@user) %></div>
 			<% end %>
 		<% end %>
-	</div> 
-
-<!--
-	<div class="invitations">
+</div>
+<div class="row invites">
 		<% if user_signed_in? && @user == current_user %>
 			<% unless current_user.invitation_limit == 0 %>
-				<div class="invite-info">
-					<% unless current_user.invitation_limit.nil? %>
-						You earned  <%= pluralize(current_user.invitation_limit, "invitation") %>.</br>
-					<% end %>
-					<%= link_to "Invite a friend!", new_user_invitation_path %>
-
-				</div>
+						<div class="invite-info"><small><i class="glyphicon glyphicon-envelope"></i></small>
+							<%= link_to "You earned #{pluralize(current_user.invitation_limit, "invitation")}!", new_user_invitation_path %></div>
 			<% end %>
 		<% end %>
-	</div>
 </div>
--->
+</div> <!-- .user-info -->
 
 
 <% if @user.used_products.any? %>
