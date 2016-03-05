@@ -2,6 +2,7 @@
 /* Custom, iPhone Retina -------------------------------------------------------- */
 @media screen and (min-width: 320px) {
 
+	
 
 	.jumbotron {
 		background-color:#ffffff;
@@ -72,6 +73,7 @@
 				font-weight: regular;
 				padding-right:5px;
 				padding-bottom:10px;
+				height:34px;
 			}
 			.navbar-brand {
 			color: #ffffff;
@@ -81,7 +83,10 @@
 		}
 	}
 
-
+	.badge {
+		margin-top:-62px;
+		margin-left: 80px;
+	}
 
 	.container-fluid {
 		padding: 0px 10px;
@@ -448,6 +453,12 @@
 			}
 		}
 	}
+
+	.badge {
+		margin-top:-52px;
+		margin-left: 52px;
+	}
+
 
 	.container-fluid {
 		padding: 10px 100px;
