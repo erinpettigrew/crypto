@@ -37,7 +37,7 @@
 </div>
 <div class="row invites">
 		<% if user_signed_in? && @user == current_user %>
-			<% unless current_user.invitation_limit == 0 %>
+			<% unless current_user.invitation_limit == 0 || current_user.invitation_limit == nil %>
 						<div class="invite-info"><small><i class="glyphicon glyphicon-envelope"></i></small>
 							<%= link_to "You earned #{pluralize(current_user.invitation_limit, "invitation")}!", new_user_invitation_path %></div>
 			<% end %>
