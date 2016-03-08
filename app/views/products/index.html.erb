@@ -43,7 +43,7 @@
             <div class="product-info"><%= @used_basic_products[i].product_brand + " " + @used_basic_products[i].product_name %></div>
           <% else %>
             <div class="product-image"><%= link_to image_tag("https://s3.amazonaws.com/productbase/placeholders/white-square.png"), theme_path(theme) %></div>
-            <div class="profile-add"><%= link_to "+ Add product", theme_path(theme) %></div>
+            <div class="profile-add"><%= link_to "+ Add", theme_path(theme) %></div>
           <% end %>
       </div>
     <% end %><!-- /basic products loop -->
