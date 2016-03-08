@@ -13,9 +13,13 @@
         Hi, <%= current_user.user_name %>!
     </div>
     <div class="user-instructions">
-      Complete your </br>skincare routine:</br>
-      <small><%= link_to "#{pluralize(current_user.used_products.count, 'product')}", current_user %> so far</small>
+      What beauty products are you using?</br>
     </div>
+          <div class= "new-product-panel">
+          <div class= "form-group">
+            <%= link_to 'Add product!', new_product_path, class: "btn btn-primary btn-lg" %>
+          </div>
+      </div>
   </div><!-- /. user info column -->
   <% if @basic_products_count > 2 %>
     <% @categories.each_with_index do |category, i| %>
