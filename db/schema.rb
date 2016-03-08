@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160225061348) do
-=======
 ActiveRecord::Schema.define(version: 20160302172449) do
->>>>>>> completeprofile
 
   create_table "applicants", force: :cascade do |t|
     t.string   "email"
@@ -70,15 +66,6 @@ ActiveRecord::Schema.define(version: 20160302172449) do
     t.integer  "product_id"
     t.text     "excerpt"
     t.text     "site_name"
-  end
-
-  create_table "listings", force: :cascade do |t|
-    t.integer  "product_id"
-    t.integer  "store_id"
-    t.string   "url"
-    t.decimal  "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "photos", force: :cascade do |t|
@@ -144,13 +131,6 @@ ActiveRecord::Schema.define(version: 20160302172449) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "stores", force: :cascade do |t|
-    t.text     "name"
-    t.string   "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "thanks", force: :cascade do |t|
     t.integer  "review_id"
     t.integer  "user_id"
@@ -168,7 +148,7 @@ ActiveRecord::Schema.define(version: 20160302172449) do
 
   add_index "themes", ["slug"], name: "index_themes_on_slug", unique: true
 
-  create_table "used_products", force: :cascade do |t|
+  create_table "tries", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "product_id"
     t.datetime "created_at", null: false

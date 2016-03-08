@@ -6,6 +6,7 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
+    @themes = Theme.all.order('created_at ASC')
     @categories = Category.all.includes(:products).order('name ASC')
     @products = []
 
