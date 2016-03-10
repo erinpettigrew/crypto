@@ -75,5 +75,5 @@
 </script>
 
 <script>
-  mixpanel.track("Viewed Search Results");
+  mixpanel.track("Viewed Search Results", {"Search Term": "<%= @search_term %>"});
 </script>
