@@ -38,5 +38,6 @@ end
   has_one :skin_type, through: :profiles, source: :skin_type
   has_many :posts
   validates :user_name, presence: true
+  validates_uniqueness_of :user_name, :case_sensitive => false
 
 end
