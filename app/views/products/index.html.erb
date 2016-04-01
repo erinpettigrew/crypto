@@ -78,6 +78,7 @@
         </div><!-- /feed-user -->
 
       <% if action.is_a? (Review) %>
+      <div class="review-item">
         <div class="col-xs-8 col-sm-8 col-md-7 feed-action-text">
           <strong><%= link_to "#{action.user.user_name}", action.user %></strong> reviewed <div class="product"><%= link_to action.product.product_brand + ' ' + action.product.product_name, action.product %></div>
         </div><!-- /.feed-action-text -->
@@ -88,9 +89,11 @@
               <%= truncate(action.comment, length:60, separator: ' ') %></br><div class="feed-timestamp"><%= time_ago_in_words(action.updated_at).gsub('about','') %> ago in <div class="category"><%= link_to "#{action.product.category.name.titleize.pluralize}", action.product.category %></div></div>
           </div><!-- /.feed-review-excerpt -->
         </div><!-- /.col-xs-12 -->
+      </div> <!-- /.review-item -->
       <% end %>
 
-      <% if action.is_a? (Use) %>        
+      <% if action.is_a? (Use) %>    
+      <div class="use-item">    
         <div class="col-xs-8 col-sm-8 col-md-7 feed-action-text">
           <strong><%= link_to "#{action.user.user_name}", action.user %></strong> started using <div class="product"><%= link_to action.product.product_brand + ' ' + action.product.product_name, action.product %></div></br>
         </div><!-- /.feed-action-text -->
@@ -98,9 +101,11 @@
           <div class="feed-product-image"><%= link_to image_tag(action.product.image.url(:med_thumb)), action.product %></div>
           <div class="feed-timestamp"><%= time_ago_in_words(action.updated_at).gsub('about','') %> ago in <div class="category"><%= link_to "#{action.product.category.name.titleize.pluralize}", action.product.category %></div></div>
         </div><!-- /.col-xs-12 -->
+      </div> <!-- /.use-item -->
       <% end %>
 
       <% if action.is_a? (Want) %>
+        <div class="want-item">
         <div class="col-xs-8 col-sm-8 col-md-7 feed-action-text">
           <strong><%= link_to "#{action.user.user_name}", action.user %></strong> wants to try <div class="product"><%= link_to action.product.product_brand + ' ' + action.product.product_name, action.product %></div></br>
         </div>
@@ -108,9 +113,11 @@
           <div class="feed-product-image"><%= link_to image_tag(action.product.image.url(:med_thumb)), action.product %></div>
           <div class="feed-timestamp"><%= time_ago_in_words(action.updated_at).gsub('about','') %> ago in <div class="category"><%= link_to "#{action.product.category.name.titleize.pluralize}", action.product.category %></div></div>
         </div>
+      </div> <!-- /.want-item -->
       <% end %>
 
       <% if action.is_a? (Post) %>
+      <div class="post-item">
         <div class="col-xs-8 col-sm-8 col-md-7 feed-action-text">
           <strong><%= link_to "#{action.user.user_name}", action.user %></strong> shared <div class="product"><%= link_to "#{action.title}", action.url %></div></br>
         </div><!-- ./feed-action-text -->
@@ -119,6 +126,7 @@
           <div class="feed-review-excerpt"></br><%= truncate(action.excerpt, length:100, separator: ' ') %></br></div>
           <div class="feed-timestamp"><%= time_ago_in_words(action.updated_at).gsub('about','')%> ago</div>
         </div><!-- ./col-xs-12 -->
+      </div><!-- /.post-item -->
       <% end %>
     </div><!-- /.feed-item -->
   <% end %><!-- /recent_actions loop -->
