@@ -32,6 +32,23 @@
 			font-size:110%;
 
 		}
+
+		h2 {
+		font-size:140%;
+		font-weight:300;
+		}
+
+		.user-avatar {
+			text-align: right;
+		}
+
+		.welcome-message {
+			text-align:left;
+		}
+
+		.add-button {
+			text-align: left;
+		}
 	}
 
 	.table th, .table td { 
@@ -57,7 +74,7 @@
 			text-transform:none;
 			border-bottom:1px solid black;
 			padding:5px;
-			margin-bottom:20px;
+			margin-bottom:0px;
 	}
 
 	.table-header {
