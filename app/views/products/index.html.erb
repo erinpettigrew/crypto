@@ -1,54 +1,69 @@
 <% title 'looklove, reviews of new beauty products' %>
 <% description 'Reviews and photos of the best in new skincare and cosmetics products' %>
 <% keywords 'the best beauty products, reviews, community, forum, posts, asian beauty, korean beauty, skincare' %>
-
-<div class = "row profile-panel hidden-xs">
-  <div class="col-xs-6 col-sm-3">
+<% if current_user.used_products.count > 3 || current_user.sign_in_count > 3 %>
+  <div class="index-panel hidden-xs">
     <div class="user-avatar">
-      <div class="extra-medium-avatar">
-        <%= image_tag current_user.try(:avatar).try(:image) %>
+      <div class="medium-avatar">
+        <%= image_tag current_user.try(:avatar).try(:image) %> Hi Erin! We have 324 new products for you. Got something recently? Add product!
       </div>
     </div>
-    <div class="user-greeting">
-        Hi, <%= current_user.user_name %>!
-    </div>
-    <div class="user-instructions">
-      What beauty products are you using?</br>
-    </div>
-          <div class= "new-product-panel">
-          <div class= "form-group">
-            <%= link_to 'Add product!', new_product_path, class: "btn btn-primary btn-lg" %>
-          </div>
+
+        <div class= "new-product-panel">
+            <div class= "form-group">
+              <%= link_to 'Add product!', new_product_path, class: "btn btn-primary btn-lg" %>
+            </div>
+        </div>
+  </div>
+<% else %>
+  <div class = "row profile-panel hidden-xs">
+    <div class="col-xs-6 col-sm-3">
+      <div class="user-avatar">
+        <div class="extra-medium-avatar">
+          <%= image_tag current_user.try(:avatar).try(:image) %>
+        </div>
       </div>
-  </div><!-- /. user info column -->
-  <% if @basic_products_count > 2 %>
-    <% @categories.each_with_index do |category, i| %>
-      <div class="col-xs-6 col-sm-3 card">
-        <div class="category"><%= category.name.titleize %></div>
-        <% if @used_advanced_products[i].present? %>
-          <div class="product-image"><%= link_to image_tag(@used_advanced_products[i].image), @used_advanced_products[i] %></div>
-          <div class="product-info"><%= link_to "#{@used_advanced_products[i].product_brand} #{@used_advanced_products[i].product_name}", product_path(@used_advanced_products[i]) %></div>
-        <% else %>
-          <div class="product-image"><%= link_to image_tag("https://s3.amazonaws.com/productbase/placeholders/white-square.png"), category_path(category) %></div>
-          <div class="profile-add"><%= link_to "+ Add", category_path(category) %></div>
-        <% end %>
+      <div class="user-greeting">
+          Hi, <%= current_user.user_name %>!
       </div>
-    <% end %><!-- /advanced products loop -->
-  <% else %><!-- if don't have basic products completed -->
-    <% @themes.each_with_index do |theme, i| %>
-      <div class="col-xs-6 col-sm-3 card">
-        <div class="category"><%= theme.name.titleize %></div>
-          <% if @used_basic_products[i].present? %>
-            <div class="product-image"><%= link_to image_tag(@used_basic_products[i].image), @used_basic_products[i] %></div>
-            <div class="product-info"><%= @used_basic_products[i].product_brand + " " + @used_basic_products[i].product_name %></div>
+      <div class="user-instructions">
+          What beauty products are you using?</br>
+      </div>
+            <div class= "new-product-panel">
+            <div class= "form-group">
+              <%= link_to 'Add product!', new_product_path, class: "btn btn-primary btn-lg" %>
+            </div>
+        </div>
+    </div><!-- /. user info column -->
+    <% if @basic_products_count > 2 %>
+      <% @categories.each_with_index do |category, i| %>
+        <div class="col-xs-6 col-sm-3 card">
+          <div class="category"><%= category.name.titleize %></div>
+          <% if @used_advanced_products[i].present? %>
+            <div class="product-image"><%= link_to image_tag(@used_advanced_products[i].image), @used_advanced_products[i] %></div>
+            <div class="product-info"><%= link_to "#{@used_advanced_products[i].product_brand} #{@used_advanced_products[i].product_name}", product_path(@used_advanced_products[i]) %></div>
           <% else %>
-            <div class="product-image"><%= link_to image_tag("https://s3.amazonaws.com/productbase/placeholders/white-square.png"), theme_path(theme) %></div>
-            <div class="profile-add"><%= link_to "+ Add", theme_path(theme) %></div>
+            <div class="product-image"><%= link_to image_tag("https://s3.amazonaws.com/productbase/placeholders/white-square.png"), category_path(category) %></div>
+            <div class="profile-add"><%= link_to "+ Add", category_path(category) %></div>
           <% end %>
-      </div>
-    <% end %><!-- /basic products loop -->
-  <% end %><!-- / profile completion loop -->
+        </div>
+      <% end %><!-- /advanced products loop -->
+    <% else %><!-- if don't have basic products completed -->
+      <% @themes.each_with_index do |theme, i| %>
+        <div class="col-xs-6 col-sm-3 card">
+          <div class="category"><%= theme.name.titleize %></div>
+            <% if @used_basic_products[i].present? %>
+              <div class="product-image"><%= link_to image_tag(@used_basic_products[i].image), @used_basic_products[i] %></div>
+              <div class="product-info"><%= @used_basic_products[i].product_brand + " " + @used_basic_products[i].product_name %></div>
+            <% else %>
+              <div class="product-image"><%= link_to image_tag("https://s3.amazonaws.com/productbase/placeholders/white-square.png"), theme_path(theme) %></div>
+              <div class="profile-add"><%= link_to "+ Add", theme_path(theme) %></div>
+            <% end %>
+        </div>
+      <% end %><!-- /basic products loop -->
+    <% end %><!-- / profile completion loop -->
 </div> <!--  /.profile-panel -->
+<% end %>
 
 <div class="index-panel visible-xs-inline">
   <h1>What beauty products are you using?</h1>
