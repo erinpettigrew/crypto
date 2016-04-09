@@ -13,6 +13,15 @@ def show
 
   @products_added = Product.where(user_id: @user).count
   @reviews_added = @user_reviews.count
+
+
+  # get user's avatar or provide a default avatar
+  @avatar_file = ""
+  if @user.avatar != nil
+    @avatar_file = @user.avatar.image
+  else
+    @avatar_file = "https://s3.amazonaws.com/productbase/hearts/black-heart.png"
+  end
 end
 	
 def index
