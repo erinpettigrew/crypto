@@ -1,16 +1,18 @@
 <% title 'looklove, reviews of new beauty products' %>
 <% description 'Reviews and photos of the best in new skincare and cosmetics products' %>
 <% keywords 'the best beauty products, reviews, community, forum, posts, asian beauty, korean beauty, skincare' %>
+
+<!-- IF RETURNING USER AND HAS ALREADY ADDED PRODUCTS -->
 <% if current_user.used_products.count > 3 || current_user.sign_in_count > 3 %>
   <div class="index-panel hidden-xs">
     <div class="col-sm-3 user-avatar">
       <div class="medium-avatar">
-        <%= image_tag current_user.try(:avatar).try(:image) %>
+        <%=  link_to image_tag(@avatar_file), current_user %>
       </div>
     </div><!-- /.col-sm-3 -->
     <div class ="col-sm-5 welcome-message">
     </br>
-      <h2><strong>Hi Erin!</strong> Browse <%= link_to "#{@product_count} products", categories_path %> with <%= @review_count %> reviews.</h2>
+      <h2><strong>Hi <%= link_to "Erin!", current_user %></strong> Browse <%= link_to "#{@product_count} products", categories_path %> with <%= @review_count %> reviews.</h2>
     </div><!-- /.col-sm-5 -->
     <div class="col-sm-4">
       <div class= "new-product-panel">
@@ -23,12 +25,13 @@
     </div><!-- /.col-sm-3 -->
 </div>
 
+<!-- ELSE FOR NEW USERS -->
 <% else %>
   <div class = "row profile-panel hidden-xs">
     <div class="col-xs-6 col-sm-3">
       <div class="user-avatar">
         <div class="extra-medium-avatar">
-          <%= image_tag current_user.try(:avatar).try(:image) %>
+          <%=  link_to image_tag(@avatar_file), current_user %>
         </div>
       </div>
       <div class="user-greeting">
@@ -72,6 +75,8 @@
     <% end %><!-- / profile completion loop -->
 </div> <!--  /.profile-panel -->
 <% end %>
+
+<!-- BEGIN PRODUCT FEED --> 
 
 <div class="index-panel visible-xs-inline">
   <h1>What beauty products are you using?</h1>

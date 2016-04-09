@@ -63,6 +63,14 @@ class ProductsController < ApplicationController
     @recent_posts = Post.all.order('created_at DESC').take(9)
     @recent_actions = (@recent_reviews + @recent_uses + @recent_wants + @recent_posts).sort_by(&:created_at).reverse
 
+    # get user's avatar or provide a default avatar
+    @avatar_file = ""
+    if current_user.avatar != nil
+      @avatar_file = current_user.avatar.image
+    else
+      @avatar_file = "https://s3.amazonaws.com/productbase/hearts/black-heart.png"
+    end
+
   end
 
 
