@@ -15,7 +15,7 @@
 	<% @users.each do |user| %>
 		<% if user.avatar.blank? %>
 			<div class="col-xs-4 col-sm-3 col-md-2">
-				<div class="large-avatar"><%= link_to image_tag("https://s3.amazonaws.com/productbase/hearts/black-heart.png"), user %></div>
+				<div class="large-avatar"><%= link_to image_tag("https://s3.amazonaws.com/productbase/hearts/black-heart.jpeg"), user %></div>
 				<% if current_user.try(:profile).try(:skin_type_id) == user.try(:profile).try(:skin_type_id) && current_user.try(:profile).try(:skin_type_id) != nil %>
 					<div class="match-name"><small><i class="glyphicon glyphicon-tasks"></i></small> <%= link_to truncate(user.user_name, length:12), user %> </div>
 				<% else %>

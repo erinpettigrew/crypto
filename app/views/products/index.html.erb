@@ -101,9 +101,7 @@
   <% @recent_actions.each do |action, i| %>
     <div class="col-xs-12 col-sm-6 col-md-4 feed-item">
         <div class="col-xs-4 col-sm-4 col-md-5 feed-user">
-          <% if action.user.avatar.present? %>
-            <div class="large-avatar"><%= link_to image_tag(action.user.avatar.try(:image).try(:med_thumb)), action.user %></div>
-          <% end %>
+            <div class="large-avatar"><%=  link_to image_tag(@avatar_file), current_user %></div>
         </div><!-- /feed-user -->
 
       <% if action.is_a? (Review) %>
