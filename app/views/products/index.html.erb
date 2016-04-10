@@ -12,7 +12,7 @@
     </div><!-- /.col-sm-3 -->
     <div class ="col-sm-5 welcome-message">
     </br>
-      <h2><strong>Hi <%= link_to "Erin!", current_user %></strong> Browse <%= link_to "#{@product_count} products", categories_path %> with <%= @review_count %> reviews.</h2>
+      <h2><strong>Hi <%= link_to "#{current_user.user_name}", current_user %>!</strong> Browse <%= link_to "#{@product_count} products", categories_path %> with <%= @review_count %> reviews.</h2>
     </div><!-- /.col-sm-5 -->
     <div class="col-sm-4">
       <div class= "new-product-panel">
@@ -101,7 +101,13 @@
   <% @recent_actions.each do |action, i| %>
     <div class="col-xs-12 col-sm-6 col-md-4 feed-item">
         <div class="col-xs-4 col-sm-4 col-md-5 feed-user">
-            <div class="large-avatar"><%=  link_to image_tag(@avatar_file), current_user %></div>
+            <div class="large-avatar">
+              <% if action.user.avatar != nil %>
+                <%=  link_to image_tag(action.user.avatar.image), action.user %>
+              <% else %>
+                <%= link_to image_tag("https://s3.amazonaws.com/productbase/hearts/black-heart.jpeg"), action.user %>
+              <% end %>
+            </div><!-- /.large-avatar -->
         </div><!-- /feed-user -->
 
       <% if action.is_a? (Review) %>
