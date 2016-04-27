@@ -1,4 +1,5 @@
 class Use < ActiveRecord::Base
+
 	belongs_to :product
 	belongs_to :user
 
@@ -6,4 +7,5 @@ class Use < ActiveRecord::Base
 		scope: [:product_id],
 		message: "Oops, you are already using this product"
 	}
+	
 end

@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+
 	extend FriendlyId
 	friendly_id :slug_candidates, use: :slugged
 
@@ -12,7 +13,6 @@ class Product < ActiveRecord::Base
 	def should_generate_new_friendly_id?
 		product_brand_changed? || product_name_changed?
 	end
-
 
 	mount_uploader :image, ImageUploader
 
@@ -31,4 +31,5 @@ class Product < ActiveRecord::Base
 	has_many :wants, dependent: :destroy
 	has_many :wanted_by, through: :wants, source: :user
 	validates :product_brand, :product_name, :image, :category, presence: true
+
 end

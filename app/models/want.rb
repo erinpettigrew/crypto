@@ -1,4 +1,5 @@
 class Want < ActiveRecord::Base
+	
 	belongs_to :product
 	belongs_to :user
 
@@ -6,4 +7,5 @@ class Want < ActiveRecord::Base
 		scope: [:product_id],
 		message: "Oops, you already want this product"
 		}
+
 end
