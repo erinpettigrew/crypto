@@ -20,7 +20,7 @@ def show
   if @user.avatar != nil
     @avatar_file = @user.avatar.image
   else
-    @avatar_file = "https://s3.amazonaws.com/productbase/hearts/black-heart.png"
+    @avatar_file = "https://s3.amazonaws.com/productbase/hearts/black-heart.jpeg"
   end
 end
 	

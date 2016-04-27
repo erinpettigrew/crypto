@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
      @review_count = []
      @use_count = []
      @uses = []
- 
+
      for singleproduct in @products
        @reviews = singleproduct.reviews
        @uses = singleproduct.uses
@@ -28,11 +28,11 @@ class ProductsController < ApplicationController
          @avg_rating << 0
          @review_count << 0
       else
-         @avg_rating << @reviews.average(:rating).round(2) 
+         @avg_rating << @reviews.average(:rating).round(2)
          @review_count << @reviews.size
       end
      end
- 
+
   end
 
   # GET /products
