@@ -20,9 +20,9 @@ class CategoriesController < ApplicationController
     @uses = []
     @use_count = []
 
-    for singleproduct in @products
-        @reviews = singleproduct.reviews
-        @uses = singleproduct.uses
+    @products.each do |product|
+        @reviews = product.reviews
+        @uses = product.uses
         @use_count << @uses.size
 
       if @reviews.blank?
