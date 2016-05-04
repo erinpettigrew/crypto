@@ -1,10 +1,10 @@
 class Review < ActiveRecord::Base
 
-after_create :send_notification
+	after_create :send_notification
 
-def send_notification
-	AdminMailer.new_review(self.product, self.user.user_name).deliver_now
-end
+	def send_notification
+		AdminMailer.new_review(self.product, self.user.user_name).deliver_now
+	end
 
 	belongs_to :user
 	belongs_to :product,
@@ -17,4 +17,5 @@ end
 		less_than_or_equal_to: 5,
 		message: "can only be a whole number between 1 and 5"
 	}
+
 end

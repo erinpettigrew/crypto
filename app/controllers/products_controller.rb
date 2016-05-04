@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
      @review_count = []
      @use_count = []
      @uses = []
- 
+
      for singleproduct in @products
        @reviews = singleproduct.reviews
        @uses = singleproduct.uses
@@ -28,16 +28,18 @@ class ProductsController < ApplicationController
          @avg_rating << 0
          @review_count << 0
       else
-         @avg_rating << @reviews.average(:rating).round(2) 
+         @avg_rating << @reviews.average(:rating).round(2)
          @review_count << @reviews.size
       end
      end
- 
+
   end
 
   # GET /products
   # GET /products.json
   def index
+    @product_count = Product.all.count
+    @review_count = Review.all.count
     @used_basic_products = []
     @used_advanced_products = []
     @basic_products_count = 0
@@ -60,6 +62,15 @@ class ProductsController < ApplicationController
     @recent_wants = Want.all.order('created_at DESC').take(12)
     @recent_posts = Post.all.order('created_at DESC').take(9)
     @recent_actions = (@recent_reviews + @recent_uses + @recent_wants + @recent_posts).sort_by(&:created_at).reverse
+
+    # get user's avatar or provide a default avatar
+    @avatar_file = ""
+    if current_user.avatar != nil
+      @avatar_file = current_user.avatar.image
+    else
+      @avatar_file = "https://s3.amazonaws.com/productbase/hearts/black-heart.jpeg"
+    end
+
   end
 
 

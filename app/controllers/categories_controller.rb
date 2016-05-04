@@ -8,7 +8,6 @@ class CategoriesController < ApplicationController
   def index
     @themes = Theme.all.order('created_at ASC')
     @categories = Category.all.includes(:products).order('name ASC')
-    @products = []
   end
 
   # GET /categories/1
@@ -21,9 +20,9 @@ class CategoriesController < ApplicationController
     @uses = []
     @use_count = []
 
-    for singleproduct in @products
-        @reviews = singleproduct.reviews
-        @uses = singleproduct.uses
+    @products.each do |product|
+        @reviews = product.reviews
+        @uses = product.uses
         @use_count << @uses.size
 
       if @reviews.blank?

@@ -1,4 +1,5 @@
 class Profile < ActiveRecord::Base
+
 	belongs_to :user
 	has_one :skin_type
 
@@ -6,4 +7,5 @@ class Profile < ActiveRecord::Base
 		scope: [:user_id],
 		message: "Oops, you can only have one profile"
 	}
+	
 end
