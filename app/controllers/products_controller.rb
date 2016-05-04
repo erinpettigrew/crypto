@@ -8,31 +8,8 @@ class ProductsController < ApplicationController
 
 
   def search
-    if params[:search].present?
-      @products = Product.includes(:reviews, :uses).search(params[:search])
-    else
-      @products = Product.includes(:reviews, :uses).all? #show all products if search is blank
-    end
-
-     @search_term = params[:search]
-     @avg_rating = []
-     @review_count = []
-     @use_count = []
-     @uses = []
-
-     for singleproduct in @products
-       @reviews = singleproduct.reviews
-       @uses = singleproduct.uses
-       @use_count << @uses.size
-      if @reviews.blank?
-         @avg_rating << 0
-         @review_count << 0
-      else
-         @avg_rating << @reviews.average(:rating).round(2)
-         @review_count << @reviews.size
-      end
-     end
-
+    @query = params[:search]
+    @products = Product.includes(:reviews, :uses).search(params[:search])
   end
 
   # GET /products
@@ -72,8 +49,6 @@ class ProductsController < ApplicationController
     end
 
   end
-
-
 
   # GET /products/1
   # GET /products/1.json
