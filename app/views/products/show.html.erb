@@ -97,7 +97,7 @@
 
 
 
-	<% if @reviews.blank? %>
+	<% if @product.reviews.blank? %>
 
 		<% unless @number_of_uses == 0 %>
 			<div class="uses">
@@ -122,9 +122,9 @@
 						<div class = "form-group">
 
 							<div class= "col-xs-12 col-sm-12 button-1">
-								<%= link_to "Add a Review!", new_product_review_path(@product), class: "btn btn-primary btn-lg" %> 
+								<%= link_to "Add a Review!", new_product_review_path(@product), class: "btn btn-primary btn-lg" %>
 							</div>
-						
+
 						</div>
 					</div>
 
@@ -137,7 +137,7 @@
 			<% end %>
 		<% end %>
 	<% end %>
-		<% elsif @reviews.blank? == false %>
+		<% elsif @product.reviews.blank? == false %>
 
 		<% unless @number_of_uses == 0 %>
 			<div class="uses">
@@ -159,16 +159,16 @@
 					<div class = "row">
 						<div class = "form-group">
 							<div class= "col-xs-12 col-sm-12 button-1">
-								<%= link_to "Add a Review!", new_product_review_path(@product), class: "btn btn-primary btn-lg" %> 
+								<%= link_to "Add a Review!", new_product_review_path(@product), class: "btn btn-primary btn-lg" %>
 							</div>
 						</div>
 					</div>
 
 
-			<% if @reviews.length == 1 %>
-				<h3><%= "#{@reviews.length}" %> Review</h3>
-			<% elsif @reviews.length >= 1 %>
-				<h3><%= "#{@reviews.length}" %> Reviews</h3>
+			<% if @product.reviews.length == 1 %>
+				<h3><%= "#{@product.reviews.length}" %> Review</h3>
+			<% elsif @product.reviews.length >= 1 %>
+				<h3><%= "#{@product.reviews.length}" %> Reviews</h3>
 			<% end %>
 			<table class="table product-show">
 				<thead>
@@ -178,7 +178,7 @@
 				</thead>
 
 				<tbody>
-					<% @reviews.each do |review| %>
+					<% @product.recent_reviews.each do |review| %>
 						<tr>
 							<td>
 								<div class="row">
@@ -252,7 +252,7 @@
     }
   });
     $(".ingredients-button").click(function(){
-        $(".ingredients").toggle(); 
+        $(".ingredients").toggle();
     });
 </script>
 
