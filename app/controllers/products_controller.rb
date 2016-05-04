@@ -78,19 +78,6 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    @reviews = @product.reviews.order("created_at DESC")
-    # @number_of_likes = @product.likes.size
-    @links = @product.links.order("created_at DESC")
-    @uses = @product.uses.order("created_at DESC")
-    @number_of_uses = @uses.size
-    @wants = @product.wants.order("created_at DESC")
-    @number_of_wants = @wants.size
-    # @photos = @product.photos.order("created_at DESC")
-    if @reviews.blank?
-      @avg_rating = 0
-    else
-      @avg_rating = @reviews.average(:rating).round(2)
-    end
   end
 
   def like
