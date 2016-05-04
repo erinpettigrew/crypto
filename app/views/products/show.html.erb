@@ -34,7 +34,7 @@
 
 				<p><h3><%= @product.product_brand %></br>
 				<%= @product.product_name %></h3></p>
-				<div class="star-rating-product-page"><div class="star-rating" data-score= <%= @avg_rating %> ></div></div>
+				<div class="star-rating-product-page"><div class="star-rating" data-score= <%= @product.average_rating %> ></div></div>
 
 	 			<% if @product.category_id != 1 %>
 					<p><h5>in <%= link_to @product.category.name.titleize.pluralize, @product.category %></br>
@@ -49,15 +49,15 @@
 			</div>
 		<% end %>
 
-	<% unless @number_of_wants == 0 %>
+	<% unless @product.wants.size == 0 %>
 		<div class="wants">
 			<div class="row">
-				<h3><%= pluralize(@number_of_wants, "Want") %></h3>
-				<% @wants.each_with_index do |want, j| %>
-					<% if @wants[j].user.avatar.present? %>
+				<h3><%= pluralize(@product.wants.size, "Want") %></h3>
+				<% @product.recent_wants.each_with_index do |want, j| %>
+					<% if @product.recent_wants[j].user.avatar.present? %>
 						<div class="col-xs-2">
 							<div class="small-avatar">
-								<%= link_to image_tag(@wants[j].user.try(:avatar).try(:image).try(:small_thumb)), @wants[j].user %>
+								<%= link_to image_tag(@product.recent_wants[j].user.try(:avatar).try(:image).try(:small_thumb)), @product.recent_wants[j].user %>
 							</div>
 						</div>
 					<% end %>
@@ -97,17 +97,17 @@
 
 
 
-	<% if @reviews.blank? %>
+	<% if @product.reviews.blank? %>
 
-		<% unless @number_of_uses == 0 %>
+		<% unless @product.uses.size == 0 %>
 			<div class="uses">
 				<div class="row">
-					<h3><%= pluralize(@number_of_uses, "User") %></h3>
-					<% @uses.each_with_index do |use, j| %>
-						<% if @uses[j].user.avatar.present? %>
+					<h3><%= pluralize(@product.uses.size, "User") %></h3>
+					<% @product.recent_uses.each_with_index do |use, j| %>
+						<% if @product.recent_uses[j].user.avatar.present? %>
 							<div class="col-xs-2">
 								<div class="small-avatar">
-									<%= link_to image_tag(@uses[j].user.try(:avatar).try(:image).try(:small_thumb)), @uses[j].user %>
+									<%= link_to image_tag(@product.recent_uses[j].user.try(:avatar).try(:image).try(:small_thumb)), @product.recent_uses[j].user %>
 								</div>
 							</div>
 						<% end %>
@@ -122,32 +122,23 @@
 						<div class = "form-group">
 
 							<div class= "col-xs-12 col-sm-12 button-1">
-								<%= link_to "Add a Review!", new_product_review_path(@product), class: "btn btn-primary btn-lg" %> 
+								<%= link_to "Add a Review!", new_product_review_path(@product), class: "btn btn-primary btn-lg" %>
 							</div>
-						
+
 						</div>
 					</div>
 
+		<% elsif @product.reviews.blank? == false %>
 
-	<% if user_signed_in? %>
-		<% if current_user.admin? && @links.exists? %>
-			<h4>Blog Posts</h4>
-			<% @links.each_with_index do |link| %>
-				<p><%= link.excerpt %> - <%= link_to link.site_name, @product %></p> <!-- replace with link.url on go live -->
-			<% end %>
-		<% end %>
-	<% end %>
-		<% elsif @reviews.blank? == false %>
-
-		<% unless @number_of_uses == 0 %>
+		<% unless @product.uses.size == 0 %>
 			<div class="uses">
 				<div class="row">
-					<h3><%= pluralize(@number_of_uses, "User") %></h3>
-					<% @uses.each_with_index do |use, j| %>
-						<% if @uses[j].user.avatar.present? %>
+					<h3><%= pluralize(@product.uses.size, "User") %></h3>
+					<% @product.recent_uses.each_with_index do |use, j| %>
+						<% if @product.recent_uses[j].user.avatar.present? %>
 							<div class="col-xs-2">
 								<div class="small-avatar">
-									<%= link_to image_tag(@uses[j].user.try(:avatar).try(:image).try(:small_thumb)), @uses[j].user %>
+									<%= link_to image_tag(@product.recent_uses[j].user.try(:avatar).try(:image).try(:small_thumb)), @product.recent_uses[j].user %>
 								</div>
 							</div>
 						<% end %>
@@ -159,16 +150,16 @@
 					<div class = "row">
 						<div class = "form-group">
 							<div class= "col-xs-12 col-sm-12 button-1">
-								<%= link_to "Add a Review!", new_product_review_path(@product), class: "btn btn-primary btn-lg" %> 
+								<%= link_to "Add a Review!", new_product_review_path(@product), class: "btn btn-primary btn-lg" %>
 							</div>
 						</div>
 					</div>
 
 
-			<% if @reviews.length == 1 %>
-				<h3><%= "#{@reviews.length}" %> Review</h3>
-			<% elsif @reviews.length >= 1 %>
-				<h3><%= "#{@reviews.length}" %> Reviews</h3>
+			<% if @product.reviews.length == 1 %>
+				<h3><%= "#{@product.reviews.length}" %> Review</h3>
+			<% elsif @product.reviews.length >= 1 %>
+				<h3><%= "#{@product.reviews.length}" %> Reviews</h3>
 			<% end %>
 			<table class="table product-show">
 				<thead>
@@ -178,7 +169,7 @@
 				</thead>
 
 				<tbody>
-					<% @reviews.each do |review| %>
+					<% @product.recent_reviews.each do |review| %>
 						<tr>
 							<td>
 								<div class="row">
@@ -252,7 +243,7 @@
     }
   });
     $(".ingredients-button").click(function(){
-        $(".ingredients").toggle(); 
+        $(".ingredients").toggle();
     });
 </script>
 

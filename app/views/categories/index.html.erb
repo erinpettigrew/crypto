@@ -15,7 +15,7 @@
 <div class="category-index">
   <% @themes.each do |theme| %>
     <div class="title"><%= link_to "#{theme.name.titleize}", theme_path(theme) %></div>
-    <% theme.categories.each_with_index do |category, i| %>
+    <% theme.categories.each do |category| %>
       <div class="row category-row">
         <div class="col-xs-5 col-sm-3 category-name">
           <%= link_to category.name.titleize.pluralize, category %>
