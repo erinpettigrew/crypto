@@ -1,6 +1,6 @@
 class Review < ActiveRecord::Base
 
-	after_create :send_notification
+	# after_create :send_notification
 
 	def send_notification
 		AdminMailer.new_review(self.product, self.user.user_name).deliver_now

@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   extend FriendlyId
   	friendly_id :user_name, use: :slugged
 
-  after_create :send_notification
+  # after_create :send_notification
 
   def send_notification
   	AdminMailer.new_user(self).deliver_now

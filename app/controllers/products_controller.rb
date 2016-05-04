@@ -118,15 +118,11 @@ class ProductsController < ApplicationController
     'Product ID' => @product.id,
     'Product Name' => @product.product_brand + " " + @product.product_name
       })
-
       #notice: "You started using #{@product.product_brand} #{@product.product_name}"
-
     elsif type == 'unuse'
       current_user.used_products.delete(@product)
       redirect_to :back
-
       #notice: "You started using #{@product.product_brand} #{@product.product_name}"
-
     else
       redirect_to :back, notice: 'Nothing happened.'
     end
