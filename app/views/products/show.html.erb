@@ -49,18 +49,14 @@
 			</div>
 		<% end %>
 
-	<% unless @product.wants.size == 0 %>
-		<div class="wants">
-			<div class="row">
-				<h3><%= pluralize(@product.wants.size, "Want") %></h3>
-				<% @product.recent_wants.each_with_index do |want, j| %>
-						<div class="col-xs-2">
-							<div class="small-avatar">
-								<%= link_to image_tag(@product.recent_wants[j].user.pic), @product.recent_wants[j].user %>
-							</div>
-						</div>
-				<% end %>
-			</div>
+	<% if @product.wants.any? %>
+		<div class="row wants">
+			<h3><%= pluralize(@product.wants.size, "Want") %></h3>
+			<% @product.recent_wants.each do |want| %>
+					<div class="col-xs-2 small-avatar">
+						<%= link_to image_tag(want.user.pic), want.user %>
+					</div>
+			<% end %>
 		</div>
 	<% end %>
 
@@ -99,18 +95,14 @@
 
 		<% elsif @product.reviews.blank? == false %>
 
-		<% unless @product.uses.size == 0 %>
-			<div class="uses">
-				<div class="row">
-					<h3><%= pluralize(@product.uses.size, "User") %></h3>
-					<% @product.recent_uses.each_with_index do |use, j| %>
-							<div class="col-xs-2">
-								<div class="small-avatar">
-									<%= link_to image_tag(@product.recent_uses[j].user.pic), @product.recent_uses[j].user %>
-								</div>
-							</div>
-					<% end %>
-				</div>
+		<% if @product.uses.any? %>
+			<div class="row uses">
+				<h3><%= pluralize(@product.uses.size, "User") %></h3>
+				<% @product.recent_uses.each do |use| %>
+						<div class="col-xs-2 small-avatar">
+								<%= link_to image_tag(use.user.pic), use.user %>
+						</div>
+				<% end %>
 			</div>
 		<% end %>
 
