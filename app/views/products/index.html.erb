@@ -7,7 +7,7 @@
   <div class="index-panel hidden-xs">
     <div class="col-sm-3 user-avatar">
       <div class="medium-avatar">
-        <%=  link_to image_tag(@avatar_file), current_user %>
+        <%=  link_to image_tag(current_user.pic), current_user %>
       </div>
     </div><!-- /.col-sm-3 -->
     <div class ="col-sm-5 welcome-message">
@@ -31,7 +31,7 @@
     <div class="col-xs-6 col-sm-3">
       <div class="user-avatar">
         <div class="extra-medium-avatar">
-          <%=  link_to image_tag(@avatar_file), current_user %>
+          <%=  link_to image_tag(@current_user.pic), current_user %>
         </div>
       </div>
       <div class="user-greeting">
@@ -76,7 +76,7 @@
 </div> <!--  /.profile-panel -->
 <% end %>
 
-<!-- BEGIN PRODUCT FEED --> 
+<!-- BEGIN PRODUCT FEED -->
 
 <div class="index-panel visible-xs-inline">
   <h1>What beauty products are you using?</h1>
@@ -125,8 +125,8 @@
       </div> <!-- /.review-item -->
       <% end %>
 
-      <% if action.is_a? (Use) %>    
-      <div class="use-item">    
+      <% if action.is_a? (Use) %>
+      <div class="use-item">
         <div class="col-xs-8 col-sm-8 col-md-7 feed-action-text">
           <strong><%= link_to "#{action.user.user_name}", action.user %></strong> started using <div class="product"><%= link_to action.product.product_brand + ' ' + action.product.product_name, action.product %></div></br>
         </div><!-- /.feed-action-text -->
@@ -191,11 +191,10 @@
   });
 </script>
 
-<script> 
+<script>
   mixpanel.track_links(".feed-user a", "Clicked Feed", {"Item" : "User"})
   mixpanel.track_links(".review-item a", "Clicked Feed", {"Item" : "Review"});
   mixpanel.track_links(".use-item a", "Clicked Feed", {"Item" : "Use"});
   mixpanel.track_links(".want-item a", "Clicked Feed", {"Item" : "Want"});
   mixpanel.track_links(".post-item a", "Clicked Feed", {"Item" : "Post"});
 </script>
-
