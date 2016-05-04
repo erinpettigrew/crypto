@@ -54,63 +54,32 @@
 			<div class="row">
 				<h3><%= pluralize(@product.wants.size, "Want") %></h3>
 				<% @product.recent_wants.each_with_index do |want, j| %>
-					<% if @product.recent_wants[j].user.avatar.present? %>
 						<div class="col-xs-2">
 							<div class="small-avatar">
-								<%= link_to image_tag(@product.recent_wants[j].user.try(:avatar).try(:image).try(:small_thumb)), @product.recent_wants[j].user %>
+								<%= link_to image_tag(@product.recent_wants[j].user.pic), @product.recent_wants[j].user %>
 							</div>
 						</div>
-					<% end %>
 				<% end %>
 			</div>
 		</div>
 	<% end %>
 
-
-<!-- hide photo panel
-			<% if @photos.blank? == false %>
-				<div class = "photo-panel">
-				<% if @photos.length == 1 %>
-					<h3><%= "#{@photos.length}" %> Photo</h3>
-				<% elsif @photos.length >= 1 %>
-					<h3><%= "#{@photos.length}" %> Photos</h3>
-				<% end %>
-				<div class = "product-photos-product-page">
-					<% @photos.each do |photo| %>
-	  					<p><%= image_tag photo.product_photo_url(:med_thumb) %></p>
-	  					<p><strong><%= link_to "#{photo.user.user_name}", photo.user %></strong>: <%= photo.comment %> - <small><%= photo.created_at.strftime("%-m/%-d/%-y") %></small></p>
-						<% if user_signed_in? %>
-							<% if (photo.user == current_user) || (current_user.admin?) %>
-								<p><%= link_to "Edit", edit_product_photo_path(@product, photo) %>
-								<%= link_to "Delete", product_photo_path(@product, photo), method: :delete %></p>
-							<% end %>
-						<% end %>
-					<% end %>
-				</div>
-				</div>
-			<% end %>
--->
 	</div>
 
 	<div class="col-xs-12 col-sm-8">
 		<div class="reviews">
 
-
-
 	<% if @product.reviews.blank? %>
-
 		<% unless @product.uses.size == 0 %>
 			<div class="uses">
 				<div class="row">
 					<h3><%= pluralize(@product.uses.size, "User") %></h3>
 					<% @product.recent_uses.each_with_index do |use, j| %>
-						<% if @product.recent_uses[j].user.avatar.present? %>
 							<div class="col-xs-2">
 								<div class="small-avatar">
-									<%= link_to image_tag(@product.recent_uses[j].user.try(:avatar).try(:image).try(:small_thumb)), @product.recent_uses[j].user %>
+									<%= link_to image_tag(@product.recent_uses[j].user.pic), @product.recent_uses[j].user %>
 								</div>
 							</div>
-						<% end %>
 					<% end %>
 				</div>
 			</div>
@@ -135,13 +104,11 @@
 				<div class="row">
 					<h3><%= pluralize(@product.uses.size, "User") %></h3>
 					<% @product.recent_uses.each_with_index do |use, j| %>
-						<% if @product.recent_uses[j].user.avatar.present? %>
 							<div class="col-xs-2">
 								<div class="small-avatar">
-									<%= link_to image_tag(@product.recent_uses[j].user.try(:avatar).try(:image).try(:small_thumb)), @product.recent_uses[j].user %>
+									<%= link_to image_tag(@product.recent_uses[j].user.pic), @product.recent_uses[j].user %>
 								</div>
 							</div>
-						<% end %>
 					<% end %>
 				</div>
 			</div>
@@ -177,7 +144,7 @@
 										<table>
 											<tr>
 												<td>
-													<div class="small-avatar"><%= link_to image_tag(review.user.avatar.try(:image).try(:med_thumb)), review.user %>
+													<div class="small-avatar"><%= link_to image_tag(review.user.pic), review.user %>
 													</div>
 												</td>
 												<td>
