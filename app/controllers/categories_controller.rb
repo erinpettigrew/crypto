@@ -9,10 +9,6 @@ class CategoriesController < ApplicationController
     @themes = Theme.all.order('created_at ASC')
     @categories = Category.all.includes(:products).order('name ASC')
     @products = []
-
-    for singlecategory in @categories
-      @products << singlecategory.products
-    end
   end
 
   # GET /categories/1
@@ -34,7 +30,7 @@ class CategoriesController < ApplicationController
         @avg_rating << 0
         @review_count << 0
       else
-        @avg_rating << @reviews.average(:rating).round(2) 
+        @avg_rating << @reviews.average(:rating).round(2)
         @review_count << @reviews.size
       end
     end
