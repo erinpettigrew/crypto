@@ -23,21 +23,21 @@ class ProductsController < ApplicationController
     @themes = Theme.first(3)
     @categories = Category.order("RANDOM()").first(3)
 
-    for singletheme in @themes
-        @used_basic_products << current_user.used_products.where(theme_id: singletheme.id).first
+    @themes.each do |theme|
+        @used_basic_products << current_user.used_products.where(theme_id: theme.id).first
         if @used_basic_products.last != nil
           @basic_products_count += 1
         end
     end
 
-    for singlecategory in @categories
-      @used_advanced_products << current_user.used_products.where(category_id: singlecategory.id).first
+    @categories.each do |category|
+      @used_advanced_products << current_user.used_products.where(category_id: category.id).first
     end
 
-    @recent_reviews = Review.all.order('created_at DESC').take(15)
-    @recent_uses = Use.all.order('created_at DESC').take(12)
-    @recent_wants = Want.all.order('created_at DESC').take(12)
-    @recent_posts = Post.all.order('created_at DESC').take(9)
+    @recent_reviews = Review.all.order(created_at: :desc).includes(:user, :product).take(14)
+    @recent_uses = Use.all.order(created_at: :desc).includes(:user, :product).take(12)
+    @recent_wants = Want.all.order(created_at: :desc).includes(:user, :product).take(12)
+    @recent_posts = Post.all.order(created_at: :desc).includes(:user).take(9)
     @recent_actions = (@recent_reviews + @recent_uses + @recent_wants + @recent_posts).sort_by(&:created_at).reverse
   end
 
@@ -91,15 +91,11 @@ class ProductsController < ApplicationController
     'Product ID' => @product.id,
     'Product Name' => @product.product_brand + " " + @product.product_name
       })
-
       #notice: "You want #{@product.product_brand} #{@product.product_name}"
-
     elsif type == 'unwant'
       current_user.wanted_products.delete(@product)
       redirect_to :back
-
       #notice: "You stopped wanting #{@product.product_brand} #{@product.product_name}"
-
     else
       redirect_to :back, notice: 'Nothing happened.'
     end
@@ -179,7 +175,7 @@ class ProductsController < ApplicationController
     end
 
     def set_categories
-      @categories = Category.all.order("name ASC")
+      @categories = Category.all.order(name: :asc)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
