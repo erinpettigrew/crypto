@@ -49,7 +49,7 @@
 <% if @user.used_products.any? %>
 	<div class= "title">Using</div>
 	<div class="row">
-		<% @user.used_products.each do |product| %>
+		<% @user.used_products.includes(:category).each do |product| %>
 			<div class="col-xs-6 col-sm-4">
 				<div class="card">
 					<div class="category">
@@ -71,7 +71,7 @@
 <% if @user.wanted_products.any? %>
 	<div class= "title">Wants</div>
 	<div class="row">
-		<% @user.wanted_products.each do |product| %>
+		<% @user.wanted_products.includes(:category).each do |product| %>
 			<div class="col-xs-6 col-sm-4">
 				<div class="card">
 					<div class="category">

@@ -34,10 +34,10 @@ class ProductsController < ApplicationController
       @used_advanced_products << current_user.used_products.where(category_id: category.id).first
     end
 
-    @recent_reviews = Review.all.order(created_at: :desc).includes(:user, :product).take(14)
-    @recent_uses = Use.all.order(created_at: :desc).includes(:user, :product).take(12)
-    @recent_wants = Want.all.order(created_at: :desc).includes(:user, :product).take(12)
-    @recent_posts = Post.all.order(created_at: :desc).includes(:user).take(9)
+    @recent_reviews = Review.all.order(created_at: :desc).includes(:user => :avatar, :product => :category).take(14)
+    @recent_uses = Use.all.order(created_at: :desc).includes(:user => :avatar, :product => :category).take(12)
+    @recent_wants = Want.all.order(created_at: :desc).includes(:user => :avatar, :product => :category).take(12)
+    @recent_posts = Post.all.order(created_at: :desc).includes(:user => :avatar).take(9)
     @recent_actions = (@recent_reviews + @recent_uses + @recent_wants + @recent_posts).sort_by(&:created_at).reverse
   end
 
