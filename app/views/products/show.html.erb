@@ -128,7 +128,7 @@
 				</thead>
 
 				<tbody>
-					<% @product.recent_reviews.includes(:user => :avatar).each do |review| %>
+					<% @product.recent_reviews.includes(:user => [:avatar, :profile]).each do |review| %>
 						<tr>
 							<td>
 								<div class="row">
