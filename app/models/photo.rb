@@ -1,7 +1,5 @@
 class Photo < ActiveRecord::Base
-
 	# after_create :send_notification
-
 	def send_notification
 		AdminMailer.new_photo(self.product, self.user.user_name).deliver_now
 	end

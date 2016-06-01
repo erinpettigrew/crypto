@@ -1,5 +1,4 @@
 class Review < ActiveRecord::Base
-
 	# after_create :send_notification
 
 	def send_notification
@@ -17,5 +16,4 @@ class Review < ActiveRecord::Base
 		less_than_or_equal_to: 5,
 		message: "can only be a whole number between 1 and 5"
 	}
-
 end

@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-
   has_many :reviews, dependent: :destroy
   has_many :photos, dependent: :destroy
   has_many :likes
@@ -17,16 +16,16 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :user_name, :case_sensitive => false
 
   extend FriendlyId
-  	friendly_id :user_name, use: :slugged
+  friendly_id :user_name, use: :slugged
 
   # after_create :send_notification
 
   def send_notification
-  	AdminMailer.new_user(self).deliver_now
+    AdminMailer.new_user(self).deliver_now
   end
 
   def should_generate_new_friendly_id?
-  	user_name_changed? || slug.blank?
+    user_name_changed? || slug.blank?
   end
 
   def has_friendly_id_slug?
@@ -36,8 +35,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :invitable, :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-
+  :recoverable, :rememberable, :trackable, :validatable
 
   def basic_products
     #
@@ -53,6 +51,4 @@ class User < ActiveRecord::Base
       avatar.image
     end
   end
-
-
 end

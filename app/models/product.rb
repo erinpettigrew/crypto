@@ -1,5 +1,4 @@
 class Product < ActiveRecord::Base
-
 	has_many :reviews, dependent: :destroy
 	has_many :photos, dependent: :destroy
 	has_many :likes
@@ -13,7 +12,7 @@ class Product < ActiveRecord::Base
 	has_many :wants, dependent: :destroy
 	has_many :wanted_by, through: :wants, source: :user
 	validates :product_brand, :product_name, :image, :category, presence: true
-
+	
 	extend FriendlyId
 	friendly_id :slug_candidates, use: :slugged
 
@@ -30,7 +29,6 @@ class Product < ActiveRecord::Base
 	mount_uploader :image, ImageUploader
 
 	searchkick
-
 
 	def recent_reviews
 		reviews.order(created_at: :desc)
@@ -51,6 +49,4 @@ class Product < ActiveRecord::Base
 			reviews.average(:rating).round(2)
 		end
 	end
-
-
 end
