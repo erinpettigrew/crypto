@@ -2,7 +2,7 @@
 /* Custom, iPhone Retina -------------------------------------------------------- */
 @media screen and (min-width: 320px) {
 
-	
+
 
 	.jumbotron {
 		background-color:#ffffff;
@@ -34,8 +34,8 @@
 		}
 
 		h2 {
-		font-size:140%;
-		font-weight:300;
+			font-size:140%;
+			font-weight:300;
 		}
 
 		.user-avatar {
@@ -55,35 +55,35 @@
 		}
 	}
 
-	.table th, .table td { 
-	     border-top: 0px solid #f2f3f4 !important; 
-	 }
+	.table th, .table td {
+		border-top: 0px solid #f2f3f4 !important;
+	}
 
 	.btn-primary {
-	    background: #ffffff;
-	    color: #000000;
-	    border-color: #000000;
-	    }
+		background: #ffffff;
+		color: #000000;
+		border-color: #000000;
+	}
 
-	 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-	    background: #33a6cc;
-	    }
+	.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+		background: #33a6cc;
+	}
 
 
-	 .title {
-			width:100%;
-			text-align:center;
-			font-weight:500;
-			font-size:140%;
-			text-transform:none;
-			border-bottom:1px solid black;
-			padding:5px;
-			margin-bottom:30px;
-			margin-top:10px;
+	.title {
+		width:100%;
+		text-align:center;
+		font-weight:500;
+		font-size:140%;
+		text-transform:none;
+		border-bottom:1px solid black;
+		padding:5px;
+		margin-bottom:30px;
+		margin-top:10px;
 	}
 
 	.table-header {
-	text-align:center;
+		text-align:center;
 	}
 
 	.navbar-default {
@@ -98,9 +98,9 @@
 				height:34px;
 			}
 			.navbar-brand {
-			color: #ffffff;
-			font-size: 22px;
-			font-weight: bold;
+				color: #ffffff;
+				font-size: 22px;
+				font-weight: bold;
 			}
 		}
 	}
@@ -141,7 +141,7 @@
 		.product-list-row {
 			margin:0px 0px 0px 0px;
 			padding:0px 0px 20px 0px;
-			
+
 		}
 
 		.product-info {
@@ -180,14 +180,14 @@
 	}
 
 
-		.user-product-image {
-			margin:5px;
-		}
+	.user-product-image {
+		margin:5px;
+	}
 
-		.user-product-image img {
-			max-width:80%;
-			min-width:80px;
-		}
+	.user-product-image img {
+		max-width:80%;
+		min-width:80px;
+	}
 
 
 	.index-product-image {
@@ -201,10 +201,10 @@
 
 
 	.button-1 {
-			text-align:center;
-			margin:10px 0px 0px 0px;
+		text-align:center;
+		margin:10px 0px 0px 0px;
 	}
-	
+
 	.button-using {
 		text-align:center;
 		margin:30px 0px 0px 0px;
@@ -246,7 +246,7 @@
 	}
 
 	.ingredients-list {
-	font-size:75%;
+		font-size:75%;
 	}
 
 	.star-rating-index img {
@@ -278,7 +278,7 @@
 
 		a {
 			color:#000000;
-			text-decoration:underline;		
+			text-decoration:underline;
 		}
 	}
 
@@ -352,14 +352,14 @@
 	.user-panel {
 
 		.row {
-		margin:0px 0px 20px 0px;
+			margin:0px 0px 20px 0px;
 		}
 
 		.user-product-photos img {
-		margin:0px 0px 20px 0px;
-		max-width:100%;
-		min-width:130px;
-		border-radius:5px;
+			margin:0px 0px 20px 0px;
+			max-width:100%;
+			min-width:130px;
+			border-radius:5px;
 		}
 
 		.user-product-image {
@@ -372,7 +372,7 @@
 		}
 
 		.user-product-info h5 {
-		text-align:center;
+			text-align:center;
 		}
 
 		.stars img {
@@ -423,7 +423,7 @@
 	.main-container {
 		overflow:auto;
 		padding-bottom:100px;
-		}
+	}
 
 	.jumbotron {
 		background-color:#ffffff;
@@ -441,18 +441,18 @@
 	/* modify bootstrap's button colors */
 
 	.btn-primary {
-	    background: #ffffff;
-	    color: #000000;
-	    border-color: #000000;
-	    }
+		background: #ffffff;
+		color: #000000;
+		border-color: #000000;
+	}
 
-	 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-	    background: #33a6cc;
-	    }
+	.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+		background: #33a6cc;
+	}
 
 
 	.table-header {
-	text-align:center;
+		text-align:center;
 	}
 
 	.navbar-default {
@@ -469,9 +469,9 @@
 				font-weight: regular;
 			}
 			.navbar-brand {
-			color: #ffffff;
-			font-size: 20px;
-			font-weight: bold;
+				color: #ffffff;
+				font-size: 20px;
+				font-weight: bold;
 			}
 		}
 	}
@@ -496,8 +496,8 @@
 	}
 
 	.product-list-header {
-	text-align:center;
-	padding:0px 0px 25px 0px;
+		text-align:center;
+		padding:0px 0px 25px 0px;
 	}
 
 	.product-list {
@@ -544,8 +544,8 @@
 
 	.index-product-image {
 		padding:0px;
-			margin:15px 0px 0px 0px;
-		}
+		margin:15px 0px 0px 0px;
+	}
 
 	.index-product-image img {
 		max-width:100px;
@@ -554,15 +554,15 @@
 		border-radius:5px;
 		box-shadow:1px 1px 1px #e5e5e5;
 		padding:3px;
-		}
+	}
 
 	.product-panel {
 
-	.product-image img {
-	max-width:300px;
-	min-width:120px;
-	}
-	text-align:left;
+		.product-image img {
+			max-width:300px;
+			min-width:120px;
+		}
+		text-align:left;
 	}
 
 	.button-1 {
@@ -637,7 +637,7 @@
 
 		a {
 			color:#000000;
-			text-decoration:underline;		
+			text-decoration:underline;
 		}
 	}
 
@@ -678,8 +678,4 @@
 
 	}
 
-
 }
-
-
-
