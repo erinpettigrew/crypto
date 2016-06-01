@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   resources :posts
   resources :themes
   resources :skin_types
@@ -16,15 +15,14 @@ Rails.application.routes.draw do
       put :use, on: :member
       put :like, on: :member
       put :want, on: :member
-      collection do #search will apply to more than one product
+      collection do # search will apply to more than one product
           get 'search'
       end
           resources :reviews, except: [:show, :index] #deleted show and index pages
           resources :photos
           resources :links
-
     end
-    
+
   get 'pages/about'
 
   get '/join', to: 'applicants#new'
