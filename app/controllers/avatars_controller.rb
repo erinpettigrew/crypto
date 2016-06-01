@@ -45,7 +45,7 @@ class AvatarsController < ApplicationController
   end
 
 
-    def destroy
+  def destroy
     @avatar.destroy
     respond_to do |format|
       format.html { redirect_to user_path(current_user), notice: 'Your photo was successfully destroyed.' }
@@ -54,17 +54,15 @@ class AvatarsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_avatar
-      @avatar = Avatar.find(params[:id])
-    end
+  def set_avatar
+    @avatar = Avatar.find(params[:id])
+  end
 
-    def set_user
-    	@user = current_user
-    end
+  def set_user
+    @user = current_user
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def avatar_params
-      params.require(:avatar).permit(:image)
-    end
+  def avatar_params
+    params.require(:avatar).permit(:image)
+  end
 end
