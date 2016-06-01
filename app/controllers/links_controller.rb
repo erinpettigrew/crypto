@@ -1,9 +1,8 @@
 class LinksController < ApplicationController
- before_action :set_link, only: [:destroy]
- before_action :set_product
- before_action :authenticate_user!
- before_action :check_user
-
+  before_action :set_link, only: [:destroy]
+  before_action :set_product
+  before_action :authenticate_user!
+  before_action :check_user
 
   def new
   	@link = Link.new
@@ -58,4 +57,3 @@ private
     end
 
 end
-
