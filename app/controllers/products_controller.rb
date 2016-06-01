@@ -6,14 +6,11 @@ class ProductsController < ApplicationController
   before_action :set_categories, only: [:new, :edit, :create, :update]
   before_action :set_themes, only: [:new, :edit, :create, :update]
 
-
   def search
     @query = params[:search]
     @products = Product.includes(:reviews, :uses).search(params[:search])
   end
 
-  # GET /products
-  # GET /products.json
   def index
     @product_count = Product.all.count
     @review_count = Review.all.count
@@ -41,8 +38,6 @@ class ProductsController < ApplicationController
     @recent_actions = (@recent_reviews + @recent_uses + @recent_wants + @recent_posts).sort_by(&:created_at).reverse
   end
 
-  # GET /products/1
-  # GET /products/1.json
   def show
   end
 
@@ -51,13 +46,11 @@ class ProductsController < ApplicationController
     if type == 'like'
       current_user.liked_products << @product
       redirect_to :back
-      #notice: "You liked #{@product.product_brand} #{@product.product_name}"
     elsif type == 'unlike'
       current_user.liked_products.delete(@product)
       redirect_to :back
-      #notice: "You unliked #{@product.product_brand} #{@product.product_name}"
     else
-      redirect_to :back, notice: 'Nothing happened.'
+      redirect_to :back
     end
   end
 
@@ -71,13 +64,11 @@ class ProductsController < ApplicationController
     'Product ID' => @product.id,
     'Product Name' => @product.product_brand + " " + @product.product_name
       })
-      #notice: "You started using #{@product.product_brand} #{@product.product_name}"
     elsif type == 'unuse'
       current_user.used_products.delete(@product)
       redirect_to :back
-      #notice: "You started using #{@product.product_brand} #{@product.product_name}"
     else
-      redirect_to :back, notice: 'Nothing happened.'
+      redirect_to :back
     end
   end
 
