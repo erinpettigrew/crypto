@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
 
   def pic
     if avatar.nil?
-      "https://s3.amazonaws.com/productbase/hearts/black-heart.jpeg"
+      "https://s3.amazon.com/productbase/hearts/black-heart.jpeg"
     else
       avatar.image
     end
