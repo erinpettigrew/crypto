@@ -3,16 +3,15 @@ class WantsController < ApplicationController
   before_action :set_product
   before_action :authenticate_user!
 
+  def new
+    @want = Want.new
+  end
 
-	def new 
-		@want = Want.new
-	end
-
-	def create
-		@want = Want.new(want_params)
-    	@want.user_id = current_user.id
-    	@want.product_id = @product.id
-	end
+  def create
+    @want = Want.new(want_params)
+    @want.user_id = current_user.id
+    @want.product_id = @product.id
+  end
 
   def destroy
     @use.destroy
@@ -22,14 +21,12 @@ class WantsController < ApplicationController
     end
   end
 
-    private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_use
-      @use = Use.find(params[:id])
-    end
+  private
+  def set_use
+    @use = Use.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def use_params
-      params.require(:use).permit(:product_id, :user_id)
-    end
+  def use_params
+    params.require(:use).permit(:product_id, :user_id)
+  end
 end
