@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160602001446) do
+ActiveRecord::Schema.define(version: 20160602002509) do
 
   create_table "applicants", force: :cascade do |t|
     t.string   "email"
@@ -203,11 +203,17 @@ ActiveRecord::Schema.define(version: 20160602001446) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "uses", ["product_id"], name: "index_uses_on_product_id"
+  add_index "uses", ["user_id"], name: "index_uses_on_user_id"
+
   create_table "wants", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "wants", ["product_id"], name: "index_wants_on_product_id"
+  add_index "wants", ["user_id"], name: "index_wants_on_user_id"
 
 end
