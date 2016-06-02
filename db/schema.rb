@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160602002509) do
+ActiveRecord::Schema.define(version: 20160602003244) do
 
   create_table "applicants", force: :cascade do |t|
     t.string   "email"
@@ -155,13 +155,6 @@ ActiveRecord::Schema.define(version: 20160602002509) do
   end
 
   add_index "themes", ["slug"], name: "index_themes_on_slug", unique: true
-
-  create_table "tries", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
