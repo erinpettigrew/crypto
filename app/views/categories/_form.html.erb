@@ -1,31 +1,31 @@
 <%= form_for(@category) do |f| %>
-  <% if @category.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+<% if @category.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
 
-      <ul>
-      <% @category.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% @category.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="form-group">
-    <%= f.label :name %><br>
-    <%= f.text_area :name, class: "form-control", rows: "1" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :description %><br>
-    <%= f.text_area :description, class: "form-control" %>
-  </div>
+<div class="form-group">
+  <%= f.label :name %><br>
+  <%= f.text_area :name, class: "form-control", rows: "1" %>
+</div>
+<div class="form-group">
+  <%= f.label :description %><br>
+  <%= f.text_area :description, class: "form-control" %>
+</div>
 
-  <div class="form-group">
-    <%= f.label "Theme" %><br>
-    <%= f.select :theme_id, @themes.collect {|theme| [theme.name.titleize, theme.id]}, class: "form-control" %>
-  </div>
+<div class="form-group">
+  <%= f.label "Theme" %><br>
+  <%= f.select :theme_id, @themes.collect {|theme| [theme.name.titleize, theme.id]}, class: "form-control" %>
+</div>
 
-  <div class="form-group">
-    <%= f.submit class: "btn btn-primary btn-0lg" %>
-  </div>
+<div class="form-group">
+  <%= f.submit class: "btn btn-primary btn-0lg" %>
+</div>
 <% end %>
