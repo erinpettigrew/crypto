@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302172449) do
+ActiveRecord::Schema.define(version: 20160602001446) do
 
   create_table "applicants", force: :cascade do |t|
     t.string   "email"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20160302172449) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "avatars", ["user_id"], name: "index_avatars_on_user_id"
+
   create_table "categories", force: :cascade do |t|
     t.text     "name"
     t.text     "description"
@@ -37,6 +39,7 @@ ActiveRecord::Schema.define(version: 20160302172449) do
   end
 
   add_index "categories", ["slug"], name: "index_categories_on_slug", unique: true
+  add_index "categories", ["theme_id"], name: "index_categories_on_theme_id"
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -100,7 +103,9 @@ ActiveRecord::Schema.define(version: 20160302172449) do
     t.integer  "theme_id"
   end
 
+  add_index "products", ["category_id"], name: "index_products_on_category_id"
   add_index "products", ["slug"], name: "index_products_on_slug", unique: true
+  add_index "products", ["theme_id"], name: "index_products_on_theme_id"
 
   create_table "profiles", force: :cascade do |t|
     t.integer  "user_id"
@@ -117,6 +122,9 @@ ActiveRecord::Schema.define(version: 20160302172449) do
     t.integer  "user_id"
     t.integer  "product_id"
   end
+
+  add_index "reviews", ["product_id"], name: "index_reviews_on_product_id"
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "sites", force: :cascade do |t|
     t.text     "name"
