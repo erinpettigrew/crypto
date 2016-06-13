@@ -37,18 +37,7 @@ class User < ActiveRecord::Base
   devise :invitable, :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable
 
-  def basic_products
-    #
-  end
-
-  def advanced_products
-  end
-
   def pic
-    if avatar.nil?
-      "https://s3.amazonaws.com/productbase/hearts/black-heart.jpeg"
-    else
-      avatar.image
-    end
+    avatar.nil? ? "https://s3.amazonaws.com/productbase/hearts/black-heart.jpeg" : avatar.image
   end
 end
