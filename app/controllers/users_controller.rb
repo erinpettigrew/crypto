@@ -4,8 +4,7 @@ class UsersController < ApplicationController
 
 
 	def show
-		@user_photos = Photo.where(user: @user).order(created_at: :desc)
-		@user_reviews = Review.includes(:product, :user).where(user: @user).order(created_at: :desc)
+		@user_reviews = @user.reviews.includes(:product).order(created_at: :desc)
 
 		if @user.profile.present? && @user.profile.skin_type_id.present?
 			@skin_type = SkinType.find_by(id: @user.profile.skin_type_id)
