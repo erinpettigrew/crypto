@@ -44,18 +44,7 @@
           <% end %>
         </div>
         <% end %>
-
-        <% if product.uses.count > 0 %>
-        <div class="uses">
-          <div class="tiny-avatar">
-            <%= image_tag(product.uses.first.try(:user).try(:avatar).try(:image).try(:small_thumb)) %>
-            <%= image_tag(product.uses.second.try(:user).try(:avatar).try(:image).try(:small_thumb)) %>
-            <%= image_tag(product.uses.third.try(:user).try(:avatar).try(:image).try(:small_thumb)) %>
-          </div>
-        </div>
-        <% end %>
-
-
+        <%= render partial: 'uses/uses', locals: { uses: product.uses } %>
       </div>
     </div>
     <% end %>

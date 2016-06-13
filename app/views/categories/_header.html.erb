@@ -1,0 +1,15 @@
+<div class="index-panel">
+  <h1><%= category.name.pluralize.titleize %></h1>
+  <h4><%= (category.description).gsub(/\n/, '<br/>').html_safe %></h4>
+  <br>
+  <% if user_signed_in? %>
+  <div class= "new-product-panel">
+    <div class= "form-group">
+      <%= link_to 'Add a new ' + category.name.titleize, new_product_path, class: "btn btn-primary btn-lg" %>
+    </div>
+  </div>
+  <% end %>
+</div>
+  <div class="title">
+    <%= pluralize(@products.count, "Product") %>
+  </div>

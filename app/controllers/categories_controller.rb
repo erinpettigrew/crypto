@@ -9,26 +9,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @products = @category.products.includes(:reviews, :uses).order(created_at: :desc)
-    @avg_rating = []
-    @review_count = []
-    @total_uses = []
-    @uses = []
-    @use_count = []
-
-    @products.each do |product|
-      @reviews = product.reviews
-      @uses = product.uses
-      @use_count << @uses.size
-
-      if @reviews.blank?
-        @avg_rating << 0
-        @review_count << 0
-      else
-        @avg_rating << @reviews.average(:rating).round(2)
-        @review_count << @reviews.size
-      end
-    end
+    @products = @category.products.includes([:reviews], [:uses => [:user => :avatar]]).order(created_at: :desc)
   end
 
   def new
