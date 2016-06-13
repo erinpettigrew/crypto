@@ -1,2 +1,2 @@
-<div class="title"><%= link_to "#{theme.name.titleize}", theme_path(theme) %></div>
+<div class="title"><%= theme.name.titleize %></div>
 <%= render partial: 'category_row', collection: theme.categories, as: :category %>
