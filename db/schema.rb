@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160602003244) do
+ActiveRecord::Schema.define(version: 20160613202947) do
 
   create_table "applicants", force: :cascade do |t|
     t.string   "email"
@@ -59,16 +59,6 @@ ActiveRecord::Schema.define(version: 20160602003244) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "links", force: :cascade do |t|
-    t.integer  "site_id"
-    t.string   "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "product_id"
-    t.text     "excerpt"
-    t.text     "site_name"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -125,13 +115,6 @@ ActiveRecord::Schema.define(version: 20160602003244) do
 
   add_index "reviews", ["product_id"], name: "index_reviews_on_product_id"
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
-
-  create_table "sites", force: :cascade do |t|
-    t.text     "name"
-    t.string   "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "skin_types", force: :cascade do |t|
     t.text     "name"
