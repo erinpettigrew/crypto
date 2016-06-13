@@ -12,7 +12,7 @@ class Product < ActiveRecord::Base
 	has_many :wants, dependent: :destroy
 	has_many :wanted_by, through: :wants, source: :user
 	validates :product_brand, :product_name, :image, :category, presence: true
-	
+
 	extend FriendlyId
 	friendly_id :slug_candidates, use: :slugged
 
@@ -43,10 +43,6 @@ class Product < ActiveRecord::Base
 	end
 
 	def average_rating
-		if reviews.blank?
-			0
-		else
-			reviews.average(:rating).round(2)
-		end
+		reviews.blank? ? 0 : reviews.average(:rating).round(2)
 	end
 end

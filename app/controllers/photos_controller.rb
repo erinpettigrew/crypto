@@ -3,8 +3,6 @@ class PhotosController < ApplicationController
   before_action :set_product
   before_action :authenticate_user!
 
-
-
   # GET /photos/new
   def new
     @photo = Photo.new

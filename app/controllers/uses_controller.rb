@@ -22,7 +22,6 @@ class UsesController < ApplicationController
   end
 
   private
-
   def set_want
     @want = Want.find(params[:id])
   end

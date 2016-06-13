@@ -1,15 +1,14 @@
 class ThemesController < ApplicationController
- before_action :set_theme, only: [:show, :edit, :update, :destroy]
- before_action :authenticate_user!
- before_action :check_user, except: [:show]
-
+  before_action :set_theme, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :check_user, except: [:show]
 
   def new
-  	@theme = Theme.new
+    @theme = Theme.new
   end
 
   def create
-  	@theme = Theme.new(theme_params)
+    @theme = Theme.new(theme_params)
 
     respond_to do |format|
       if @theme.save
@@ -23,7 +22,7 @@ class ThemesController < ApplicationController
   end
 
   def index
-  	@themes = Theme.all()
+    @themes = Theme.all()
   end
 
   def show
@@ -36,15 +35,15 @@ class ThemesController < ApplicationController
     @use_count = []
 
     for singleproduct in @products
-        @reviews = singleproduct.reviews
-        @uses = singleproduct.uses
-        @use_count << @uses.size
+      @reviews = singleproduct.reviews
+      @uses = singleproduct.uses
+      @use_count << @uses.size
 
       if @reviews.blank?
         @avg_rating << 0
         @review_count << 0
       else
-        @avg_rating << @reviews.average(:rating).round(2) 
+        @avg_rating << @reviews.average(:rating).round(2)
         @review_count << @reviews.size
       end
     end
@@ -63,28 +62,28 @@ class ThemesController < ApplicationController
   end
 
   def destroy
-  	@theme.destroy
-  	  respond_to do |format|
-      	format.html { redirect_to product_url, notice: 'This was successfully destroyed.' }
-      	format.json { head :no_content }
-      end
+    @theme.destroy
+    respond_to do |format|
+      format.html { redirect_to product_url, notice: 'This was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
 
-private
+  private
 
-  	def set_theme
-      @theme = Theme.friendly.find(params[:id])
-    end
+  def set_theme
+    @theme = Theme.friendly.find(params[:id])
+  end
 
-    def theme_params
-  	   params.require(:theme).permit(:name, :info)
-    end
+  def theme_params
+    params.require(:theme).permit(:name, :info)
+  end
 
-    def check_user
-      unless current_user.admin?
-        redirect_to root_url, alert: "Sorry, only admins can do that!"
-      end
+  def check_user
+    unless current_user.admin?
+      redirect_to root_url, alert: "Sorry, only admins can do that!"
     end
+  end
 
 end
