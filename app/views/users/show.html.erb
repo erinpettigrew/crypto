@@ -140,21 +140,6 @@
 			</div>
 			<% end %>
 
-
-
-
-
-			<script>
-			$('.star-rating').raty({
-				path: 'https://s3.amazonaws.com/productbase/stars',
-				readOnly: true,
-				score: function() {
-					return $(this).attr('data-score');
-				}
-			});
-			</script>
-
-
 			<% if @user == current_user %>
 			<script>
 			mixpanel.track("Viewed Own Profile", {"Username": "<%= @user.user_name %>", "User ID": <%= @user.id %>});
@@ -164,3 +149,13 @@
 			mixpanel.track("Viewed Profile", {"Username": "<%= @user.user_name %>", "User ID": <%= @user.id %>});
 			</script>
 			<% end %>
+
+<script>
+	$('.star-rating').raty({
+		path: 'https://s3.amazonaws.com/productbase/stars',
+		readOnly: true,
+		score: function() {
+			return $(this).attr('data-score');
+		}
+	});
+</script>
