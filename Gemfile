@@ -50,6 +50,7 @@ group :development do
   gem 'rename'
   gem 'bullet'
   gem 'pry-rails'
+  gem 'rack-mini-profiler'
 end
 
 #heroku requires installation of rails 12 factor for ruby 4 and above, so only use it in production
