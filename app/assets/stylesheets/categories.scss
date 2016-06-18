@@ -11,70 +11,57 @@
 		.category-row {
 			margin-bottom:20px;
 		}
-
 		.category-name {
 			font-size:18px;
 			font-weight:500;
 			text-align:left;
 			margin-top:15px;
 		}
-
 		.category-images {
 			text-align:left;
 		}
-
 		.category-images img {
 			max-height:50px;
 		}
-
 		.category-count {
 			font-size:18px;
 			font-weight:300;
 			display:none;
 		}
 	}
-
 	.category-index a {
 		color:#000000;
 	}
 
 
 	.category-show {
-
 		.product-row {
 			padding-bottom:20px;
-
+			height: 130px;
 		}
-
 		.product-image img {
-			max-width:100px;
+			max-height:100px;
 		}
-
 		.product-brand {
 			font-size:16px;
 			font-weight:500;
 			margin-top:0px;
 		}
-
 		.product-name {
 			font-size:16px;
 			font-weight:500;
-
 		}
-
 		.review-info {
 			font-size:14px;
 			font-weight:300;
 			margin-top:0px;
 		}
-
 	}
 
 	.uses {
 		margin-left:0px;
 		padding-left:0px;
 	}
-
 }
 
 /* Small Devices, Tablets -------------------------------------------------------- */
@@ -110,6 +97,7 @@
 
 		.product-row {
 			padding-bottom: 20px;
+			height: 150px;
 		}
 
 		.product-image {
@@ -117,7 +105,7 @@
 		}
 
 		.product-image img {
-			max-width:115px;
+			max-height:110px;
 		}
 
 		.product-brand {
@@ -133,7 +121,5 @@
 			margin-top:20px;
 			line-height:25px;
 		}
-
 	}
-	
 }
