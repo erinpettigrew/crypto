@@ -1,7 +1,7 @@
 <div class="uses">
   <div class="tiny-avatar">
     <% uses.take(3).each do |use| %>
-      <%= image_tag(use.user.try(:avatar).try(:image).try(:small_thumb)) %>
+      <%= image_tag(use.user.pic) %>
     <% end %>
   </div>
 </div>
