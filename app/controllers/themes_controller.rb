@@ -71,7 +71,6 @@ class ThemesController < ApplicationController
 
 
   private
-
   def set_theme
     @theme = Theme.friendly.find(params[:id])
   end

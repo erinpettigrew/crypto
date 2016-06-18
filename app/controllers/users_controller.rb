@@ -2,7 +2,6 @@ class UsersController < ApplicationController
 	before_action :set_user, only: [:show]
 	before_action :authenticate_user! #remove when out of preview beta
 
-
 	def show
 		@user_reviews = @user.reviews.includes(:product).order(created_at: :desc)
 

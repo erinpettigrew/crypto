@@ -2,7 +2,6 @@ class SkinTypesController < ApplicationController
 	before_action :check_user
 	before_action :set_skin_type, only: [:show, :edit, :destroy, :update]
 
-
 	def index
 		@skin_types = SkinType.all
 	end
@@ -10,11 +9,9 @@ class SkinTypesController < ApplicationController
 	def show
 	end
 
-
 	def new
 		@skin_type = SkinType.new
 	end
-
 
 	def create
 		@skin_type = SkinType.new(skin_type_params)
@@ -33,7 +30,6 @@ class SkinTypesController < ApplicationController
 	def edit
 	end
 
-
 	def update
 		respond_to do |format|
 			if @skin_type.update(skin_type_params)
@@ -44,9 +40,7 @@ class SkinTypesController < ApplicationController
 				format.json { render json: @skin_type.errors, status: :unprocessable_entity }
 			end
 		end
-
 	end
-
 
 	def destroy
 		@skin_type.destroy
@@ -57,12 +51,10 @@ class SkinTypesController < ApplicationController
 	end
 
 	private
-	# Use callbacks to share common setup or constraints between actions.
 	def set_skin_type
 		@skin_type = SkinType.find(params[:id])
 	end
 
-	# Never trust parameters from the scary internet, only allow the white list through.
 	def skin_type_params
 		params.require(:skin_type).permit(:name)
 	end
