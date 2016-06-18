@@ -45,6 +45,7 @@ group :development do
   gem 'spring'
   gem 'rename'
   gem 'bullet'
+  gem 'pry-rails'
 end
 
 #heroku requires installation of rails 12 factor for ruby 4 and above, so only use it in production

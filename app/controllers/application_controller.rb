@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-
   def disable_nav
   	@disable_nav = true
   end
@@ -28,7 +27,6 @@ protected
 		root_path
 #		URI.parse(request.referer).path if request.referer #when no longer under preview mode
 	end
-
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :user_name
