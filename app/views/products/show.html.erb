@@ -2,6 +2,7 @@
 <% description 'Reviews and photos of ' + @product.product_brand + ' ' + @product.product_name %>
 <% keywords @product.product_brand + ' ' + @product.product_name + ', ' + @product.category.name + ', reviews, community, forum, posts, asian, skincare, beauty, products' %>
 
+<div class="page">
 
 <div class="row">
 	<div class="col-xs-12 col-sm-4">
@@ -38,7 +39,7 @@
 
 				<% if @product.category_id != 1 %>
 				<p><h5>in <%= link_to @product.category.name.titleize.pluralize, @product.category %></br>
-					by <%= link_to "#{@product.product_brand}", 'http://www.looklove.com/products/search?utf8=%E2%9C%93&search=' + @product.product_brand %></h5></p>
+					by <%= link_to "#{@product.product_brand}", root_path + 'products/search?utf8=%E2%9C%93&search=' + @product.product_brand %></h5></p>
 					<% end %>
 				</div> <!-- /product-image -->
 
@@ -187,6 +188,7 @@
 		<%= link_to "Destroy", @product, method: :delete, data: { confirm: 'Are you sure?' } %>
 		<% end %>
 		<% end %>
+</div><!-- /.page -->
 
 		<script>
 		$('.star-rating').raty({

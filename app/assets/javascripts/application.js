@@ -11,6 +11,12 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
 //= require turbolinks
+//= require jquery_ujs
 //= require_tree .
+
+
+function transitionIn(anyDiv) {
+  anyDiv.hide();
+  anyDiv.delay(10).fadeIn(300);
+}
