@@ -2,34 +2,9 @@
 <% description 'Reviews and photos of the best in new skincare and cosmetics products' %>
 <% keywords 'the best beauty products, reviews, community, forum, posts, asian beauty, korean beauty, skincare' %>
 
-<div class="index-panel hidden-xs">
-  <div class="col-sm-3 user-avatar">
-    <div class="medium-avatar">
-      <%=  link_to image_tag(current_user.pic), current_user %>
-    </div>
-  </div>
-  <div class ="col-sm-5 welcome-message">
-  </br>
-  <h2><strong>Hi <%= link_to "#{current_user.user_name}", current_user %>!</strong> Browse <%= link_to "#{@product_count} products", categories_path %> with <%= @review_count %> reviews.</h2>
-</div>
-<div class="col-sm-4">
-  <div class="add-button">
-    </br>
-    <%= link_to 'Add product!', new_product_path, class: "btn btn-primary btn-lg" %>
-  </div>
-</div>
-</div>
+<%= render 'search' %>
+<!-- <%= render partial: 'welcome', locals: { product_count: @product_count, review_count: @review_count } %> -->
 
-<div class="index-panel visible-xs-inline">
-  <h1>What beauty products are you using?</h1>
-  <div class= "new-product-panel">
-    <div class= "form-group">
-      <%= link_to 'Add product!', new_product_path, class: "btn btn-primary btn-lg" %>
-    </div>
-  </div>
-</div>
-<div style="clear: both;"></div>
-</br>
 <div class="title">What's new</div>
 <div class="product-list">
   <% @recent_actions.each do |action, i| %>

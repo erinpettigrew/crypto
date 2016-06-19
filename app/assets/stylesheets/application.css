@@ -1,35 +1,54 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any styles
+* defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+* file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
 
- body {
-   /*font-family: "Raleway", sans-serif;*/
-   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
- }
+body {
+  /*font-family: "Raleway", sans-serif;*/
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  /*font-family: 'Raleway Dots', cursive;*/
+  /*font-family: 'Questrial', sans-serif;*/
+  /*font-family: 'Bitter', serif;*/
+}
 
- html { -webkit-font-smoothing: antialiased; }
+html { -webkit-font-smoothing: antialiased; }
 
- .btn-primary {
-   background: #ffffff;
-   color: #000000;
-   border-color: #000000;
- }
+.badge {
+  margin-top:-62px;
+  margin-left: 80px;
+}
 
- .btn-info {
- }
+.btn-primary {
+  background: #ffffff;
+  color: #000000;
+  border-color: #000000;
+}
 
- .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-   background: #33a6cc;
- }
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+  background: #EDF277;
+  border-color: #EDF277;
+  color: #000000;
+}
+
+.btn-info {
+  background: #EDF277;
+  border-color: #EDF277;
+  color: #000000;
+}
+
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open > .dropdown-toggle.btn-info {
+  background: #EDF277;
+  border-color: #EDF277;
+  color: #000000;
+}

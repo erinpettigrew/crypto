@@ -1,10 +1,5 @@
-
-
-
 /* Custom, iPhone Retina -------------------------------------------------------- */
 @media screen and (min-width: 320px) {
-
-
 
 	.jumbotron {
 		background-color:#ffffff;
@@ -17,41 +12,31 @@
 			color: #000000;
 			font-weight:200;
 		}
-
 		h4 {
 			font-weight:200;
 		}
-
 	}
 
 	.index-panel {
-
 		text-align:center;
 		margin-bottom:20px;
-
 		.p {
 			font-weight:regular;
 			font-size:110%;
-
 		}
-
 		h2 {
 			font-size:140%;
 			font-weight:300;
 		}
-
 		.user-avatar {
 			text-align: right;
 		}
-
 		.welcome-message {
 			text-align:left;
 		}
-
 		.welcome-message a {
 			color: #000000;
 		}
-
 		.add-button {
 			text-align: left;
 		}
@@ -62,13 +47,14 @@
 	}
 
 	.title {
-		width:100%;
 		text-align:center;
+    margin: 0 auto;
+		color: black;
+		width: 100px;
 		font-weight:500;
-		font-size:140%;
-		text-transform:none;
-		border-bottom:1px solid black;
-		padding:5px;
+		font-size:90%;
+		text-transform:uppercase;
+		padding:10px;
 		margin-bottom:30px;
 		margin-top:10px;
 	}
@@ -78,10 +64,11 @@
 	}
 
 	.navbar-default {
+		font-family: 'Questrial', sans-serif;
 		.container-fluid {
-			background-color: #000000;
+			background-color: #ffffff;
 			.navbar-nav > li > a {
-				color: #ffffff;
+				color: #000000;
 				font-size: 22px;
 				font-weight: regular;
 				padding-right:5px;
@@ -89,16 +76,16 @@
 				height:34px;
 			}
 			.navbar-brand {
-				color: #ffffff;
-				font-size: 22px;
+				color: #000000;
+				font-size: 42px;
 				font-weight: bold;
 			}
 		}
 	}
 
 	.badge {
-		margin-top:-62px;
-		margin-left: 80px;
+		margin-top:-92px;
+		margin-left: 42px;
 	}
 
 	.container-fluid {
@@ -117,22 +104,17 @@
 		padding:0px 0px 25px 0px;
 	}
 
-
-
 	.product-list {
-
 		.product-card {
 			border: 0px solid #f0f0f0;
 			border-radius:5px;
 			padding:5px 0px 5px 0px;
 			margin:0px 0px 25px 0px;
-
 		}
 
 		.product-list-row {
 			margin:0px 0px 0px 0px;
 			padding:0px 0px 20px 0px;
-
 		}
 
 		.product-info {
@@ -203,7 +185,6 @@
 
 	.product-panel {
 		text-align:center;
-
 	}
 
 	.product-image img {
@@ -439,24 +420,19 @@
 			padding-top:5px;
 			padding-bottom:0px;
 			margin-bottom:0px;
-
-
-			background-color: #000000;
 			.navbar-nav > li > a {
-				color: #ffffff;
 				font-size: 12px;
 				font-weight: regular;
 			}
 			.navbar-brand {
-				color: #ffffff;
-				font-size: 20px;
+				font-size: 60px;
 				font-weight: bold;
 			}
 		}
 	}
 
 	.badge {
-		margin-top:-52px;
+		margin-top:-72px;
 		margin-left: 52px;
 	}
 
