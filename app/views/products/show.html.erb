@@ -2,6 +2,7 @@
 <% description 'Reviews and photos of ' + @product.product_brand + ' ' + @product.product_name %>
 <% keywords @product.product_brand + ' ' + @product.product_name + ', ' + @product.category.name + ', reviews, community, forum, posts, asian, skincare, beauty, products' %>
 
+<div class="page">
 
 <div class="row">
 	<div class="col-xs-12 col-sm-4">
@@ -187,6 +188,7 @@
 		<%= link_to "Destroy", @product, method: :delete, data: { confirm: 'Are you sure?' } %>
 		<% end %>
 		<% end %>
+</div><!-- /.page -->
 
 		<script>
 		$('.star-rating').raty({

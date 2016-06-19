@@ -15,3 +15,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+function transitionIn(anyDiv) {
+  anyDiv.hide();
+  anyDiv.delay(10).fadeIn(300);
+}
