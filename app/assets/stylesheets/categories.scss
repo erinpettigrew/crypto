@@ -45,31 +45,6 @@
 		color:#000000;
 	}
 
-
-	.category-show {
-		.product-row {
-			padding-bottom:20px;
-			height: 140px;
-		}
-		.product-image img {
-			max-height:100px;
-		}
-		.product-brand {
-			font-size:16px;
-			font-weight:500;
-			margin-top:0px;
-		}
-		.product-name {
-			font-size:16px;
-			font-weight:500;
-		}
-		.review-info {
-			font-size:14px;
-			font-weight:300;
-			margin-top:0px;
-		}
-	}
-
 	.uses {
 		margin-left:0px;
 		padding-left:0px;
@@ -94,33 +69,4 @@
 		}
 	}
 
-	.category-show {
-
-		.product-row {
-			padding-bottom: 20px;
-			height: 150px;
-		}
-
-		.product-image {
-			text-align:right;
-		}
-
-		.product-image img {
-			max-height:110px;
-		}
-
-		.product-brand {
-			font-size:18px;
-			margin-top:20px;
-		}
-
-		.product-name {
-			font-size:18px;
-		}
-
-		.review-info {
-			margin-top:20px;
-			line-height:25px;
-		}
-	}
 }

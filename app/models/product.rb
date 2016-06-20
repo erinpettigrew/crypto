@@ -31,7 +31,7 @@ class Product < ActiveRecord::Base
 	searchkick
 
 	def self.brands
-		Product.all.pluck(:product_brand).uniq.sort
+		Product.all.pluck(:product_brand).uniq.sort_by(&:downcase)
 	end
 
 	def recent_reviews

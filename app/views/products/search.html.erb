@@ -1,19 +1,9 @@
-<div class="index-panel">
-  <h1><%= @query %></h1>
-</div>
+<%= render 'search' %>
 
-<div class="add-product">
-  <%= link_to "Add Product", new_product_path, class: "btn btn-primary btn-lg" %>
-</div>
-
-<div class="product-list">
-  <div class="title">
-    <%= pluralize(@products.count, "Product") %>
-  </div>
+<div class="title"><%= pluralize(@products.count, "Product") %></div>
 
 <div class="category-show">
   <%= render partial: 'products/product_row', collection: @products, as: :product %>
-  </div>
 </div>
 
 <script>
