@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :skin_types
   resources :applicants
   resources :categories
+  resources :brands
   devise_for :users
   resources :users, :only => [:show, :index] do
       resources :avatars

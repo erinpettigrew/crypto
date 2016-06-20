@@ -33,6 +33,7 @@ html { -webkit-font-smoothing: antialiased; }
   background: #ffffff;
   color: #000000;
   border-color: #000000;
+  font-style: italic;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
@@ -45,6 +46,7 @@ html { -webkit-font-smoothing: antialiased; }
   background: #EDF277;
   border-color: #EDF277;
   color: #000000;
+  font-style: italic;
 }
 
 .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open > .dropdown-toggle.btn-info {

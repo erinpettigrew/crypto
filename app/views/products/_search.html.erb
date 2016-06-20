@@ -1,14 +1,13 @@
 <div class='big-search'>
   <%= form_tag search_products_path, method: :get, class: "search" do %>
   <%= text_field_tag :search, params[:search], class: "big-search", placeholder: "search 737 products" %>
-  <%= submit_tag "get it", name: nil, class: "btn btn-primary" %>
-
-  what's good?
+  <%= submit_tag "get it!", name: nil, class: "btn btn-primary search-button" %>
+  <div class="guide-text">
+  try searching for
   <%= link_to "orgasm blush", root_path + 'products/search?utf8=%E2%9C%93&search=' + 'orgasm blush' %>,
   <%= link_to "hyaluronic acid", root_path + 'products/search?utf8=%E2%9C%93&search=' + 'hyaluronic acid' %>,
-  <%= link_to "huda lashes", root_path + 'products/search?utf8=%E2%9C%93&search=' + 'huda lashes' %>,
-  <%= link_to "cerave cream", root_path + 'products/search?utf8=%E2%9C%93&search=' + 'cerave cream' %>,
-  <%= link_to "green tea", root_path + 'products/search?utf8=%E2%9C%93&search=' + 'green tea' %>,
-  and a thousand other things!
+  <%= link_to "cerave cream", root_path + 'products/search?utf8=%E2%9C%93&search=' + 'cerave cream' %>, or
+  <%= link_to "green tea", root_path + 'products/search?utf8=%E2%9C%93&search=' + 'green tea' %>
+</div>
 <% end %>
 </div>

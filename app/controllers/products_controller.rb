@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
 
   def search
     @query = params[:search]
-    @products = Product.includes(:reviews, :uses, :avatars).search(params[:search])
+    @products = Product.search(params[:search])
   end
 
   def index
@@ -31,10 +31,10 @@ class ProductsController < ApplicationController
       @used_advanced_products << current_user.used_products.where(category_id: category.id).first
     end
 
-    @recent_reviews = Review.all.order(created_at: :desc).includes(:user => :avatar, :product => :category).take(14)
-    @recent_uses = Use.all.order(created_at: :desc).includes(:user => :avatar, :product => :category).take(12)
-    @recent_wants = Want.all.order(created_at: :desc).includes(:user => :avatar, :product => :category).take(12)
-    @recent_posts = Post.all.order(created_at: :desc).includes(:user => :avatar).take(9)
+    @recent_reviews = Review.all.order(created_at: :desc).includes(:user => :avatar, :product => :category).take(6)
+    @recent_uses = Use.all.order(created_at: :desc).includes(:user => :avatar, :product => :category).take(6)
+    @recent_wants = Want.all.order(created_at: :desc).includes(:user => :avatar, :product => :category).take(6)
+    @recent_posts = Post.all.order(created_at: :desc).includes(:user => :avatar).take(5)
     @recent_actions = (@recent_reviews + @recent_uses + @recent_wants + @recent_posts).sort_by(&:created_at).reverse
   end
 

@@ -30,6 +30,10 @@ class Product < ActiveRecord::Base
 
 	searchkick
 
+	def self.brands
+		Product.all.pluck(:product_brand).uniq.sort
+	end
+
 	def recent_reviews
 		reviews.order(created_at: :desc)
 	end
@@ -45,4 +49,5 @@ class Product < ActiveRecord::Base
 	def average_rating
 		reviews.blank? ? 0 : reviews.average(:rating).round(2)
 	end
+
 end

@@ -18,6 +18,19 @@
 			font-weight: 100;
 			font-style: italic;
 		}
+		.search-button {
+			font-style: italic;
+			display:block;
+			float:right;
+			margin-top: 10px;
+		}
+		.guide-text {
+			text-align: left;
+		}
+		.guide-text a {
+			color: #000000;
+			text-decoration: underline;
+		}
 	}
 
 	.add-product {
@@ -178,7 +191,7 @@
 
 		.feed-item {
 			font-size:125%;
-			box-shadow:1px 1px 1px #e5e5e5;
+			box-shadow:1px 1px 1px #F4F4F4;
 		}
 
 		.feed-user {
@@ -347,13 +360,11 @@
 
 		.feed-user {
 			text-align:right;
-
 		}
 
 		.feed-action-text {
 			padding:20px 0px 0px 0px;
 			padding-left:15px;
-
 		}
 
 		.review-info p {
@@ -365,10 +376,15 @@
 		.feed-product-image {
 			padding:0px;
 			margin:0px;
+			:hover {
+				-ms-transform: scale(1.04, 1.04); /* IE 9 */
+				-webkit-transform: scale(1.04, 1.04); /* Safari */
+				transform: scale(1.04, 1.04);
+			}
 		}
 
 		.feed-product-image img {
-			max-width:295px;
+			max-width:265px;
 			max-height: 275px;
 			border-radius:5%;
 			padding:20px;

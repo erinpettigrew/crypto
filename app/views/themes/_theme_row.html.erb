@@ -1,2 +1,4 @@
 <div class="title"><%= theme.name.titleize %></div>
-<%= render partial: 'category_row', collection: theme.categories, as: :category %>
+<div class="row theme-row">
+  <%= render partial: 'category_row', collection: theme.categories, as: :category %>
+</div>
