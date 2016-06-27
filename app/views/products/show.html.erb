@@ -2,14 +2,59 @@
 <% description 'Reviews and photos of ' + @product.product_brand + ' ' + @product.product_name %>
 <% keywords @product.product_brand + ' ' + @product.product_name + ', ' + @product.category.name + ', reviews, community, forum, posts, asian, skincare, beauty, products' %>
 
-<div class="page">
+<%= render 'search' %>
 
-<div class="row">
+<div class="page product-show">
+	<div class="row">
+		<div class="title"><%= @product.category.name %></div>
+		<div class="col-xs-12 col-sm-5">
+			<div class="product-show-image"><%= image_tag @product.image_url %></div>
+		</div>
+
+
+	<h1><%= link_to @product.product_brand %></h1>
+	<h2><%= @product.product_name %></h2>
+	<div class="product-show-rating">
+		<%= render partial: 'rating', locals: { rating: @product.average_rating } %>
+	</div>
+
+
+	<%= link_to "I use this!", use_product_path(@product, type:'unuse'), class: "btn btn-info btn-lg", method: :put %>
+
+	<%= link_to "I want this", want_product_path(@product, type:'unwant'), class: "btn btn-primary btn-lg", method: :put %>
+<br>
+	by <%= link_to "#{@product.product_brand}", root_path + 'products/search?utf8=%E2%9C%93&search=' + @product.product_brand %></br>
+	in <%= link_to @product.category.name, @product.category %>
+	<%= render partial: "ingredients", locals: { product: @product } %>
+
+</div>
+
+	<div class="col-xs-12 col-sm-6"><h3>X Uses</h3>
+	<% @product.used_by.each do |user| %>
+		<div class="tiny-avatar"><%= link_to image_tag(user.pic), user %></div>
+	<% end %>
+</div>
+
+<div class="col-xs-12 col-sm-6">
+	<h3>Y Wants</h3>
+	<% @product.wanted_by.each do |user| %>
+		<div class="tiny-avatar"><%= link_to image_tag(user.pic), user %></div>
+	<% end %>
+</div>
+
+<div class="title">XY Reviews</div>
+
+<%= render partial: "reviews/row", collection: @product.reviews, as: :review %>
+
+
+
+
+<!-- <div class="row">
 	<div class="col-xs-12 col-sm-4">
 
-		<div class="product-panel">
-			<div class="product-image"><%= image_tag @product.image_url %></div>
-
+		<div class="product-panel"> -->
+			<!-- <div class="product-image"><%= image_tag @product.image_url %></div> -->
+<!--
 			<div class="col-xs-6 col-sm-6 button-use">
 				<% if user_signed_in? %>
 				<% if current_user.used_products.include?(@product) %>
@@ -31,9 +76,9 @@
 				<% else %>
 				<%= link_to "I want this", want_product_path(@product, type:'want'), class: "btn btn-primary btn-lg", method: :put %>
 				<% end %>
-			</div>
+			</div> -->
 
-			<p><h3><%= @product.product_brand %></br>
+			<!-- <p><h3><%= @product.product_brand %></br>
 				<%= @product.product_name %></h3></p>
 				<div class="star-rating-product-page"><div class="star-rating" data-score= <%= @product.average_rating %> ></div></div>
 
@@ -41,16 +86,10 @@
 				<p><h5>in <%= link_to @product.category.name.titleize.pluralize, @product.category %></br>
 					by <%= link_to "#{@product.product_brand}", root_path + 'products/search?utf8=%E2%9C%93&search=' + @product.product_brand %></h5></p>
 					<% end %>
-				</div> <!-- /product-image -->
-
-				<% if !@product.ingredients.blank? %>
-				<div class="ingredients-list">
-					see <div class="ingredients-button">Ingredients</div>
-					<div class="ingredients"><p><%= @product.ingredients.titleize %></p></div>
 				</div>
-				<% end %>
 
-				<% if @product.wants.any? %>
+
+				<!-- <% if @product.wants.any? %>
 				<div class="row wants">
 					<h3><%= pluralize(@product.wants.size, "Want") %></h3>
 					<% @product.recent_wants.includes(:user => :avatar).each do |want| %>
@@ -59,10 +98,10 @@
 					</div>
 					<% end %>
 				</div>
-				<% end %>
+				<% end %> -->
 
-			</div>
-
+			<!-- </div> -->
+<!--
 			<div class="col-xs-12 col-sm-8">
 				<div class="reviews">
 
@@ -174,9 +213,9 @@
 					</table>
 					<% end %>
 				</div>
-			</div>
+			</div> -->
 
-		</div> <!-- end of row class -->
+		<!-- </div> <!-- end of row class --> -->
 
 		<% if user_signed_in? %>
 		<% if current_user.admin? %>

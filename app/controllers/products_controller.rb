@@ -12,6 +12,14 @@ class ProductsController < ApplicationController
   end
 
   def index
+
+    @rand_categories = Product.last(4).collect { |product| product.category }
+    @products = Product.take(20).sample(8)
+
+
+
+
+
     @product_count = Product.all.count
     @review_count = Review.all.count
     @used_basic_products = []
@@ -34,7 +42,7 @@ class ProductsController < ApplicationController
     @recent_reviews = Review.all.order(created_at: :desc).includes(:user => :avatar, :product => :category).take(6)
     @recent_uses = Use.all.order(created_at: :desc).includes(:user => :avatar, :product => :category).take(6)
     @recent_wants = Want.all.order(created_at: :desc).includes(:user => :avatar, :product => :category).take(6)
-    @recent_posts = Post.all.order(created_at: :desc).includes(:user => :avatar).take(5)
+    @recent_posts = Post.all.order(created_at: :desc).includes(:user => :avatar).take(3)
     @recent_actions = (@recent_reviews + @recent_uses + @recent_wants + @recent_posts).sort_by(&:created_at).reverse
   end
 

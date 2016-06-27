@@ -4,6 +4,21 @@
 
 <%= render 'search' %>
 
+<div class="title">Worth It</div>
+<%= render partial: 'products/product_row', collection: @products.first(3), as: :product %>
+
+<div class="category-index">
+  <div class="title">Trending</div>
+  <div class="row theme-row">
+    <%= render partial: 'categories/category_row', collection: @rand_categories, as: :category %>
+  </div>
+</div>
+
+<div class="title">Noteworthy</div>
+<%= render partial: 'posts/post_tile', collection: @recent_posts, as: :post %>
+
+
+<!--
 <div class="title">What's new</div>
 <div class="product-list">
   <% @recent_actions.each do |action, i| %>
@@ -73,7 +88,7 @@
   <div class="form-group">
     <center><%= link_to 'See all products!', categories_path, class: "btn btn-primary btn-lg" %></center>
   </div>
-</div>
+</div> -->
 
 <script>
   mixpanel.track("Viewed Home");

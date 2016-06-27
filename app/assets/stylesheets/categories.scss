@@ -38,6 +38,9 @@
 				-webkit-transform: scale(1.05, 1.05); /* Safari */
 				-moz-transform: scale(1.05, 1.05);
 			}
+			.category-name {
+				text-decoration: underline;
+			}
 		}
 	}
 
@@ -49,6 +52,18 @@
 		margin-left:0px;
 		padding-left:0px;
 	}
+
+	.category-show-header {
+		text-align: left;
+		width: 100%;
+		.add-button {
+			float: right;
+			margin-top: -52px;
+		}
+	}
+
+
+
 }
 
 

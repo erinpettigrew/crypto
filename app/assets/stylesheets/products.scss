@@ -64,7 +64,7 @@
 		}
 	}
 
-	.product-rating {
+	.rating {
 		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 		background-color: #000000;
 		color: #ffffff;
@@ -76,6 +76,32 @@
 		text-align:center;
 		padding-top: 11px;
 	}
+
+
+
+	.product-show {
+		h1 {
+			font-size: 25px;
+			font-style: italic;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 25px;
+		}
+		.product-show-image {
+			text-align: left;
+		}
+		.product-show-image img {
+			max-width: 100%;
+
+		}
+		.product-show-rating {
+			float: right;
+			margin-top: -100px;
+		}
+	}
+
+
 
 
 

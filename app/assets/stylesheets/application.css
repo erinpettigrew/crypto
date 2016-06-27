@@ -24,6 +24,10 @@ body {
 
 html { -webkit-font-smoothing: antialiased; }
 
+body a {
+  color: black;
+}
+
 .badge {
   margin-top:-62px;
   margin-left: 80px;

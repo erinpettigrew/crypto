@@ -68,12 +68,12 @@
 	}
 
 	.navbar-default {
-		font-family: 'Questrial', sans-serif;
+		// font-family: 'Questrial', sans-serif;
 		.container-fluid {
 			background-color: #ffffff;
 			.navbar-nav > li > a {
 				color: #000000;
-				font-size: 22px;
+				font-size: 16px;
 				font-weight: regular;
 				padding-right:5px;
 				padding-bottom:10px;
@@ -81,8 +81,8 @@
 			}
 			.navbar-brand {
 				color: #000000;
-				font-size: 42px;
-				font-weight: bold;
+				font-size: 32px;
+				// font-weight: bold;
 			}
 		}
 	}
@@ -430,8 +430,6 @@
 				font-weight: regular;
 			}
 			.navbar-brand {
-				font-size: 42px;
-				font-weight: bold;
 			}
 		}
 	}

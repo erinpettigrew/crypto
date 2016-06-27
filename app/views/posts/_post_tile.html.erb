@@ -1,0 +1,5 @@
+<div class="col-xs-12 col-sm-6 col-md-4 post">
+  <div class="post-source"><%= post.source %></div>
+  <div class="post-title"><%= link_to truncate(post.title, length: 70), post.url %></div>
+  <div class="post-image"><%= image_tag(post.image) %></div>
+</div>

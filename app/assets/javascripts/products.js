@@ -1,6 +1,7 @@
 $(document).on('ready page:load', function () {
   transitionIn($('.feed-item'));
   transitionIn($('.page'));
+  handleSearch();
   rotateSearchTerms();
 });
 
@@ -26,4 +27,10 @@ function rotateSearchTerms() {
   .queue(function() { $(this).attr('placeholder', 'strobing powder').dequeue()})
   .delay(1500)
   .queue(function() { $(this).attr('placeholder', 'search 737 products')})
+}
+
+function handleSearch() {
+  $('input#search.big-search').on('click', function() {
+    $(this).attr('placeholder', '')
+  })
 }

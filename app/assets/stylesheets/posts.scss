@@ -1,11 +1,36 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* Custom, iPhone Retina -------------------------------------------------------- */
+@media screen and (min-width: 320px) {
 
-.post-list {
-  padding-bottom: 20px;
+  .post-list {
+    padding-bottom: 20px;
+  }
+
+  .post {
+    font-size: 18px;
+    .post-image {
+      text-align: center;
+      height: 200px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .post-image img {
+      border: 1px solid #f0f0f0;
+      margin-top: -20%;
+    }
+    .post-source {
+      font-style: italic;
+      font-weight: bold;
+    }
+    .post-title {
+      height: 65px;
+      text-decoration: underline;
+    }
+  }
+
 }
 
-.post-image img {
-  max-width:250px;
+/* Small Devices, Tablets -------------------------------------------------------- */
+
+@media screen and (min-width: 768px) {
 }

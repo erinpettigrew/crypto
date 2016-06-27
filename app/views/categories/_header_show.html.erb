@@ -1,13 +1,12 @@
-<div class="index-panel">
+<div class="category-show-header">
   <h1><%= category.name.pluralize.titleize %></h1>
-  <h4><%= (category.description).gsub(/\n/, '<br/>').html_safe %></h4>
-  <br>
+  <%= (category.description).gsub(/\n/, '<br/>').html_safe %>
   <% if user_signed_in? %>
-  <div class= "new-product-panel">
-    <div class= "form-group">
-      <%= link_to 'Add a new ' + category.name.titleize, new_product_path, class: "btn btn-primary btn-lg" %>
+    <div class= "add-button">
+      <div class= "form-group">
+        <%= link_to 'Add new ' + category.name.titleize, new_product_path, class: "btn btn-primary btn-lg" %>
+      </div>
     </div>
-  </div>
   <% end %>
 </div>
 
