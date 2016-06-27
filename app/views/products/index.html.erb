@@ -8,13 +8,13 @@
 <%= render partial: 'products/product_row', collection: @products.first(3), as: :product %>
 
 <div class="category-index">
-  <div class="title">Trending</div>
+  <div class="title">Explore</div>
   <div class="row theme-row">
     <%= render partial: 'categories/category_row', collection: @rand_categories, as: :category %>
   </div>
 </div>
 
-<div class="title">Noteworthy</div>
+<div class="title">Reads</div>
 <%= render partial: 'posts/post_tile', collection: @recent_posts, as: :post %>
 
 

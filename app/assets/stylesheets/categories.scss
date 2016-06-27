@@ -28,12 +28,10 @@
 				opacity: 1;
 			}
 			.category-image img {
-				// max-height:70px;
 			}
 		}
 		.category-row:hover {
 			.category-image {
-				opacity: 1;
 				-ms-transform: scale(1.05, 1.05); /* IE 9 */
 				-webkit-transform: scale(1.05, 1.05); /* Safari */
 				-moz-transform: scale(1.05, 1.05);

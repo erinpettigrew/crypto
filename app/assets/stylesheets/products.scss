@@ -18,11 +18,18 @@
 			font-weight: 100;
 			font-style: italic;
 		}
+		input#search:hover {
+			background-color: #FCF6FF;
+		}
+		input#search:focus {
+			background-color: #FCF6FF;
+		}
 		.search-button {
 			font-style: italic;
-			display:block;
+			display: inline;
 			float:right;
-			margin-top: 10px;
+			margin-top: -3px;
+			vertical-align: middle;
 		}
 		.guide-text {
 			text-align: left;
@@ -64,6 +71,12 @@
 		}
 	}
 
+	.product-row:hover {
+		-ms-transform: scale(1.01, 1.01); /* IE 9 */
+		-webkit-transform: scale(1.01, 1.01); /* Safari */
+		-moz-transform: scale(1.01, 1.01);
+	}
+
 	.rating {
 		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 		background-color: #000000;
@@ -77,9 +90,24 @@
 		padding-top: 11px;
 	}
 
+	.rating-single {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		background-color: white;
+		color: black;
+		font-size: 160%;
+		height: 50px;
+		width: 50px;
+		border-radius: 50%;
+		border: 1px dotted black;
+		text-align:center;
+	}
+
 
 
 	.product-show {
+		padding: 30px 0px;
+		border-bottom: 1px dotted grey;
+		height: 400px;
 		h1 {
 			font-size: 25px;
 			font-style: italic;
@@ -93,11 +121,10 @@
 		}
 		.product-show-image img {
 			max-width: 100%;
-
+			max-height: 340px;
 		}
 		.product-show-rating {
 			float: right;
-			margin-top: -100px;
 		}
 	}
 

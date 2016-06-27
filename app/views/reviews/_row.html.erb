@@ -1,5 +1,11 @@
-<div class="medium-avatar"><%= link_to image_tag(review.user.pic), review.user %></div>
-<%= review.user.user_name %>
-<%= review.comment %>
-<%= render partial: 'products/rating', locals: { rating: review.rating } %>
-<%= time_ago_in_words(review.created_at).gsub('about','') %> ago
+<div class="row review-row">
+  <div class="col-xs-3">
+    <div class="small-avatar"><%= link_to image_tag(review.user.pic), review.user %></div>
+    <br /><%= review.user.user_name %>
+  </div>
+  <div class="col-xs-8">
+    <%= review.comment %><br>
+    <%= time_ago_in_words(review.created_at).gsub('about','') %> ago
+  </div>
+  <div class="col-xs-1 review-rating"><%= render partial: 'products/rating_single', locals: { rating: review.rating } %></div>
+</div>

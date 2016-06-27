@@ -4,244 +4,64 @@
 
 <%= render 'search' %>
 
-<div class="page product-show">
+<div class="product-show">
 	<div class="row">
-		<div class="title"><%= @product.category.name %></div>
 		<div class="col-xs-12 col-sm-5">
 			<div class="product-show-image"><%= image_tag @product.image_url %></div>
 		</div>
-
-
-	<h1><%= link_to @product.product_brand %></h1>
-	<h2><%= @product.product_name %></h2>
-	<div class="product-show-rating">
-		<%= render partial: 'rating', locals: { rating: @product.average_rating } %>
-	</div>
-
-
-	<%= link_to "I use this!", use_product_path(@product, type:'unuse'), class: "btn btn-info btn-lg", method: :put %>
-
-	<%= link_to "I want this", want_product_path(@product, type:'unwant'), class: "btn btn-primary btn-lg", method: :put %>
-<br>
-	by <%= link_to "#{@product.product_brand}", root_path + 'products/search?utf8=%E2%9C%93&search=' + @product.product_brand %></br>
-	in <%= link_to @product.category.name, @product.category %>
-	<%= render partial: "ingredients", locals: { product: @product } %>
-
-</div>
-
-	<div class="col-xs-12 col-sm-6"><h3>X Uses</h3>
-	<% @product.used_by.each do |user| %>
-		<div class="tiny-avatar"><%= link_to image_tag(user.pic), user %></div>
-	<% end %>
-</div>
-
-<div class="col-xs-12 col-sm-6">
-	<h3>Y Wants</h3>
-	<% @product.wanted_by.each do |user| %>
-		<div class="tiny-avatar"><%= link_to image_tag(user.pic), user %></div>
-	<% end %>
-</div>
-
-<div class="title">XY Reviews</div>
-
-<%= render partial: "reviews/row", collection: @product.reviews, as: :review %>
-
-
-
-
-<!-- <div class="row">
-	<div class="col-xs-12 col-sm-4">
-
-		<div class="product-panel"> -->
-			<!-- <div class="product-image"><%= image_tag @product.image_url %></div> -->
-<!--
-			<div class="col-xs-6 col-sm-6 button-use">
-				<% if user_signed_in? %>
-				<% if current_user.used_products.include?(@product) %>
-				<%= link_to "I use this!", use_product_path(@product, type:'unuse'), class: "btn btn-info btn-lg", method: :put %>
-				<% else %>
-				<%= link_to "I use this!", use_product_path(@product, type:'use'), class: "btn btn-primary btn-lg", method: :put %>
-				<% end %>
-				<% else %>
-				<%= link_to "I use this!", use_product_path(@product, type:'use'), class: "btn btn-primary btn-lg", method: :put %>
-				<% end %>
+		<div class="col-xs-9 col-sm-5">
+			<h1><%= link_to @product.product_brand %></h1>
+			<h2><%= @product.product_name %></h2>
+			<%= link_to "I use this!", use_product_path(@product, type:'unuse'), class: "btn btn-info btn-lg", method: :put %>
+			<br/>
+			<%= render partial: "metadata", locals: { product: @product } %>
+			<%= render partial: "ingredients", locals: { product: @product } %>
+		</div>
+		<div class="col-xs-3 col-sm-2">
+			<div class="product-show-rating">
+				<%= render partial: 'rating', locals: { rating: @product.average_rating } %>
 			</div>
-			<div class="col-xs-6 col-sm-6 button-want">
-				<% if user_signed_in? %>
-				<% if current_user.wanted_products.include?(@product) %>
-				<%= link_to "I want this", want_product_path(@product, type:'unwant'), class: "btn btn-info btn-lg", method: :put %>
-				<% else %>
-				<%= link_to "I want this", want_product_path(@product, type:'want'), class: "btn btn-primary btn-lg", method: :put %>
-				<% end %>
-				<% else %>
-				<%= link_to "I want this", want_product_path(@product, type:'want'), class: "btn btn-primary btn-lg", method: :put %>
-				<% end %>
-			</div> -->
+		</div>
+	</div>
+</div>
 
-			<!-- <p><h3><%= @product.product_brand %></br>
-				<%= @product.product_name %></h3></p>
-				<div class="star-rating-product-page"><div class="star-rating" data-score= <%= @product.average_rating %> ></div></div>
+<div class="col-xs-12 col-sm-5">
+<div class="title"><%= pluralize(@product.users.count, "User") %></div>
+<% @product.used_by.each do |user| %>
+<div class="small-avatar"><%= link_to image_tag(user.pic), user %></div>
+<% end %>
+</div>
 
-				<% if @product.category_id != 1 %>
-				<p><h5>in <%= link_to @product.category.name.titleize.pluralize, @product.category %></br>
-					by <%= link_to "#{@product.product_brand}", root_path + 'products/search?utf8=%E2%9C%93&search=' + @product.product_brand %></h5></p>
-					<% end %>
-				</div>
+<div class="col-xs-12 col-sm-7">
+<div class="title">XY Reviews</div>
+<%= render partial: "reviews/row", collection: @product.reviews, as: :review %>
+</div>
 
-
-				<!-- <% if @product.wants.any? %>
-				<div class="row wants">
-					<h3><%= pluralize(@product.wants.size, "Want") %></h3>
-					<% @product.recent_wants.includes(:user => :avatar).each do |want| %>
-					<div class="col-xs-2 small-avatar">
-						<%= link_to image_tag(want.user.pic), want.user %>
-					</div>
-					<% end %>
-				</div>
-				<% end %> -->
-
-			<!-- </div> -->
-<!--
-			<div class="col-xs-12 col-sm-8">
-				<div class="reviews">
-
-					<% if @product.reviews.blank? %>
-					<% unless @product.uses.size == 0 %>
-					<div class="uses">
-						<div class="row">
-							<h3><%= pluralize(@product.uses.size, "User") %></h3>
-							<% @product.recent_uses.includes(:user => :avatar).each_with_index do |use, j| %>
-							<div class="col-xs-2">
-								<div class="small-avatar">
-									<%= link_to image_tag(@product.recent_uses[j].user.pic), @product.recent_uses[j].user %>
-								</div>
-							</div>
-							<% end %>
-						</div>
-					</div>
-					<% end %>
-
-					<center><h3>Have you tried this <%= @product.category.name %>? </br>Be the first to...</h3></center>
-
-					<div class = "row">
-						<div class = "form-group">
-
-							<div class= "col-xs-12 col-sm-12 button-1">
-								<%= link_to "Add a Review!", new_product_review_path(@product), class: "btn btn-primary btn-lg" %>
-							</div>
-
-						</div>
-					</div>
-
-					<% elsif @product.reviews.blank? == false %>
-
-					<% if @product.uses.any? %>
-					<div class="row uses">
-						<h3><%= pluralize(@product.uses.size, "User") %></h3>
-						<% @product.recent_uses.includes(:user => :avatar).each do |use| %>
-						<div class="col-xs-2 small-avatar">
-							<%= link_to image_tag(use.user.pic), use.user %>
-						</div>
-						<% end %>
-					</div>
-					<% end %>
-
-					<div class = "row">
-						<div class = "form-group">
-							<div class= "col-xs-12 col-sm-12 button-1">
-								<%= link_to "Add a Review!", new_product_review_path(@product), class: "btn btn-primary btn-lg" %>
-							</div>
-						</div>
-					</div>
+<% if user_signed_in? %>
+<% if current_user.admin? %>
+</br><p></br>
+	<p>Product Id: <%= @product.id %></p>
+	<%= link_to 'Edit', edit_product_path(@product), class: "btn btn-link" %> |
+	<%= link_to 'Product', products_path, class: "btn btn-link" %> |
+	<%= link_to 'New', new_product_path, class: "btn btn-link" %> |
+	<%= link_to "Destroy", @product, method: :delete, data: { confirm: 'Are you sure?' } %>
+	<% end %>
+	<% end %>
 
 
-					<% if @product.reviews.length == 1 %>
-					<h3><%= "#{@product.reviews.length}" %> Review</h3>
-					<% elsif @product.reviews.length >= 1 %>
-					<h3><%= "#{@product.reviews.length}" %> Reviews</h3>
-					<% end %>
-					<table class="table product-show">
-						<thead>
-							<tr>
-								<th class="col-xs-12 col-sm-12"></th>
-							</tr>
-						</thead>
+	<script>
+	$('.star-rating').raty({
+		path: 'https://s3.amazonaws.com/productbase/stars',
+		readOnly: true,
+		score: function() {
+			return $(this).attr('data-score');
+		}
+	});
+	$(".ingredients-button").click(function(){
+		$(".ingredients").toggle(200);
+	});
+	</script>
 
-						<tbody>
-							<% @product.recent_reviews.includes(:user => [:avatar, :profile]).each do |review| %>
-							<tr>
-								<td>
-									<div class="row">
-										<div class="col-xs-8">
-											<table>
-												<tr>
-													<td>
-														<div class="small-avatar"><%= link_to image_tag(review.user.pic), review.user %>
-														</div>
-													</td>
-													<td>
-														<h4><%= link_to "#{review.user.user_name}", review.user %></h4>
-														<div class="star-rating-product-page"><div class="star-rating" data-score= <%= review.rating %> ></div></div>
-													</td>
-												</tr>
-											</table>
-										</div>
-										<div class="col-xs-4">
-											<div class="reviewer-info">
-												<%= SkinType.find_by(id: review.user.try(:profile).try(:skin_type_id)).try(:name).try(:titleize) %></br>
-												<%= time_ago_in_words(review.created_at).gsub('about','') %> ago
-											</div>
-										</div>
-									</div>
-									<div class="col-xs-12">
-										<div class="comment">
-											<%= h(review.comment).gsub(/\n/, '<br/>').html_safe %>
-										</div>
-									</div>
-
-									<% if user_signed_in? %>
-									<% if (review.user == current_user) || (current_user.admin?) %>
-									<%= link_to "Edit", edit_product_review_path(@product, review) %>
-									<%= link_to "Delete", product_review_path(@product, review), method: :delete %>
-									<%= review.created_at.strftime("%-m/%-d/%-y") %>
-									<% end %>
-									<% end %>
-								</td>
-							</tr>
-							<% end %>
-						</tbody>
-					</table>
-					<% end %>
-				</div>
-			</div> -->
-
-		<!-- </div> <!-- end of row class --> -->
-
-		<% if user_signed_in? %>
-		<% if current_user.admin? %>
-	</br><p></br>
-		<p>Product Id: <%= @product.id %></p>
-		<%= link_to 'Edit', edit_product_path(@product), class: "btn btn-link" %> |
-		<%= link_to 'Product', products_path, class: "btn btn-link" %> |
-		<%= link_to 'New', new_product_path, class: "btn btn-link" %> |
-		<%= link_to "Destroy", @product, method: :delete, data: { confirm: 'Are you sure?' } %>
-		<% end %>
-		<% end %>
-</div><!-- /.page -->
-
-		<script>
-		$('.star-rating').raty({
-			path: 'https://s3.amazonaws.com/productbase/stars',
-			readOnly: true,
-			score: function() {
-				return $(this).attr('data-score');
-			}
-		});
-		$(".ingredients-button").click(function(){
-			$(".ingredients").toggle(200);
-		});
-		</script>
-
-		<script>
-		mixpanel.track("Viewed Product", {"Product Name": "<%= @product.product_name %>", "Product ID": <%= @product.id %>});
-		</script>
+	<script>
+	mixpanel.track("Viewed Product", {"Product Name": "<%= @product.product_name %>", "Product ID": <%= @product.id %>});
+	</script>

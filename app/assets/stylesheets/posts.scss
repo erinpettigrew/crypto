@@ -27,6 +27,11 @@
       text-decoration: underline;
     }
   }
+  .post:hover {
+    -ms-transform: scale(1.01, 1.01); /* IE 9 */
+    -webkit-transform: scale(1.01, 1.01); /* Safari */
+    -moz-transform: scale(1.01, 1.01);
+  }
 
 }
 

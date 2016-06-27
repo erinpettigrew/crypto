@@ -1,0 +1,2 @@
+by <%= link_to "#{product.product_brand}", root_path + 'products/search?utf8=%E2%9C%93&search=' + @product.product_brand %></br>
+in <%= link_to product.category.name.titleize, product.category %>
