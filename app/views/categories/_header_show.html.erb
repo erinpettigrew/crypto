@@ -4,7 +4,7 @@
   <% if user_signed_in? %>
     <div class= "add-button">
       <div class= "form-group">
-        <%= link_to 'Add new ' + category.name.titleize, new_product_path, class: "btn btn-primary btn-lg" %>
+        <%= link_to 'Add a ' + category.name.titleize, new_product_path, class: "btn btn-primary btn-lg" %>
       </div>
     </div>
   <% end %>

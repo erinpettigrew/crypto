@@ -4,8 +4,11 @@
 
 <%= render 'search' %>
 
-<div class="title">Worth It</div>
-<%= render partial: 'products/product_row', collection: @products.first(3), as: :product %>
+<div class="title">Try</div>
+<%= render partial: 'products/product_row', collection: @products.first(2), as: :product %>
+
+<div class="title">Rate</div>
+What <div class="rotate-product-name">products</div> are you using? Add!
 
 <div class="category-index">
   <div class="title">Explore</div>
@@ -14,81 +17,9 @@
   </div>
 </div>
 
-<div class="title">Reads</div>
+<div class="title">Read</div>
 <%= render partial: 'posts/post_tile', collection: @recent_posts, as: :post %>
 
-
-<!--
-<div class="title">What's new</div>
-<div class="product-list">
-  <% @recent_actions.each do |action, i| %>
-  <div class="col-xs-12 col-sm-6 col-md-4 feed-item">
-    <div class="col-xs-4 col-sm-4 col-md-5 feed-user">
-      <div class="large-avatar">
-        <%=  link_to image_tag(action.user.pic), action.user %>
-      </div>
-    </div>
-
-    <% if action.is_a? (Review) %>
-    <div class="review-item">
-      <div class="col-xs-8 col-sm-8 col-md-7 feed-action-text">
-        <strong><%= link_to "#{action.user.user_name}", action.user %></strong> reviewed <div class="product"><%= link_to action.product.product_brand + ' ' + action.product.product_name, action.product %></div>
-      </div>
-      <div class="col-xs-12">
-        <div class="feed-product-image"><%= link_to image_tag(action.product.image.url(:med_thumb)), action.product %></div>
-        <div class="feed-review-excerpt">
-          <div class="star-rating-product-page"><div class="star-rating" data-score= <%= action.rating %> ></div></div>
-          <%= truncate(action.comment, length:60, separator: ' ') %></br><div class="feed-timestamp"><%= time_ago_in_words(action.updated_at).gsub('about','') %> ago in <div class="category"><%= link_to "#{action.product.category.name.titleize.pluralize}", action.product.category %></div></div>
-        </div>
-      </div>
-    </div>
-    <% end %>
-
-    <% if action.is_a? (Use) %>
-    <div class="use-item">
-      <div class="col-xs-8 col-sm-8 col-md-7 feed-action-text">
-        <strong><%= link_to "#{action.user.user_name}", action.user %></strong> started using <div class="product"><%= link_to action.product.product_brand + ' ' + action.product.product_name, action.product %></div></br>
-      </div>
-      <div class="col-xs-12">
-        <div class="feed-product-image"><%= link_to image_tag(action.product.image.url(:med_thumb)), action.product %></div>
-        <div class="feed-timestamp"><%= time_ago_in_words(action.updated_at).gsub('about','') %> ago in <div class="category"><%= link_to "#{action.product.category.name.titleize.pluralize}", action.product.category %></div></div>
-      </div>
-    </div>
-    <% end %>
-
-    <% if action.is_a? (Want) %>
-    <div class="want-item">
-      <div class="col-xs-8 col-sm-8 col-md-7 feed-action-text">
-        <strong><%= link_to "#{action.user.user_name}", action.user %></strong> wants to try <div class="product"><%= link_to action.product.product_brand + ' ' + action.product.product_name, action.product %></div></br>
-      </div>
-      <div class="col-xs-12">
-        <div class="feed-product-image"><%= link_to image_tag(action.product.image.url(:med_thumb)), action.product %></div>
-        <div class="feed-timestamp"><%= time_ago_in_words(action.updated_at).gsub('about','') %> ago in <div class="category"><%= link_to "#{action.product.category.name.titleize.pluralize}", action.product.category %></div></div>
-      </div>
-    </div>
-    <% end %>
-
-    <% if action.is_a? (Post) %>
-    <div class="post-item">
-      <div class="col-xs-8 col-sm-8 col-md-7 feed-action-text">
-        <strong><%= link_to "#{action.user.user_name}", action.user %></strong> shared <div class="product"><%= link_to "#{action.title}", action.url %></div></br>
-      </div>
-      <div class="col-xs-12">
-        <div class="feed-product-image"><%= link_to image_tag(action.image), action.url %></div>
-        <div class="feed-review-excerpt"></br><%= truncate(action.excerpt, length:100, separator: ' ') %></br></div>
-        <div class="feed-timestamp"><%= time_ago_in_words(action.updated_at).gsub('about','')%> ago</div>
-      </div>
-    </div>
-    <% end %>
-  </div>
-  <% end %>
-</div>
-
-<div class="more">
-  <div class="form-group">
-    <center><%= link_to 'See all products!', categories_path, class: "btn btn-primary btn-lg" %></center>
-  </div>
-</div> -->
 
 <script>
   mixpanel.track("Viewed Home");

@@ -1,4 +1,4 @@
-<% if product.ingredients %>
+<% if product.ingredients.present? %>
   <div class="ingredients-list">
     see <div class="ingredients-button">Ingredients</div>
     <div class="ingredients"><p><%= product.ingredients.titleize %></p></div>

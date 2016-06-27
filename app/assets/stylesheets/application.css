@@ -29,8 +29,9 @@ body a {
 }
 
 .badge {
-  margin-top:-62px;
-  margin-left: 80px;
+  float: right;
+  margin-top: -22px;
+  margin-right: 18px;
 }
 
 .btn-primary {

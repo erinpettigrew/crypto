@@ -77,6 +77,10 @@
 		-moz-transform: scale(1.01, 1.01);
 	}
 
+	.product-name {
+		display:inline;
+	}
+
 	.rating {
 		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 		background-color: #000000;
@@ -102,8 +106,6 @@
 		text-align:center;
 	}
 
-
-
 	.product-show {
 		padding: 30px 0px;
 		border-bottom: 1px dotted grey;
@@ -125,6 +127,10 @@
 		}
 		.product-show-rating {
 			float: right;
+		}
+		.product-show-use-button {
+			float:left;
+			margin-top: -5px;
 		}
 	}
 

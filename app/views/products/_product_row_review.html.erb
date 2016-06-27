@@ -1,0 +1,17 @@
+<div class="row product-row">
+  <div class="col-xs-3 product-image">
+    <%= link_to image_tag(product.image.url), product %>
+  </div>
+
+  <div class="col-xs-8">
+    <div class="product-brand"><%= product.product_brand %></div>
+    <div class="product-name"><%= link_to product.product_name, product %></div>
+    <% if product.reviews.where(user: @user).any? %>
+      <%= product.reviews.where(user: @user).first.comment %>
+    <% end %>
+  </div>
+
+  <div class="col-xs-1 review-info">
+    <%= render partial: 'products/rating', locals: {rating: product.average_rating} %>
+  </div>
+</div>
