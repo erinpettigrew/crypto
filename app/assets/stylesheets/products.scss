@@ -40,6 +40,16 @@
 		}
 	}
 
+	.sorts {
+		padding-bottom: 15px;
+		text-align: right;
+		margin-top: -52px;
+		a {
+			margin-left: 15px;
+			text-decoration: underline;
+		}
+	}
+
 
 	.product-row {
 		padding-bottom: 20px;
@@ -67,7 +77,7 @@
 		}
 		.review-info {
 			margin-top:20px;
-			line-height:25px;
+			// line-height:25px;
 		}
 	}
 
@@ -91,7 +101,7 @@
 		border-radius: 50%;
 		border: 1px dotted white;
 		text-align:center;
-		padding-top: 11px;
+		padding-top: 8px;
 	}
 
 	.rating-single {
@@ -104,6 +114,7 @@
 		border-radius: 50%;
 		border: 1px dotted black;
 		text-align:center;
+		padding-top: 8px;
 	}
 
 	.product-show {

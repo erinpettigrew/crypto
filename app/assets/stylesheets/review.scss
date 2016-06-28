@@ -1,5 +1,14 @@
-.review-form {
+.new_review {
 	height: 225px;
+	textarea#review_comment {
+	}
+	.review-button {
+		font-style: italic;
+		display: inline;
+		float:right;
+		margin-top: -18px;
+		vertical-align: middle;
+	}
 }
 
 .review-row {
@@ -9,15 +18,4 @@
 	.user-info {
 		text-align: left;
 	}
-}
-
-.review-rating {
-  float: right;
-}
-
-.review-button {
-	margin-top: -18px;
-	float: right;
-	display: inline;
-	border-top: 0px !important;
 }

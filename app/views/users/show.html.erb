@@ -6,7 +6,7 @@
 
 <div class="user-info">
 	<h1><%= @user.user_name %></h1>
-	<div class="user-avatar"><%= image_tag(@user.pic) %></div>
+	<div class="extra-medium-avatar"><%= image_tag(@user.pic) %></div>
 
 	<% if @user == current_user %>
 	<% if @user.avatar.blank? %>

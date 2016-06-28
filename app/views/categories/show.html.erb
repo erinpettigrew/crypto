@@ -2,11 +2,11 @@
 <%= render 'products/search' %>
 <%= render partial: 'header_show', locals: { category: @category } %>
 
-<div class="product-list">
-  <div class="category-show">
-    <%= render partial: 'products/product_row', collection: @products, as: :product %>
-  </div>
+
+<div class="sortable">
+  <%= render partial: 'products/product_row', collection: @products, as: :product %>
 </div>
+
 
 <script>
   mixpanel.track("Viewed Category", {"Category Name": "<%= @category.name %>", "Category ID": <%= @category.id %>});

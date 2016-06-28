@@ -1,4 +1,4 @@
-<div class="form-fields review-form">
+
   <%= form_for([@product, @review]) do |f| %>
   <% if @review.errors.any? %>
   <div id="error_explanation" class= "alert alert-danger alert-dismissable">
@@ -18,11 +18,9 @@
   <div class="form-group">
     <%= f.text_area :comment, placeholder: "leave a tip", class: "form-control", rows: "6"%>
   </div>
-  <div class="form-group review-button">
-    <%= f.submit "Add review!", class: "btn btn-primary btn-lg" %>
-  </div>
+  <%= submit_tag "add!", name: nil, class: "btn btn-primary review-button" %>
   <% end %>
-</div> <!-- form-fields review-form -->
+
 
 <script>
 $('#star-rating').raty({

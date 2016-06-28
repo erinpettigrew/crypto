@@ -14,9 +14,4 @@
   <%= pluralize(@products.count, "Product") %>
 </div>
 
-<div class="sorts">
-  sort:
-  <%= link_to "Brand", category_path(category), id: "brand" %>
-  <%= link_to "Name", category_path(category), id: "name" %>
-  <%= link_to "Rating", category_path(category), id: "rating" %>
-</div>
+<%= render 'products/sort' %>

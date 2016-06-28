@@ -30,7 +30,7 @@ function sortByBrand() {
       if (brandA === brandB) result = 0
       return result
     })
-    $('.category-show').append($sortedProducts)
+    $('.sortable').append($sortedProducts)
     event.preventDefault()
   })
 }
@@ -51,7 +51,7 @@ function sortByName() {
       if (nameA === nameB) result = 0
       return result
     })
-    $('.category-show').append($sortedProducts)
+    $('.sortable').append($sortedProducts)
     event.preventDefault()
   })
 }
@@ -72,7 +72,7 @@ function sortByRating() {
       if (ratingA === ratingB) result = 0
       return result
     })
-    $('.category-show').append($sortedProducts)
+    $('.sortable').append($sortedProducts)
     event.preventDefault()
   })
 }

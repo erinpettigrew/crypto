@@ -1,15 +1,25 @@
 <%= render 'search' %>
 
-
-<div class="title"><%= pluralize(@categories.count, "Category") %></div>
-<div class="category-index">
-  <div class="row theme-row">
-    <%= render partial: "categories/category_row", collection: @categories, as: :category %>
+<% if @categories.any? %>
+  <div class="title"><%= pluralize(@categories.count, "Category") %></div>
+  <div class="category-index">
+    <div class="row theme-row">
+      <%= render partial: "categories/category_row", collection: @categories, as: :category %>
+    </div>
   </div>
-</div>
+<% end %>
 
-<div class="title"><%= pluralize(@products.count, "Product") %></div>
-<%= render partial: 'products/product_row', collection: @products, as: :product %>
+<% if @products.any? %>
+  <div class="title"><%= pluralize(@products.count, "Product") %></div>
+  <%= render 'products/sort' %>
+  <div class="sortable">
+    <%= render partial: 'products/product_row', collection: @products, as: :product %>
+  </div>
+<% end %>
+
+<% if !@products.any? && !@categories.any? %>
+  <h2>sorry, no results</h2>
+<% end %>
 
 <script>
   $('.star-rating').raty({

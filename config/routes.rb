@@ -11,8 +11,9 @@ Rails.application.routes.draw do
       resources :avatars
       resources :profiles
     end
+  # resources :uses
   resources :products do
-      put :use, on: :member
+      resources :uses
       put :like, on: :member
       put :want, on: :member
       collection do # search will apply to more than one product
@@ -22,18 +23,16 @@ Rails.application.routes.draw do
       resources :photos
     end
 
-  get 'pages/about'
+  get 'pages/login'
 
   get '/join', to: 'applicants#new'
 
   get '/thanks', to: 'pages#thanks'
 
-  # get 'pages/contact'
-  #set homepage as login / signup page
   authenticated :user do
     root to: 'products#index', as: :authenticated_root
   end
 
-  root to: 'pages#about'
+  root to: 'pages#login'
 
 end

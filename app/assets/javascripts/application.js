@@ -20,3 +20,9 @@ function transitionIn(anyDiv) {
   anyDiv.hide();
   anyDiv.delay(10).fadeIn(300);
 }
+
+$(document).on('ready page:load', function () {
+  $('input#search').on('click', function() {
+    $(this).val("")
+  })
+});
