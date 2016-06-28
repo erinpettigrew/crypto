@@ -1,8 +1,13 @@
+.review-form {
+	height: 225px;
+}
+
 .review-row {
 	border-bottom: 1px dotted grey;
   padding: 15px 0px;
-	.user-name {
-		margin-left: 25px;
+	display: block;
+	.user-info {
+		text-align: left;
 	}
 }
 
@@ -14,4 +19,5 @@
 	margin-top: -18px;
 	float: right;
 	display: inline;
+	border-top: 0px !important;
 }

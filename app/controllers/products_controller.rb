@@ -13,8 +13,8 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @rand_categories = Category.take(10).sample(4)
-    @products = Product.take(20).sample(8)
+    @rand_categories = Category.all.sample(4)
+    @products = Product.take(30).sample(8)
     @brands = Product.brands.sample(4)
     @recent_posts = Post.all.order(created_at: :desc).includes(:user => :avatar).take(3)
   end
