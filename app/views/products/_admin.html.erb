@@ -1,0 +1,9 @@
+<% if user_signed_in? && current_user.admin %>
+<div class="row">
+	<p>Product Id: <%= product.id %></p>
+	<%= link_to 'Edit', edit_product_path(product), class: "btn btn-link" %> |
+	<%= link_to 'Product', products_path, class: "btn btn-link" %> |
+	<%= link_to 'New', new_product_path, class: "btn btn-link" %> |
+	<%= link_to "Destroy", product, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+<% end %>

@@ -97,7 +97,7 @@ body a {
 		border-radius: 0px;
   }
 
-  textarea#product_ingredients.form-control {
+  textarea.form-control {
     width: 100%;
     height: 150px;
     font-size: 200%;

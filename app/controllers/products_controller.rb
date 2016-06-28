@@ -9,44 +9,18 @@ class ProductsController < ApplicationController
   def search
     @query = params[:search]
     @products = Product.search(params[:search])
+    @categories = Category.search(params[:search])
   end
 
   def index
-
-    @rand_categories = Product.last(4).collect { |product| product.category }
+    @rand_categories = Category.take(10).sample(4)
     @products = Product.take(20).sample(8)
-
-
-
-
-
-    @product_count = Product.all.count
-    @review_count = Review.all.count
-    @used_basic_products = []
-    @used_advanced_products = []
-    @basic_products_count = 0
-    @themes = Theme.first(3)
-    @categories = Category.order("RANDOM()").first(3)
-
-    @themes.each do |theme|
-      @used_basic_products << current_user.used_products.where(theme_id: theme.id).first
-      if @used_basic_products.last != nil
-        @basic_products_count += 1
-      end
-    end
-
-    @categories.each do |category|
-      @used_advanced_products << current_user.used_products.where(category_id: category.id).first
-    end
-
-    @recent_reviews = Review.all.order(created_at: :desc).includes(:user => :avatar, :product => :category).take(6)
-    @recent_uses = Use.all.order(created_at: :desc).includes(:user => :avatar, :product => :category).take(6)
-    @recent_wants = Want.all.order(created_at: :desc).includes(:user => :avatar, :product => :category).take(6)
+    @brands = Product.brands.sample(4)
     @recent_posts = Post.all.order(created_at: :desc).includes(:user => :avatar).take(3)
-    @recent_actions = (@recent_reviews + @recent_uses + @recent_wants + @recent_posts).sort_by(&:created_at).reverse
   end
 
   def show
+    @review = Review.new
   end
 
   def like

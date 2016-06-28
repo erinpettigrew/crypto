@@ -34,6 +34,13 @@ class Product < ActiveRecord::Base
 		Product.all.pluck(:product_brand).uniq.sort_by(&:downcase)
 	end
 
+	def self.ingredients
+		ingredients = Product.all.pluck(:ingredients).join
+		ingredients = ingredients.gsub("\n", "").gsub("\r", "")
+		ingredients = ingredients.split(", ")
+		ingredients.select { |ing| !ing.nil? }
+	end
+
 	def recent_reviews
 		reviews.order(created_at: :desc)
 	end

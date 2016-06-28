@@ -1,7 +1,7 @@
 <div class="row review-row">
   <div class="col-xs-3">
     <div class="small-avatar"><%= link_to image_tag(review.user.pic), review.user %></div>
-    <br /><%= review.user.user_name %>
+    <div class="user-name"><%= review.user.user_name %></div>
   </div>
   <div class="col-xs-8">
     <%= review.comment %><br>

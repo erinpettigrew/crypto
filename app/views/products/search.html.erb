@@ -1,10 +1,15 @@
 <%= render 'search' %>
 
-<div class="title"><%= pluralize(@products.count, "Product") %></div>
 
-<div class="category-show">
-  <%= render partial: 'products/product_row', collection: @products, as: :product %>
+<div class="title"><%= pluralize(@categories.count, "Category") %></div>
+<div class="category-index">
+  <div class="row theme-row">
+    <%= render partial: "categories/category_row", collection: @categories, as: :category %>
+  </div>
 </div>
+
+<div class="title"><%= pluralize(@products.count, "Product") %></div>
+<%= render partial: 'products/product_row', collection: @products, as: :product %>
 
 <script>
   $('.star-rating').raty({
