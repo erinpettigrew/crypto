@@ -18,9 +18,10 @@
   <div class="form-group">
     <%= f.text_area :comment, placeholder: "leave a tip", class: "form-control", rows: "6"%>
   </div>
-  <%= submit_tag "add!", name: nil, class: "btn btn-primary review-button" %>
-  <% end %>
+  <%= submit_tag "add!", name: nil, class: "btn btn-primary review-button", method: :post, remote: true %>
 
+  <!-- <%= submit_tag "add!", name: nil, class: "btn btn-primary review-button", method: :post, remote: true %> -->
+  <% end %>
 
 <script>
 $('#star-rating').raty({

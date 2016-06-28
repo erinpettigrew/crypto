@@ -55,7 +55,7 @@
 		padding-bottom: 20px;
 		margin: 30px 0px 30px 0px;
 		height: 118px;
-		border-bottom: 1px dotted grey;
+		border-bottom: 1px dotted silver;
 		.product-image {
 			text-align:left;
 		}
@@ -115,11 +115,12 @@
 		border: 1px dotted black;
 		text-align:center;
 		padding-top: 8px;
+		float: right;
 	}
 
 	.product-show {
 		padding: 30px 0px;
-		border-bottom: 1px dotted grey;
+		border-bottom: 1px dotted silver;
 		height: 400px;
 		h1 {
 			font-size: 25px;
@@ -148,7 +149,7 @@
 	.add-product {
 		text-align:center;
 		padding-bottom: 30px;
-		border-bottom: 1px dotted grey;
+		border-bottom: 1px dotted silver;
 		.add-product-text {
 			font-size: 200%;
 			display:inline;

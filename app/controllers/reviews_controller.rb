@@ -24,7 +24,7 @@ class ReviewsController < ApplicationController
       respond_to do |format|
         if @review.save
           format.html { redirect_to @product, notice: 'Thank you for your review! It helps all of us make better purchases.' }
-          format.json { render :show, status: :created, location: @review }
+          format.json { render :json => @review }
         else
           format.html { render :new }
           format.json { render json: @review.errors, status: :unprocessable_entity }

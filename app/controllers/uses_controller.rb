@@ -1,4 +1,5 @@
 class UsesController < ApplicationController
+  before_action :set_product, only: [:destroy]
 
   def new
     @use = Use.new
@@ -6,6 +7,7 @@ class UsesController < ApplicationController
 
   def create
     @use = Use.create(use_params)
+    render nothing: true
   end
 
   def destroy
@@ -18,8 +20,8 @@ class UsesController < ApplicationController
   end
 
   private
-  def set_use
-    @use = Use.find(params[:id])
+  def set_product
+    @product = Product.friendly.find(params[:id])
   end
 
   def use_params

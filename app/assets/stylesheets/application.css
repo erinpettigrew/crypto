@@ -116,3 +116,14 @@ body a {
     font-weight: 400;
     font-size: 100%;
   }
+
+  .dropdown-menu li a:hover {
+    background-color: white;
+    text-decoration: underline;
+  }
+
+  .badge {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    background-color: black;
+    font-weight: Normal;
+  }
