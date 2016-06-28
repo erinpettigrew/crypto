@@ -1,13 +1,13 @@
 <div class="category-show-header">
   <h1><%= category.name.pluralize.titleize %></h1>
-  <%= (category.description).gsub(/\n/, '<br/>').html_safe %>
-  <% if user_signed_in? %>
+  <!-- <%= (category.description).gsub(/\n/, '<br/>').html_safe %> -->
+  <!-- <% if user_signed_in? %>
     <div class= "add-button">
       <div class= "form-group">
         <%= link_to 'Add a ' + category.name.titleize, new_product_path, class: "btn btn-primary btn-lg" %>
       </div>
     </div>
-  <% end %>
+  <% end %> -->
 </div>
 
 <div class="title">
@@ -15,6 +15,7 @@
 </div>
 
 <div class="sorts">
+  sort:
   <%= link_to "Brand", category_path(category), id: "brand" %>
   <%= link_to "Name", category_path(category), id: "name" %>
   <%= link_to "Rating", category_path(category), id: "rating" %>
