@@ -1,18 +1,18 @@
 <div class="row product-row">
-  <div class="col-xs-3 product-image">
+  <div class="col-xs-4 col-sm-3 product-image">
     <%= link_to image_tag(product.image.url), product %>
   </div>
 
-  <div class="col-xs-8">
+  <div class="col-xs-5 col-sm-6">
     <div class="product-brand"><%= product.product_brand %></div>
     <div class="product-name"><%= link_to product.product_name, product %></div>
     <br/>
     <% if product.reviews.where(user: @user).any? %>
-      <%= truncate(product.reviews.where(user: @user).first.comment, length: 80) %>
+      <%= truncate(product.reviews.where(user: @user).first.comment, length: 70) %>
     <% end %>
   </div>
 
-  <div class="col-xs-1 review-info">
+  <div class="col-xs-3 col-sm-3 review-info">
     <% if product.reviews.where(user: @user).any? %>
       <%= render partial: 'products/rating_single', locals: {rating: product.reviews.where(user: @user).first.rating} %>
     <% end %>

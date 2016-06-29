@@ -19,7 +19,8 @@
 <% end %>
 
 <% if !@products.any? && !@categories.any? %>
-  <h2>Sorry no <%= @query %> yet, but try these:</h2>
+  <div class="search-fail">Hm, no <%= @query %> yet.</div>
+
 <% end %>
 </div>
 
