@@ -1,8 +1,10 @@
-by <%= link_to "#{product.product_brand}", root_path + 'products/search?utf8=%E2%9C%93&search=' + @product.product_brand %></br>
-in <%= link_to product.category.name.pluralize.titleize, product.category %>
-<% if product.ingredients.present? %>
+<div class="metadata">
+  by <%= link_to "#{product.product_brand}", root_path + 'products/search?utf8=%E2%9C%93&search=' + @product.product_brand %></br>
+  in <%= link_to product.category.name.pluralize.titleize, product.category %>
+  <% if product.ingredients.present? %>
   <div class="ingredients-list">
     see <div class="ingredients-button">Ingredients</div>
     <div class="ingredients"><p><%= product.ingredients.titleize %></p></div>
   </div>
-<% end %>
+  <% end %>
+</div>
