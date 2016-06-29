@@ -30,30 +30,9 @@
 
 @media screen and (min-width: 768px) {
 
-  .post-list {
-    padding-bottom: 20px;
-  }
-
   .post {
-    font-size: 18px;
-    .post-image {
-      text-align: center;
-      height: 200px;
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-    }
-    .post-image img {
-      border: 1px solid #f0f0f0;
-      margin-top: -20%;
-    }
-    .post-source {
-      font-style: italic;
-      font-weight: bold;
-    }
     .post-title {
       height: 65px;
-      text-decoration: underline;
     }
   }
   .post:hover {
@@ -61,5 +40,4 @@
     -webkit-transform: scale(1.01, 1.01); /* Safari */
     -moz-transform: scale(1.01, 1.01);
   }
-
 }
