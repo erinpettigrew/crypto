@@ -11,6 +11,7 @@ function getProducts() {
 function handleSorting() {
   sortByBrand()
   sortByName()
+  sortByUsers()
   sortByRating()
 }
 
@@ -50,6 +51,31 @@ function sortByName() {
       if (nameA > nameB) result = 1
       if (nameA === nameB) result = 0
       return result
+    })
+    $('.sortable').append($sortedProducts)
+    event.preventDefault()
+  })
+}
+
+
+function sortByUsers() {
+  $('.sorts #users').on('click', function(event) {
+    var $sortedProducts = $products
+    $sortedProducts.sort(function(a,b) {
+      var usersA = a.getElementsByClassName('count')[0]
+      usersA = $(usersA).text()
+      usersA = usersA.replace(" ", "").replace("user", "").replace("s", "")
+
+      var usersB = b.getElementsByClassName('count')[0]
+      usersB = $(usersB).text()
+      usersB = usersB.replace(" ", "").replace("user", "").replace("s", "")
+
+      var result = 0
+      if (usersA < usersB) result = 1  // sort descending
+      if (usersA > usersB) result = -1
+      if (usersA === usersB) result = 0
+      return result
+
     })
     $('.sortable').append($sortedProducts)
     event.preventDefault()

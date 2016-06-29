@@ -74,6 +74,18 @@
 		.product-name a {
 			color: #000000;
 		}
+		.user-count {
+			margin-top: 30px;
+			margin-right: 5%;
+			text-align: right;
+			.count {
+				display: inline;
+				font-size: 110%;
+			}
+		}
+		.user-count img {
+			margin-left: -40px;
+		}
 		.review-info {
 			margin-top:20px;
 		}
