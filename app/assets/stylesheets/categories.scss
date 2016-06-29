@@ -1,10 +1,5 @@
-// Place all the styles related to the Categories controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 /* Custom, iPhone Retina -------------------------------------------------------- */
 @media screen and (min-width: 320px) {
-
 	.category-index {
 		.category-row {
 			text-align:center;
@@ -40,11 +35,9 @@
 			}
 		}
 	}
-
 	.category-index a {
 		color:#000000;
 	}
-
 	.category-show-header {
 		text-align: left;
 		width: 100%;
@@ -55,21 +48,16 @@
 	}
 }
 
-
 /* Small Devices, Tablets -------------------------------------------------------- */
 @media screen and (min-width: 768px) {
-
 	.category-index {
-
 		.category-row {
 			margin-bottom:30px;
 			height: 175px;
 		}
-
 		.category-image img {
 			max-height:125px;
 			margin-bottom:5px;
 		}
 	}
-
 }

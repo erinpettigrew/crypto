@@ -48,7 +48,7 @@
 
 	.title {
 		text-align:center;
-    margin-left: 0px;
+		margin-left: 0px;
 		color: white;
 		width: 100px;
 		font-weight:500;
@@ -59,7 +59,7 @@
 		background: black;
 		text-transform: uppercase;
 		-webkit-transform: skew(-5deg);
-	 	-moz-transform: skew(-5deg);
+		-moz-transform: skew(-5deg);
 		-o-transform: skew(-5deg);
 	}
 
@@ -99,85 +99,6 @@
 		margin: 20px 0px 20px 0px;
 	}
 
-	.product-list-header {
-		text-align:center;
-		padding:0px 0px 25px 0px;
-	}
-
-	.product-list {
-		.product-card {
-			border: 0px solid #f0f0f0;
-			border-radius:5px;
-			padding:5px 0px 5px 0px;
-			margin:0px 0px 25px 0px;
-		}
-
-		.product-list-row {
-			margin:0px 0px 0px 0px;
-			padding:0px 0px 20px 0px;
-		}
-
-		.product-info {
-			font-size:16px;
-			font-weight:500;
-			margin:0px;
-			padding:0px;
-		}
-
-		.product-info h6 {
-			font-size:105%;
-			margin:5px 0px 5px 0px;
-			padding:0px;
-		}
-
-		.review-info p {
-			font-size:90%;
-			margin:0px;
-			padding:0px;
-		}
-
-		.review-info img {
-			margin:0px;
-			padding:0px;
-		}
-
-		.review-excerpt {
-			font-size:100%;
-			color:#000000;
-			padding:0px 20px 0px 20px;
-		}
-	}
-
-	.product-list a {
-		color:#000000;
-	}
-
-
-	.user-product-image {
-		margin:5px;
-	}
-
-	.user-product-image img {
-		max-width:80%;
-		min-width:80px;
-	}
-
-
-	.index-product-image {
-		margin:0px 0px 5px 0px;
-	}
-
-	.index-product-image img {
-		max-width:65%;
-		min-width:80px;
-	}
-
-
-	.button-1 {
-		text-align:center;
-		margin:10px 0px 0px 0px;
-	}
-
 	.button-using {
 		text-align:center;
 		margin:30px 0px 0px 0px;
@@ -189,23 +110,6 @@
 
 	.product-image img {
 		max-width:50%;
-	}
-
-	.photo-panel {
-		padding: 25px 0px 0px 0px;
-		text-align:center;
-	}
-
-	.product-photos-product-page {
-		margin:10px 0px 10px 0px;
-		padding:0px 30px 0px 30px;
-		font-size:12px;
-	}
-
-	.product-photos-product-page img {
-		border-radius:5px;
-		max-width:100%;
-		height:auto;
 	}
 
 	.star-rating-product-page {
@@ -311,41 +215,8 @@
 		border:1px solid #FAFAFA;
 	}
 
-	.user-panel {
-
-		.row {
-			margin:0px 0px 20px 0px;
-		}
-
-		.user-product-photos img {
-			margin:0px 0px 20px 0px;
-			max-width:100%;
-			min-width:130px;
-			border-radius:5px;
-		}
-
-		.user-product-image {
-			margin:5px;
-		}
-
-		.user-product-image img {
-			max-width:90%;
-			min-width:95px;
-		}
-
-		.user-product-info h5 {
-			text-align:center;
-		}
-
-		.stars img {
-			width:20px;
-			margin:0px 0px 10px 0px;
-			padding:0px 0px 0px 0px;
-		}
-	}
 
 	.product-panel-form {
-
 		margin: 25px 0px 25px 0px;
 
 		h4 {
@@ -357,10 +228,7 @@
 			max-width:70%;
 			min-width:75px;
 		}
-
 	}
-
-
 }
 
 /* Small Devices, Tablets -------------------------------------------------------- */
@@ -391,11 +259,6 @@
 
 	}
 
-
-	.table-header {
-		text-align:center;
-	}
-
 	.navbar-default {
 		.container-fluid {
 			padding-top:5px;
@@ -414,8 +277,6 @@
 		padding: 10px 100px;
 	}
 
-
-
 	.new-product-panel {
 		width: 100%;
 		text-align: center;
@@ -423,69 +284,7 @@
 		padding: 0px;
 	}
 
-	.product-list-header {
-		text-align:center;
-		padding:0px 0px 25px 0px;
-	}
-
-	.product-list {
-
-
-		.product-card {
-			padding:20px 0px 0px 10px;
-			margin:0px 0px 10px 0px;
-
-		}
-
-		.product-list-row {
-			padding:0px 0px 0px 0px;
-			margin-bottom:20px;
-			font-size:100%;
-		}
-
-
-		.product-info {
-			font-size:18px;
-			font-weight:500;
-			margin:0px;
-			padding:0px;
-		}
-
-		.review-info p {
-			font-weight:300;
-			margin:0px;
-			padding:0px;
-		}
-
-		.review-excerpt {
-			font-size:100%;
-			padding: 10px 40px 10px 15px;
-		}
-
-
-	}
-
-	.product-list a{
-		color:#000000;
-	}
-
-
-	.index-product-image {
-		padding:0px;
-		margin:15px 0px 0px 0px;
-	}
-
-	.index-product-image img {
-		max-width:100px;
-		border:1px solid #ffffff;
-		background:#ffffff;
-		border-radius:5px;
-		box-shadow:1px 1px 1px #e5e5e5;
-		padding:3px;
-	}
-
 	.product-panel {
-
 		.product-image img {
 			max-width:300px;
 			min-width:120px;
@@ -493,40 +292,9 @@
 		text-align:left;
 	}
 
-	.button-1 {
-		text-align:center;
-		margin:20px 0px 10px 0px;
-	}
-
-	.button-2 {
-		text-align:left;
-		margin:20px 0px 10px 0px;
-	}
-
 	.button-using {
 		text-align:left;
 		margin:20px 0px 10px 0px;
-	}
-
-
-
-	.photo-panel {
-		padding: 25px 0px 0px 0px;
-		text-align:left;
-	}
-
-	.product-photos-product-page {
-		padding:0px;
-		margin:15px 0px 15px 0px;
-		font-size:12px;
-		text-align:left;
-	}
-
-	.product-photos-product-page img {
-		border-radius:5px;
-		max-width:100%;
-		height:auto;
-		margin:10px 0px 0px 0px;
 	}
 
 	.star-rating-product-page {
@@ -567,15 +335,6 @@
 			color:#000000;
 			text-decoration:underline;
 		}
-	}
-
-	.user-product-image {
-		margin:10px;
-	}
-
-	.user-product-image img {
-		max-width:100%;
-		min-width:120px;
 	}
 
 	.product-panel-form {

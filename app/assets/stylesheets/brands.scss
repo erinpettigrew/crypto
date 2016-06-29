@@ -14,6 +14,9 @@
     padding-bottom: 30px;
     border-bottom: 1px dotted silver;
   }
+  .list:last-child {
+    border-bottom: 0px;
+  }
 }
 
 .brands a {
