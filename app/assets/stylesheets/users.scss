@@ -85,19 +85,17 @@
 
 	.user-info {
 		text-align:center;
-		padding-bottom: 50px;
-
-		.user-avatar img{
-			max-width:30%;
-			border-radius:50%;
-		}
-
+		border-bottom: 1px dotted silver;
+		background-color: #FAFFFE;
+		padding: 30px 0px;
+		margin-top: 0px;
 	}
 
-
-
-	.activity-info {
-		display:none;
+	.user-edit {
+		float: right;
+		margin-right: 15px;
+		position: relative;
+		bottom: -20px;
 	}
 
 	.card {
@@ -180,13 +178,11 @@
 
 	}
 
-	.skin {
-		padding-bottom:20px;
-	}
-
 	.skin-info {
 		display:inline;
+		text-transform: uppercase;
 		font-weight:500;
+		font-size: 85%;
 	}
 
 	.invite-info {

@@ -42,22 +42,22 @@ body a {
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-  background: #FFE8F8;
-  border-color: #FFE8F8;
-  color: #000000;
+  background: white;
+  border-color: black;
+  color: black;
 }
 
 .btn-info {
-  background: #FFE8F8;
-  border-color: #FFE8F8;
-  color: #000000;
+  background: black;
+  border-color: black;
+  color: white;
   font-style: italic;
 }
 
 .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open > .dropdown-toggle.btn-info {
-  background: #FFE8F8;
-  border-color: #FFE8F8;
-  color: #000000;
+  background: black;
+  border-color: black;
+  color: white;
 }
 
 
@@ -126,4 +126,11 @@ body a {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     background-color: black;
     font-weight: Normal;
+  }
+
+  h1 {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight: 100;
+        font-size: 250%;
+        font-style: italic;
   }

@@ -52,39 +52,40 @@
 
 
 	.product-row {
-		padding-bottom: 20px;
 		margin: 30px 0px 30px 0px;
 		height: 118px;
 		border-bottom: 1px dotted silver;
+		overflow: hidden;
 		.product-image {
 			text-align:left;
 		}
 		.product-image img {
-			max-height:85px;
+			max-height:100px;
 		}
 		.product-brand {
-			font-size:18px;
+			font-size:17px;
 			margin-top:20px;
 			font-weight: bold;
 			font-style: italic;
 		}
 		.product-name {
-			font-size:18px;
+			font-size:17px;
 		}
 		.product-name a {
 			color: #000000;
-			text-decoration: underline;
 		}
 		.review-info {
 			margin-top:20px;
-			// line-height:25px;
 		}
 	}
 
 	.product-row:hover {
-		-ms-transform: scale(1.01, 1.01); /* IE 9 */
-		-webkit-transform: scale(1.01, 1.01); /* Safari */
-		-moz-transform: scale(1.01, 1.01);
+		.product-image {
+			-ms-transform: scale(1.05, 1.05); /* IE 9 */
+			-webkit-transform: scale(1.05, 1.05); /* Safari */
+			-moz-transform: scale(1.05, 1.05);
+		}
+
 	}
 
 	.product-name {

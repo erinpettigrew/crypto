@@ -15,7 +15,11 @@
 	border-bottom: 1px dotted silver;
   padding: 15px 0px;
 	display: block;
-	.user-info {
+	.review-user-info {
 		text-align: left;
+		font-size: 85%;
+	}
+	.review-user-info a {
+		text-decoration: underline;
 	}
 }

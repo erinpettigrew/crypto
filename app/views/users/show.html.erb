@@ -3,7 +3,7 @@
 <% keywords 'beauty products, reviews, community, forum, posts, skincare, cosmetics' %>
 <% nofollow %>
 <% noindex %>
-
+<div class="profile">
 <div class="user-info">
 	<h1><%= @user.user_name %></h1>
 	<div class="extra-medium-avatar"><%= image_tag(@user.pic) %></div>
@@ -12,12 +12,12 @@
 	<% if @user.avatar.blank? %>
 	<small><%= link_to "Add photo", new_user_avatar_path(@user) %></small></br>
 	<% else %>
-	<small><%= link_to "Edit", edit_user_avatar_path(@user, @user.avatar) %>,
-		<%= link_to "Delete", [@user, @user.avatar], method: :delete %></small></p>
+	<!-- <small><%= link_to "Edit", edit_user_avatar_path(@user, @user.avatar) %>,
+		<%= link_to "Delete", [@user, @user.avatar], method: :delete %></small></p> -->
 		<% end %>
 		<% end %>
 
-		<div class="row skin">
+		<div class="row">
 			<% if @skin_type.present? %>
 			<% if @user == current_user %>
 			<div class="skin-info"><i class="fa fa-sliders" aria-hidden="true"></i> <%=link_to "#{@skin_type.name.capitalize}", edit_user_profile_path(@user, @user.profile) %></div>
@@ -30,15 +30,24 @@
 			<% end %>
 			<% end %>
 		</div>
+
+<% if @user == current_user %>
+	<div class="user-edit">
+		<i class="fa fa-user" aria-hidden="true"></i>
+		<%= link_to "Edit profile", @user %>
+	</div>
+<% end %>
 	</div> <!-- .user-info -->
 
 
 <div class="title">Using</div>
-<%= render partial: 'products/product_row_review', collection: @user.used_products, as: :product, locals: { user: @user } %>
+<%= render partial: 'products/product_row_user', collection: @user.used_products, as: :product, locals: { user: @user } %>
+</div>
 
 <div class="title">Wants</div>
-<%= render partial: 'products/product_row_review', collection: @user.wanted_products, as: :product, locals: { user: @user } %>
+<%= render partial: 'products/product_row_user', collection: @user.wanted_products, as: :product, locals: { user: @user } %>
 
+</div><!-- /.profile -->
 
 <% if @user == current_user %>
 <script>

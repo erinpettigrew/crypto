@@ -1,5 +1,6 @@
 <%= render 'search' %>
 
+<div class="search-results">
 <% if @categories.any? %>
   <div class="title"><%= pluralize(@categories.count, "Category") %></div>
   <div class="category-index">
@@ -18,8 +19,9 @@
 <% end %>
 
 <% if !@products.any? && !@categories.any? %>
-  <h2>sorry, no results</h2>
+  <h2>Sorry no <%= @query %> yet, but try these:</h2>
 <% end %>
+</div>
 
 <script>
   $('.star-rating').raty({

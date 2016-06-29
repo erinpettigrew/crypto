@@ -1,25 +1,27 @@
+<%= form_for([@user, @profile]) do |f| %>
+<% if @profile.errors.any? %>
+<div id="error_explanation" class= "alert alert-danger alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+  <h4><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h4>
 
-<div class = "form-fields">
-  <%= form_for([@user, @profile]) do |f| %>
-    <% if @profile.errors.any? %>
-      <div id="error_explanation" class= "alert alert-danger alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h4>
-
-        <ul>
-        <% @profile.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
+  <ul>
+    <% @profile.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
     <% end %>
-    <div class="form-group">
-      <%= f.label "What's your skin type?" %></br>
-      <%= f.select :skin_type_id, @skin_types.collect {|s| [s.name.titleize, s.id]}, class: "form-control" %>
-    </div>
-    <div class="form-group">
-      <%= f.submit "Save", class: "btn btn-primary btn-sm" %>
-    </div>
-  <% end %>
+  </ul>
 </div>
+<% end %>
+<div class="form-group">
+  <%= fields_for :avatar, @user.avatar do |f| %>
+  <%= f.label "Profile photo" %></br>
+  <%= f.file_field %>
+  <% end %>
 
+
+  <%= f.label "What's your skin type?" %></br>
+  <%= f.select :skin_type_id, @skin_types.collect {|s| [s.name.titleize, s.id]}, class: "form-control" %>
+</div>
+<div class="form-group">
+  <%= f.submit "Save", class: "btn btn-primary btn-sm" %>
+</div>
+<% end %>
