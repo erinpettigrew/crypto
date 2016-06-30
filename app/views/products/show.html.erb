@@ -20,7 +20,7 @@
 		</div>
 		<%= render partial: "metadata", locals: { product: @product } %>
 		<% if @product.ingredients.present? %>
-			<div class="ingredients"><%= @product.ingredients.titleize %></p></div>
+			<div class="col-xs-12 col-sm-7 ingredients"><%= @product.ingredients.titleize %></p></div>
 		<% end %>
 	</div>
 </div>

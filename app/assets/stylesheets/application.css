@@ -141,3 +141,7 @@ h1 {
 .fa-search:before {
   -webkit-text-stroke: 0.75px white;
 }
+
+.fa-plus:before {
+  -webkit-text-stroke: 0.75px white;
+}
