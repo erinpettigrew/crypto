@@ -4,6 +4,7 @@ $(document).on('ready page:load', function() {
 
 function updateUses(event, data) {
   toggleUses(data)
+  // data is sometimes the DOM object and sometimes JSON
 }
 
 function toggleUses(data) {
