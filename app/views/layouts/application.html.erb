@@ -5,8 +5,8 @@
   <%= display_meta_tags %>
   <title>looklove, reviews of new beauty products</title>
   <%= render 'layouts/bootstrap' %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,6 +35,7 @@
   </div>
 </div>
 <div class="footer-container">
+  <div id="footer">
   <%= render 'layouts/footer' unless @disable_footer %>
 </div>
 </body>

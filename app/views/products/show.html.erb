@@ -9,24 +9,24 @@
 		<div class="col-xs-12 col-sm-5">
 			<div class="product-show-image"><%= image_tag @product.image_url %></div>
 		</div>
-		<div class="col-xs-9 col-sm-6">
+		<div class="col-xs-10 col-sm-6">
 			<h1><%= link_to @product.product_brand, root_path + 'products/search?utf8=%E2%9C%93&search=' + @product.product_brand %></h1>
 			<h2><%= @product.product_name %></h2>
-			<br/>
-			<%= render partial: "metadata", locals: { product: @product } %>
-		<br/>
-		<%= render partial: "uses/button", locals: { product: @product, user: current_user } %>
 		</div>
-		<div class="col-xs-3 col-sm-1">
+		<div class="col-xs-2 col-sm-1">
 			<div class="product-show-rating">
 				<%= render partial: 'rating', locals: { rating: @product.average_rating } %>
 			</div>
 		</div>
+		<%= render partial: "metadata", locals: { product: @product } %>
+		<% if @product.ingredients.present? %>
+			<div class="ingredients"><%= @product.ingredients.titleize %></p></div>
+		<% end %>
 	</div>
 </div>
 
 <div class="col-xs-12 col-sm-5 users">
-	<div class="title"><%= pluralize(@product.used_by.count, "User") %></div>
+	<div class="title" id="users"><%= pluralize(@product.used_by.count, "User") %></div>
 		<div class="user-matrix">
 	<% @product.used_by.each do |user| %>
 	<div class="small-avatar" id="<%= user.id %>"><%= link_to image_tag(user.pic), user %></div>
@@ -35,7 +35,7 @@
 </div>
 
 <div class="col-xs-12 col-sm-7">
-	<div class="title"><%= pluralize(@product.reviews.count, "Rating") %></div>
+	<div class="title" id="ratings"><%= pluralize(@product.reviews.count, "Rating") %></div>
 	<% unless @product.reviews.where(user: current_user).any? %>
 		<%= render partial: "reviews/form" %>
 	<% end %>
@@ -45,19 +45,19 @@
 	</div>
 </div>
 
-<%= render partial: 'admin', locals: { product: @product } %>
+<!-- <%= render partial: 'admin', locals: { product: @product } %> -->
 
 
 	<script>
+	$(".ingredients-button").click(function(){
+		$(".ingredients").toggle(200);
+	});
 	$('.star-rating').raty({
 		path: 'https://s3.amazonaws.com/productbase/stars',
 		readOnly: true,
 		score: function() {
 			return $(this).attr('data-score');
 		}
-	});
-	$(".ingredients-button").click(function(){
-		$(".ingredients").toggle(200);
 	});
 	</script>
 

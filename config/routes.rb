@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     end
   resources :products do
       resources :uses
+      post 'uses/toggle', to: 'uses#toggle'
       put :like, on: :member
       put :want, on: :member
       collection do # search will apply to more than one product

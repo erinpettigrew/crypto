@@ -100,7 +100,7 @@
 	.product-show {
 		padding: 30px 0px;
 		border-bottom: 1px dotted silver;
-		height: 400px;
+		height: 100%;
 		h1 {
 			font-size: 25px;
 			font-style: italic;
@@ -108,21 +108,34 @@
 		}
 		h2 {
 			font-size: 25px;
+			margin-top: 10px;
+		}
+		.metalinks a {
+			text-decoration: underline;
+		}
+		.ingredients-button {
+			text-decoration: underline;
+			color: black;
 		}
 		.product-show-image {
-			text-align: left;
+			text-align: center;
 		}
 		.product-show-image img {
-			max-width: 100%;
-			max-height: 340px;
+			max-width: 55%;
+			max-height: 55%;
 		}
 		.product-show-rating {
 			float: right;
+			padding-top: 32%;
 		}
 		.product-show-use-button {
 			float:left;
 			margin-top: -5px;
 		}
+	}
+
+	.use-button {
+		float: right;
 	}
 
 	// .add-product {
@@ -179,12 +192,12 @@
 
 	.ingredients-list {
 		font-size:14px;
-		text-align:center;
+		text-align:left;
 	}
 
 	.ingredients-button {
 		font-size:14px;
-		text-align:center;
+		text-align:left;
 		display:inline;
 	}
 
@@ -194,42 +207,9 @@
 
 	.ingredients {
 		display:none;
-		padding:10px 0px 15px 0px;
 		font-size:80%;
-		text-align:center;
+		text-align:left;
 	}
-
-	// .product-list {
-	//
-	//
-	//
-	//
-	// 	.product {
-	// 		font-weight:500;
-	// 		display:inline;
-	// 	}
-	//
-	//
-	// 	.feed-review-excerpt {
-	//
-	// 		.star-rating {
-	// 			text-align:center;
-	// 		}
-	//
-	// 		.star-rating img {
-	// 			max-width:20px;
-	// 		}
-	// 	}
-	//
-	//
-	//
-	// 	.category {
-	// 		font-weight:400;
-	// 		display:inline;
-	// 	}
-	//
-	//
-	// }
 
 	.reviews {
 
@@ -388,6 +368,39 @@
 					text-align:center;
 					padding-top: 8px;
 					float: right;
+				}
+
+				.product-show {
+					padding: 30px 0px;
+					border-bottom: 1px dotted silver;
+					height: 400px;
+					h1 {
+						font-size: 25px;
+						font-style: italic;
+						font-weight: bold;
+					}
+					h2 {
+						font-size: 25px;
+					}
+					.product-show-image {
+						text-align: left;
+					}
+					.product-show-image img {
+						max-width: 100%;
+						max-height: 340px;
+					}
+					.product-show-rating {
+						float: right;
+					}
+					.product-show-use-button {
+						float:left;
+						margin-top: -5px;
+					}
+				}
+
+				.use-button {
+					margin-top: 20px;
+					float: left;
 				}
 
 }
