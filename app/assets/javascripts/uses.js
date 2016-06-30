@@ -8,6 +8,7 @@ function updateUses(event, data) {
 }
 
 function toggleUses(data) {
+  console.log(data)
   status = $('.use-button').html()
   if (status === "I'm using this!") {
     $('.use-button').html("I use this!")

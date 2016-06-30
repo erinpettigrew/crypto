@@ -12,7 +12,6 @@ class ReviewsController < ApplicationController
   end
 
   def create
-
     @review = Review.create(review_params)
     @review.user_id = current_user.id
     @review.product_id = @product.id
