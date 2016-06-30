@@ -11,7 +11,6 @@ Rails.application.routes.draw do
       resources :avatars
       resources :profiles
     end
-  # resources :uses
   resources :products do
       resources :uses
       put :like, on: :member
@@ -19,7 +18,7 @@ Rails.application.routes.draw do
       collection do # search will apply to more than one product
           get 'search'
       end
-      resources :reviews, except: [:show, :index] #deleted show and index pages
+      resources :reviews, except: [:show, :index]
       resources :photos
     end
 

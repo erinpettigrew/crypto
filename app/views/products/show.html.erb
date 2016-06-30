@@ -10,7 +10,7 @@
 			<div class="product-show-image"><%= image_tag @product.image_url %></div>
 		</div>
 		<div class="col-xs-9 col-sm-6">
-			<h1><%= link_to @product.product_brand %></h1>
+			<h1><%= link_to @product.product_brand, root_path + 'products/search?utf8=%E2%9C%93&search=' + @product.product_brand %></h1>
 			<h2><%= @product.product_name %></h2>
 			<br/>
 			<%= render partial: "metadata", locals: { product: @product } %>
@@ -38,8 +38,9 @@
 
 	<%= render partial: "reviews/form" %>
 
-
-	<%= render partial: "reviews/row", collection: @product.recent_reviews, as: :review %>
+	<div class="reviews">
+		<%= render partial: "reviews/row", collection: @product.recent_reviews, as: :review %>
+	</div>
 </div>
 
 <%= render partial: 'admin', locals: { product: @product } %>

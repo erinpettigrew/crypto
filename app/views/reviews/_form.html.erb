@@ -1,27 +1,24 @@
+<%= form_for([@product, @review], remote: true) do |f| %>
+<% if @review.errors.any? %>
+<div id="error_explanation" class= "alert alert-danger alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+  <h4><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h4>
 
-  <%= form_for([@product, @review]) do |f| %>
-  <% if @review.errors.any? %>
-  <div id="error_explanation" class= "alert alert-danger alert-dismissable">
-    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-    <h4><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h4>
-
-    <ul>
-      <% @review.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-  <% end %>
-  <div class="form-group">
-    <div id="star-rating"></div>
-  </div>
-  <div class="form-group">
-    <%= f.text_area :comment, placeholder: "leave a tip", class: "form-control", rows: "6"%>
-  </div>
-  <%= submit_tag "add!", name: nil, class: "btn btn-primary review-button", method: :post, remote: true %>
-
-  <!-- <%= submit_tag "add!", name: nil, class: "btn btn-primary review-button", method: :post, remote: true %> -->
-  <% end %>
+  <ul>
+    <% @review.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<div class="form-group">
+  <div id="star-rating"></div>
+</div>
+<div class="form-group">
+  <%= f.text_area :comment, placeholder: "leave a tip", class: "form-control", rows: "6"%>
+</div>
+<%= submit_tag "add!", name: nil, class: "btn btn-primary review-button" %>
+<% end %>
 
 <script>
 $('#star-rating').raty({

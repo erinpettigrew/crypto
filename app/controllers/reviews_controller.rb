@@ -12,25 +12,19 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new(review_params)
+
+    @review = Review.create(review_params)
     @review.user_id = current_user.id
     @review.product_id = @product.id
+    @review.save
+    render :json => { :review => render_to_string('reviews/_row', :layout => false, :locals => { :review => @review }) }
+
 
     $tracker.track(current_user.id, 'Added Review', {
       'Product ID' => @product.id,
       'Product Name' => @product.product_brand + " " + @product.product_name
-      })
-
-      respond_to do |format|
-        if @review.save
-          format.html { redirect_to @product, notice: 'Thank you for your review! It helps all of us make better purchases.' }
-          format.json { render :json => @review }
-        else
-          format.html { render :new }
-          format.json { render json: @review.errors, status: :unprocessable_entity }
-        end
-      end
-    end
+    })
+  end
 
     def update
       respond_to do |format|
