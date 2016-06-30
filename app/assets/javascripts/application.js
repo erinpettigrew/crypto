@@ -18,10 +18,11 @@
 
 function transitionIn(anyDiv) {
   anyDiv.hide();
-  anyDiv.delay(10).fadeIn(300);
+  anyDiv.delay(10).fadeIn(200);
 }
 
 $(document).on('ready page:load', function () {
+  transitionIn($('.page'));
   $('input#search').on('click', function() {
     $(this).val("")
   })

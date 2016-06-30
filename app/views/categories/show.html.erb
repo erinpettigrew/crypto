@@ -1,12 +1,13 @@
 <%= render partial: 'meta', locals: { category: @category } %>
 <%= render 'products/search' %>
+<div class="page">
 <%= render partial: 'header_show', locals: { category: @category } %>
 
 
 <div class="sortable">
   <%= render partial: 'products/product_row', collection: @products, as: :product %>
 </div>
-
+</div>
 
 <script>
   mixpanel.track("Viewed Category", {"Category Name": "<%= @category.name %>", "Category ID": <%= @category.id %>});

@@ -3,7 +3,7 @@
         <%= link_to image_tag(product.image.url), product %>
       </div>
 
-      <div class="col-xs-5 col-sm-6">
+      <div class="col-xs-5 col-sm-5">
         <div class="product-brand"><%= product.product_brand %></div>
         <div class="product-name"><%= link_to product.product_name, product %></div>
       </div>
@@ -17,7 +17,7 @@
         <% end %>
       </div>
 
-      <div class="col-xs-3 col-sm-1 review-info">
+      <div class="col-xs-3 col-sm-2 review-info">
         <%= render partial: 'products/rating', locals: {rating: product.average_rating} %>
       </div>
     </div>

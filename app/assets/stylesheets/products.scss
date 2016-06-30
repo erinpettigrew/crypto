@@ -81,6 +81,7 @@
 		border: 1px dotted white;
 		text-align:center;
 		padding-top: 8px;
+		float: right;
 	}
 
 	.rating-single {
@@ -229,6 +230,8 @@
 
 	.reviews a {
 		color:#000000;
+		font-weight: 600;
+		font-style: italic;
 	}
 
 
@@ -354,6 +357,7 @@
 					border: 1px dotted white;
 					text-align:center;
 					padding-top: 8px;
+					float: right;
 				}
 
 				.rating-single {

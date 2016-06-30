@@ -3,7 +3,7 @@
 <% keywords @product.product_brand + ' ' + @product.product_name + ', ' + @product.category.name + ', reviews, community, forum, posts, asian, skincare, beauty, products' %>
 
 <%= render 'search' %>
-
+<div class="page">
 <div class="product-show">
 	<div class="row">
 		<div class="col-xs-12 col-sm-5">
@@ -44,7 +44,7 @@
 		<%= render partial: "reviews/row", collection: @product.recent_reviews, as: :review %>
 	</div>
 </div>
-
+</div>
 <!-- <%= render partial: 'admin', locals: { product: @product } %> -->
 
 
