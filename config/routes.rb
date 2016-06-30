@@ -5,34 +5,34 @@ Rails.application.routes.draw do
   resources :skin_types
   resources :applicants
   resources :categories
+  resources :brands
   devise_for :users
   resources :users, :only => [:show, :index] do
       resources :avatars
       resources :profiles
     end
   resources :products do
-      put :use, on: :member
+      resources :uses
+      post 'uses/toggle', to: 'uses#toggle'
       put :like, on: :member
       put :want, on: :member
       collection do # search will apply to more than one product
           get 'search'
       end
-      resources :reviews, except: [:show, :index] #deleted show and index pages
+      resources :reviews, except: [:show, :index]
       resources :photos
     end
 
-  get 'pages/about'
+  get 'pages/login'
 
   get '/join', to: 'applicants#new'
 
   get '/thanks', to: 'pages#thanks'
 
-  # get 'pages/contact'
-  #set homepage as login / signup page
   authenticated :user do
     root to: 'products#index', as: :authenticated_root
   end
 
-  root to: 'pages#about'
+  root to: 'pages#login'
 
 end

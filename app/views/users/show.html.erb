@@ -3,10 +3,10 @@
 <% keywords 'beauty products, reviews, community, forum, posts, skincare, cosmetics' %>
 <% nofollow %>
 <% noindex %>
-
+<div class="profile page">
 <div class="user-info">
 	<h1><%= @user.user_name %></h1>
-	<div class="user-avatar"><%= image_tag(@user.pic) %></div>
+	<div class="extra-medium-avatar"><%= image_tag(@user.pic) %></div>
 
 	<% if @user == current_user %>
 	<% if @user.avatar.blank? %>
@@ -17,138 +17,41 @@
 		<% end %>
 		<% end %>
 
-		<div class="activity-info">
-			<small>Member #<%= @user.id %></br>
-				Joined <%= @user.created_at.strftime("%-m/%-d/%-y") %></small></br>
-			</div><!-- .activity-info -->
-		</p>
-		<div class="row skin">
+		<div class="row">
 			<% if @skin_type.present? %>
 			<% if @user == current_user %>
-			<div class="skin-info"><small><i class="glyphicon glyphicon-tasks"></i></small> <%=link_to "#{@skin_type.name.capitalize}", edit_user_profile_path(@user, @user.profile) %></div>
+			<div class="skin-info"><i class="fa fa-sliders" aria-hidden="true"></i> <%=link_to "#{@skin_type.name.capitalize}", edit_user_profile_path(@user, @user.profile) %></div>
 			<% else %>
-			<div class="skin-info"><small><i class="glyphicon glyphicon-tasks"></i></small> <%= @skin_type.name.titleize %></div>
+			<div class="skin-info"><i class="fa fa-sliders" aria-hidden="true"></i> <%= @skin_type.name.titleize %></div>
 			<% end %>
 			<% else %>
 			<% if @user == current_user %>
-			<div class="skin-info"><small><i class="glyphicon glyphicon-tasks"></i></small> <%=link_to "Add your skin type!", new_user_profile_path(@user) %></div>
+			<div class="skin-info"><i class="fa fa-sliders" aria-hidden="true"></i> <%=link_to "Add your skin type!", new_user_profile_path(@user) %></div>
 			<% end %>
 			<% end %>
 		</div>
-		<div class="row invites">
-			<% if user_signed_in? && @user == current_user %>
-			<% unless current_user.invitation_limit == 0 || current_user.invitation_limit == nil %>
-			<div class="invite-info"><small><i class="glyphicon glyphicon-envelope"></i></small>
-				<%= link_to "You earned #{pluralize(current_user.invitation_limit, "invitation")}!", new_user_invitation_path %></div>
-				<% end %>
-				<% end %>
-			</div>
-		</div> <!-- .user-info -->
+
+	</div> <!-- .user-info -->
 
 
-		<% if @user.used_products.any? %>
-		<div class= "title">Using</div>
-		<div class="row">
-			<% @user.used_products.includes(:category).each do |product| %>
-			<div class="col-xs-6 col-sm-4">
-				<div class="card">
-					<div class="category">
-						<%= product.category.name.titleize %>
-					</div>
-					<div class="product-image">
-						<%= link_to image_tag(product.image), product %></br>
-					</div>
-					<div class="product-info">
-						<%= product.product_brand %></br>
-						<%= link_to product.product_name, product %></br>
-					</div>
-				</div>
-			</div>
-			<% end %>
-		</div>
-		<% end %>
+<div class="title">Using</div>
+<%= render partial: 'products/product_row_user', collection: @user.used_products, as: :product, locals: { user: @user } %>
+</div>
 
-		<% if @user.wanted_products.any? %>
-		<div class= "title">Wants</div>
-		<div class="row">
-			<% @user.wanted_products.includes(:category).each do |product| %>
-			<div class="col-xs-6 col-sm-4">
-				<div class="card">
-					<div class="category">
-						<%= product.category.name.titleize %>
-					</div>
-					<div class="product-image">
-						<%= link_to image_tag(product.image), product %></br>
-					</div>
-					<div class="product-info">
-						<%= product.product_brand %></br>
-						<%= link_to product.product_name, product %></br>
-					</div>
-				</div>
-			</div>
-			<% end %>
-		</div>
-		<% end %>
+<div class="title">Wants</div>
+<%= render partial: 'products/product_row_user', collection: @user.wanted_products, as: :product, locals: { user: @user } %>
 
+</div><!-- /.profile -->
 
-
-		<% if @user_reviews.present? %>
-		<div class= "title"><%= pluralize(@reviews_added, "Review") %></div>
-		<div class="product-list">
-			<% @user_reviews.each do |review| %>
-			<div class="product-card">
-				<div class="row product-list-row">
-					<div class="col-xs-3 col-md-3">
-						<div class="user-product-image"><%= link_to image_tag(review.product.image_url), review.product %>
-						</div>
-					</div>
-
-					<div class="col-xs-4 col-md-5 product-info">
-						<div class="row product-list-row">
-							<div class="col-xs-12 col-md-5">
-								<h6><%= "#{review.product.product_brand}" %></h6>
-							</div>
-							<div class="col-xs-12 col-md-7">
-								<h7><%= link_to review.product.product_name, review.product %></h7>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-xs-5 col-md-4 review-info">
-						<div class="col-xs-12 col-md-8">
-							<div class="star-rating-index"><div class="star-rating" data-score= <%= review.rating %>></div></div>
-						</div>
-
-					</div>
-
-					<div class="col-xs-12 col-sm-8 col-md-8 review-excerpt">
-						<%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></br>
-						<small><%= time_ago_in_words(review.updated_at).gsub('about','') %> ago</small>
-
-						<% if user_signed_in? %>
-						<% if (review.user == current_user) || (current_user.admin?) %>
-						<p><%= link_to "Edit", edit_product_review_path(review.product, review) %>
-							<%= link_to "Delete", product_review_path(review.product, review), method: :delete %>
-							<%= review.created_at.strftime("%-m/%-d/%-y") %></p>
-							<% end %>
-							<% end %>
-						</div>
-
-					</div>   <!-- /row product-list-row -->
-				</div>   <!-- /product-card -->
-				<% end %>
-			</div>
-			<% end %>
-
-			<% if @user == current_user %>
-			<script>
-			mixpanel.track("Viewed Own Profile", {"Username": "<%= @user.user_name %>", "User ID": <%= @user.id %>});
-			</script>
-			<% else %>
-			<script>
-			mixpanel.track("Viewed Profile", {"Username": "<%= @user.user_name %>", "User ID": <%= @user.id %>});
-			</script>
-			<% end %>
+<% if @user == current_user %>
+<script>
+mixpanel.track("Viewed Own Profile", {"Username": "<%= @user.user_name %>", "User ID": <%= @user.id %>});
+</script>
+<% else %>
+<script>
+mixpanel.track("Viewed Profile", {"Username": "<%= @user.user_name %>", "User ID": <%= @user.id %>});
+</script>
+<% end %>
 
 <script>
 	$('.star-rating').raty({

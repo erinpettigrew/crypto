@@ -30,6 +30,17 @@ class Product < ActiveRecord::Base
 
 	searchkick
 
+	def self.brands
+		Product.all.pluck(:product_brand).uniq.sort_by(&:downcase)
+	end
+
+	def self.ingredients
+		ingredients = Product.all.pluck(:ingredients).join
+		ingredients = ingredients.gsub("\n", "").gsub("\r", "")
+		ingredients = ingredients.split(", ")
+		ingredients.select { |ing| !ing.nil? }
+	end
+
 	def recent_reviews
 		reviews.order(created_at: :desc)
 	end
@@ -45,4 +56,5 @@ class Product < ActiveRecord::Base
 	def average_rating
 		reviews.blank? ? 0 : reviews.average(:rating).round(2)
 	end
+
 end

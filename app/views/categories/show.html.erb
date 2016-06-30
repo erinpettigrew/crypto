@@ -1,10 +1,12 @@
 <%= render partial: 'meta', locals: { category: @category } %>
+<%= render 'products/search' %>
+<div class="page">
 <%= render partial: 'header_show', locals: { category: @category } %>
 
-<div class="product-list">
-  <div class="category-show">
-    <%= render partial: 'products/product_row', collection: @products, as: :product %>
-  </div>
+
+<div class="sortable">
+  <%= render partial: 'products/product_row', collection: @products, as: :product %>
+</div>
 </div>
 
 <script>

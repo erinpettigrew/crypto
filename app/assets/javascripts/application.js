@@ -11,12 +11,19 @@
 // about supported directives.
 //
 //= require jquery
-//= require turbolinks
+// require turbolinks removed this by removing equals
 //= require jquery_ujs
 //= require_tree .
 
 
 function transitionIn(anyDiv) {
   anyDiv.hide();
-  anyDiv.delay(10).fadeIn(300);
+  anyDiv.delay(10).fadeIn(200);
 }
+
+$(document).on('ready page:load', function () {
+  transitionIn($('.page'));
+  $('input#search').on('click', function() {
+    $(this).val("")
+  })
+});

@@ -1,7 +1,5 @@
-<div class="jumbotron">
-<h3>Need to tweak something?</h3>
-<p><p>Go ahead, change is good!</p></p>
-</div>
+<div class="title">Settings</div>
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
@@ -39,8 +37,6 @@
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
-
-<p>Aww, please don't go! <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
+<p>Aww, please don't go! <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-sm btn-primary" %></p>
 
 <%= link_to "Back", :back %>

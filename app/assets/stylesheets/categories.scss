@@ -1,125 +1,63 @@
-// Place all the styles related to the Categories controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 /* Custom, iPhone Retina -------------------------------------------------------- */
 @media screen and (min-width: 320px) {
-
 	.category-index {
-		padding-top:10px;
-
 		.category-row {
-			margin-bottom:20px;
+			text-align:center;
+			padding-top:20px;
+			height: 160px;
+
+			.category-name {
+				font-weight:500;
+				.counter {
+					display:inline;
+					background-color: #e5e5e5;
+					font-size: 75%;
+				}
+			}
+			.category-image {
+				text-align:center;
+				margin-right: -10px;
+			}
+			.category-image img {
+				max-width: 100px;
+				max-height:100px;
+				margin-bottom:5px;
+			}
 		}
-		.category-name {
-			font-size:18px;
-			font-weight:500;
-			text-align:left;
-			margin-top:15px;
-		}
-		.category-images {
-			text-align:left;
-		}
-		.category-images img {
-			max-height:50px;
-		}
-		.category-count {
-			font-size:18px;
-			font-weight:300;
-			display:none;
+		.category-row:hover {
+			.category-image {
+				-ms-transform: scale(1.05, 1.05); /* IE 9 */
+				-webkit-transform: scale(1.05, 1.05); /* Safari */
+				-moz-transform: scale(1.05, 1.05);
+			}
+			.category-name {
+				text-decoration: underline;
+			}
 		}
 	}
 	.category-index a {
 		color:#000000;
 	}
-
-
-	.category-show {
-		.product-row {
-			padding-bottom:20px;
-			height: 140px;
+	.category-show-header {
+		text-align: left;
+		width: 100%;
+		.add-button {
+			float: right;
+			margin-top: -52px;
 		}
-		.product-image img {
-			max-height:100px;
-		}
-		.product-brand {
-			font-size:16px;
-			font-weight:500;
-			margin-top:0px;
-		}
-		.product-name {
-			font-size:16px;
-			font-weight:500;
-		}
-		.review-info {
-			font-size:14px;
-			font-weight:300;
-			margin-top:0px;
-		}
-	}
-
-	.uses {
-		margin-left:0px;
-		padding-left:0px;
 	}
 }
 
 /* Small Devices, Tablets -------------------------------------------------------- */
 @media screen and (min-width: 768px) {
-
 	.category-index {
-		padding-top:30px;
-
 		.category-row {
 			margin-bottom:30px;
+			height: 175px;
 		}
-
-		.category-name {
-			margin-top:30px;
-		}
-
-		.category-images {
-			text-align:center;
-		}
-
-		.category-images img {
-			max-height:90px;
-		}
-
-		.category-count {
-			text-align:left;
-			display:inline;
-			margin-top:30px;
-		}
-	}
-
-	.category-show {
-
-		.product-row {
-			padding-bottom: 20px;
-			height: 150px;
-		}
-
-		.product-image {
-			text-align:right;
-		}
-
-		.product-image img {
-			max-height:110px;
-		}
-
-		.product-brand {
-			font-size:18px;
-			margin-top:20px;
-		}
-
-		.product-name {
-			font-size:18px;
-		}
-
-		.review-info {
-			margin-top:20px;
-			line-height:25px;
+		.category-image img {
+			max-height:125px;
+			margin-bottom:5px;
 		}
 	}
 }

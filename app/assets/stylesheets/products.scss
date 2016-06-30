@@ -1,66 +1,181 @@
-// Place all the styles related to the Products controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 /* Custom, iPhone Retina -------------------------------------------------------- */
 @media screen and (min-width: 320px) {
 
-	.add-product {
+
+	.sorts {
+		padding-bottom: 15px;
+		text-align: right;
+		margin-top: -52px;
+		a {
+			margin-left: 10px;
+			text-decoration: underline;
+		}
+	}
+
+	.product-row {
+		margin: 30px 0px 30px 0px;
+		height: 118px;
+		border-bottom: 1px dotted silver;
+		overflow: hidden;
+		.product-image {
+			text-align:left;
+		}
+		.product-image img {
+			max-height:105px;
+			max-width: 100px;
+		}
+		.product-brand {
+			font-size:14px;
+			margin-top:20px;
+			font-weight: bold;
+			font-style: italic;
+		}
+		.product-name {
+			font-size:14px;
+		}
+		.product-name a {
+			color: #000000;
+		}
+		.user-count {
+			margin-top: 30px;
+			margin-right: 5%;
+			text-align: right;
+			.count {
+				display: inline;
+				font-size: 110%;
+			}
+		}
+		.user-count img {
+			margin-left: -40px;
+		}
+		.review-info {
+			margin-top:12px;
+		}
+	}
+
+	.product-row:last-child {
+		border-bottom: 0px;
+	}
+
+	.product-row:hover {
+		.product-image {
+			-ms-transform: scale(1.05, 1.05); /* IE 9 */
+			-webkit-transform: scale(1.05, 1.05); /* Safari */
+			-moz-transform: scale(1.05, 1.05);
+		}
+
+	}
+
+	.product-name {
+		display:inline;
+	}
+
+	.rating {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		background-color: #000000;
+		color: #ffffff;
+		font-size: 160%;
+		height: 50px;
+		width: 50px;
+		border-radius: 50%;
+		border: 1px dotted white;
 		text-align:center;
-		padding-top: 10px;
-		padding-bottom: 20px;
+		padding-top: 8px;
+		float: right;
 	}
 
-	.profile-panel {
-		height:375px;
-	}
-
-	.profile-panel a {
-		color:#000000;
-	}
-
-	.user-avatar {
-		padding-5op:30px;
+	.rating-single {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		background-color: white;
+		color: black;
+		font-size: 160%;
+		height: 50px;
+		width: 50px;
+		border-radius: 50%;
+		border: 1px dotted black;
 		text-align:center;
+		padding-top: 8px;
+		float: right;
 	}
 
-	.user-greeting {
-		font-weight:500;
-		font-size:200%;
-		text-align:center;
+	.product-show {
+		padding: 30px 0px;
+		border-bottom: 1px dotted silver;
+		height: 100%;
+		h1 {
+			font-size: 25px;
+			font-style: italic;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 25px;
+			margin-top: 10px;
+		}
+		.metalinks a {
+			text-decoration: underline;
+		}
+		.ingredients-button {
+			text-decoration: underline;
+			color: black;
+		}
+		.product-show-image {
+			text-align: center;
+		}
+		.product-show-image img {
+			max-width: 55%;
+			max-height: 55%;
+		}
+		.product-show-rating {
+			float: right;
+			padding-top: 32%;
+		}
+		.product-show-use-button {
+			float:left;
+			margin-top: -5px;
+		}
 	}
 
-	.user-instructions {
-		font-size: 140%;
-		font-weight:400;
-		text-align:center;
+	.use-button {
+		float: right;
 	}
 
-	.profile-product {
-		padding:10px 0px 10px 0px;
-		margin:0px;
-		height:100%;
-	}
+	// .add-product {
+	// 	text-align:center;
+	// 	padding-bottom: 30px;
+	// 	border-bottom: 1px dotted silver;
+	// 	.add-product-text {
+	// 		font-size: 200%;
+	// 		display:inline;
+	// 		padding: 0 30px;
+	// 	}
+	// }
 
-	.profile-add {
-		margin-top:-125px;
-		font-size:125%;
-		text-align:center;
-	}
 
-	.profile-product img {
-		max-width:175px;
-		border:1px solid #ffffff;
-		background:#ffffff;
-		border-radius:5px;
-		box-shadow:1px 1px 1px #e5e5e5;
-		padding:20px;
-	}
-
-	.product-info {
-		font-size:150%;
-		font-weight:500;
-	}
+	// .profile-product {
+	// 	padding:10px 0px 10px 0px;
+	// 	margin:0px;
+	// 	height:100%;
+	// }
+	//
+	// .profile-add {
+	// 	margin-top:-125px;
+	// 	font-size:125%;
+	// 	text-align:center;
+	// }
+	//
+	// .profile-product img {
+	// 	max-width:175px;
+	// 	border:1px solid #ffffff;
+	// 	background:#ffffff;
+	// 	border-radius:5px;
+	// 	box-shadow:1px 1px 1px #e5e5e5;
+	// 	padding:20px;
+	// }
+	//
+	// .product-info {
+	// 	font-size:150%;
+	// 	font-weight:500;
+	// }
 
 
 
@@ -76,65 +191,14 @@
 		padding-bottom:10px;
 	}
 
-
-	.card {
-
-		padding-bottom:20px;
-		border:5px solid #fafafa;
-		border-radius:10px;
-		margin-bottom:20px;
-
-		.category {
-			font-size:90%;
-			text-align:center;
-			color:#999999;
-			background-color:#fafafa;
-			padding-bottom:5px;
-		}
-
-		.product-image {
-			text-align:center;
-			background-color:#ffffff;
-			margin:20px;
-			height:100px;
-		}
-
-		.product-info {
-			font-size:115%;
-			text-align:center;
-			background-color:#ffffff;
-			height:75px;
-		}
-	}
-
-	.card img {
-		max-height:125px;
-		background-color:#fafafa;
-		align:center;
-	}
-
-
-	.new-product-panel {
-		width: 100%;
-		text-align: center;
-		height: auto;
-		margin: 20px 0px 20px 0px;
-	}
-
-	.product-list-header {
-		text-align:center;
-		padding:0px 0px 25px 0px;
-	}
-
 	.ingredients-list {
 		font-size:14px;
-		text-align:center;
+		text-align:left;
 	}
 
 	.ingredients-button {
 		font-size:14px;
-		text-align:center;
-		color:#337AB7;
+		text-align:left;
 		display:inline;
 	}
 
@@ -144,108 +208,8 @@
 
 	.ingredients {
 		display:none;
-		padding:10px 0px 15px 0px;
 		font-size:80%;
-		text-align:center;
-	}
-
-	.product-list {
-
-		.title {
-			width:100%;
-			text-align:center;
-			font-weight:200;
-			font-size:120%;
-			text-transform:none;
-			border-bottom:1px solid black;
-			padding:5px;
-			margin-bottom:20px;
-		}
-
-		.feed-item {
-			font-size:125%;
-		}
-
-		.feed-user {
-			text-align:left;
-		}
-
-		.feed-action-text {
-			font-size:18px;
-			font-weight:300;
-			padding:20px 0px 0px 15px;
-		}
-
-		.feed-action-text img {
-			max-width:50px;
-		}
-
-		.feed-action-text a {
-			color:#000000;
-		}
-
-		.product {
-			font-weight:500;
-			display:inline;
-		}
-
-		.feed-product-image {
-			padding:10px 0px 10px 0px;
-			margin:0px;
-			text-align:center;
-		}
-
-		.feed-product-image img {
-			max-width:275px;
-			border:1px solid #ffffff;
-			background:#ffffff;
-			border-radius:5px;
-			box-shadow:1px 1px 1px #e5e5e5;
-			padding:5px;
-		}
-
-
-		.feed-product-image-alt {
-			padding:0px;
-			margin:15px 0px 0px 0px;
-		}
-
-		.feed-product-image-alt img {
-			max-width:100px;
-			border:1px solid #ffffff;
-			background:#ffffff;
-			border-radius:5px;
-			box-shadow:1px 1px 1px #e5e5e5;
-			padding:5px;
-		}
-
-		.feed-review-excerpt {
-			font-size:110%;
-			font-weight:200;
-			color:#000000;
-
-			.star-rating {
-				text-align:center;
-			}
-
-			.star-rating img {
-				max-width:20px;
-			}
-		}
-
-		.feed-timestamp {
-			font-size:75%;
-			font-weight:300;
-			text-align:left;
-			padding-bottom:15px;
-		}
-
-		.category {
-			font-weight:400;
-			display:inline;
-		}
-
-
+		text-align:left;
 	}
 
 	.reviews {
@@ -266,6 +230,8 @@
 
 	.reviews a {
 		color:#000000;
+		font-weight: 600;
+		font-style: italic;
 	}
 
 
@@ -283,13 +249,10 @@
 
 @media screen and (min-width: 768px) {
 
-
-	.new-product-panel {
-		width: 100%;
-		text-align: center;
-		height: auto;
-		margin: 20px 0px 20px 0px;
+	.sorts a {
+			margin-left: 15px;
 	}
+
 
 	.button-use {
 		text-align:right;
@@ -297,16 +260,7 @@
 		padding-bottom:10px;
 	}
 
-	.button-want {
-		text-align:left;
-		padding-top:10px;
-		padding-bottom:10px;
-	}
 
-	.product-list-header {
-		text-align:center;
-		padding:0px 0px 25px 0px;
-	}
 
 	.ingredients-list {
 		font-size:14px;
@@ -326,42 +280,12 @@
 		margin-left:-40px;
 	}
 
-	.feed-item {
-		height:600px;
-		font-size:125%;
 
-		.feed-user {
-			text-align:right;
-
-		}
-
-		.feed-action-text {
-			padding:20px 0px 0px 0px;
-			padding-left:15px;
-
-		}
 
 		.review-info p {
 			margin:0px;
 			padding:0px;
 		}
-
-
-		.feed-product-image {
-			padding:0px;
-			margin:0px;
-		}
-
-		.feed-product-image img {
-			max-width:250px;
-			border-radius:5%;
-			box-shadow:1px 1px 1px #e5e5e5;
-			padding:20px;
-		}
-
-		.feed-review-excerpt {
-			color:#000000;
-			text-align:left;
 
 			.star-rating {
 				text-align:center;
@@ -370,15 +294,117 @@
 			.star-rating img {
 				max-width:100%;
 			}
-		}
 
 
-		.feed-timestamp {
-			font-size:75%;
-			font-weight:300;
-			padding-top:5px;
-			text-align:left;
-		}
-	}
+
+				.product-row {
+					margin: 30px 0px 30px 0px;
+					height: 118px;
+					border-bottom: 1px dotted silver;
+					overflow: hidden;
+					.product-image {
+						text-align:left;
+					}
+					.product-image img {
+						max-height:100px;
+					}
+					.product-brand {
+						font-size:17px;
+						margin-top:20px;
+						font-weight: bold;
+						font-style: italic;
+					}
+					.product-name {
+						font-size:17px;
+					}
+					.product-name a {
+						color: #000000;
+					}
+					.user-count {
+						margin-top: 30px;
+						margin-right: 5%;
+						text-align: right;
+						.count {
+							display: inline;
+							font-size: 110%;
+						}
+					}
+					.user-count img {
+						margin-left: -40px;
+					}
+					.review-info {
+						margin-top:20px;
+					}
+				}
+
+				.product-row:hover {
+					.product-image {
+						-ms-transform: scale(1.05, 1.05); /* IE 9 */
+						-webkit-transform: scale(1.05, 1.05); /* Safari */
+						-moz-transform: scale(1.05, 1.05);
+					}
+
+				}
+
+				.rating {
+					font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+					background-color: #000000;
+					color: #ffffff;
+					font-size: 160%;
+					height: 50px;
+					width: 50px;
+					border-radius: 50%;
+					border: 1px dotted white;
+					text-align:center;
+					padding-top: 8px;
+					float: right;
+				}
+
+				.rating-single {
+					font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+					background-color: white;
+					color: black;
+					font-size: 160%;
+					height: 50px;
+					width: 50px;
+					border-radius: 50%;
+					border: 1px dotted black;
+					text-align:center;
+					padding-top: 8px;
+					float: right;
+				}
+
+				.product-show {
+					padding: 30px 0px;
+					border-bottom: 1px dotted silver;
+					height: 400px;
+					h1 {
+						font-size: 25px;
+						font-style: italic;
+						font-weight: bold;
+					}
+					h2 {
+						font-size: 25px;
+					}
+					.product-show-image {
+						text-align: left;
+					}
+					.product-show-image img {
+						max-width: 100%;
+						max-height: 340px;
+					}
+					.product-show-rating {
+						float: right;
+					}
+					.product-show-use-button {
+						float:left;
+						margin-top: -5px;
+					}
+				}
+
+				.use-button {
+					margin-top: 20px;
+					float: left;
+				}
 
 }

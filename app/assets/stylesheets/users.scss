@@ -1,162 +1,19 @@
 /* Custom, iPhone Retina -------------------------------------------------------- */
 @media screen and (min-width: 320px) {
 
-	/* Member Index */
-
-	.legend {
-		background:#EEEAF2;
-		border-radius:5px;
-		font-weight:500;
-		font-size:100%;
-		padding:7px 10px 7px 10px;
-		text-align:center;
-		width:190px;
-	}
-
-	.legend a {
-		color:#000000;
-	}
-
-	.user-index {
-		text-align:center;
-		padding-top:30px;
-
-		.name {
-			font-weight:500;
-			font-size:125%;
-			padding:5px;
-		}
-
-		.name a {
-			color:#000000;
-		}
-
-		.match-name {
-			background:#EEEAF2;
-			border-radius:5px;
-			font-weight:500;
-			font-size:125%;
-			padding:5px;
-		}
-
-		.match-name a {
-			color:#000000;
-		}
-
-	}
-
-	.login-image {
-		text-align:center;
-	}
-
-	.login-image img {
-		max-width:225px;
-		padding-bottom:15px;
-	}
-
-	/* Profile */
-
-
-	.skin-info {
-		background:#EEEAF2;
-		border-radius:5px;
-		font-weight:500;
-		font-size:125%;
-		padding:8px 10px 8px 10px;
-		margin-bottom:10px;
-	}
-
-	.skin-info a {
-		color:#000000;
-	}
-
-	.invite-info {
-		background:#f1e9ed;
-		border-radius:5px;
-		font-weight:500;
-		font-size:125%;
-		padding:8px 10px 8px 10px;
-	}
-
-	.invite-info a {
-		color:#000000;
-	}
-
 	.user-info {
 		text-align:center;
-		padding-bottom: 50px;
-
-		.user-avatar img{
-			max-width:30%;
-			border-radius:50%;
-			box-shadow:1px 1px 1px #e5e5e5;
-			margin-right:0px;
-			border:1px solid #f2f3f4;
-		}
-
+		border-bottom: 1px dotted silver;
+		background-color: #FAFFFE;
+		padding: 4% 0% 5% 0%;
+		margin-top: 0px;
 	}
 
-
-
-	.activity-info {
-		display:none;
+	.user-edit {
+		float: right;
+		margin-right: 2%;
+		position: relative;
 	}
-
-	.card {
-
-		padding-bottom:20px;
-		border:0px;
-
-		.category {
-			font-size:110%;
-			font-weight:300;
-			text-align:center;
-			color:#000000;
-			background-color:#ffffff;
-		}
-
-		.product-image {
-			text-align:center;
-			background-color:#ffffff;
-			margin:10px;
-			padding:40px 0px 40px 0px;
-			border-radius:5%;
-			height:100%;
-			box-shadow:1px 1px 1px #e5e5e5;
-			margin-right:0px;
-			border:1px solid #f2f3f4;
-		}
-
-		.product-info {
-			font-size:125%;
-			text-align:center;
-			background-color:#ffffff;
-			height:75px;
-		}
-
-		.product-info a {
-			color:#000000;
-		}
-	}
-
-	.card img {
-		max-height:125px;
-		align:center;
-	}
-
-	.product-card {
-
-		.review-excerpt {
-			font-size:16px;
-			font-weight:300;
-		}
-
-		.timestamp {
-			font-size:14px;
-		}
-	}
-
-
 
 	.form-text {
 		font-size:16px;
@@ -164,85 +21,16 @@
 		margin-bottom:30px;
 	}
 
+	.skin-info {
+		display:inline;
+		text-transform: uppercase;
+		font-weight:500;
+		font-size: 85%;
+	}
 }
 
 /* Small Devices, Tablets -------------------------------------------------------- */
 
 @media screen and (min-width: 768px) {
-
-
-	.user-info {
-		text-align:center;
-		padding-bottom: 50px;
-
-		.user-avatar img{
-			max-width:25%;
-			border-radius:50%;
-			box-shadow:1px 1px 1px #e5e5e5;
-			margin-right:0px;
-			border:1px solid #f2f3f4;
-		}
-
-	}
-
-	.skin {
-		padding-bottom:20px;
-	}
-
-	.skin-info {
-		display:inline;
-		font-weight:500;
-	}
-
-	.invite-info {
-		display:inline;
-		font-weight:500;
-	}
-
-	.activity-info {
-		display:inline;
-		text-align:right;
-		font-weight:200;
-		font-size:110%;
-	}
-
-	.card {
-
-		padding-bottom:20px;
-		border:0px;
-
-
-		.category {
-			font-size:110%;
-			font-weight:300;
-			text-align:center;
-			color:#000000;
-			background-color:#ffffff;
-		}
-
-		.product-image {
-			text-align:center;
-			background-color:#ffffff;
-			margin:10px;
-			padding:50px 0px 50px 0px;
-			border-radius:5%;
-			height:100%;
-			box-shadow:1px 1px 1px #e5e5e5;
-			margin-right:0px;
-			border:1px solid #f2f3f4;
-		}
-
-		.product-info {
-			font-size:125%;
-			text-align:center;
-			background-color:#ffffff;
-			height:75px;
-		}
-	}
-
-	.card img {
-		max-height:125px;
-		align:center;
-	}
 
 }

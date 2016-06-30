@@ -1,0 +1,14 @@
+<!-- <% @use = product.uses.where(user: user) %>
+<% if @use.present? %>
+  <%= link_to "I'm using this!", product_use_path(@product, @use), class: "btn btn-info btn-lg use-button", method: :delete, remote: true %>
+<% else %>
+  <%= link_to "I use this!", product_uses_path(product_id: product.id, user_id: user.id), class: "btn btn-info btn-lg use-button", method: :post, remote: true %>
+<% end %> -->
+
+
+<% @use = product.uses.where(user: user) %>
+<% if @use.present? %>
+  <%= link_to "I'm using this!", product_uses_toggle_path(@product, @use), class: "btn btn-info btn-lg use-button", method: :post, remote: true %>
+<% else %>
+  <%= link_to "I use this!", product_uses_toggle_path(product_id: product.id, user_id: user.id), class: "btn btn-info btn-lg use-button", method: :post, remote: true %>
+<% end %>
