@@ -11,7 +11,7 @@ function updateReviews(event, data) {
 function incrementReviewsHeader() {
   var count = $('#ratings').text().replace(" Rating", "").replace("s", "")
   count++
-  if (count > 1) ratings = "Ratings"
-  else ratings = "Rating"
-  $('#ratings').text(`${count} ${ratings}`)
+  if (count > 1) ratings = " Ratings"
+  else ratings = " Rating"
+  $('#ratings').text(count + ratings)
 }

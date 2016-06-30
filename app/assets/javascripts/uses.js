@@ -25,15 +25,15 @@ function toggleUses(data) {
 function incrementUsesHeader() {
   var count = $('#users').text().replace(" User", "").replace("s", "")
   count++
-  if (count > 1) users = "Users"
-  else users = "User"
-  $('#users').text(`${count} ${users}`)
+  if (count > 1) users = " Users"
+  else users = " User"
+  $('#users').text(count + users)
 }
 
 function decrementUsesHeader() {
   var count = $('#users').text().replace(" User", "").replace("s", "")
   count--
-  if (count > 1 || count == 0) users = "Users"
-  else users = "User"
-  $('#users').text(`${count} ${users}`)
+  if (count > 1 || count == 0) users = " Users"
+  else users = " User"
+  $('#users').text(count + users)
 }
