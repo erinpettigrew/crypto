@@ -1,7 +1,6 @@
 /* Custom, iPhone Retina -------------------------------------------------------- */
 @media screen and (min-width: 320px) {
 
-
 	.sorts {
 		padding-bottom: 15px;
 		text-align: right;
@@ -139,46 +138,6 @@
 		float: right;
 	}
 
-	// .add-product {
-	// 	text-align:center;
-	// 	padding-bottom: 30px;
-	// 	border-bottom: 1px dotted silver;
-	// 	.add-product-text {
-	// 		font-size: 200%;
-	// 		display:inline;
-	// 		padding: 0 30px;
-	// 	}
-	// }
-
-
-	// .profile-product {
-	// 	padding:10px 0px 10px 0px;
-	// 	margin:0px;
-	// 	height:100%;
-	// }
-	//
-	// .profile-add {
-	// 	margin-top:-125px;
-	// 	font-size:125%;
-	// 	text-align:center;
-	// }
-	//
-	// .profile-product img {
-	// 	max-width:175px;
-	// 	border:1px solid #ffffff;
-	// 	background:#ffffff;
-	// 	border-radius:5px;
-	// 	box-shadow:1px 1px 1px #e5e5e5;
-	// 	padding:20px;
-	// }
-	//
-	// .product-info {
-	// 	font-size:150%;
-	// 	font-weight:500;
-	// }
-
-
-
 	.button-use {
 		text-align:right;
 		padding-top:10px;
@@ -208,7 +167,7 @@
 
 	.ingredients {
 		display:none;
-		font-size:90%;
+		font-size:85%;
 		text-align:left;
 		padding-top: 20px;
 	}
@@ -234,7 +193,6 @@
 		font-weight: 600;
 		font-style: italic;
 	}
-
 
 	.uses {
 		margin-left:15px;
@@ -378,7 +336,7 @@
 				.product-show {
 					padding: 30px 0px;
 					border-bottom: 1px dotted silver;
-					height: 400px;
+					min-height: 400px;
 					h1 {
 						font-size: 25px;
 						font-style: italic;
