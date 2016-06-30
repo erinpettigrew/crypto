@@ -4,7 +4,6 @@ $(document).on('ready page:load', function () {
   transitionIn($('.search-results'));
   handleSearch();
   rotateSearchTerms();
-  handleUseButton();
 });
 
 function rotateSearchTerms() {
@@ -35,24 +34,4 @@ function handleSearch() {
   $('input#search.big-search').on('click', function() {
     $(this).attr('placeholder', '')
   })
-}
-
-function handleUseButton() {
-  $('.use-button').on('click', function(event) {
-    var status = $('.use-button').html()
-    toggleUses(status)
-    event.preventDefault()
-  })
-}
-
-function toggleUses(status) {
-  if (status === "I'm using this!") {
-    $('.use-button').html("I use this!")
-    $('.users').append("<div class='small-avatar'><%= link_to image_tag(user.pic), user %></div>")
-  }
-  if (status === "I use this!") {
-    $('.use-button').html("I'm using this!")
-    // figure out how to remove the user's avatar
-    // $('.users').append("<div class='small-avatar'><%= link_to image_tag(user.pic), user %></div>")
-  }
 }

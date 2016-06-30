@@ -1,5 +1,5 @@
 class UsesController < ApplicationController
-  before_action :set_product, only: [:destroy]
+  # before_action :set_product, only: [:destroy]
 
   def new
     @use = Use.new
@@ -7,16 +7,14 @@ class UsesController < ApplicationController
 
   def create
     @use = Use.create(use_params)
-    render nothing: true
+    render json: { use: render_to_string('uses/_use-small', layout: false, locals: { use: @use }) }
   end
 
   def destroy
-    binding.pry
-    @use.destroy
-    respond_to do |format|
-      format.html { redirect_to product_url, notice: 'This was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    product = @product = Product.friendly.find(params[:product_id])
+    @use = Use.where(product: product, user: current_user)
+    @use.destroy_all
+    render json: { id: current_user.id}
   end
 
   private

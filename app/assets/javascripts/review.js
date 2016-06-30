@@ -3,6 +3,6 @@ $(document).on('ready page:load', function() {
 });
 
 function updateReviews(event, data) {
-  $('.new_review').hide(300)
-  $('.reviews').prepend(data.review)
+  $('.new_review').hide()
+  $(data.review).hide().prependTo('.reviews').fadeIn(300)
 }

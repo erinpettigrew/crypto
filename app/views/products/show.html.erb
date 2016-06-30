@@ -27,15 +27,15 @@
 
 <div class="col-xs-12 col-sm-5 users">
 	<div class="title"><%= pluralize(@product.used_by.count, "User") %></div>
+		<div class="user-matrix">
 	<% @product.used_by.each do |user| %>
-	<div class="small-avatar"><%= link_to image_tag(user.pic), user %></div>
+	<div class="small-avatar" id="<%= user.id %>"><%= link_to image_tag(user.pic), user %></div>
 	<% end %>
+</div>
 </div>
 
 <div class="col-xs-12 col-sm-7">
 	<div class="title"><%= pluralize(@product.reviews.count, "Rating") %></div>
-	<!-- <%= link_to "Add a review!", new_product_review_path(@product), class: "btn btn-lg btn-primary" %> -->
-
 	<%= render partial: "reviews/form" %>
 
 	<div class="reviews">

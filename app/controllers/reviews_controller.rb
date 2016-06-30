@@ -17,8 +17,7 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id
     @review.product_id = @product.id
     @review.save
-    render :json => { :review => render_to_string('reviews/_row', :layout => false, :locals => { :review => @review }) }
-
+    render json: { review: render_to_string('reviews/_row', layout: false, locals: { review: @review }) }
 
     $tracker.track(current_user.id, 'Added Review', {
       'Product ID' => @product.id,
