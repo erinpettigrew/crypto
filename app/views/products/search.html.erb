@@ -19,8 +19,13 @@
 <% end %>
 
 <% if !@products.any? && !@categories.any? %>
-  <div class="search-fail">Hm, no <%= @query %> yet.</div>
-
+  <div class="search-fail">Hm, no <strong><%= @query %></strong> yet. <i class="fa fa-frown-o" aria-hidden="true"></i> Try these!</div>
+  <div class="title">Categories</div>
+  <div class="category-index">
+    <div class="row theme-row">
+      <%= render partial: 'categories/category_row', collection: @default, as: :category %>
+    </div>
+  </div>
 <% end %>
 </div>
 
