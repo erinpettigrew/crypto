@@ -29,6 +29,7 @@
 				-ms-transform: scale(1.05, 1.05); /* IE 9 */
 				-webkit-transform: scale(1.05, 1.05); /* Safari */
 				-moz-transform: scale(1.05, 1.05);
+				transition: all 0.25s ease;
 			}
 			.category-name {
 				text-decoration: underline;

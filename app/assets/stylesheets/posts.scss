@@ -39,5 +39,6 @@
     -ms-transform: scale(1.01, 1.01); /* IE 9 */
     -webkit-transform: scale(1.01, 1.01); /* Safari */
     -moz-transform: scale(1.01, 1.01);
+    transition: all 0.25s ease;
   }
 }
