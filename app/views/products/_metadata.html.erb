@@ -1,6 +1,6 @@
 <div class="metadata">
   <div class="col-xs-6 metalinks">
-    by <%= link_to "#{product.product_brand}", root_path + 'products/search?utf8=%E2%9C%93&search=' + @product.product_brand %></br>
+    by <%= link_to "#{product.product_brand}", search_products_path(brand: @product.product_brand) %></br>
     in <%= link_to product.category.name.pluralize.titleize, product.category %>
     <% if product.ingredients.present? %>
       <div class="ingredients-list">

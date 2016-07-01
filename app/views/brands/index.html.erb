@@ -9,7 +9,7 @@
   <div class="list">
     <% @brands.each do |brand| %>
       <% if letter == brand[0].downcase %>
-        <%= link_to brand, root_path + 'products/search?utf8=%E2%9C%93&search=' + brand %><br>
+        <%= link_to brand, search_products_path(brand: brand) %><br>
       <% end %>
     <% end %>
   </div>

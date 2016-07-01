@@ -6,10 +6,16 @@ class ProductsController < ApplicationController
   before_action :set_themes, only: [:new, :edit, :create, :update]
 
   def search
-    @query = params[:search]
-    @products = Product.search(params[:search])
-    @categories = Category.search(params[:search])
-    @default = Category.all
+    if params[:brand]
+      @query = params[:brand]
+      @products = Product.search(@query, fields: [:product_brand])
+      @categories = []
+    else
+      @query = params[:search]
+      @products = Product.search(params[:search])
+      @categories = Category.search(params[:search])
+      @default = Category.all
+    end
   end
 
   def index
