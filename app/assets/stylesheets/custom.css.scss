@@ -175,11 +175,22 @@
 	}
 
 	.tiny-avatar {
-		margin:10px 15px 15px 0px;
-		display:inline;
+		margin: 10px 0px 15px 0px;
+    margin-top: -8px;
 	}
 
 	.tiny-avatar img {
+		max-width:35px;
+		border-radius:50%;
+		border:1px solid silver;
+	}
+
+	.tiny-avatar-list {
+		margin: 10px 15px 15px 0px;
+		display: inline;
+	}
+
+	.tiny-avatar-list img {
 		max-width:35px;
 		border-radius:50%;
 		border:1px solid silver;

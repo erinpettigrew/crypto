@@ -1,0 +1,13 @@
+<div class="row activity-row">
+  <div class="col-xs-3">
+    <div class="activity-avatar medium-avatar"><%= link_to image_tag(review.user.pic), review.user %></div>
+    <div class="user-name"><%= link_to review.user.user_name, review.user %></div>
+  </div>
+  <div class="col-xs-6">
+    </br><%= truncate(review.comment, length: 60) %>
+  </div>
+  <div class="col-xs-3">
+    <div class="activity-image"><%= link_to image_tag(review.product.image), review.product %></div>
+    <div class="rating-single"><%= review.rating.round(1) %></div>
+  </div>
+</div>

@@ -10,6 +10,17 @@
   <%= link_to "Add your products", new_product_path, class: "btn btn-lg btn-primary"%>
 </div> -->
 
+<div class="title">Recently</div>
+<div class="activity-index">
+  <% @activity.each do |activity| %>
+    <% if activity.is_a? (Use) %>
+      <%= render partial: "users/activity_use", locals: { use: activity } %>
+    <% elsif activity.is_a? (Review) %>
+      <%= render partial: "users/activity_rating", locals: { review: activity } %>
+    <% end %>
+  <% end %>
+</div>
+
 <div class="category-index">
   <div class="title">Brands</div>
     <div class="row theme-row">
