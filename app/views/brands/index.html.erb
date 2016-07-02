@@ -1,0 +1,18 @@
+<%= render 'products/search' %>
+<div class="page">
+<div class="title"><%= pluralize(@brands.count, "brand") %></div>
+<div class="brands">
+
+<% letters = %w[a b c d e f g h i j k l m n o p q r s t u v w x y z] %>
+<% letters.each do |letter| %>
+  <div class="letter"><%= letter.upcase %></div>
+  <div class="list">
+    <% @brands.each do |brand| %>
+      <% if letter == brand[0].downcase %>
+        <%= link_to brand, search_products_path(brand: brand) %><br>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
+</div>
+</div>

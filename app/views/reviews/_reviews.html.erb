@@ -1,0 +1,5 @@
+<% if product.reviews.count > 0 %>
+<div class="star-rating-index"><div class="star-rating" data-score= <%= product.average_rating %>></div></div>
+<% end %>
+<% unless product.reviews.count == 0 %><%= pluralize(product.reviews.count, "review") %><% end %>
+<% unless product.uses.count == 0 %>  <%= pluralize(product.uses.count, "user") %><% end %>

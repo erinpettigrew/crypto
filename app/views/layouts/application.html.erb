@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- meta-tags gem call-->
+  <!-- meta-tags gem -->
   <%= display_meta_tags %>
   <title>looklove, reviews of new beauty products</title>
   <%= render 'layouts/bootstrap' %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= render 'layouts/analytics' %>
 </head>
 <body>
-  <% title 'looklove, reviews of new beauty products' %>
+  <% title 'Looklove, reviews of new beauty products' %>
   <% description 'Get reviews and photos for new skincare and cosmetics products' %>
   <% keywords 'reviews, community, forum, posts, asian beauty, korean beauty, skincare, beauty, products, lists, regimen' %>
   <% nofollow %>
@@ -21,20 +22,21 @@
     <%= render 'layouts/navbar' unless @disable_nav %>
     <div class="main-container">
       <div class="container-fluid">
-        <% flash.each do |name, msg| %>
+        <!-- <% flash.each do |name, msg| %>
         <% if msg.is_a?(String) %>
         <div class="alert alert-<%= name == "notice" ? "success" : "danger" %> alert-dismissable">
-          <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-          <%= content_tag :div, msg, :id => "flash_#{name}" %>
-        </div>
-        <% end %>
-        <% end %>
-        <%= yield %>
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
       </div>
+      <% end %>
+      <% end %> -->
+      <%= yield %>
     </div>
   </div>
-  <div class="footer-container">
-    <%= render 'layouts/footer' unless @disable_footer %>
-  </div>
+</div>
+<div class="footer-container">
+  <div id="footer">
+  <%= render 'layouts/footer' unless @disable_footer %>
+</div>
 </body>
 </html>

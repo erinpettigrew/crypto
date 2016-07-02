@@ -44,7 +44,6 @@ class AvatarsController < ApplicationController
     end
   end
 
-
   def destroy
     @avatar.destroy
     respond_to do |format|

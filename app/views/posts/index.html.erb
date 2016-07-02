@@ -2,7 +2,7 @@
 <p><%= link_to "New Post", new_post_path, class: "btn btn-primary btn-large" %></p>
 <hr>
 <% @posts.each do |post| %>
-<div class="row post-list">
+<div class="row">
   <div class="col-xs-5 col-sm-2">
     <div class="medium-avatar">
       <%= image_tag(post.user.avatar.image) %>

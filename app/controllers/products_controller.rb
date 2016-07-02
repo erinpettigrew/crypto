@@ -1,44 +1,32 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :like, :use, :want, :destroy]
-  before_action :authenticate_user! #switch to below version when moving out of preview beta
-  #before_action :authenticate_user!, except: [:index, :show, :search]
+  before_action :authenticate_user!
   before_action :check_user, except: [:search, :index, :show, :create, :new, :like, :use, :want, :update]
   before_action :set_categories, only: [:new, :edit, :create, :update]
   before_action :set_themes, only: [:new, :edit, :create, :update]
 
   def search
-    @query = params[:search]
-    @products = Product.includes(:reviews, :uses, :avatars).search(params[:search])
+    if params[:brand]
+      @query = params[:brand]
+      @products = Product.search(@query, fields: [:product_brand])
+      @categories = []
+    else
+      @query = params[:search]
+      @products = Product.search(params[:search])
+      @categories = Category.search(params[:search])
+      @default = Category.all
+    end
   end
 
   def index
-    @product_count = Product.all.count
-    @review_count = Review.all.count
-    @used_basic_products = []
-    @used_advanced_products = []
-    @basic_products_count = 0
-    @themes = Theme.first(3)
-    @categories = Category.order("RANDOM()").first(3)
-
-    @themes.each do |theme|
-      @used_basic_products << current_user.used_products.where(theme_id: theme.id).first
-      if @used_basic_products.last != nil
-        @basic_products_count += 1
-      end
-    end
-
-    @categories.each do |category|
-      @used_advanced_products << current_user.used_products.where(category_id: category.id).first
-    end
-
-    @recent_reviews = Review.all.order(created_at: :desc).includes(:user => :avatar, :product => :category).take(14)
-    @recent_uses = Use.all.order(created_at: :desc).includes(:user => :avatar, :product => :category).take(12)
-    @recent_wants = Want.all.order(created_at: :desc).includes(:user => :avatar, :product => :category).take(12)
-    @recent_posts = Post.all.order(created_at: :desc).includes(:user => :avatar).take(9)
-    @recent_actions = (@recent_reviews + @recent_uses + @recent_wants + @recent_posts).sort_by(&:created_at).reverse
+    @rand_categories = Category.all.sample(4)
+    @products = Product.take(30).sample(8)
+    @brands = Product.brands.sample(4)
+    @recent_posts = Post.all.order(created_at: :desc).includes(:user => :avatar).take(3)
   end
 
   def show
+    @review = Review.new
   end
 
   def like

@@ -1,0 +1,26 @@
+// Place all the styles related to the brands controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.brands {
+  .letter {
+    display: block;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .list {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px dotted silver;
+  }
+  .list:last-child {
+    border-bottom: 0px;
+  }
+}
+
+.brands a {
+  color: #000000;
+  font-size: 140%;
+  text-decoration: underline;
+}

@@ -1,0 +1,28 @@
+.new_review {
+	height: 225px;
+	textarea#review_comment {
+	}
+	.review-button {
+		font-style: italic;
+		display: inline;
+		float:right;
+		margin-top: -18px;
+		vertical-align: middle;
+	}
+}
+
+.review-row {
+	border-bottom: 1px dotted silver;
+  padding: 15px 0px;
+	display: block;
+	.review-user-info {
+		text-align: left;
+		font-size: 85%;
+	}
+	.review-user-info a {
+		text-decoration: underline;
+	}
+}
+.review-row:last-child {
+	border-bottom: 0px;
+}
