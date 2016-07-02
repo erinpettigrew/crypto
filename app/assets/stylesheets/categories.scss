@@ -55,10 +55,11 @@
 		.category-row {
 			margin-bottom:30px;
 			height: 175px;
-		}
-		.category-image img {
-			max-height:125px;
-			margin-bottom:5px;
+			.category-image img {
+				max-height:120px;
+				max-width: 120px;
+				margin-bottom:5px;
+			}
 		}
 	}
 }
