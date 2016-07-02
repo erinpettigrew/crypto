@@ -145,3 +145,11 @@ h1 {
 .fa-plus:before {
   -webkit-text-stroke: 0.75px white;
 }
+
+.fa-plus:hover {
+  -ms-transform: scale(1.50, 1.50); /* IE 9 */
+  -webkit-transform: scale(1.50, 1.50); /* Safari */
+  -moz-transform: scale(1.50, 1.50);
+  transition: all 0.25s ease;
+  color: #13D8C6
+}
