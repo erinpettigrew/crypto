@@ -153,3 +153,9 @@ h1 {
   transition: all 0.25s ease;
   color: #13D8C6
 }
+
+.floater {
+  position: relative;
+  z-index: 2;
+  bottom: -20%;
+}

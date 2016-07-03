@@ -33,6 +33,6 @@ Rails.application.routes.draw do
     root to: 'products#index', as: :authenticated_root
   end
 
-  root to: 'pages#login'
+  root to: 'products#index'
 
 end
