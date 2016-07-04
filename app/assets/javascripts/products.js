@@ -1,6 +1,7 @@
 $(document).on('ready page:load', function () {
   handleSearch();
   rotateSearchTerms();
+  autoSizeReviewInput();
 });
 
 function rotateSearchTerms() {
@@ -31,4 +32,26 @@ function handleSearch() {
   $('input#search.big-search').on('click', function() {
     $(this).attr('placeholder', '')
   })
+}
+
+function autoSizeReviewInput() {
+  $('#review_comment').on('keyup', function() {
+    var commentLength = $('#review_comment').val().length
+    if ( commentLength > 100 ) {
+        $('#review_comment').attr('rows', '6')
+    }
+    if ( commentLength > 160 ) {
+      $('#review_comment').attr('rows', '8')
+    }
+    if ( commentLength > 235 ) {
+      $('#review_comment').attr('rows', '10')
+    }
+    if ( commentLength > 300 ) {
+      $('#review_comment').attr('rows', '12')
+    }
+    if ( commentLength > 360 ) {
+      $('#review_comment').attr('rows', '16')
+    }
+  })
+
 }
