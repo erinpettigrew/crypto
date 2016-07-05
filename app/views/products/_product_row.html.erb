@@ -18,6 +18,8 @@
       </div>
 
       <div class="col-xs-3 col-sm-2 review-info">
-        <%= render partial: 'products/rating', locals: {rating: product.average_rating} %>
+        <% if product.average_rating != 0 %>
+          <%= render partial: 'products/rating', locals: {rating: product.average_rating} %>
+        <% end %>
       </div>
     </div>
