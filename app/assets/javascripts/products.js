@@ -2,6 +2,7 @@ $(document).on('ready page:load', function () {
   handleSearch();
   rotateSearchTerms();
   autoSizeReviewInput();
+  showLogin();
 });
 
 function rotateSearchTerms() {
@@ -53,5 +54,16 @@ function autoSizeReviewInput() {
       $('#review_comment').attr('rows', '16')
     }
   })
+}
 
+function showLogin() {
+  $('.use-button').on('click', function(event) {
+    $('.login-layer').fadeIn(300)
+    $('.page').fadeOut(300)
+    $('.fa-times').on('click', function() {
+      $('.login-layer').fadeOut(200)
+      $('.page').fadeIn(300)
+    })
+    event.preventDefault()
+  })
 }

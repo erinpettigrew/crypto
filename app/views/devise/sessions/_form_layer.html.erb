@@ -1,0 +1,25 @@
+<div class="login-layer">
+  <i class="fa fa-times" aria-hidden="true"></i>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="form-group">
+      <%= f.check_box :remember_me %>
+      <%= f.label "Stay logged in" %>
+    </div>
+  <% end -%>
+
+  <div class="form-group">
+    <%= f.submit "Log in", class: "btn btn-primary login-button" %>
+  </div>
+<% end %>
+</div>
