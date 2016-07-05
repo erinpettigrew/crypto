@@ -18,7 +18,7 @@
       </div>
 
       <div class="col-xs-3 col-sm-2 review-info">
-        <% if product.average_rating != 0 %>
+        <% unless product.average_rating == 0 %>
           <%= render partial: 'products/rating', locals: {rating: product.average_rating} %>
         <% end %>
       </div>

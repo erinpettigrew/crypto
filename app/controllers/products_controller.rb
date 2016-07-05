@@ -22,6 +22,9 @@ class ProductsController < ApplicationController
     @rand_categories = Category.all.sample(4)
     @products = Product.take(30).sample(8)
     @brands = Product.brands.sample(4)
+    recent_reviews = Review.last(4)
+    recent_uses = Use.last(4)
+    @activity = (recent_reviews + recent_uses).sort_by(&:created_at).reverse
     @recent_posts = Post.all.order(created_at: :desc).includes(:user => :avatar).take(3)
   end
 

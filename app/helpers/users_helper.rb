@@ -10,4 +10,12 @@ module UsersHelper
       "<span class='badge'>#{current_user.invitation_limit}</span>".html_safe
     end
   end
+
+  def render_rating_stars(rating)
+    star_html = ''
+    rating.times do
+      star_html << "★"
+    end
+    star_html.html_safe
+  end
 end

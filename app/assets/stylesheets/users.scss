@@ -27,6 +27,72 @@
 		font-weight:500;
 		font-size: 85%;
 	}
+
+	.activity-index {
+		border-bottom: 1px dotted silver;
+		padding-bottom: 20px;
+	}
+	.activity-row {
+		text-align:center;
+		padding-bottom:20px;
+		height: 130px;
+		text-align: left;
+		position:relative;
+		z-index: 0;
+		border-bottom: 1px dotted #f0f0f0;
+		font-size: 105%;
+		.activity-avatar img {
+			margin-left: 0%;
+			margin-top: 30px;
+		}
+		.user-name {
+			font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+			font-style: italic;
+			font-weight: 100;
+			display: inline;
+		}
+		.product-brand {
+			font-weight: 500;
+			font-style: italic;
+			display: inline;
+		}
+		.product-name {
+			display: inline;
+		}
+		.activity-image img {
+			max-height: 100px;
+			max-width: 100px;
+			margin-top:15px;
+			margin-left:-20px;
+		}
+		.rating {
+			margin-top:-30px;
+			position:relative;
+			z-index: 1;
+		}
+		.rating-single {
+			margin-top:-30px;
+			position:relative;
+			z-index: 1;
+		}
+	}
+	.activity-row:hover {
+		background-color: #FEFCFF;
+		.activity-avatar {
+			-ms-transform: scale(1.05, 1.05); /* IE 9 */
+			-webkit-transform: scale(1.05, 1.05); /* Safari */
+			-moz-transform: scale(1.05, 1.05);
+		}
+	}
+	.activity-row:last-child {
+		border-bottom: 0px;
+	}
+	.activity-row:nth-child(7) {
+		border-bottom: 0px;
+	}
+	.activity-row:nth-child(odd) {
+		border-right: 1px dotted #f0f0f0;
+	}
 }
 
 /* Small Devices, Tablets -------------------------------------------------------- */
