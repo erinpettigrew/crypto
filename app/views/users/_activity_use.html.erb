@@ -1,19 +1,12 @@
-<div class="row activity-row">
+<div class="activity-row col-sm-6">
   <div class="col-xs-3">
-    <div class="activity-avatar medium-avatar"><%= link_to image_tag(use.user.pic), use.user %></div>
-    <div class="user-name"><%= link_to use.user.user_name, use.user %></div>
+    <div class="small-avatar activity-avatar"><%= link_to image_tag(use.user.pic), use.user %></div>
   </div>
   <div class="col-xs-6">
-        <!-- <div class="user-name"><%= current_user.user_name %></div> rated <div class="product-brand"><%= Product.brands.take(15).shuffle.first %></div> </br><div class="product-name"><%= Product.take(15).shuffle.first.product_name %></div>
-      </br>This was okay but I wouldn't buy it again. I'm interested to see what the... -->
-
-      <!-- <div class="user-name"><%= current_user.user_name %></div> added a rating: -->
-    </br></br>started using
- <div class="product-brand"><%= Product.brands.first(15).shuffle.first %></div> <div class="product-name"><%= Product.take(15).shuffle.first.product_name %></div>
-
+  </br></br><div class="user-name"><%= link_to use.user.user_name, use.user %></div> is using
+    <div class="product-brand"><%= link_to use.product.product_brand, use.product %></div> <div class="product-name"><%= link_to use.product.product_name, use.product %></div>
   </div>
   <div class="col-xs-3">
-    <div class="activity-image"><%= image_tag(Product.last(15).shuffle.first.image) %></div>
-        <div class="rating"><%= use.product.average_rating.round(1) %></div>
+    <div class="activity-image"><%= link_to image_tag(use.product.image), use.product %></div>
   </div>
 </div>

@@ -4,14 +4,8 @@
 
 <%= render 'search' %>
 
-<!-- <div class="title">Share</div>
-<div class="add-product">
-  <div class="add-product-text">What products are you using?</div>
-  <%= link_to "Add your products", new_product_path, class: "btn btn-lg btn-primary"%>
-</div> -->
-
 <div class="title">Recently</div>
-<div class="activity-index">
+<div class="row activity-index">
   <% @activity.each do |activity| %>
     <% if activity.is_a? (Use) %>
       <%= render partial: "users/activity_use", locals: { use: activity } %>
