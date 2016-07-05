@@ -57,11 +57,15 @@ function autoSizeReviewInput() {
 }
 
 function showLogin() {
-  $('.use-button').on('click', function(event) {
+  $('.use-button-logged-out').on('click', function(event) {
     $('.login-layer').fadeIn(300)
     $('.page').fadeOut(300)
     $('.fa-times').on('click', function() {
       $('.login-layer').fadeOut(200)
+      $('.page').fadeIn(300)
+    })
+    $('.login-button').on('click', function() {
+      $('.login-layer').fadeOut(300)
       $('.page').fadeIn(300)
     })
     event.preventDefault()
