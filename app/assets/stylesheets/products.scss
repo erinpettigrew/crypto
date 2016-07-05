@@ -14,7 +14,7 @@
 	.product-row {
 		margin: 30px 0px 30px 0px;
 		height: 118px;
-		border-bottom: 1px dotted silver;
+		border-bottom: 1px dotted #f0f0f0;
 		overflow: hidden;
 		.product-image {
 			text-align:left;
@@ -61,6 +61,7 @@
 			-ms-transform: scale(1.05, 1.05); /* IE 9 */
 			-webkit-transform: scale(1.05, 1.05); /* Safari */
 			-moz-transform: scale(1.05, 1.05);
+			transition: all 0.25s ease;
 		}
 
 	}
@@ -313,7 +314,6 @@
 				.product-row {
 					margin: 30px 0px 30px 0px;
 					height: 118px;
-					border-bottom: 1px dotted silver;
 					overflow: hidden;
 					.product-image {
 						text-align:left;

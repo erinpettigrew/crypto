@@ -16,16 +16,21 @@
 </div>
 
 <div class="category-index">
-  <div class="title">Brands</div>
-    <div class="row theme-row">
-      <%= render partial: 'brands/brand_tile', collection: @brands, as: :brand %>
-  </div>
-</div>
-
-<div class="category-index">
   <div class="title">Categories</div>
   <div class="row theme-row">
     <%= render partial: 'categories/category_row', collection: @rand_categories, as: :category %>
+  </div>
+</div>
+
+<!-- <div class="title">Popular</div>
+<div class="row theme-row">
+  <%= render partial: 'products/product_row', collection: @popular_products, as: :product %>
+</div> -->
+
+<div class="category-index">
+  <div class="title">Brands</div>
+    <div class="row theme-row">
+      <%= render partial: 'brands/brand_tile', collection: @brands, as: :brand %>
   </div>
 </div>
 
