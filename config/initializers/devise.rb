@@ -25,7 +25,7 @@ Devise.setup do |config|
 
   # Omniauth Facebook configuration from instructions in Devise wiki
   config.omniauth :facebook, ENV["APP_ID"], ENV["APP_SECRET"],
-                  callback_url: "CALLBACK_URL"
+                  callback_url: 'http://localhost:3000/users/auth/facebook/callback'
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
