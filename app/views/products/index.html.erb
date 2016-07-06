@@ -3,7 +3,7 @@
 <% keywords 'the best beauty products, reviews, community, forum, posts, asian beauty, korean beauty, skincare' %>
 
 <%= render 'search' %>
-
+<div class="page">
 <div class="title">Recently</div>
 <div class="row activity-index">
   <% @activity.each do |activity| %>
@@ -37,7 +37,7 @@
 <div class="title">Reads</div>
 <%= render partial: 'posts/post_tile', collection: @recent_posts, as: :post %>
 
-
+</div>
 <script>
   mixpanel.track("Viewed Home");
   <% if current_user %>
