@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
   validates :user_name, presence: true
   validates_uniqueness_of :user_name, :case_sensitive => false
 
+  devise :omniauthable, :omniauth_providers => [:facebook]
+
   extend FriendlyId
   friendly_id :user_name, use: :slugged
 
