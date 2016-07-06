@@ -18,20 +18,26 @@
 				<%= render partial: 'rating', locals: { rating: @product.average_rating } %>
 			</div>
 		</div>
-		<%= render partial: "metadata", locals: { product: @product } %>
-		<% if @product.ingredients.present? %>
-			<div class="col-xs-12 col-sm-7 ingredients"><%= @product.ingredients.titleize %></p></div>
-		<% end %>
+
+	<%= render partial: "metadata", locals: { product: @product } %>
+	<% if @product.ingredients.present? %>
+		<div class="col-xs-12 col-sm-7 ingredients"><%= @product.ingredients.titleize %></p></div>
+	<% end %>
+
 	</div>
 </div>
 
+<!-- <% unless @product.user_id.nil? %>
+	discovered by <div class="tiny-avatar discover-avatar"><%= image_tag(User.find(@product.user_id).pic) %></div>
+<% end %> -->
+
 <div class="col-xs-12 col-sm-5 users">
 	<div class="title" id="users"><%= pluralize(@product.used_by.count, "User") %></div>
-		<div class="user-matrix">
-	<% @product.used_by.each do |user| %>
-	<div class="small-avatar" id="<%= user.id %>"><%= link_to image_tag(user.pic), user %></div>
-	<% end %>
-</div>
+	<div class="user-matrix">
+		<% @product.used_by.each do |user| %>
+		<div class="small-avatar" id="<%= user.id %>"><%= link_to image_tag(user.pic), user %></div>
+		<% end %>
+	</div>
 </div>
 
 <div class="col-xs-12 col-sm-7">

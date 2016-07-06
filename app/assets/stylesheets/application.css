@@ -59,8 +59,8 @@ a, a:hover {
 }
 
 .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open > .dropdown-toggle.btn-info {
-  background: black;
-  border-color: black;
+  background: #D81361;
+  border-color: #D81361;
   color: white;
 }
 
