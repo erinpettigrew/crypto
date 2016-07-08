@@ -1,7 +1,13 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
+
     # You need to implement the method below in your model (e.g. app/models/user.rb)
     @user = User.from_omniauth(request.env["omniauth.auth"])
+
+    # if user declines to share their email address
+    # if @user.email.blank?
+    #   redirect_to "/users/auth/facebook?auth_type=rerequest&scope=email"
+    # end
 
     # match to existing user if exists, else create new user
     if User.where(email: @user.email).any?

@@ -1,11 +1,21 @@
 <div class="login-box">
   <h2>Looklove</h2>
-  Share your skincare and makeup tips!<br/>
-  <%= render 'form' %>
-
-<br/>
+  The community for beauty<br/>
   We are <%= pluralize(User.count, "member") %> using
   <%= pluralize(Product.count, "product") %>.
+
+  <% if devise_mapping.omniauthable? %>
+    <% resource_class.omniauth_providers.each do |provider| %>
+      <%= link_to "Continue with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: "btn btn-lg btn-facebook" %><br />
+    <% end %>
+  <% end %>
+
+
+  <div class="facebook-assurance">
+    No worries, we don't post anything!
+</div>
+<br/>
+
 
   <script>
     mixpanel.track("Viewed Login");
