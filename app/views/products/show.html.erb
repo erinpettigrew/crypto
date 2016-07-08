@@ -27,10 +27,6 @@
 	</div>
 </div>
 
-<!-- <% unless @product.user_id.nil? %>
-	discovered by <div class="tiny-avatar discover-avatar"><%= image_tag(User.find(@product.user_id).pic) %></div>
-<% end %> -->
-
 <div class="col-xs-12 col-sm-5 users">
 	<div class="title" id="users"><%= pluralize(@product.used_by.count, "User") %></div>
 	<div class="user-matrix">

@@ -12,4 +12,12 @@ class SessionsController  resource_name, :recall => "#{controller_path}#failure"
   def failure
     return render :json => {:success => false, :errors => ["Login failed."]}
   end
+# class SessionsController < Devise::SessionsController
+#   before_action :disable_nav, only: [:new]
+#   before_action :disable_footer, only: [:new]
+#
+#   def new
+#     super
+#
+#   end
 end
