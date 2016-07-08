@@ -27,11 +27,11 @@ class User < ActiveRecord::Base
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
       user.user_name = auth.info.name   # assuming the user model has a name
-      if user.avatar.present?
-        user.avatar.image = auth.info.image # assuming the user model has an image
-      else
+      if !user.avatar.present?
         Avatar.create(user: user)
-        user.avatar.remote_image_url = auth.info.image
+        user.avatar.remote_image_url = auth.info.image.gsub('http://','https://') << "?type=large"
+        user.save
+        user.avatar.save
       end
     end
   end

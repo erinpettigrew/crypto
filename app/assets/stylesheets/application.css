@@ -64,6 +64,23 @@ a, a:hover {
   color: white;
 }
 
+.btn-facebook {
+  background: #3b5998;
+  border-color: #3b5998;
+  color: white;
+}
+
+
+.btn-facebook:hover, .btn-facebook:focus, .btn-facebook:active {
+  background: #4E69A2;
+  border-color: #4E69A2;
+  color: white;
+}
+
+.login-devise {
+  display:none;
+}
+
 /* Forms */
 
 input.form-control {
@@ -135,6 +152,11 @@ h1 {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 100;
   font-size: 250%;
+  font-style: italic;
+}
+
+h2 {
+  font-weight: 600;
   font-style: italic;
 }
 

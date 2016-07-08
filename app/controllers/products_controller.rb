@@ -8,11 +8,11 @@ class ProductsController < ApplicationController
   def search
     if params[:brand]
       @query = params[:brand]
-      @products = Product.search(@query, fields: [:product_brand])
+      @products = Product.search(@query, fields: [:product_brand], include: [:uses, :reviews])
       @categories = []
     else
       @query = params[:search]
-      @products = Product.search(params[:search])
+      @products = Product.search(params[:search], include: [:uses, :reviews])
       @categories = Category.search(params[:search])
       @default = Category.all
     end
@@ -22,11 +22,11 @@ class ProductsController < ApplicationController
     @rand_categories = Category.all.includes(:products).sample(4)
     @products = Product.take(30).sample(8)
     @brands = Product.brands.sample(4)
-    recent_reviews = Review.includes( { user: [:avatar] }, :product).last(8)
-    recent_uses = Use.includes( { user: [:avatar] }, :product).last(12)
+    recent_reviews = Review.includes( [user: :avatar], :product).last(8)
+    recent_uses = Use.includes( { :user => :avatar }, :product).last(12)
     @activity = (recent_reviews + recent_uses).sort_by(&:created_at).reverse.first(8)
     # @popular_products = Product.find(Product.joins(:uses).group('products.id').order("count(*) desc").limit(3).ids)
-    @recent_posts = Post.all.order(created_at: :desc).includes(:user => :avatar).take(3)
+    @recent_posts = Post.all.order(created_at: :desc).includes(user: :avatar).take(3)
   end
 
   def show

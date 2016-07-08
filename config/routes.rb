@@ -7,11 +7,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :brands
   # devise_for :users
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  # devise_scope :user do
-  #   delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
-  # end
-
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", sessions: "sessions" }
   resources :users, :only => [:show, :index] do
       resources :avatars
       resources :profiles
