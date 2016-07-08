@@ -24,7 +24,7 @@ Devise.setup do |config|
   require 'devise/orm/active_record'
 
   # Omniauth Facebook configuration from instructions in Devise wiki
-  config.omniauth :facebook, ENV["APP_ID"], ENV["APP_SECRET"],
+  config.omniauth :facebook, ENV['APP_ID'], ENV['APP_SECRET'],
                   callback_url: 'http://localhost:3000/users/auth/facebook/callback'
 
   # ==> Configuration for any authentication mechanism

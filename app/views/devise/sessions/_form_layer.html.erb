@@ -22,4 +22,10 @@
     <%= f.submit "Log in", class: "btn btn-primary login-button" %>
   </div>
 <% end %>
+<% if devise_mapping.omniauthable? %>
+  <% resource_class.omniauth_providers.each do |provider| %>
+    <%= link_to "Continue with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: "btn btn-lg btn-facebook" %><br />
+  <% end %>
+<% end %>
+
 </div>

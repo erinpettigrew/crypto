@@ -8,13 +8,13 @@ class ProductsController < ApplicationController
   def search
     if params[:brand]
       @query = params[:brand]
-      @products = Product.search(@query, fields: [:product_brand], include: [:uses, :reviews])
+      @products = Product.search(@query, fields: [:product_brand], include: [ { uses: { user: :avatar } }, :reviews])
       @categories = []
     else
       @query = params[:search]
-      @products = Product.search(params[:search], include: [:uses, :reviews])
-      @categories = Category.search(params[:search])
-      @default = Category.all
+      @products = Product.search(params[:search], include: [ { uses: { user: :avatar } }, :reviews])
+      @categories = Category.search(params[:search], include: [:products])
+      @default = Category.all.includes(:products)
     end
   end
 

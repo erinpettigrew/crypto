@@ -155,11 +155,6 @@ h1 {
   font-style: italic;
 }
 
-h2 {
-  font-weight: 600;
-  font-style: italic;
-}
-
 .fa-search:before {
   -webkit-text-stroke: 0.75px white;
 }
