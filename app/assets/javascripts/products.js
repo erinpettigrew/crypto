@@ -2,7 +2,8 @@ $(document).on('ready page:load', function () {
   handleSearch();
   rotateSearchTerms();
   autoSizeReviewInput();
-  showLogin();
+  showLoginOnUse();
+  showLoginOnReview();
 });
 
 function rotateSearchTerms() {
@@ -56,8 +57,24 @@ function autoSizeReviewInput() {
   })
 }
 
-function showLogin() {
+function showLoginOnUse() {
   $('.use-button-logged-out').on('click', function(event) {
+    $('.login-layer').fadeIn(300)
+    $('.page').fadeOut(300)
+    $('.fa-times').on('click', function() {
+      $('.login-layer').fadeOut(200)
+      $('.page').fadeIn(300)
+    })
+    $('.login-button').on('click', function() {
+      $('.login-layer').fadeOut(300)
+      $('.page').fadeIn(300)
+    })
+    event.preventDefault()
+  })
+}
+
+function showLoginOnReview() {
+  $('.review-button-logged-out').on('click', function(event) {
     $('.login-layer').fadeIn(300)
     $('.page').fadeOut(300)
     $('.fa-times').on('click', function() {
