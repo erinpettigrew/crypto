@@ -6,14 +6,6 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def disable_nav
-  	@disable_nav = true
-  end
-
-  def disable_footer
-  	@disable_footer = true
-  end
-
 protected
 
   # after sign in, retrieves the user's most recent page

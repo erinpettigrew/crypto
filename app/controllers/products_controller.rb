@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :like, :use, :want, :destroy]
-  before_action :authenticate_user!, except: [:index, :show, :search]
+  before_action :authenticate_user!
   before_action :check_user, except: [:search, :index, :show, :create, :new, :like, :use, :want, :update]
   before_action :set_categories, only: [:new, :edit, :create, :update]
   before_action :set_themes, only: [:new, :edit, :create, :update]

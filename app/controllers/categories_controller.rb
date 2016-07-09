@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
   before_action :set_themes, only: [:new, :show, :index, :edit, :create, :update]
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!
 
   def index
     @themes = Theme.all.includes(:categories => :products).order(created_at: :asc)

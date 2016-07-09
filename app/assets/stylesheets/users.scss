@@ -1,6 +1,26 @@
 /* Custom, iPhone Retina -------------------------------------------------------- */
 @media screen and (min-width: 320px) {
 
+	.login-box {
+		padding: 100px 5%;
+		text-align: center;
+		.login-text {
+			h2 {
+				font-weight: 600;
+				font-style: italic;
+			}
+		}
+		.login-images {
+			padding-top: 30px;
+		}
+		img {
+			max-height: 90px;
+		}
+		.btn-facebook {
+			margin: 20px 0;
+		}
+	}
+
 	.login-layer {
 		margin: auto;
 	  position: absolute;
@@ -16,13 +36,6 @@
 			float: right;
 			padding-bottom:20px;
 			opacity: 0.5;
-		}
-	}
-	.login-box {
-		margin: 30% auto;
-		width: 250px;
-		.facebook-assurance {
-			font-size: 75%;
 		}
 	}
 
@@ -125,6 +138,29 @@
 @media screen and (min-width: 768px) {
 	.login-layer {
 		width: 50%;
+	}
+
+	.login-box {
+		border-bottom: 1px solid black;
+		border-top: none;
+		padding: 30px 0;
+		text-align: left;
+		.login-text {
+			h2 {
+				font-weight: 600;
+				font-size: 250%;
+				font-style: italic;
+			}
+		}
+		.login-images {
+			padding-top: 30px;
+		}
+		img {
+			max-height: 125px;
+		}
+		.btn-facebook {
+			margin: 20px 0;
+		}
 	}
 
 }

@@ -1,4 +1,6 @@
 class SessionsController < Devise::SessionsController
+  layout 'login'
+
   def create
     resource = warden.authenticate!(:scope => resource_name, :recall => '#{controller_path}#failure')
     sign_in_and_redirect(resource_name, resource)
@@ -14,12 +16,4 @@ class SessionsController < Devise::SessionsController
   def failure
     return render :json => {:success => false, :errors => ["Login failed."]}
   end
-# class SessionsController < Devise::SessionsController
-#   before_action :disable_nav, only: [:new]
-#   before_action :disable_footer, only: [:new]
-#
-#   def new
-#     super
-#
-#   end
 end

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- meta-tags gem -->
+  <%= display_meta_tags %>
+  <title>looklove, reviews of new beauty products</title>
+  <%= render 'layouts/bootstrap' %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= render 'layouts/analytics' %>
+</head>
+<body>
+  <div class="container-fluid">
+  <% title 'Looklove, reviews of new beauty products' %>
+  <% description 'Get reviews and photos for new skincare and cosmetics products' %>
+  <% keywords 'reviews, community, forum, posts, asian beauty, korean beauty, skincare, beauty, products, lists, regimen' %>
+  <% nofollow %>
+  <% noindex %>
+  <%= yield %>
+</div>
+</body>
+</html>

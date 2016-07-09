@@ -1,23 +1,25 @@
-<div class="login-box">
+
+<div class="login-box row">
+  <div class="login-text">
   <h2>Looklove</h2>
   The community for beauty<br/>
-  We are <%= pluralize(User.count, "member") %> using
-  <%= pluralize(Product.count, "product") %>.
+  </div>
+  <div class="col-xs-12 col-sm-7 login-images">
+    <%= image_tag("https://productbase.s3.amazonaws.com/uploads/product/image/400/nars-eye-makeup-remover.jpg") %>
+    <%= image_tag("https://productbase.s3.amazonaws.com/uploads/product/image/396/sunday-riley-flora-hydroactive-cellular-face-oil.jpg") %>
+    <%= image_tag("https://productbase.s3.amazonaws.com/uploads/product/image/798/stila-stay-all-day-waterproof-liquid-eye-liner.jpg") %>
+  </div>
+  <div class="col-xs-12 col-sm-5 login-cta">
 
   <% if devise_mapping.omniauthable? %>
     <% resource_class.omniauth_providers.each do |provider| %>
-      <%= link_to "Continue with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: "btn btn-lg btn-facebook" %><br />
+      <%= link_to "Login with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: "btn btn-lg btn-facebook" %><br />
     <% end %>
   <% end %>
-
-
-  <div class="facebook-assurance">
-    No worries, we don't post anything!
+  Join <%= pluralize(User.count, "member") %> who are
+  <br/>recommending <%= pluralize(Product.count, "product") %>!
 </div>
-<br/>
-
 
   <script>
     mixpanel.track("Viewed Login");
   </script>
-</div>
