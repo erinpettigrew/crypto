@@ -6,6 +6,6 @@
   <% else %>
     <%= link_to "I use this!", product_uses_toggle_path(product_id: product.id, user_id: user.id), class: "btn btn-info btn-lg use-button", method: :post, remote: true %>
   <% end %>
-  <% else %>
-  <%= link_to "I use this!", pages_login_path, class: "btn btn-info btn-lg use-button" %>
+<% else %>
+  <%= link_to "I use this!", pages_login_path, class: "btn btn-info btn-lg use-button-logged-out" %>
 <% end %>

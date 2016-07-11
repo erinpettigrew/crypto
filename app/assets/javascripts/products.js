@@ -2,6 +2,8 @@ $(document).on('ready page:load', function () {
   handleSearch();
   rotateSearchTerms();
   autoSizeReviewInput();
+  showLoginOnUse();
+  showLoginOnReview();
 });
 
 function rotateSearchTerms() {
@@ -25,7 +27,7 @@ function rotateSearchTerms() {
   .delay(1500)
   .queue(function() { $(this).attr('placeholder', 'strobing powder').dequeue()})
   .delay(1500)
-  .queue(function() { $(this).attr('placeholder', 'search 781 products')})
+  .queue(function() { $(this).attr('placeholder', 'search 829 products')})
 }
 
 function handleSearch() {
@@ -53,5 +55,36 @@ function autoSizeReviewInput() {
       $('#review_comment').attr('rows', '16')
     }
   })
+}
 
+function showLoginOnUse() {
+  $('.use-button-logged-out').on('click', function(event) {
+    $('.login-layer').fadeIn(300)
+    $('.page').fadeOut(300)
+    $('.fa-times').on('click', function() {
+      $('.login-layer').fadeOut(200)
+      $('.page').fadeIn(300)
+    })
+    $('.login-button').on('click', function() {
+      $('.login-layer').fadeOut(300)
+      $('.page').fadeIn(300)
+    })
+    event.preventDefault()
+  })
+}
+
+function showLoginOnReview() {
+  $('.review-button-logged-out').on('click', function(event) {
+    $('.login-layer').fadeIn(300)
+    $('.page').fadeOut(300)
+    $('.fa-times').on('click', function() {
+      $('.login-layer').fadeOut(200)
+      $('.page').fadeIn(300)
+    })
+    $('.login-button').on('click', function() {
+      $('.login-layer').fadeOut(300)
+      $('.page').fadeIn(300)
+    })
+    event.preventDefault()
+  })
 }

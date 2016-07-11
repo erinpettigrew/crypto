@@ -42,7 +42,7 @@ class Product < ActiveRecord::Base
 	end
 
 	def recent_reviews
-		reviews.order(created_at: :desc)
+		reviews.includes(:user => :avatar).order(created_at: :desc)
 	end
 
 	def recent_uses
