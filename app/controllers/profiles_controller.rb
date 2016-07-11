@@ -29,7 +29,7 @@ class ProfilesController < ApplicationController
 	def update
 		respond_to do |format|
 			if @profile.update(profile_params)
-				format.html { redirect_to @user }
+				format.html { redirect_to root_path } # figure out how to redirect to @user without error
 				format.json { render :show, status: :ok, location: @profile }
 			else
 				format.html { render :edit }
@@ -56,6 +56,6 @@ class ProfilesController < ApplicationController
 	end
 
 	def profile_params
-		params.require(:profile).permit(:user_id, :skin_type_id)
+		params.require(:profile).permit(:user_id, :skin_type_id, :user_attributes => [:user_name, :id])
 	end
 end

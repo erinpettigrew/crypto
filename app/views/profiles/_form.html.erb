@@ -11,10 +11,16 @@
 </div>
 <% end %>
 
+<%= f.fields_for :user, @profile.user do |ff| %>
+  <%= ff.label "Pick a username" %>
+  <%= ff.text_field :user_name %>
+<% end %>
+
 <div class="form-group">
 <%= f.label "What's your skin type?" %></br>
 <%= f.select :skin_type_id, @skin_types.collect {|s| [s.name.titleize, s.id]}, class: "form-control" %>
 </div>
+
 <div class="form-group">
   <%= f.submit "Save", class: "btn btn-primary btn-sm" %>
 </div>
