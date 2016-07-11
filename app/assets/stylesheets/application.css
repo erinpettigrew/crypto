@@ -138,8 +138,13 @@ label {
 }
 
 .dropdown-menu li a:hover {
-  background-color: white;
-  text-decoration: underline;
+  background: black;
+  color: white;
+  font-style: italic;
+}
+
+.dropdown-toggle a:active {
+  background: white;
 }
 
 .badge {
