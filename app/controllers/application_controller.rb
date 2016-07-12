@@ -25,10 +25,10 @@ protected
 	end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :user_name
-    devise_parameter_sanitizer.for(:account_update) << :user_name
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:user_name])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:user_name])
     # override defaults and force user name to be accepted on devise accept invitation method
-    devise_parameter_sanitizer.for(:accept_invitation) << :user_name
+    devise_parameter_sanitizer.permit(:accept_invitation, keys: [:user_name])
   end
 
   private
