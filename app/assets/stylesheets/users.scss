@@ -120,10 +120,11 @@
 	}
 	.activity-row:hover {
 		background-color: #FEFCFF;
-		.activity-avatar {
+		.activity-avatar img {
 			-ms-transform: scale(1.05, 1.05); /* IE 9 */
 			-webkit-transform: scale(1.05, 1.05); /* Safari */
 			-moz-transform: scale(1.05, 1.05);
+			transition: all 0.25s ease;
 		}
 	}
 	.activity-row:last-child {
