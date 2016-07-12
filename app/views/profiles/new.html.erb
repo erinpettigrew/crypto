@@ -6,9 +6,4 @@
 
 <div class="large-avatar"><%= image_tag(@user.avatar.try(:image)) %></div>
 
-<%= form_for @user do |f| %>
-  <div class="form-group">
-    <%= f.text_field :user_name, value: "", class: "form-control onboarding" %>
-  </div>
-  <%= f.submit "Done!", class: "btn btn-lg btn-primary" %>
-<% end %>
+<%= render 'username' %>
