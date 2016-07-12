@@ -1,2 +1,9 @@
-edit stuff here
-<%= render 'profiles/username' %>
+<% nofollow %>
+<% noindex %>
+
+<div class="title">You</div>
+<h1>Just one more thing!</h1>
+
+<div class="large-avatar"><%= image_tag(@user.avatar.try(:image)) %></div>
+
+<%= render 'username' %>

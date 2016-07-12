@@ -8,7 +8,7 @@
 
 <%= form_for @user do |f| %>
   <div class="form-group">
-    <%= f.text_field :user_name, value: "Add your username", class: "form-control onboarding" %>
+    <%= f.text_field :user_name, value: "", class: "form-control onboarding" %>
   </div>
   <%= f.submit "Done!", class: "btn btn-lg btn-primary" %>
 <% end %>

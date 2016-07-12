@@ -11,9 +11,9 @@
   </ul>
 </div>
 <% end %>
+
   <div class="form-group">
-    <%= f.label "Your username" %>
-    <%= f.text_field :user_name, class: "form-control" %>
+    <%= f.text_field :user_name, value: "", class: "form-control onboarding" %>
   </div>
   <%= f.submit "Done!", class: "btn btn-lg btn-primary" %>
 <% end %>
