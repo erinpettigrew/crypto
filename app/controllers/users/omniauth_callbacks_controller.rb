@@ -10,16 +10,17 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     # end
 
     # match to existing user if exists, else create new user
-    if User.where(email: @user.email).any?
-      @existing_user = User.where(email: @user.email).first
-    else
-      @user
-    end
-
-    if !@existing_user.nil?
-      sign_in_and_redirect @existing_user, :event => :authentication
-      set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
-    else
+    # if User.where(email: @user.email).any?
+    #   @existing_user = User.where(email: @user.email).first
+    # else
+    #   @user
+    # end
+    #
+    # # on creating a new user, callbacks send us here
+    # if !@existing_user.nil?
+    #   sign_in_and_redirect @existing_user, :event => :authentication
+    #   set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
+    # else
       if @user.persisted?
         sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
         set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
@@ -27,7 +28,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         session["devise.facebook_data"] = request.env["omniauth.auth"]
         redirect_to new_user_registration_url
       end
-    end
+    # end
   end
 
   def failure

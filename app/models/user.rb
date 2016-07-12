@@ -12,13 +12,14 @@ class User < ActiveRecord::Base
   has_one :profile
   has_one :skin_type, through: :profiles, source: :skin_type
   has_many :posts
+  
   validates :user_name, presence: true
   validates_uniqueness_of :user_name, :case_sensitive => false
 
   devise :omniauthable, :omniauth_providers => [:facebook]
 
   extend FriendlyId
-  friendly_id :user_name, use: :slugged
+  friendly_id :user_name, use: [:slugged, :finders]
 
   # after_create :send_notification
 

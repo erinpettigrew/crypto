@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :brands
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", sessions: "sessions" }
-  resources :users, :only => [:show, :index] do
+  resources :users, :only => [:show, :index, :update] do
       resources :avatars
       resources :profiles
     end
