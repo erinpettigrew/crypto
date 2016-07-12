@@ -1,13 +1,9 @@
 <% nofollow %>
 <% noindex %>
-<div class="user-info">
-	<h1><%= @user.user_name %></h1>
-	<div class="user-avatar"><%= image_tag(@user.avatar.try(:image)) %></div>
-</div>
-<center>
-<h2>Add your skin type </h2>
 
-<%= render 'form' %>
+<div class="large-avatar"><%= image_tag(@user.avatar.try(:image)) %></div>
+
+<%= render 'username' %>
 
 <%= link_to 'Cancel', user_path(@user) %>
 </center>
