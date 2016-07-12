@@ -7,7 +7,7 @@
     <div class="activity-image"><%= link_to image_tag(review.product.image), review.product %></div>
     <br/><div class="user-name"><%= link_to review.user.user_name, review.user %></div> rated
     <div class="product-brand"><%= link_to review.product.product_brand, review.product %></div> <div class="product-name"><%= link_to review.product.product_name, review.product %></div>
-    <%= truncate(review.comment, length: 160) %>
+    <%= truncate(review.comment, length: 150) %>
     <br/><%= render_rating_stars(review.rating) %>
   </div>
 </div>
