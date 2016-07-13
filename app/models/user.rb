@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   has_one :profile
   has_one :skin_type, through: :profiles, source: :skin_type
   has_many :posts
+  has_many :questions
 
   validates :user_name, presence: true, allow_blank: false
   validates_uniqueness_of :user_name, :case_sensitive => false
