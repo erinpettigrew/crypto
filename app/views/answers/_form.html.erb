@@ -1,4 +1,9 @@
-<%= form_for @answer do |f| %>
+<div class="col-xs-3">
+<div class="small-avatar"><%= image_tag(current_user.pic) %></div>
+</div>
+<div class="col-xs-9">
+<%= form_for [@question, @answer] do |f| %>
   <%= f.text_area :content, class: "form-control" %>
-  <%= f.submit "Save", class: "btn btn-lg btn-primary" %>
+  <%= f.submit "Add!", class: "btn btn-md btn-info answer-button" %>
 <% end %>
+</div>

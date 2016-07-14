@@ -28,6 +28,7 @@ class ProductsController < ApplicationController
     @activity = (recent_questions + recent_reviews + recent_uses).sort_by(&:created_at).reverse.first(8)
     # @popular_products = Product.find(Product.joins(:uses).group('products.id').order("count(*) desc").limit(3).ids)
     @recent_posts = Post.all.order(created_at: :desc).includes(user: :avatar).take(3)
+    @answer = Answer.new
   end
 
   def show

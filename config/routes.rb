@@ -16,8 +16,9 @@ Rails.application.routes.draw do
   resources :applicants
   resources :categories
   resources :brands
-  resources :questions
-  resources :answers
+  resources :questions do
+    resources :answers
+  end
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", sessions: "sessions" }
   resources :users, :only => [:show, :index, :update] do
       resources :avatars

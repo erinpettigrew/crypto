@@ -1,9 +1,17 @@
-<div class="medium-avatar"><%= image_tag(question.user.pic) %></div>
-</br>
-<%= question.user.user_name %>
-</br>
-<%= question.content %>
-</br>
-<%= image_tag(question.image) %>
+  <div class="row">
+    <div class="medium-avatar"><%= image_tag(question.user.pic) %></div>
+  </br>
+  <%= question.user.user_name %>
+  </br>
+  <%= question.content %>
+  </br>
+  <%= image_tag(question.image) %>
+  </div>
+  <div class="col-xs-3 col-sm-2">
+  <div class="medium-avatar"><%= image_tag(current_user.pic) %></div>
+  <br><%= current_user.user_name %>
+  </div>
 
-<%= render 'answers/form' %>
+  <div class="col-xs-9 col-sm-10">
+  <%= render 'answers/form' %>
+  </div>
