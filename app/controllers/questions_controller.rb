@@ -1,10 +1,13 @@
 class QuestionsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @question = Question.new
   end
 
   def show
     @question = Question.find(params[:id])
+    @answer = @question.answers.build
   end
 
   def create
@@ -32,6 +35,6 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:content, :user_id)
+    params.require(:question).permit(:content, :image, :user_id)
   end
 end
