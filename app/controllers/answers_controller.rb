@@ -1,7 +1,6 @@
 class AnswersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_answer, only: [:edit, :update, :destroy]
-  before_action :set_question
 
   def new
     @answer = Answer.new
@@ -10,9 +9,8 @@ class AnswersController < ApplicationController
   def create
     @answer = Answer.create(answer_params)
     @answer.user_id = current_user.id
-    @answer.question_id = @question.id
     @answer.save
-    render json: { answer: render_to_string('answers/answer', layout: false, locals: { answer: @answer }) }
+    render json: { answer: render_to_string('answers/_answer', layout: false, locals: { answer: @answer }) }
   end
 
   def edit
@@ -35,6 +33,6 @@ class AnswersController < ApplicationController
   end
 
   def answer_params
-    params.require(:answer).permit(:content, :user_id)
+    params.require(:answer).permit(:content, :question_id, :user_id)
   end
 end

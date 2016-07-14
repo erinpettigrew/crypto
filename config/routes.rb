@@ -1,24 +1,13 @@
 Rails.application.routes.draw do
 
-  get 'answers/new'
-
-  get 'answers/create'
-
-  get 'answers/edit'
-
-  get 'answers/update'
-
-  get 'answers/destroy'
-
   resources :posts
   resources :themes
   resources :skin_types
   resources :applicants
   resources :categories
   resources :brands
-  resources :questions do
-    resources :answers
-  end
+  resources :questions
+  resources :answers
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", sessions: "sessions" }
   resources :users, :only => [:show, :index, :update] do
       resources :avatars

@@ -3,15 +3,7 @@ $(document).on('ready page:load', function() {
 });
 
 function updateAnswers(event, data) {
-  $('.new_answer').hide(300)
-  $(data.answer).hide().prependTo('.answers').fadeIn(200)
-  // incrementReviewsHeader()
+  // event.preventDefault()
+  $('.new_answer').hide(100) // hide only that one tho
+  $(data.answer).hide().appendTo('.answers').slideUp(300)
 }
-
-// function incrementReviewsHeader() {
-//   var count = $('#ratings').text().replace(" Rating", "").replace("s", "")
-//   count++
-//   if (count > 1) ratings = " Ratings"
-//   else ratings = " Rating"
-//   $('#ratings').text(count + ratings)
-// }

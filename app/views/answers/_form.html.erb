@@ -2,7 +2,8 @@
 <div class="small-avatar"><%= image_tag(current_user.pic) %></div>
 </div>
 <div class="col-xs-9">
-<%= form_for [@question, @answer] do |f| %>
+<%= form_for [@answer], remote: true do |f| %>
+  <%= f.hidden_field :question_id, value: question.id %>
   <%= f.text_area :content, class: "form-control" %>
   <%= f.submit "Add!", class: "btn btn-md btn-info answer-button" %>
 <% end %>

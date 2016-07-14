@@ -13,5 +13,7 @@
   </div>
 
   <div class="col-xs-9 col-sm-10">
-  <%= render 'answers/form' %>
+  <%= render partial: 'answers/answer', collection: question.answers, as: :answer %>
+  <%= render partial: 'answers/form', locals: { question: question } %>
+  <div class="answers">
   </div>
