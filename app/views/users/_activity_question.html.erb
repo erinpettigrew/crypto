@@ -11,8 +11,8 @@
     <div class="question-image"><%= image_tag(question.image) %></div>
   </div>
 </div>
-<div class="answers">
+<ul class="answers">
   <%= render partial: 'answers/answer', collection: question.answers, as: :answer %>
-</div>
+</ul>
   <%= render partial: 'answers/form', locals: { question: question } %>
 </div>

@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+ul.answers {
+  list-style: none;
+}
+
+.form-avatar img {
+  float: right;
+}
+
 .answer-feed {
   padding: 15px 0;
   img {
