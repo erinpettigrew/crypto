@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :set_user, only: [:show, :update]
+	before_action :set_user_custom, only: [:show, :update]
 	before_action :authenticate_user!
 
 	def show
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 	end
 
 	private
-	def set_user
+	def set_user_custom
 		@user = User.friendly.find(params[:id])
 	end
 
