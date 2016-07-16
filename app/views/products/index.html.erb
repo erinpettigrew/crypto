@@ -11,8 +11,6 @@
       <%= render partial: "users/activity_use", locals: { use: activity } %>
     <% elsif activity.is_a? (Review) %>
       <%= render partial: "users/activity_rating", locals: { review: activity } %>
-    <%= elsif activity.is_a? (Question) %>
-      <%= render partial: "users/activity_question", locals: { question: activity } %>
     <% end %>
   <% end %>
 </div>
