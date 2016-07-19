@@ -1,31 +1,27 @@
 <div class="login-layer">
-  <i class="fa fa-times" aria-hidden="true"></i>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name), remote: true) do |f| %>
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true, class: "form-control" %>
-  </div>
+  <i class="fa fa-times fa-2x" aria-hidden="true"></i>
 
-  <div class="form-group">
-    <%= f.label :password %>
-    <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+<div class="login-box row">
+  <div class="login-text">
+  <h2>Looklove</h2>
+  Share beauty products that <em>work</em><br/>
   </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="form-group">
-      <%= f.check_box :remember_me %>
-      <%= f.label "Stay logged in" %>
-    </div>
-  <% end -%>
-
-  <div class="form-group">
-    <%= f.submit "Log in", class: "btn btn-primary login-button" %>
+  <div class="col-xs-12 login-image">
+    <%= image_tag("https://s3.amazonaws.com/productbase/assets/looklove-iphone-pink-bg.png") %>
   </div>
-<% end %>
-<% if devise_mapping.omniauthable? %>
-  <% resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Continue with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: "btn btn-lg btn-facebook" %><br />
+  <div class="col-xs-12 login-cta">
+
+  <% if devise_mapping.omniauthable? %>
+    <% resource_class.omniauth_providers.each do |provider| %>
+      <%= link_to "Login with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: "btn btn-lg btn-facebook" %><br />
+    <% end %>
   <% end %>
-<% end %>
+  Join <%= pluralize(User.count, "member") %> who are
+  <br/>recommending <%= pluralize(Product.count, "product") %>!
+</div>
+
+  <script>
+    mixpanel.track("Viewed Login");
+  </script>
 
 </div>

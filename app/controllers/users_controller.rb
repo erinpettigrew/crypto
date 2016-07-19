@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	before_action :set_user_custom, only: [:show, :update]
-	before_action :authenticate_user!
+	before_action :authenticate_user!, except: [:show]
 
 	def show
 		@user_reviews = @user.reviews.includes(:product).order(created_at: :desc)

@@ -60,14 +60,17 @@ function autoSizeReviewInput() {
 function showLoginOnUse() {
   $('.use-button-logged-out').on('click', function(event) {
     $('.login-layer').fadeIn(300)
-    $('.page').fadeOut(300)
+    $('.page').fadeTo(600, 0.25)
+    $('.big-search').fadeTo(600, 0.25)
     $('.fa-times').on('click', function() {
       $('.login-layer').fadeOut(200)
-      $('.page').fadeIn(300)
+      $('.page').fadeTo(300, 1)
+      $('.big-search').fadeTo(300, 1)
     })
     $('.login-button').on('click', function() {
       $('.login-layer').fadeOut(300)
-      $('.page').fadeIn(300)
+      $('.page').fadeTo(300, 1)
+      $('.big-search').fadeTo(300, 1)
     })
     event.preventDefault()
   })
@@ -76,14 +79,17 @@ function showLoginOnUse() {
 function showLoginOnReview() {
   $('.review-button-logged-out').on('click', function(event) {
     $('.login-layer').fadeIn(300)
-    $('.page').fadeOut(300)
+    $('.page').fadeTo(600, 0.25)
+    $('.big-search').fadeTo(600, 0.25)
     $('.fa-times').on('click', function() {
       $('.login-layer').fadeOut(200)
-      $('.page').fadeIn(300)
+      $('.page').fadeTo(300, 1)
+      $('.big-search').fadeTo(300, 1)
     })
     $('.login-button').on('click', function() {
       $('.login-layer').fadeOut(300)
-      $('.page').fadeIn(300)
+      $('.page').fadeTo(300, 1)
+      $('.big-search').fadeTo(300, 1)
     })
     event.preventDefault()
   })

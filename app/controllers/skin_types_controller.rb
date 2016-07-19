@@ -1,5 +1,6 @@
 class SkinTypesController < ApplicationController
 	before_action :check_user
+	before_action :authenticate_user!
 	before_action :set_skin_type, only: [:show, :edit, :destroy, :update]
 
 	def index

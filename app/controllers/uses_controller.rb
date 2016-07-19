@@ -1,4 +1,5 @@
 class UsesController < ApplicationController
+  before_action :authenticate_user!
 
   def new
     @use = Use.new
