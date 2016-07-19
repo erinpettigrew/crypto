@@ -27,7 +27,7 @@ function rotateSearchTerms() {
   .delay(1500)
   .queue(function() { $(this).attr('placeholder', 'strobing powder').dequeue()})
   .delay(1500)
-  .queue(function() { $(this).attr('placeholder', 'search 829 products')})
+  .queue(function() { $(this).attr('placeholder', 'search 832 products from 88 members!')})
 }
 
 function handleSearch() {

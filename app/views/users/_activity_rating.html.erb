@@ -10,7 +10,7 @@
     </div>
     <div class="activity-image"><%= link_to image_tag(review.product.image), review.product %></div>
     </br>
-    <%= truncate(review.comment, length: 110) %>
+    <%= truncate(review.comment, length: 90) %>
     <br/><%= render_rating_stars(review.rating) %>
   </div>
 </div>
