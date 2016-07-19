@@ -140,7 +140,7 @@
 	}
 
 	.activity-row {
-		height: 280px;
+		height: 300px;
 	}
 	.activity-row:nth-child(7) {
 		border-bottom: 0px;
@@ -148,14 +148,19 @@
 	.activity-row:nth-child(odd) {
 		border-right: 1px dotted #f0f0f0;
 	}
-
 }
 
 /* Medium devices (desktops, 992px and up) ---------------------------------------*/
 @media screen and (min-width: 992px) {
 	.activity-row {
-			height: 220px;
+			height: 260px;
 		}
+}
+
+@media screen and (min-width: 1024px) {
+	.activity-row {
+		height: 220px;
+	}
 }
 
 @media screen and (min-width: 1200px) {
