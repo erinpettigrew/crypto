@@ -31,7 +31,7 @@
   <%= f.select :category_id, @categories.collect {|c| [c.name.titleize, c.id]}, class: "form-control" %> <small>Not sure? Choose "Other" and we'll take care of it!</small>
 </div>
 
-<% if current_user.admin? %>
+<% if user_signed_in? && current_user.admin? %>
 <div class="form-group">
   <%= f.label :ingredients %><br>
   <%= f.text_area :ingredients, class: "form-control", rows: "10", placeholder: "Add ingredients here"%>

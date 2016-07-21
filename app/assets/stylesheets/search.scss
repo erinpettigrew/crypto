@@ -1,10 +1,51 @@
 /* Custom, iPhone Retina -------------------------------------------------------- */
 @media screen and (min-width: 320px) {
-  .search {
-    padding-bottom: 20px;
+
+
+  .nav-search {
+    display: inline;
+    input#search {
+      width: 90%;
+      height: 36px;
+      font-size: 200%;
+      border: 0;
+      padding-left: 30px;
+      background-color: #FEFCFF;
+      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      font-weight: 100;
+      font-style: italic;
+      // border-left: 1px solid black;
+      background: FEFCFF; /* For browsers that do not support gradients */
+background: -webkit-linear-gradient(left, #EFE8F2 , #FEFCFF); /* For Safari 5.1 to 6.0 */
+background: -o-linear-gradient(right, #EFE8F2, #FEFCFF); /* For Opera 11.1 to 12.0 */
+background: -moz-linear-gradient(right, #EFE8F2, #FEFCFF); /* For Firefox 3.6 to 15 */
+background: linear-gradient(to right, #EFE8F2 , #FEFCFF); /* Standard syntax */
+    }
+    input#search:hover {
+      background-color: #FCF6FF;
+    }
+    input#search:focus {
+      background-color: #FCF6FF;
+    }
+    .nav-search-button {
+      font-style: italic;
+      display: inline;
+      margin-top: -5px;
+      vertical-align: middle;
+      border: none;
+      box-shadow: none;
+      .fa-search:before {
+        -webkit-text-stroke: 0px black;
+      }
+    }
+  }
+
+
+.search {
+  padding-bottom: 20px;
     input#search {
       width: 100%;
-      height: 100px;
+      height: 50px;
       font-size: 200%;
       border: 0;
       border-bottom:1px solid black;
@@ -46,13 +87,31 @@
 /* Small Devices, Tablets -------------------------------------------------------- */
 
 @media screen and (min-width: 768px) {
+  .nav-search {
+    input#search {
+      width: 180px;
+      font-size: 140%;
+      margin-top: 5px;
+      margin-left: 15px;
+    }
+  }
+
   .search {
     input#search {
-      font-size: 300%;
+      font-size: 200%;
     }
     .guide-text {
       text-align: left;
       display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .nav-search {
+    input#search {
+      width: 300px;
+      font-size: 165%;
     }
   }
 }

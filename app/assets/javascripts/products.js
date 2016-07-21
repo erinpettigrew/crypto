@@ -7,7 +7,7 @@ $(document).on('ready page:load', function () {
 });
 
 function rotateSearchTerms() {
-  $('input#search.big-search').fadeIn(500)
+  $('input#search').fadeIn(500)
   .delay(1500)
   .queue(function() { $(this).attr('placeholder', 'orgasm blush').dequeue()})
   .delay(1500)
@@ -27,11 +27,11 @@ function rotateSearchTerms() {
   .delay(1500)
   .queue(function() { $(this).attr('placeholder', 'strobing powder').dequeue()})
   .delay(1500)
-  .queue(function() { $(this).attr('placeholder', 'search 832 products from 88 members!')})
+  .queue(function() { $(this).attr('placeholder', 'search 832 products!')})
 }
 
 function handleSearch() {
-  $('input#search.big-search').on('click', function() {
+  $('input#search').on('click', function() {
     $(this).attr('placeholder', '')
   })
 }

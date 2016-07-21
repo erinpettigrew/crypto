@@ -68,7 +68,7 @@
 	}
 
 	.navbar-default {
-		// font-family: 'Questrial', sans-serif;
+		// box-shadow: none;
 		.container-fluid {
 			background-color: #ffffff;
 			.navbar-nav > li > a {
@@ -204,7 +204,7 @@
 	.tiny-avatar img {
 		max-width:35px;
 		border-radius:50%;
-		border:1px solid silver;
+		// border:1px solid silver;
 	}
 
 	.tiny-avatar-list {
@@ -298,7 +298,6 @@
 			padding-bottom:0px;
 			margin-bottom:0px;
 			.navbar-nav > li > a {
-				// font-size: 12px;
 				font-weight: regular;
 			}
 			.navbar-brand {

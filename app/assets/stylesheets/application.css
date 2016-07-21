@@ -164,6 +164,14 @@ h1 {
   -webkit-text-stroke: 0.75px white;
 }
 
+.fa-search:hover {
+  -ms-transform: scale(1.50, 1.50); /* IE 9 */
+  -webkit-transform: scale(1.50, 1.50); /* Safari */
+  -moz-transform: scale(1.50, 1.50);
+  transition: all 0.25s ease;
+  color: #13D8C6
+}
+
 .fa-plus:before {
   -webkit-text-stroke: 0.75px white;
 }
@@ -179,5 +187,4 @@ h1 {
 .floater {
   position: relative;
   z-index: 2;
-
 }

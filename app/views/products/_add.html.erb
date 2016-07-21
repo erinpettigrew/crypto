@@ -1,0 +1,29 @@
+
+<% if user_signed_in? %>
+<div class="row add-row">
+<div class="col-xs-12 col-sm-6 share">
+  <div class="share-text">Hey again! What products are you using?
+    <br/>What do <em><strong><u>you</u></strong></em> recommend?</div>
+</div>
+<div class="col-xs-12 col-sm-6">
+  <%= link_to "Add product!", new_product_path, class: "btn btn-lg btn-info share-button"%>
+</div>
+</div>
+<% else %>
+
+<div class="row add-row">
+<div class="col-xs-12 col-sm-6 share">
+  <div class="share-text"><em><strong>Hi.</strong></em> We're <%= pluralize(User.count, "people") %> sharing skincare
+    <br/>and cosmetics products that <em><strong>work</strong></em>.
+    <br/>Everyone is different. So we'd love to know -
+    <br/>what works for <em><strong><u>you</u></strong></em>?</div>
+  </div>
+  <div class="col-xs-12 col-sm-6">
+    <% if devise_mapping.omniauthable? %>
+      <% resource_class.omniauth_providers.each do |provider| %>
+        <%= link_to "Login with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: "btn btn-lg btn-info share-button" %><br />
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<% end %>
