@@ -37,6 +37,20 @@
 		margin: 20px auto;
 	}
 
+	.fb-button {
+		display: block;
+		margin: 20px auto;
+		background: #3b5998;
+	  border-color: #3b5998;
+	  color: white;
+	}
+
+	.fb-button:hover {
+		background: #355088;
+		border-color: #355088;
+		color: white;
+	}
+
 	.product-row {
 		margin: 30px 0px 30px 0px;
 		height: 118px;
@@ -318,6 +332,11 @@
 	}
 
 	.share-button {
+		margin-top: 0px;
+		float: right;
+	}
+
+	.fb-button {
 		margin-top: 0px;
 		float: right;
 	}
