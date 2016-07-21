@@ -4,6 +4,7 @@ $(document).on('ready page:load', function () {
   autoSizeReviewInput();
   showLoginOnUse();
   showLoginOnReview();
+  handleAddProduct();
 });
 
 function rotateSearchTerms() {
@@ -94,3 +95,50 @@ function showLoginOnReview() {
     event.preventDefault()
   })
 }
+
+function handleAddProduct() {
+  $('input#link').on('click', clearAddProductForm)
+  $('input#link').on('paste', function() {
+    // ajax get to the url
+
+    setTimeout(function () {
+      var link = $('input#link').val()
+      parseLink(link)
+    }, 50);
+
+    // retrieve image, product name, product brand from the DOM
+  })
+}
+
+function clearAddProductForm() {
+  $('input#link').val('')
+}
+
+function parseLink(link) {
+
+
+}
+
+// function parseLink(link) {
+//   $.ajax({
+//     url: link,
+//     dataType: 'JSONP',
+//     jsonpCallback: 'callbackFnc',
+//     type: 'GET',
+//     async: false,
+//     crossDomain: true,
+//     success: function () { },
+//     failure: function () { },
+//     complete: function (data) {
+//       if (data.readyState == '4' && data.status == '200') {
+//           // errorLog.push({ IP: Host, Status: 'SUCCESS' })
+//           console.log('success')
+//       }
+//       else {
+//           // errorLog.push({ IP: Host, Status: 'FAIL' })
+//           console.log('fail')
+//       }
+//
+//     }
+//   })
+// }
