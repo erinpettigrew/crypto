@@ -115,7 +115,10 @@ function clearAddProductForm() {
 }
 
 function parseLink(link) {
-
+  $.get("/availabilities", { url: link })
+  // get request to server side with link as the data
+  // response should be the the DOM elements as a string
+  // parse the string to get image, brand, product name, category
 
 }
 

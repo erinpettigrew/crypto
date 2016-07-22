@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get '/availabilities', to: 'availabilities#show'
+
   resources :posts
   resources :themes
   resources :skin_types
