@@ -5,6 +5,12 @@ $(document).on('ready page:load', function () {
   showLoginOnUse();
   showLoginOnReview();
   handleAddProduct();
+  $('.product-form-brand').hide()
+  $('.product-form-name').hide()
+  $('.product-form-image').hide()
+  $('.product-form-category').hide()
+
+
 });
 
 function rotateSearchTerms() {
@@ -115,33 +121,17 @@ function clearAddProductForm() {
 }
 
 function parseLink(link) {
-  $.get("/availabilities", { url: link })
-  // get request to server side with link as the data
-  // response should be the the DOM elements as a string
-  // parse the string to get image, brand, product name, category
+  $.get("/availabilities", {
+    url: link,
+  }).done(function(data) {
+    $('.product-form-image-display').html(`<img src='${data.image}'>`)
+    $('.product-form-brand').slideDown(100)
+    $('.product-form-name').slideDown(300)
+    $('.product-form-category').slideDown(700)
 
+    $('input#product_product_brand').val(data.product_brand)
+    $('input#product_product_name').val(data.product_name)
+    $('select#product_category_id').val(1) // Other Products category
+    //
+  })
 }
-
-// function parseLink(link) {
-//   $.ajax({
-//     url: link,
-//     dataType: 'JSONP',
-//     jsonpCallback: 'callbackFnc',
-//     type: 'GET',
-//     async: false,
-//     crossDomain: true,
-//     success: function () { },
-//     failure: function () { },
-//     complete: function (data) {
-//       if (data.readyState == '4' && data.status == '200') {
-//           // errorLog.push({ IP: Host, Status: 'SUCCESS' })
-//           console.log('success')
-//       }
-//       else {
-//           // errorLog.push({ IP: Host, Status: 'FAIL' })
-//           console.log('fail')
-//       }
-//
-//     }
-//   })
-// }

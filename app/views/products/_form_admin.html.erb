@@ -12,40 +12,36 @@
 </div>
 <% end %>
 
-<div class="product-form-image-display">
-</div>
-
-<div class="form-group product-form-link">
+<div class="form-group">
   <%= f.label "Link" %>
   <%= text_field_tag "link", "paste product link", class: "form-control" %>
 </div>
 
-<div class="product-details product-form-brand">
+
 <div class="form-group">
   <%= f.label :product_brand %><br>
-  <%= f.text_field :product_brand, class: "form-control" %>
+  <%= f.text_field :product_brand, class: "form-control", placeholder: "SK-II" %>
 </div>
-<div class="form-group product-form-name">
+<div class="form-group">
   <%= f.label :product_name %><br>
-  <%= f.text_field :product_name, class: "form-control" %>
+  <%= f.text_field :product_name, class: "form-control", placeholder: "First Treatment Essence" %>
 </div>
-<div class="form-group product-form-image">
+<div class="form-group">
   <%= f.label :image %><br>
   <%= f.file_field :image, class: "form-control" %>
 </div>
 
-<div class="form-group product-form-category">
+<div class="form-group">
   <%= f.label :category_id %><br>
   <%= f.select :category_id, @categories.collect {|c| [c.name.titleize, c.id]}, class: "form-control" %> <small>Not sure? Choose "Other" and we'll take care of it!</small>
 </div>
 
-<!-- <% if user_signed_in? && current_user.admin? %>
+<% if user_signed_in? && current_user.admin? %>
 <div class="form-group">
   <%= f.label :ingredients %><br>
   <%= f.text_area :ingredients, class: "form-control", rows: "10", placeholder: "Add ingredients here"%>
 </div>
 <% end %>
-</div> -->
 
 <div class="form-group">
   <%= f.submit value: "Save", class: "btn btn-primary btn-lg" %>
