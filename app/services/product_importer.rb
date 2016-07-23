@@ -31,18 +31,29 @@ class ProductImporter
       @canonical_url = url_element.attribute('content').value
     end
 
-    # how to grab sephora brand?
-
-    # could also grab the brand from the site-name and match that to existing brands
     # error return flow
     # amazon flow for later
   end
 
   def process_merchant
+
+    if @input_url.include?("amazon.com")
+      @merchant = "Amazon"
+      set_amazon_properties
+    end
+
     if @canonical_url.include?("www.sephora.com")
       @merchant = "Sephora"
       set_sephora_properties
     end
+  end
+
+  def set_amazon_properties
+    asin_start = input_url.index('/dp/') + 4
+    asin_end = input_url.index('/ref=') - 1
+    asin = input_url.slice(asin_start..asin_end)
+    search = AmazonAPIFetcher.new
+    binding.pry
   end
 
   def set_sephora_properties
