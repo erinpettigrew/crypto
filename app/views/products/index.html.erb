@@ -2,9 +2,11 @@
 <% description 'Reviews and photos of the best in new skincare and cosmetics products' %>
 <% keywords 'the best beauty products, reviews, community, forum, posts, asian beauty, korean beauty, skincare' %>
 <%= render 'add' %>
-<!-- <%= render 'search' %> -->
 
 <div class="page">
+<%= render 'products/form', locals: { product: @product } %>
+
+<div class="front-page">
 <div class="title">Recently</div>
 <div class="row activity-index">
   <% @activity.each do |activity| %>
@@ -38,6 +40,7 @@
 <div class="title">Reads</div>
 <%= render partial: 'posts/post_tile', collection: @recent_posts, as: :post %>
 
+</div>
 </div>
 <script>
   mixpanel.track("Viewed Home");

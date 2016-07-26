@@ -19,6 +19,7 @@ class ProductsController < ApplicationController
   end
 
   def index
+    @product = Product.new
     @rand_categories = Category.all.includes(:products).sample(4)
     @products = Product.take(30).sample(8)
     @brands = Product.brands.sample(4)

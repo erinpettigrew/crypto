@@ -16,7 +16,8 @@
 	}
 
 form#new_product {
-	padding: 30px 0px;
+	padding: 30px;
+	box-shadow: 1px 1px 3px silver;
 	.product-form-image-display img {
 		height: 340px;
 		padding-bottom: 20px;
@@ -36,6 +37,9 @@ form#new_product {
 		font-weight: 500;
 		box-shadow: none;
 		font-style: normal;
+	}
+	.cancel {
+		float: right;
 	}
 }
 

@@ -9,7 +9,7 @@ $(document).on('ready page:load', function () {
   $('.product-form-name').hide()
   $('.product-form-image').hide()
   $('.product-form-category').hide()
-
+  $('form#new_product').hide()
 
 });
 
@@ -103,6 +103,7 @@ function showLoginOnReview() {
 }
 
 function handleAddProduct() {
+  revealAddProductForm()
   $('input#link').on('click', clearAddProductForm)
   $('input#link').on('paste', function() {
     // ajax get to the url
@@ -120,20 +121,37 @@ function clearAddProductForm() {
   $('input#link').val('')
 }
 
+function revealAddProductForm() {
+  $('.share-button').on('click', function() {
+    $('form#new_product').show(500)
+    $('.add-row').hide()
+    $('.front-page').fadeTo(500, 0.3)
+    event.preventDefault()
+    handleCancel()
+  })
+}
+
 function parseLink(link) {
   $.get("/availabilities", {
     url: link,
   }).done(function(data) {
     $('.product-form-image-display').html(`<img src='${data.image}'>`)
-    $('.product-form-brand').slideDown(100)
-    $('.product-form-name').slideDown(300)
-    $('.product-form-category').slideDown(700)
-    $('input#link').fadeTo(100, 0.3)
+    $('.product-form-brand').slideDown(200)
+    $('.product-form-name').slideDown(400)
+    $('input#link').fadeTo(200,0)
     $('input#product_image').val(data.image)
 
     $('input#product_product_brand').val(data.product_brand)
     $('textarea#product_product_name').val(data.product_name)
     $('select#product_category_id').val(1) // Other Products category
     //
+  })
+}
+
+function handleCancel() {
+  $('.cancel').on('click', function() {
+    $('.add-row').show()
+    $('form#new_product').hide()
+    $('.front-page').fadeTo(200, 1)
   })
 }
