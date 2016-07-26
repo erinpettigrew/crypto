@@ -46,6 +46,11 @@ class ProductImporter
       @merchant = "Sephora"
       set_sephora_properties
     end
+
+    if @canonical_url.include?("www.ulta.com")
+      @merchant = "Ulta"
+      set_ulta_properties
+    end
   end
 
   def set_amazon_properties
@@ -64,6 +69,14 @@ class ProductImporter
     index = brand_and_name.index(' - ') + 3
     name = brand_and_name.slice!(index..-1)
     @name = name.reverse!
+  end
+
+  def set_ulta_properties
+    brand_element = @data.css("[property='og:brand']")[0]
+    @brand = brand_element.attribute('content').value
+    name_element = @data.css('h1').text
+    @name = name_element.gsub("\r","").gsub("\n", "").gsub("\t", "")
+    @remote_image = "http:" + @remote_image # fix Ulta image location
   end
 
   def return_properties
