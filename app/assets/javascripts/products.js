@@ -136,15 +136,15 @@ function parseLink(link) {
     url: link,
   }).done(function(data) {
     $('.product-form-image-display').html(`<img src='${data.image}'>`)
-    $('.product-form-brand').slideDown(200)
-    $('.product-form-name').slideDown(400)
-    $('input#link').fadeTo(200,0)
+    $('.product-form-brand').fadeIn(300)
+    $('.product-form-name').fadeIn(300)
+    $('input#link').fadeTo(100, 0)
     $('input#product_image').val(data.image)
 
     $('input#product_product_brand').val(data.product_brand)
     $('textarea#product_product_name').val(data.product_name)
-    $('select#product_category_id').val(1) // Other Products category
-    //
+    // $('select#product_category_id').val(1) // Other Products category
+
   })
 }
 
