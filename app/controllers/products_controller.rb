@@ -19,6 +19,7 @@ class ProductsController < ApplicationController
   end
 
   def index
+    @product = Product.new
     @rand_categories = Category.all.includes(:products).sample(4)
     @products = Product.take(30).sample(8)
     @brands = Product.brands.sample(4)
@@ -92,7 +93,9 @@ class ProductsController < ApplicationController
 
       def create
         @product = Product.new(product_params)
+        @product.remote_image_url = product_params[:image]
         @product.user_id = current_user.id
+        @product.category_id = 1
         @product.theme_id = @product.category.theme_id
 
         respond_to do |format|

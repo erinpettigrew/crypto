@@ -1,4 +1,3 @@
-
 <% if user_signed_in? %>
 <div class="row add-row">
 <div class="col-xs-12 col-sm-6 share">
@@ -6,7 +5,7 @@
     <br/>What do <em><strong><u>you</u></strong></em> recommend?</div>
 </div>
 <div class="col-xs-12 col-sm-6">
-  <%= link_to "Add product!", new_product_path, class: "btn btn-lg btn-info share-button"%>
+  <div class="btn btn-lg btn-info share-button">Add my product!</div>
 </div>
 </div>
 <% else %>
