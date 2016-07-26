@@ -15,6 +15,30 @@
 		border-bottom: 1px dotted silver;
 	}
 
+form#new_product {
+	padding: 30px 0px;
+	.product-form-image-display img {
+		height: 340px;
+		padding-bottom: 20px;
+	}
+	input#product_product_brand {
+		background-color: #FDFCFE;
+		border-bottom: 0px;
+		font-weight: 600;
+		box-shadow:none;
+		color: black;
+		font-size: 25px;
+	}
+
+	textarea#product_product_name {
+		background-color: #FDFCFE;
+		border-bottom: 0px;
+		font-weight: 500;
+		box-shadow: none;
+		font-style: normal;
+	}
+}
+
 	.share {
 		text-align: center;
 		// background: #FCF8FD;

@@ -92,7 +92,9 @@ class ProductsController < ApplicationController
 
       def create
         @product = Product.new(product_params)
+        @product.remote_image_url = product_params[:image]
         @product.user_id = current_user.id
+        @product.category_id = 1
         @product.theme_id = @product.category.theme_id
 
         respond_to do |format|

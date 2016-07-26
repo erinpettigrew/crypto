@@ -128,9 +128,11 @@ function parseLink(link) {
     $('.product-form-brand').slideDown(100)
     $('.product-form-name').slideDown(300)
     $('.product-form-category').slideDown(700)
+    $('input#link').fadeTo(100, 0.3)
+    $('input#product_image').val(data.image)
 
     $('input#product_product_brand').val(data.product_brand)
-    $('input#product_product_name').val(data.product_name)
+    $('textarea#product_product_name').val(data.product_name)
     $('select#product_category_id').val(1) // Other Products category
     //
   })
