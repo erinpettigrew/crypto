@@ -78,9 +78,9 @@
 		position:relative;
 		z-index: 0;
 		border-bottom: 1px dotted #f0f0f0;
-		font-size: 105%;
+		font-size: 17px;
 		.activity-header {
-			font-size: 15px;
+			font-size: 17px;
 		}
 		.activity-avatar img {
 			margin-left: 0%;
@@ -90,6 +90,7 @@
 			font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 			font-style: italic;
 			font-weight: 600;
+			font-size: 17px;
 			display: inline;
 		}
 		.feed-timestamp {
@@ -124,8 +125,19 @@
 		}
 	}
 	.activity-row:hover {
-		background-color: #FEFCFF;
+		background: FEFCFF; /* For browsers that do not support gradients */
+		background: -webkit-linear-gradient(left, #EFE8F2 , #FEFCFF); /* For Safari 5.1 to 6.0 */
+		background: -o-linear-gradient(right, #EFE8F2, #FEFCFF); /* For Opera 11.1 to 12.0 */
+		background: -moz-linear-gradient(right, #EFE8F2, #FEFCFF); /* For Firefox 3.6 to 15 */
+		background: linear-gradient(to right, #EFE8F2 , #FEFCFF); /* Standard syntax */
+
 		.activity-avatar img {
+			-ms-transform: scale(1.05, 1.05); /* IE 9 */
+			-webkit-transform: scale(1.05, 1.05); /* Safari */
+			-moz-transform: scale(1.05, 1.05);
+			transition: all 0.25s ease;
+		}
+		.activity-image img {
 			-ms-transform: scale(1.05, 1.05); /* IE 9 */
 			-webkit-transform: scale(1.05, 1.05); /* Safari */
 			-moz-transform: scale(1.05, 1.05);
@@ -148,7 +160,7 @@
 	}
 
 	.activity-row {
-		height: 300px;
+		height: 320px;
 	}
 	.activity-row:nth-child(11) {
 		border-bottom: 0px;
@@ -167,12 +179,12 @@
 
 @media screen and (min-width: 1024px) {
 	.activity-row {
-		height: 220px;
+		height: 240px;
 	}
 }
 
 @media screen and (min-width: 1200px) {
 	.activity-row {
-		height: 200px;
+		height: 220px;
 	}
 }
