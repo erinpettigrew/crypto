@@ -14,7 +14,7 @@ class ProductImporter
   end
 
   def get_properties
-    # open graph sites flow
+    # check for open graph elements and set if existing
     page = RestClient.get(input_url)
     @data = Nokogiri::HTML(page)
     # need to do a nil check on any og property before calling attribute on it
@@ -29,26 +29,31 @@ class ProductImporter
     unless url_element.nil?
       @canonical_url = url_element.attribute('content').value
     end
-
-    # error return flow
-    # amazon flow for later
   end
 
   def process_merchant
+    # handle specific merchant cases
     if @input_url.include?("amazon.com")
       @merchant = "Amazon"
       @canonical_url = @data.css('link[rel=canonical]')[0].attribute('href').value
       set_amazon_properties
+      return
+    end
 
-    elsif @canonical_url.include?("www.sephora.com")
-      @merchant = "Sephora"
-      set_sephora_properties
+    unless @canonical_url.nil?
+      if @canonical_url.include?("www.sephora.com")
+        @merchant = "Sephora"
+        set_sephora_properties
+      end
 
-    elsif @canonical_url.include?("www.ulta.com")
-      @merchant = "Ulta"
-      set_ulta_properties
+      if @canonical_url.include?("www.ulta.com")
+        @merchant = "Ulta"
+        set_ulta_properties
+      end
+    end
 
-    else
+    # handle general merchant case
+    if @remote_image.nil?
       set_general_properties
     end
   end
@@ -86,7 +91,9 @@ class ProductImporter
     @remote_image = []
     images = @data.css('img') # array of all images
     images.each do |image|
-      @remote_image << image.attribute('src').value
+      unless image.attribute('src').nil?
+        @remote_image << image.attribute('src').value
+      end
     end
     binding.pry
   end
