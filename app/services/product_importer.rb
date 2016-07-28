@@ -62,10 +62,6 @@ class ProductImporter
     asin_start = canonical_url.index('/dp/') + 4
     asin = canonical_url.slice(asin_start..-1)
     @brand = @data.css('#mbc').attribute('data-brand').value
-    # incomplete so far
-    # search = AmazonAPIFetcher.new
-    # url = search.by_asin(asin) # this is the request url
-    # amazon_data = HTTParty.get(url)
   end
 
   def set_sephora_properties
@@ -95,7 +91,6 @@ class ProductImporter
         @remote_image << image.attribute('src').value
       end
     end
-    binding.pry
   end
 
   def return_properties

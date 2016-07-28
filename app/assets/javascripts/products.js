@@ -139,13 +139,52 @@ function parseLink(link) {
     $('.product-form-brand').fadeIn(300)
     $('.product-form-name').fadeIn(300)
     $('input#link').fadeTo(100, 0)
-    $('input#product_image').val(data.image)
+
+    handleImage(data.image)
 
     $('input#product_product_brand').val(data.product_brand)
     $('textarea#product_product_name').val(data.product_name)
     // $('select#product_category_id').val(1) // Other Products category
 
   })
+}
+
+function handleImage(image) {
+  if (image.length === 1) {
+    $('input#product_image').val(image)
+  }
+  else {
+    image.forEach(function(singleImage, i) {
+      debugger
+      $('.image-grid').append("<img src='" + singleImage + "'>")
+      handleSelection()
+    })
+  }
+}
+
+function handleSelection() {
+  $('.image-grid img').on('click', function() {
+    // show image in form
+    // fade out other images?
+  })
+}
+
+function getImageHeight(url){
+    var img = new Image();
+    var height
+    img.onload = function(){
+        height = this.height
+    };
+    img.src = url;
+    return height
+}
+
+function getImageWidth(url){
+    var img = new Image();
+    img.onload = function(){
+        alert( this.width+' '+ this.height );
+    };
+    img.src = url;
 }
 
 function handleCancel() {
