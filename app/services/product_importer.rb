@@ -50,6 +50,11 @@ class ProductImporter
         @merchant = "Ulta"
         set_ulta_properties
       end
+
+      if @canonical_url.include?("bluemercury.com")
+        @merchat = "Blue Mercury"
+        set_general_properties
+      end
     end
 
     # handle general merchant case

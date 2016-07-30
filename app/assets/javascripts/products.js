@@ -112,7 +112,7 @@ function handleAddProduct() {
       var link = $('input#link').val()
       parseLink(link)
     }, 50);
-
+    handleSelection()
     // retrieve image, product name, product brand from the DOM
   })
 }
@@ -123,7 +123,7 @@ function clearAddProductForm() {
 
 function revealAddProductForm() {
   $('.share-button').on('click', function() {
-    $('form#new_product').show(500)
+    $('form#new_product').slideDown(500)
     $('.add-row').hide()
     $('.front-page').fadeTo(500, 0.3)
     event.preventDefault()
@@ -145,7 +145,6 @@ function parseLink(link) {
     $('input#product_product_brand').val(data.product_brand)
     $('textarea#product_product_name').val(data.product_name)
     // $('select#product_category_id').val(1) // Other Products category
-
   })
 }
 
@@ -155,36 +154,29 @@ function handleImage(image) {
   }
   else {
     image.forEach(function(singleImage, i) {
-      debugger
-      $('.image-grid').append("<img src='" + singleImage + "'>")
-      handleSelection()
+      renderIfBig(singleImage)
     })
   }
 }
 
 function handleSelection() {
   $('.image-grid img').on('click', function() {
+    alert('hey')
     // show image in form
     // fade out other images?
+
   })
 }
 
-function getImageHeight(url){
-    var img = new Image();
-    var height
-    img.onload = function(){
-        height = this.height
-    };
-    img.src = url;
-    return height
-}
 
-function getImageWidth(url){
-    var img = new Image();
-    img.onload = function(){
-        alert( this.width+' '+ this.height );
-    };
-    img.src = url;
+function renderIfBig(image) {
+  var img = new Image()
+  img.src = image
+  img.onload = function(img) {
+    if (this.width > 199) {
+      $('.image-grid').append(this)
+    }
+  }
 }
 
 function handleCancel() {
