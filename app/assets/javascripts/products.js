@@ -157,23 +157,18 @@ function handleImage(image) {
       renderIfBig(singleImage)
     })
   }
-}
-
-function handleSelection() {
-  $('.image-grid img').on('click', function() {
-    alert('hey')
-    // show image in form
-    // fade out other images?
-
+  $('.image-grid').on('click', '*', function() {
+      $('.product-form-image-display').html(this)
+      $('#product_image').val($(this).attr('src'))
+      $('.image-grid').fadeTo(300, 0.5)
   })
 }
-
 
 function renderIfBig(image) {
   var img = new Image()
   img.src = image
   img.onload = function(img) {
-    if (this.width > 199) {
+    if (this.width > 149) {
       $('.image-grid').append(this)
     }
   }
