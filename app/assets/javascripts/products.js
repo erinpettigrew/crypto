@@ -135,7 +135,9 @@ function parseLink(link) {
   $.get("/availabilities", {
     url: link,
   }).done(function(data) {
-    $('.product-form-image-display').html(`<img src='${data.image}'>`)
+    if (typeof data.image === 'string') {
+      $('.product-form-image-display').html(`<img src='${data.image}'>`)
+    }
     $('.product-form-brand').fadeIn(300)
     $('.product-form-name').fadeIn(300)
     $('input#link').fadeTo(100, 0)
