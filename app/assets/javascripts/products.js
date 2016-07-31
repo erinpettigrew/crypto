@@ -140,16 +140,14 @@ function parseLink(link) {
     $('.product-form-name').fadeIn(300)
     $('input#link').fadeTo(100, 0)
 
-    handleImage(data.image)
-
     $('input#product_product_brand').val(data.product_brand)
     $('textarea#product_product_name').val(data.product_name)
-    // $('select#product_category_id').val(1) // Other Products category
+    handleImage(data.image)
   })
 }
 
 function handleImage(image) {
-  if (image.length === 1) {
+  if (typeof image === 'string') {
     $('input#product_image').val(image)
   }
   else {
@@ -168,7 +166,7 @@ function renderIfBig(image) {
   var img = new Image()
   img.src = image
   img.onload = function(img) {
-    if (this.width > 149) {
+    if (this.width > 199) {
       $('.image-grid').append(this)
     }
   }

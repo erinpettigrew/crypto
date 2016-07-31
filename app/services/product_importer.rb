@@ -36,7 +36,7 @@ class ProductImporter
     if @input_url.include?("amazon.com")
       @merchant = "Amazon"
       @canonical_url = @data.css('link[rel=canonical]')[0].attribute('href').value
-      set_amazon_properties
+      set_general_properties
       return
     end
 

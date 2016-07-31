@@ -20,7 +20,8 @@ form#new_product {
 	box-shadow: 1px 1px 3px silver;
 	border-radius: 10px;
 	.product-form-image-display img {
-		height: 340px;
+		max-height: 300px;
+		max-width: 300px;
 		padding-bottom: 20px;
 	}
 	input#product_product_brand {
