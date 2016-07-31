@@ -14,10 +14,9 @@ class ProductImporter
   end
 
   def get_properties
-    # open graph sites flow
+    # check for open graph elements and set if existing
     page = RestClient.get(input_url)
     @data = Nokogiri::HTML(page)
-
     # need to do a nil check on any og property before calling attribute on it
 
     image_element = @data.css("[property='og:image']")[0]
@@ -30,35 +29,44 @@ class ProductImporter
     unless url_element.nil?
       @canonical_url = url_element.attribute('content').value
     end
-
-    # error return flow
-    # amazon flow for later
   end
 
   def process_merchant
-
+    # handle specific merchant cases
     if @input_url.include?("amazon.com")
       @merchant = "Amazon"
-      set_amazon_properties
+      @canonical_url = @data.css('link[rel=canonical]')[0].attribute('href').value
+      set_general_properties
+      return
     end
 
-    if @canonical_url.include?("www.sephora.com")
-      @merchant = "Sephora"
-      set_sephora_properties
+    unless @canonical_url.nil?
+      if @canonical_url.include?("www.sephora.com")
+        @merchant = "Sephora"
+        set_sephora_properties
+      end
+
+      if @canonical_url.include?("www.ulta.com")
+        @merchant = "Ulta"
+        set_ulta_properties
+      end
+
+      if @canonical_url.include?("bluemercury.com")
+        @merchat = "Blue Mercury"
+        set_general_properties
+      end
     end
 
-    if @canonical_url.include?("www.ulta.com")
-      @merchant = "Ulta"
-      set_ulta_properties
+    # handle general merchant case
+    if @remote_image.nil?
+      set_general_properties
     end
   end
 
   def set_amazon_properties
-    asin_start = input_url.index('/dp/') + 4
-    asin_end = input_url.index('/ref=') - 1
-    asin = input_url.slice(asin_start..asin_end)
-    search = AmazonAPIFetcher.new
-    binding.pry
+    asin_start = canonical_url.index('/dp/') + 4
+    asin = canonical_url.slice(asin_start..-1)
+    @brand = @data.css('#mbc').attribute('data-brand').value
   end
 
   def set_sephora_properties
@@ -77,6 +85,17 @@ class ProductImporter
     name_element = @data.css('h1').text
     @name = name_element.gsub("\r","").gsub("\n", "").gsub("\t", "")
     @remote_image = "http:" + @remote_image # fix Ulta image location
+  end
+
+  def set_general_properties
+    # grab a bunch of images to display for user to select from
+    @remote_image = []
+    images = @data.css('img') # array of all images
+    images.each do |image|
+      unless image.attribute('src').nil?
+        @remote_image << image.attribute('src').value
+      end
+    end
   end
 
   def return_properties

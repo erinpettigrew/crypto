@@ -112,7 +112,7 @@ function handleAddProduct() {
       var link = $('input#link').val()
       parseLink(link)
     }, 50);
-
+    handleSelection()
     // retrieve image, product name, product brand from the DOM
   })
 }
@@ -123,7 +123,7 @@ function clearAddProductForm() {
 
 function revealAddProductForm() {
   $('.share-button').on('click', function() {
-    $('form#new_product').show(500)
+    $('form#new_product').slideDown(500)
     $('.add-row').hide()
     $('.front-page').fadeTo(500, 0.3)
     event.preventDefault()
@@ -135,17 +135,43 @@ function parseLink(link) {
   $.get("/availabilities", {
     url: link,
   }).done(function(data) {
-    $('.product-form-image-display').html(`<img src='${data.image}'>`)
+    if (typeof data.image === 'string') {
+      $('.product-form-image-display').html(`<img src='${data.image}'>`)
+    }
     $('.product-form-brand').fadeIn(300)
     $('.product-form-name').fadeIn(300)
     $('input#link').fadeTo(100, 0)
-    $('input#product_image').val(data.image)
 
     $('input#product_product_brand').val(data.product_brand)
     $('textarea#product_product_name').val(data.product_name)
-    // $('select#product_category_id').val(1) // Other Products category
-
+    handleImage(data.image)
   })
+}
+
+function handleImage(image) {
+  if (typeof image === 'string') {
+    $('input#product_image').val(image)
+  }
+  else {
+    image.forEach(function(singleImage, i) {
+      renderIfBig(singleImage)
+    })
+  }
+  $('.image-grid').on('click', '*', function() {
+      $('.product-form-image-display').html(this)
+      $('#product_image').val($(this).attr('src'))
+      $('.image-grid').fadeTo(300, 0.5)
+  })
+}
+
+function renderIfBig(image) {
+  var img = new Image()
+  img.src = image
+  img.onload = function(img) {
+    if (this.width > 199) {
+      $('.image-grid').append(this)
+    }
+  }
 }
 
 function handleCancel() {

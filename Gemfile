@@ -28,6 +28,7 @@ gem 'omniauth-facebook'
 gem 'rest-client', '~> 1.8'
 gem 'json', '~> 1.8', '>= 1.8.3'
 gem 'nokogiri', '~> 1.6', '>= 1.6.8'
+gem 'httparty', '~> 0.13.7'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

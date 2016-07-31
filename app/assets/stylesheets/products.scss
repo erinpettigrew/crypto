@@ -20,7 +20,8 @@ form#new_product {
 	box-shadow: 1px 1px 3px silver;
 	border-radius: 10px;
 	.product-form-image-display img {
-		height: 340px;
+		max-height: 300px;
+		max-width: 300px;
 		padding-bottom: 20px;
 	}
 	input#product_product_brand {
@@ -42,6 +43,18 @@ form#new_product {
 	.cancel {
 		float: right;
 	}
+}
+
+.image-grid img {
+	max-height: 250px;
+	max-width: 250px;
+	padding: 10px;
+}
+.image-grid img:hover {
+	-ms-transform: scale(1.05, 1.05); /* IE 9 */
+	-webkit-transform: scale(1.05, 1.05); /* Safari */
+	-moz-transform: scale(1.05, 1.05);
+	transition: all 0.25s ease;
 }
 
 	.share {
