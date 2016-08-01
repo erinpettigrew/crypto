@@ -22,7 +22,7 @@ function transitionIn(anyDiv) {
 }
 
 $(document).on('ready page:load', function () {
-  transitionIn($('.page'));
+  // transitionIn($('.page'));
   $('input#search').on('click', function() {
     $(this).val("")
   })

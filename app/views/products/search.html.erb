@@ -1,6 +1,22 @@
 <!-- <%= render 'search' %> -->
 
 <div class="page">
+
+<% if !@products.any? && !@categories.any? %>
+  <!-- <div class="search-fail">Hm, no <strong><%= @query %></strong> yet. <i class="fa fa-frown-o" aria-hidden="true"></i> Try these!</div> -->
+  <h1>Aww, no <%= @query %> yet. Try these!</h1>
+
+  <div class="title">Categories</div>
+  <div class="category-index">
+    <div class="row theme-row">
+      <%= render partial: 'categories/category_row', collection: @default, as: :category %>
+    </div>
+  </div>
+  <% else %>
+  <h1><%= @query.titleize %></h1>
+<% end %>
+</div>
+
 <% if @categories.any? %>
   <div class="title"><%= pluralize(@categories.count, "Category") %></div>
   <div class="category-index">
@@ -17,19 +33,6 @@
     <%= render partial: 'products/product_row', collection: @products, as: :product %>
   </div>
 <% end %>
-
-<% if !@products.any? && !@categories.any? %>
-  <!-- <div class="search-fail">Hm, no <strong><%= @query %></strong> yet. <i class="fa fa-frown-o" aria-hidden="true"></i> Try these!</div> -->
-  <h1>Aww, no <%= @query %> yet. Try these!</h1>
-
-  <div class="title">Categories</div>
-  <div class="category-index">
-    <div class="row theme-row">
-      <%= render partial: 'categories/category_row', collection: @default, as: :category %>
-    </div>
-  </div>
-<% end %>
-</div>
 
 <script>
   $('.star-rating').raty({
