@@ -1,0 +1,5 @@
+<div class="look">
+  <h1><%= @look.title %></h1>
+<div class="description"><%= @look.description %></div>
+<%= render partial: 'looks/look_product', collection: @look.products, as: :product %>
+</div>

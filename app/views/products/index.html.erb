@@ -7,17 +7,24 @@
 <%= render 'products/form', locals: { product: @product } %>
 
 <div class="front-page">
-<div class="title">Recently</div>
-<div class="row activity-index">
-  <% @activity.each do |activity| %>
-    <% if activity.is_a? (Use) %>
-      <%= render partial: "users/activity_use", locals: { use: activity } %>
-    <% elsif activity.is_a? (Review) %>
-      <%= render partial: "users/activity_rating", locals: { review: activity } %>
+  <div class="row">
+<div class="col-xs-12 col-sm-6">
+  <div class="title">Recently</div>
+  <div class="row activity-index">
+    <% @activity.each do |activity| %>
+      <% if activity.is_a? (Use) %>
+        <%= render partial: "users/activity_use", locals: { use: activity } %>
+      <% elsif activity.is_a? (Review) %>
+        <%= render partial: "users/activity_rating", locals: { review: activity } %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
-
+<div class="col-xs-12 col-sm-6">
+  <div class="title">Collections</div>
+  <%= render partial: 'looks/look_row', collection: Look.last(5), as: :look %>
+</div>
+</div>
 <div class="category-index">
   <div class="title">Categories</div>
   <div class="row theme-row">

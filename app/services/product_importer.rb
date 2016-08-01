@@ -1,7 +1,7 @@
 class ProductImporter
 
   attr_reader :input_url
-  attr_accessor :data, :merchant, :brand, :name, :remote_image, :hosted_image, :canonical_url
+  attr_accessor :data, :merchant, :brand, :name, :remote_image, :hosted_image, :canonical_url, :link
 
   def initialize(input_url)
     @input_url = input_url
@@ -9,6 +9,7 @@ class ProductImporter
 
   def import
     get_properties
+    set_link
     process_merchant
     return_properties
   end
@@ -28,6 +29,14 @@ class ProductImporter
 
     unless url_element.nil?
       @canonical_url = url_element.attribute('content').value
+    end
+  end
+
+  def set_link
+    if @canonical_url.present?
+      @link = @canonical_url
+    else
+      @link = @input_url
     end
   end
 
@@ -102,7 +111,8 @@ class ProductImporter
     { product_brand: @brand,
       product_name: @name,
       image: @remote_image,
-      category_id: 1
+      category_id: 1,
+      link: @link
     }
   end
 

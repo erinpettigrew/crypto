@@ -160,6 +160,13 @@ h1 {
   font-style: italic;
 }
 
+h3 {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 100;
+  font-size: 180%;
+  font-style: italic;
+}
+
 .fa-search:before {
   -webkit-text-stroke: 0.75px white;
 }

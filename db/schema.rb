@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160706151357) do
+ActiveRecord::Schema.define(version: 20160801180044) do
+
+  create_table "answers", force: :cascade do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.integer  "question_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "applicants", force: :cascade do |t|
     t.string   "email"
@@ -61,6 +69,19 @@ ActiveRecord::Schema.define(version: 20160706151357) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "look_products", force: :cascade do |t|
+    t.integer "look_id"
+    t.integer "product_id"
+  end
+
+  create_table "looks", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "photos", force: :cascade do |t|
     t.text     "comment"
     t.datetime "created_at",    null: false
@@ -92,6 +113,7 @@ ActiveRecord::Schema.define(version: 20160706151357) do
     t.text     "ingredients"
     t.integer  "user_id"
     t.integer  "theme_id"
+    t.string   "link"
   end
 
   add_index "products", ["category_id"], name: "index_products_on_category_id"
@@ -103,6 +125,14 @@ ActiveRecord::Schema.define(version: 20160706151357) do
     t.integer  "skin_type_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image"
   end
 
   create_table "reviews", force: :cascade do |t|
