@@ -9,7 +9,7 @@ class LooksController < ApplicationController
 
   private
   def set_look
-    @look = Look.find(params[:id])
+    @look = Look.friendly.find(params[:id])
   end
 
   def look_params
