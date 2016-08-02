@@ -8,17 +8,14 @@
 			font-weight: 600;
 			font-style: italic;
 		}
-		.name {
-
-		}
 		img {
 			max-width: 150px;
 			max-height: 150px;
 			margin: 20px;
 		}
 		img:hover {
-			-ms-transform: scale(1.05, 1.05); /* IE 9 */
-			-webkit-transform: scale(1.05, 1.05); /* Safari */
+			-ms-transform: scale(1.05, 1.05);
+			-webkit-transform: scale(1.05, 1.05);
 			-moz-transform: scale(1.05, 1.05);
 			transition: all 0.25s ease;
 		}
@@ -35,22 +32,18 @@
 			font-weight: 600;
 			font-style: italic;
 		}
-		.name {
-
-		}
 		img {
 			max-width: 85px;
 			max-height: 85px;
 			margin: 20px;
 		}
 		img:hover {
-			-ms-transform: scale(1.05, 1.05); /* IE 9 */
-			-webkit-transform: scale(1.05, 1.05); /* Safari */
+			-ms-transform: scale(1.05, 1.05);
+			-webkit-transform: scale(1.05, 1.05);
 			-moz-transform: scale(1.05, 1.05);
 			transition: all 0.25s ease;
 		}
 	}
-
 
 	.sorts {
 		padding-bottom: 15px;
@@ -103,20 +96,14 @@ form#new_product {
 	padding: 10px;
 }
 .image-grid img:hover {
-	-ms-transform: scale(1.05, 1.05); /* IE 9 */
-	-webkit-transform: scale(1.05, 1.05); /* Safari */
+	-ms-transform: scale(1.05, 1.05);
+	-webkit-transform: scale(1.05, 1.05);
 	-moz-transform: scale(1.05, 1.05);
 	transition: all 0.25s ease;
 }
 
 	.share {
 		text-align: center;
-		// background: #FCF8FD;
-		// border: 1px dotted white;
-		// -moz-box-shadow:    0px 0px 5px 0px #ccc;
-	  // -webkit-box-shadow: 0px 0px 5px 0px #ccc;
-	  // box-shadow:         0px 0px 5px 0px #ccc;
-		// background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1)), url("http://65.media.tumblr.com/a489b259aa515bd8d1da4132057fa2bc/tumblr_o25xnwXIk11v4d5m9o4_1280.jpg");
 	}
 	.share-text {
 		display: inline;
@@ -192,12 +179,11 @@ form#new_product {
 
 	.product-row:hover {
 		.product-image {
-			-ms-transform: scale(1.05, 1.05); /* IE 9 */
-			-webkit-transform: scale(1.05, 1.05); /* Safari */
+			-ms-transform: scale(1.05, 1.05);
+			-webkit-transform: scale(1.05, 1.05);
 			-moz-transform: scale(1.05, 1.05);
 			transition: all 0.25s ease;
 		}
-
 	}
 
 	.product-name {
@@ -286,8 +272,8 @@ form#new_product {
 		}
 	}
 	.want-button:hover {
-		-ms-transform: scale(1.12, 1.12); /* IE 9 */
-		-webkit-transform: scale(1.12, 1.12); /* Safari */
+		-ms-transform: scale(1.12, 1.12);
+		-webkit-transform: scale(1.12, 1.12);
 		-moz-transform: scale(1.12, 1.12);
 		transition: all 0.25s ease;
 		.want-icon {
@@ -300,8 +286,6 @@ form#new_product {
 		}
 	}
 
-/* TESTING USE BUTTON FONTAWESOME */
-
 .use2-button {
 	float: left;
 	margin-top: 90px;
@@ -312,8 +296,8 @@ form#new_product {
 	}
 }
 .use2-button:hover {
-	-ms-transform: scale(1.12, 1.12); /* IE 9 */
-	-webkit-transform: scale(1.12, 1.12); /* Safari */
+	-ms-transform: scale(1.12, 1.12);
+	-webkit-transform: scale(1.12, 1.12);
 	-moz-transform: scale(1.12, 1.12);
 	transition: all 0.25s ease;
 	.use2-icon {
@@ -325,11 +309,6 @@ form#new_product {
 		margin-left: 10px;
 	}
 }
-
-
-/* TESTING OVER */
-
-
 
 	.button-use {
 		text-align:right;
@@ -366,12 +345,10 @@ form#new_product {
 	}
 
 	.reviews {
-
 		.comment {
 			font-weight:300;
 			font-size:16px;
 		}
-
 		.reviewer-info {
 			margin-top:10px;
 			text-align:right;
@@ -380,7 +357,6 @@ form#new_product {
 		}
 
 	}
-
 	.reviews a {
 		color:#000000;
 		font-weight: 600;
@@ -394,7 +370,6 @@ form#new_product {
 	.wants {
 		margin-left:15px;
 	}
-
 }
 
 /* Small Devices, Tablets -------------------------------------------------------- */
@@ -471,8 +446,6 @@ form#new_product {
 		margin-left:-40px;
 	}
 
-
-
 		.review-info p {
 			margin:0px;
 			padding:0px;
@@ -485,8 +458,6 @@ form#new_product {
 			.star-rating img {
 				max-width:100%;
 			}
-
-
 
 				.product-row {
 					margin: 30px 0px 30px 0px;
@@ -529,12 +500,11 @@ form#new_product {
 
 				.product-row:hover {
 					.product-image {
-						-ms-transform: scale(1.05, 1.05); /* IE 9 */
-						-webkit-transform: scale(1.05, 1.05); /* Safari */
+						-ms-transform: scale(1.05, 1.05);
+						-webkit-transform: scale(1.05, 1.05);
 						-moz-transform: scale(1.05, 1.05);
 						transition: all 0.25s ease;
 					}
-
 				}
 
 				.rating {
@@ -592,17 +562,13 @@ form#new_product {
 						margin-top: -5px;
 					}
 				}
-
 				.use-button, .use-button-logged-out {
 					margin-top: 20px;
 					float: left;
 				}
-
 }
 
 @media screen and (min-width: 960px) {
-
-
 	.look-product {
 		img {
 			max-width: 250px;

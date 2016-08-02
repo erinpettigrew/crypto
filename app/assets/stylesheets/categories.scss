@@ -26,8 +26,8 @@
 		}
 		.category-row:hover {
 			.category-image {
-				-ms-transform: scale(1.05, 1.05); /* IE 9 */
-				-webkit-transform: scale(1.05, 1.05); /* Safari */
+				-ms-transform: scale(1.05, 1.05);
+				-webkit-transform: scale(1.05, 1.05);
 				-moz-transform: scale(1.05, 1.05);
 				transition: all 0.25s ease;
 			}
