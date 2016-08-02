@@ -1,4 +1,4 @@
-# encoding: utf-8 
+# encoding: utf-8
 #PhotoUploader is for user provided photos of Products, they are a nested resource inside Products
 
 class PhotoUploader < CarrierWave::Uploader::Base

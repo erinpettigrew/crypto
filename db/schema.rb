@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160802134114) do
+ActiveRecord::Schema.define(version: 20160802135214) do
 
   create_table "answers", force: :cascade do |t|
     t.string   "content"
@@ -117,6 +117,7 @@ ActiveRecord::Schema.define(version: 20160802134114) do
     t.integer  "user_id"
     t.integer  "theme_id"
     t.string   "link"
+    t.integer  "uses_count"
   end
 
   add_index "products", ["category_id"], name: "index_products_on_category_id"
