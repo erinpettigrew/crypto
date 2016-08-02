@@ -1,3 +1,8 @@
+<% title @category.name + ' on Looklove' %>
+<% description 'Shopping and product guide to ' + @category.name %>
+<% keywords @category.name + ', skincare, cosmetics, makeup, beauty, products, reviews, community, forum, posts' %>
+
+
 <%= render partial: 'meta', locals: { category: @category } %>
 <!-- <%= render 'products/search' %> -->
 <div class="page">
