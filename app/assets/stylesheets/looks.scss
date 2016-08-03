@@ -13,6 +13,12 @@
       border-bottom: 1px dotted silver;
     }
   }
+  .look-row:hover {
+    -ms-transform: scale(1.02, 1.02);
+    -webkit-transform: scale(1.02, 1.02);
+    -moz-transform: scale(1.02, 1.02);
+    transition: all 0.25s ease;
+  }
 
   /* SHOW PAGE */
   	.look-product {
