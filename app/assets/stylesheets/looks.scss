@@ -81,6 +81,23 @@
   .look-product {
     min-height: 280px;
   }
+  .look {
+    .image {
+      height: 150px;
+      overflow: hidden;
+    }
+    .image img {
+      width: 100%;
+    }
+    .description {
+      padding-bottom: 0px;
+      border-bottom: 0px;
+    }
+    .header {
+      padding-bottom: 30px;
+      border-bottom: 1px dotted silver;
+    }
+  }
 }
 
 @media screen and (min-width: 960px) {

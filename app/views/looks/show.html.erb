@@ -3,9 +3,15 @@
 <% keywords @look.title + ', skincare, cosmetics, makeup, beauty, products, reviews, community, forum, posts' %>
 
 <div class="look">
-  <div class="image"><%= image_tag(@look.image) %></div>
-    <h1><%= @look.title %></h1>
-    <div class="description"><%= @look.description %></div>
+  <div class="row header">
+    <div class="col-xs-12 col-sm-4">
+    <div class="image"><%= image_tag(@look.image) %></div>
+  </div>
+  <div class="col-xs-12 col-sm-8">
+      <h1><%= @look.title %></h1>
+      <div class="description"><%= @look.description %></div>
+    </div>
+  </div>
 <%= render partial: 'looks/look_product', collection: @look.products, as: :product %>
 </div>
 
