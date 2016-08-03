@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160802135214) do
+ActiveRecord::Schema.define(version: 20160803015241) do
 
   create_table "answers", force: :cascade do |t|
     t.string   "content"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 20160802135214) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.string   "image"
   end
 
   add_index "looks", ["slug"], name: "index_looks_on_slug", unique: true

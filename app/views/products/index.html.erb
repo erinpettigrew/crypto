@@ -8,6 +8,12 @@
 
 <div class="front-page">
   <div class="row">
+
+<div class="col-xs-12 col-sm-12">
+  <div class="title">Looks</div>
+    <%= render partial: 'looks/look_row', collection: Look.last(9), as: :look %>
+</div>
+
 <div class="col-xs-12 col-sm-6">
   <div class="title">Recently</div>
   <div class="row activity-index">
@@ -20,10 +26,8 @@
     <% end %>
   </div>
 </div>
-<div class="col-xs-12 col-sm-6">
-  <div class="title">Collections</div>
-  <%= render partial: 'looks/look_row', collection: Look.last(9), as: :look %>
-</div>
+
+
 </div>
 <div class="category-index">
   <div class="title">Categories</div>

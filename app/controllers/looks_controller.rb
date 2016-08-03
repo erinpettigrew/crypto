@@ -13,7 +13,7 @@ class LooksController < ApplicationController
   end
 
   def look_params
-    params.require(:look).permit(:title, :description, :user_id)
+    params.require(:look).permit(:title, :description, :user_id, :image)
   end
 
 
