@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get '/availabilities', to: 'availabilities#show'
-  get '/insta', to: 'products#show', :id => '320'
+  get '/insta', to: 'looks#show', :id => '4'
   resources :posts
   resources :themes
   resources :skin_types
