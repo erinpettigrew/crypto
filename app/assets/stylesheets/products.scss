@@ -15,6 +15,12 @@
 		border-bottom: 1px dotted silver;
 	}
 
+	.buy-button {
+		margin-top: 20px;
+		margin-left: 0px;
+		float: left;
+	}
+
 form#new_product {
 	padding: 30px;
 	box-shadow: 1px 1px 3px silver;
@@ -332,6 +338,11 @@ form#new_product {
 
 @media screen and (min-width: 768px) {
 
+	.buy-button {
+		margin-left:20px;
+		margin-top: 20px;
+		float: left;
+	}
 
 	.sorts a {
 			margin-left: 15px;
@@ -497,7 +508,7 @@ form#new_product {
 						float: right;
 					}
 					.product-show-use-button {
-						float:left; 
+						float:left;
 						margin-top: -5px;
 					}
 				}
@@ -505,6 +516,7 @@ form#new_product {
 					margin-top: 20px;
 					float: left;
 				}
+
 }
 
 @media screen and (min-width: 960px) {
