@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/clutch', to: 'looks#show', :id => '20'
   get '/eyes', to: 'looks#show', :id => '19'
   get '/burning-man', to: 'looks#show', :id => '18'
+  get '/rose', to: 'looks#show', :id => '9'
   resources :posts
   resources :themes
   resources :skin_types
