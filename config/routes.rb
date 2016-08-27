@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/eyes', to: 'looks#show', :id => '19'
   get '/burning-man', to: 'looks#show', :id => '18'
   get '/rose', to: 'looks#show', :id => '9'
+  get '/blush', to: 'looks#show', :id => '14'
   resources :posts
   resources :themes
   resources :skin_types
