@@ -35,6 +35,10 @@ class ProductsController < ApplicationController
     @review = Review.new
   end
 
+  def new
+    @product = Product.new
+  end
+
   def like
     type = params[:type]
     if type == 'like'
@@ -82,10 +86,6 @@ class ProductsController < ApplicationController
         else
           redirect_to :back, notice: 'Nothing happened.'
         end
-      end
-
-      def new
-        @product = Product.new
       end
 
       def edit
