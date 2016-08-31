@@ -42,29 +42,29 @@ class ProductImporter
 
   def process_merchant
     # handle specific merchant cases
-    if @input_url.include?("amazon.com")
-      @merchant = "Amazon"
-      @canonical_url = @data.css('link[rel=canonical]')[0].attribute('href').value
-      set_general_properties
-      return
-    end
-
-    unless @canonical_url.nil?
-      if @canonical_url.include?("www.sephora.com")
-        @merchant = "Sephora"
-        set_sephora_properties
-      end
-
-      if @canonical_url.include?("www.ulta.com")
-        @merchant = "Ulta"
-        set_ulta_properties
-      end
-
-      if @canonical_url.include?("bluemercury.com")
-        @merchat = "Blue Mercury"
-        set_general_properties
-      end
-    end
+    # if @input_url.include?("amazon.com")
+    #   @merchant = "Amazon"
+    #   @canonical_url = @data.css('link[rel=canonical]')[0].attribute('href').value
+    #   set_general_properties
+    #   return
+    # end
+    #
+    # unless @canonical_url.nil?
+    #   if @canonical_url.include?("www.sephora.com")
+    #     @merchant = "Sephora"
+    #     set_sephora_properties
+    #   end
+    #
+    #   if @canonical_url.include?("www.ulta.com")
+    #     @merchant = "Ulta"
+    #     set_ulta_properties
+    #   end
+    #
+    #   if @canonical_url.include?("bluemercury.com")
+    #     @merchat = "Blue Mercury"
+    #     set_general_properties
+    #   end
+    # end
 
     # handle general merchant case
     if @remote_image.nil?
