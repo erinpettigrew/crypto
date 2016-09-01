@@ -45,15 +45,15 @@ Rails.application.configure do
   #Ensure that mail is sent in development
   config.action_mailer.perform_deliveries = true
 
-    # 
-    # config.after_initialize do
-    #   Bullet.enable = true
-    #   Bullet.alert = true
-    #   Bullet.bullet_logger = true
-    #   Bullet.console = true
-    # #  Bullet.growl = true
-    #   Bullet.rails_logger = true
-    #   Bullet.add_footer = true
-    # end
+    
+    config.after_initialize do
+      Bullet.enable = true
+      Bullet.alert = true
+      Bullet.bullet_logger = true
+      Bullet.console = true
+    #  Bullet.growl = true
+      Bullet.rails_logger = true
+      Bullet.add_footer = true
+    end
 
 end

@@ -1,7 +1,5 @@
 /* Custom, iPhone Retina -------------------------------------------------------- */
 @media screen and (min-width: 320px) {
-
-
   .nav-search {
     display: inline;
     input#search {
@@ -14,12 +12,11 @@
       font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
       font-weight: 100;
       font-style: italic;
-      // border-left: 1px solid black;
       background: FEFCFF; /* For browsers that do not support gradients */
-background: -webkit-linear-gradient(left, #EFE8F2 , #FEFCFF); /* For Safari 5.1 to 6.0 */
-background: -o-linear-gradient(right, #EFE8F2, #FEFCFF); /* For Opera 11.1 to 12.0 */
-background: -moz-linear-gradient(right, #EFE8F2, #FEFCFF); /* For Firefox 3.6 to 15 */
-background: linear-gradient(to right, #EFE8F2 , #FEFCFF); /* Standard syntax */
+      background: -webkit-linear-gradient(left, #EFE8F2 , #FEFCFF); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(right, #EFE8F2, #FEFCFF); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(right, #EFE8F2, #FEFCFF); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(to right, #EFE8F2 , #FEFCFF); /* Standard syntax */
     }
     input#search:hover {
       background-color: #FCF6FF;
@@ -85,7 +82,6 @@ background: linear-gradient(to right, #EFE8F2 , #FEFCFF); /* Standard syntax */
 }
 
 /* Small Devices, Tablets -------------------------------------------------------- */
-
 @media screen and (min-width: 768px) {
   .nav-search {
     input#search {

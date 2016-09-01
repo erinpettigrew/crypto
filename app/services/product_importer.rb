@@ -1,7 +1,7 @@
 class ProductImporter
 
   attr_reader :input_url
-  attr_accessor :data, :merchant, :brand, :name, :remote_image, :hosted_image, :canonical_url
+  attr_accessor :data, :merchant, :brand, :name, :remote_image, :hosted_image, :canonical_url, :link
 
   def initialize(input_url)
     @input_url = input_url
@@ -9,6 +9,7 @@ class ProductImporter
 
   def import
     get_properties
+    set_link
     process_merchant
     return_properties
   end
@@ -31,31 +32,39 @@ class ProductImporter
     end
   end
 
+  def set_link
+    if @canonical_url.present?
+      @link = @canonical_url
+    else
+      @link = @input_url
+    end
+  end
+
   def process_merchant
     # handle specific merchant cases
-    if @input_url.include?("amazon.com")
-      @merchant = "Amazon"
-      @canonical_url = @data.css('link[rel=canonical]')[0].attribute('href').value
-      set_general_properties
-      return
-    end
-
-    unless @canonical_url.nil?
-      if @canonical_url.include?("www.sephora.com")
-        @merchant = "Sephora"
-        set_sephora_properties
-      end
-
-      if @canonical_url.include?("www.ulta.com")
-        @merchant = "Ulta"
-        set_ulta_properties
-      end
-
-      if @canonical_url.include?("bluemercury.com")
-        @merchat = "Blue Mercury"
-        set_general_properties
-      end
-    end
+    # if @input_url.include?("amazon.com")
+    #   @merchant = "Amazon"
+    #   @canonical_url = @data.css('link[rel=canonical]')[0].attribute('href').value
+    #   set_general_properties
+    #   return
+    # end
+    #
+    # unless @canonical_url.nil?
+    #   if @canonical_url.include?("www.sephora.com")
+    #     @merchant = "Sephora"
+    #     set_sephora_properties
+    #   end
+    #
+    #   if @canonical_url.include?("www.ulta.com")
+    #     @merchant = "Ulta"
+    #     set_ulta_properties
+    #   end
+    #
+    #   if @canonical_url.include?("bluemercury.com")
+    #     @merchat = "Blue Mercury"
+    #     set_general_properties
+    #   end
+    # end
 
     # handle general merchant case
     if @remote_image.nil?
@@ -102,7 +111,8 @@ class ProductImporter
     { product_brand: @brand,
       product_name: @name,
       image: @remote_image,
-      category_id: 1
+      category_id: 1,
+      link: @link
     }
   end
 

@@ -1,0 +1,4 @@
+<div class="col-xs-12 col-sm-12">
+  <div class="title">Looks</div>
+    <%= render partial: 'looks/look_row', collection: Look.all.shuffle, as: :look %>
+</div>

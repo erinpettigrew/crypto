@@ -144,6 +144,7 @@ function parseLink(link) {
 
     $('input#product_product_brand').val(data.product_brand)
     $('textarea#product_product_name').val(data.product_name)
+    $('input#product_link').val(data.link)
     handleImage(data.image)
   })
 }

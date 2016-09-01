@@ -63,6 +63,6 @@ end
   :recoverable, :rememberable, :trackable, :validatable
 
   def pic
-    avatar.nil? ? "https://s3.amazonaws.com/productbase/hearts/black-heart.jpeg" : avatar.image
+    avatar.nil? ? "https://s3.amazonaws.com/productbase/hearts/black-heart.jpeg" : avatar.image.med_thumb
   end
 end

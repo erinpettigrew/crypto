@@ -1,5 +1,5 @@
 class Use < ActiveRecord::Base
-	belongs_to :product
+	belongs_to :product, counter_cache: :uses_count
 	belongs_to :user
 
 	validates :user_id, uniqueness: {

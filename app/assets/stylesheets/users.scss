@@ -70,13 +70,17 @@
 	.activity-index {
 		border-bottom: 1px dotted silver;
 		padding-bottom: 20px;
+		margin: 5%;
 	}
 	.activity-row {
 		text-align:center;
 		padding-bottom:20px;
 		text-align: left;
 		position:relative;
+		margin-bottom: 20px;
 		z-index: 0;
+		border: 1px solid #f0f0f0;
+		border-radius: 10px;
 		border-bottom: 1px dotted #f0f0f0;
 		font-size: 17px;
 		.activity-header {
@@ -109,8 +113,8 @@
 		}
 		.activity-image img {
 			float: right;
-	    max-height: 120px;
-	    max-width: 120px;
+	    max-height: 110px;
+	    max-width: 110px;
 	    margin-left: 20px;
 		}
 		.rating {
@@ -160,7 +164,12 @@
 	}
 
 	.activity-row {
-		height: 320px;
+		height: 200px;
+		.activity-image img {
+			max-height: 100px;
+			max-width: 125px;
+			margin-left: 20px;
+		}
 	}
 	.activity-row:nth-child(11) {
 		border-bottom: 0px;
@@ -173,18 +182,18 @@
 /* Medium devices (desktops, 992px and up) ---------------------------------------*/
 @media screen and (min-width: 992px) {
 	.activity-row {
-			height: 260px;
+			height: 180px;
 		}
 }
 
 @media screen and (min-width: 1024px) {
 	.activity-row {
-		height: 240px;
+		height: 180px;
 	}
 }
 
 @media screen and (min-width: 1200px) {
 	.activity-row {
-		height: 220px;
+		height: 180px;
 	}
 }

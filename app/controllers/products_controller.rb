@@ -26,13 +26,17 @@ class ProductsController < ApplicationController
     # recent_questions = Question.includes( [user: :avatar]).last(4)
     recent_reviews = Review.includes( [user: :avatar], :product).last(12)
     recent_uses = Use.includes( { :user => :avatar }, :product).last(16)
-    @activity = (recent_reviews + recent_uses).sort_by(&:created_at).reverse.first(12)
+    @activity = (recent_reviews + recent_uses).sort_by(&:created_at).reverse.first(10)
     # @popular_products = Product.find(Product.joins(:uses).group('products.id').order("count(*) desc").limit(3).ids)
     @recent_posts = Post.all.order(created_at: :desc).includes(user: :avatar).take(3)
   end
 
   def show
     @review = Review.new
+  end
+
+  def new
+    @product = Product.new
   end
 
   def like
@@ -84,10 +88,6 @@ class ProductsController < ApplicationController
         end
       end
 
-      def new
-        @product = Product.new
-      end
-
       def edit
       end
 
@@ -97,7 +97,6 @@ class ProductsController < ApplicationController
         @product.user_id = current_user.id
         @product.category_id = 1
         @product.theme_id = @product.category.theme_id
-
         respond_to do |format|
           if @product.save
             format.html { redirect_to @product, notice: 'Product was successfully created.' }
@@ -154,7 +153,7 @@ class ProductsController < ApplicationController
         end
 
         def product_params
-          params.require(:product).permit(:product_brand, :product_name, :image, :category_id, :user_id, :ingredients, :theme_id)
+          params.require(:product).permit(:product_brand, :product_name, :image, :category_id, :user_id, :ingredients, :theme_id, :link)
         end
 
       end

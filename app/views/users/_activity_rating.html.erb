@@ -1,4 +1,4 @@
-<div class="activity-row col-xs-12 col-sm-6">
+<div class="activity-row col-xs-12">
   <div class="col-xs-3">
     <div class="small-avatar activity-avatar"><%= link_to image_tag(review.user.pic), review.user %></div>
     </div>
@@ -8,7 +8,7 @@
     <div class="user-name"><%= link_to review.user.user_name, review.user %></div> rated
     <div class="product-brand"><%= link_to review.product.product_brand, review.product %></div> <div class="product-name"><%= link_to truncate(review.product.product_name, length: 40), review.product %></div>
     </div>
-    <div class="activity-image"><%= link_to image_tag(review.product.image), review.product %></div>
+    <div class="activity-image"><%= link_to image_tag(review.product.image.small_thumb), review.product %></div>
     <%= render_rating_stars(review.rating) %>
     <br/><%= truncate(review.comment, length: 75) %>
     <div class="feed-timestamp"> <%= time_ago_in_words(review.created_at).gsub('about','') %> ago</div>
