@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/burning-man', to: 'looks#show', :id => '18'
   get '/rose', to: 'looks#show', :id => '9'
   get '/blush', to: 'looks#show', :id => '14'
+  get '/products/newadmin', to: 'products#newadmin'
   resources :posts
   resources :themes
   resources :skin_types

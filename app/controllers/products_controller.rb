@@ -39,6 +39,11 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
+  def newadmin
+    @product = Product.new
+    @categories = Category.all
+  end
+
   def like
     type = params[:type]
     if type == 'like'
