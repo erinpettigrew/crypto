@@ -10,12 +10,12 @@
 
   <div class="row">
 
-<!-- <div class="col-xs-12 col-sm-12">
-  <div class="title">Looks</div>
-    <%= render partial: 'looks/look_row', collection: Look.all.sample(12), as: :look %>
-</div> -->
-
 <div class="col-xs-12 col-sm-12">
+  <div class="title">Looks</div>
+    <%= render partial: 'looks/look_row', collection: Look.last(3), as: :look %>
+</div>
+
+<!-- <div class="col-xs-12 col-sm-12">
   <div class="title">Recently</div>
   <div class="row activity-index">
     <% @activity.each do |activity| %>
@@ -26,8 +26,8 @@
       <% end %>
     <% end %>
   </div>
-</div>
->>>>>>> 74644ed8871c7d42ecdb4c6e8143447b02389123
+</div> -->
+
 
 
 </div>
