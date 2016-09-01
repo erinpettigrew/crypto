@@ -1,13 +1,13 @@
 <% title 'looklove, reviews of new beauty products' %>
 <% description 'Reviews and photos of the best in new skincare and cosmetics products' %>
 <% keywords 'the best beauty products, reviews, community, forum, posts, asian beauty, korean beauty, skincare' %>
-<%= render 'add' %>
+<!-- render add partial here -->
 
 <div class="page">
-<%= render 'products/form', locals: { product: @product } %>
+<!-- <%= render 'products/form', locals: { product: @product } %> -->
 
 <div class="front-page">
-<div class="title">Recently</div>
+<!-- <div class="title">Recently</div>
 <div class="row activity-index">
   <% @activity.each do |activity| %>
     <% if activity.is_a? (Use) %>
@@ -16,7 +16,9 @@
       <%= render partial: "users/activity_rating", locals: { review: activity } %>
     <% end %>
   <% end %>
-</div>
+</div> -->
+
+<div class="title">Looks</div>
 
 <div class="category-index">
   <div class="title">Categories</div>
@@ -37,8 +39,8 @@
   </div>
 </div>
 
-<div class="title">Reads</div>
-<%= render partial: 'posts/post_tile', collection: @recent_posts, as: :post %>
+<!-- <div class="title">Reads</div>
+<%= render partial: 'posts/post_tile', collection: @recent_posts, as: :post %> -->
 
 </div>
 </div>
