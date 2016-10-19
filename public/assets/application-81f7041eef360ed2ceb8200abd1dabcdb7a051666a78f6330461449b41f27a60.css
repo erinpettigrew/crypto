@@ -1,0 +1,1998 @@
+/* line 2, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/brands.scss */
+.brands .letter {
+  display: block;
+  font-weight: bold;
+  font-style: italic;
+}
+/* line 7, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/brands.scss */
+.brands .list {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px dotted silver;
+}
+/* line 12, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/brands.scss */
+.brands .list:last-child {
+  border-bottom: 0px;
+}
+
+/* line 16, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/brands.scss */
+.brands a {
+  color: #000000;
+  font-size: 140%;
+  text-decoration: underline;
+}
+/* Custom, iPhone Retina -------------------------------------------------------- */
+@media screen and (min-width: 320px) {
+  /* line 5, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/categories.scss */
+  .category-index .category-row {
+    text-align: center;
+    padding-top: 20px;
+    height: 160px;
+  }
+  /* line 10, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/categories.scss */
+  .category-index .category-row .category-name {
+    font-weight: 500;
+  }
+  /* line 12, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/categories.scss */
+  .category-index .category-row .category-name .counter {
+    display: inline;
+    background-color: #e5e5e5;
+    font-size: 75%;
+  }
+  /* line 18, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/categories.scss */
+  .category-index .category-row .category-image {
+    text-align: center;
+    margin-right: -10px;
+  }
+  /* line 22, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/categories.scss */
+  .category-index .category-row .category-image img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-bottom: 5px;
+  }
+  /* line 29, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/categories.scss */
+  .category-index .category-row:hover .category-image {
+    -ms-transform: scale(1.05, 1.05);
+    -webkit-transform: scale(1.05, 1.05);
+    -moz-transform: scale(1.05, 1.05);
+    transition: all 0.25s ease;
+  }
+  /* line 35, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/categories.scss */
+  .category-index .category-row:hover .category-name {
+    text-decoration: underline;
+  }
+
+  /* line 40, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/categories.scss */
+  .category-index a {
+    color: #000000;
+  }
+
+  /* line 43, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/categories.scss */
+  .category-show-header {
+    text-align: left;
+    width: 100%;
+  }
+  /* line 46, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/categories.scss */
+  .category-show-header .add-button {
+    float: right;
+    margin-top: -52px;
+  }
+}
+/* Small Devices, Tablets -------------------------------------------------------- */
+@media screen and (min-width: 768px) {
+  /* line 56, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/categories.scss */
+  .category-index .category-row {
+    margin-bottom: 30px;
+    height: 175px;
+  }
+  /* line 61, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/categories.scss */
+  .category-index .category-row .category-image img {
+    max-height: 120px;
+    max-width: 120px;
+    margin-bottom: 5px;
+  }
+}
+/* Custom, iPhone Retina -------------------------------------------------------- */
+@media screen and (min-width: 320px) {
+  /* line 5, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .jumbotron {
+    background-color: #ffffff;
+    text-align: center;
+  }
+  /* line 8, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .jumbotron h2 {
+    color: #000000;
+    font-weight: 300;
+  }
+  /* line 12, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .jumbotron h3 {
+    color: #000000;
+    font-weight: 200;
+  }
+  /* line 16, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .jumbotron h4 {
+    font-weight: 200;
+  }
+
+  /* line 21, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .index-panel {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  /* line 24, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .index-panel .p {
+    font-weight: regular;
+    font-size: 110%;
+  }
+  /* line 28, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .index-panel h2 {
+    font-size: 140%;
+    font-weight: 300;
+  }
+  /* line 32, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .index-panel .user-avatar {
+    text-align: right;
+  }
+  /* line 35, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .index-panel .welcome-message {
+    text-align: left;
+  }
+  /* line 38, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .index-panel .welcome-message a {
+    color: #000000;
+  }
+  /* line 41, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .index-panel .add-button {
+    text-align: left;
+  }
+
+  /* line 46, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .table th, .table td {
+    border-top: 0px solid #f2f3f4 !important;
+  }
+
+  /* line 50, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .title {
+    text-align: center;
+    margin-left: 0px;
+    color: white;
+    width: 100px;
+    font-weight: 500;
+    font-size: 90%;
+    padding: 2px;
+    margin: 30px 0 30px 0;
+    border: 1px dotted white;
+    background: black;
+    text-transform: uppercase;
+    -webkit-transform: skew(-5deg);
+    -moz-transform: skew(-5deg);
+    -o-transform: skew(-5deg);
+  }
+
+  /* line 67, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .table-header {
+    text-align: center;
+  }
+
+  /* line 73, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .navbar-default .container-fluid {
+    background-color: #ffffff;
+  }
+  /* line 75, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .navbar-default .container-fluid .navbar-nav > li > a {
+    color: #000000;
+    font-size: 16px;
+    font-weight: regular;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    height: 34px;
+  }
+  /* line 83, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .navbar-default .container-fluid .navbar-brand {
+    color: #000000;
+    font-size: 36px;
+    font-weight: bold;
+    font-style: italic;
+  }
+  /* line 89, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .navbar-default .container-fluid .nav-login {
+    background: black;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding-bottom: 5px;
+    margin-left: 20px;
+  }
+  /* line 96, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .navbar-default .container-fluid li.nav-login a {
+    color: white;
+    margin-top: -10px;
+    margin-left: -7px;
+    padding-right: 12px;
+    padding-left: 20px;
+    font-style: italic;
+  }
+  /* line 104, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .navbar-default .container-fluid li.nav-login:hover {
+    background: #D81361;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding-bottom: 5px;
+    margin-left: 20px;
+  }
+
+  /* line 114, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .container-fluid {
+    padding: 0px 10px;
+  }
+
+  /* line 118, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .new-product-panel {
+    width: 100%;
+    text-align: center;
+    height: auto;
+    margin: 20px 0px 20px 0px;
+  }
+
+  /* line 125, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .button-using {
+    text-align: center;
+    margin: 30px 0px 0px 0px;
+  }
+
+  /* line 130, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .product-panel {
+    text-align: center;
+  }
+
+  /* line 134, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .product-image img {
+    max-width: 50%;
+  }
+
+  /* line 138, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .star-rating-product-page {
+    margin: 12px 0px 12px 0px;
+  }
+
+  /* line 142, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .star-rating-product-page img {
+    width: 20px;
+  }
+
+  /* line 146, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .ingredients-list {
+    font-size: 75%;
+  }
+
+  /* line 150, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .star-rating-index img {
+    width: 12px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+  }
+
+  /* line 156, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .footer-container {
+    position: relative;
+    margin-top: -90px;
+    height: 90px;
+    clear: both;
+  }
+
+  /* line 163, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .footer-nav {
+    background-color: #ffffff;
+    border-top: 1px dotted silver;
+    color: #000000;
+    text-align: center;
+    height: 90px;
+    margin: 120px 0px 0px 0px;
+    padding: 10px 30px 0px 30px;
+  }
+  /* line 172, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .footer-nav p {
+    font-weight: normal;
+    font-size: 85%;
+  }
+  /* line 177, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .footer-nav a {
+    color: #000000;
+    text-decoration: underline;
+  }
+
+  /* line 183, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .big-avatar img {
+    max-width: 35%;
+    border-radius: 50%;
+  }
+
+  /* line 188, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .small-avatar {
+    margin: 10px 15px 15px 0px;
+    display: inline;
+  }
+
+  /* line 193, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .small-avatar img {
+    max-width: 65px;
+    border-radius: 50%;
+  }
+
+  /* line 198, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .tiny-avatar {
+    margin: 10px 0px 15px 0px;
+    margin-top: -8px;
+  }
+
+  /* line 203, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .tiny-avatar img {
+    max-width: 35px;
+    border-radius: 50%;
+  }
+
+  /* line 208, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .tiny-avatar-list {
+    margin: 10px 15px 15px 0px;
+    display: inline;
+  }
+
+  /* line 213, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .tiny-avatar-list img {
+    max-width: 35px;
+    border-radius: 50%;
+    border: 1px solid silver;
+  }
+
+  /* line 219, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .medium-avatar {
+    margin: 10px 15px 15px 0px;
+  }
+
+  /* line 223, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .medium-avatar img {
+    max-width: 75px;
+    border-radius: 50%;
+  }
+
+  /* line 228, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .extra-medium-avatar {
+    margin: 10px 15px 15px 0px;
+  }
+
+  /* line 232, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .extra-medium-avatar img {
+    max-width: 120px;
+    border-radius: 50%;
+  }
+
+  /* line 237, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .large-avatar {
+    margin: 10px 15px 15px 0px;
+  }
+
+  /* line 241, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .large-avatar img {
+    max-width: 100px;
+    border-radius: 50%;
+  }
+
+  /* line 246, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .product-panel-form {
+    margin: 25px 0px 25px 0px;
+  }
+  /* line 249, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .product-panel-form h4 {
+    margin: 10px 0px 0px 0px;
+  }
+  /* line 253, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .product-panel-form img {
+    margin: 5px;
+    max-width: 70%;
+    min-width: 75px;
+  }
+}
+/* Small Devices, Tablets -------------------------------------------------------- */
+@media screen and (min-width: 768px) {
+  /* line 265, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  html, body {
+    height: 100%;
+  }
+
+  /* line 267, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .meta-container {
+    min-height: 100%;
+  }
+
+  /* line 271, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .main-container {
+    overflow: auto;
+    padding-bottom: 100px;
+  }
+
+  /* line 276, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .jumbotron {
+    background-color: #ffffff;
+    text-align: center;
+  }
+  /* line 279, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .jumbotron h2 {
+    color: #000000;
+    font-weight: bold;
+  }
+  /* line 283, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .jumbotron h3 {
+    color: #000000;
+  }
+
+  /* line 289, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .navbar-default .container-fluid {
+    padding-top: 5px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+  }
+  /* line 293, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .navbar-default .container-fluid .navbar-nav > li > a {
+    font-weight: regular;
+  }
+
+  /* line 301, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .container-fluid {
+    padding: 10px 100px;
+  }
+
+  /* line 305, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .new-product-panel {
+    width: 100%;
+    text-align: center;
+    height: 100px;
+    padding: 0px;
+  }
+
+  /* line 312, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .product-panel {
+    text-align: left;
+  }
+  /* line 313, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .product-panel .product-image img {
+    max-width: 300px;
+    min-width: 120px;
+  }
+
+  /* line 320, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .button-using {
+    text-align: left;
+    margin: 20px 0px 10px 0px;
+  }
+
+  /* line 325, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .star-rating-product-page {
+    margin: 12px 0px 12px 0px;
+  }
+
+  /* line 329, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .star-rating-product-page img {
+    width: 20px;
+  }
+
+  /* line 333, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .star-rating-index img {
+    width: 20px;
+    margin: 0px 0px 10px 0px;
+  }
+
+  /* line 338, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .footer-container {
+    position: relative;
+    margin-top: -90px;
+    height: 90px;
+    clear: both;
+  }
+
+  /* line 345, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .footer-nav {
+    border-top: 1px dotted silver;
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    height: 90px;
+    margin: 0px;
+    padding: 10px 30px 0px 30px;
+  }
+  /* line 354, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .footer-nav p {
+    font-weight: normal;
+    font-size: 110%;
+  }
+  /* line 359, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .footer-nav a {
+    color: #000000;
+    text-decoration: underline;
+  }
+
+  /* line 365, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .product-panel-form {
+    text-align: center;
+    margin: 25px 0px 50px 0px;
+  }
+  /* line 371, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .product-panel-form h4 {
+    margin: 10px 0px 0px 0px;
+  }
+  /* line 375, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/custom.css.scss */
+  .product-panel-form img {
+    margin: 5px;
+    max-width: 125px;
+    min-width: 65px;
+  }
+}
+/* line 1, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/login.scss */
+.login-button {
+  margin-top: -18px;
+  float: right;
+}
+
+/* line 5, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/login.scss */
+.devise-links {
+  float: left;
+  font-size: 90%;
+  font-style: italic;
+}
+@media screen and (min-width: 320px) {
+  /* line 3, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/looks.scss */
+  .look {
+    margin-left: 5%;
+  }
+  /* line 5, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/looks.scss */
+  .look .image {
+    width: 95%;
+  }
+  /* line 8, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/looks.scss */
+  .look .image img {
+    width: 100%;
+  }
+  /* line 11, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/looks.scss */
+  .look .description {
+    padding-bottom: 30px;
+    border-bottom: 1px dotted silver;
+  }
+
+  /* line 16, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/looks.scss */
+  .look-row:hover {
+    -ms-transform: scale(1.02, 1.02);
+    -webkit-transform: scale(1.02, 1.02);
+    -moz-transform: scale(1.02, 1.02);
+    transition: all 0.25s ease;
+  }
+
+  /* SHOW PAGE */
+  /* line 24, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/looks.scss */
+  .look-product {
+    text-align: center;
+    min-height: 250px;
+  }
+  /* line 27, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/looks.scss */
+  .look-product .brand {
+    font-weight: 600;
+    font-style: italic;
+  }
+  /* line 31, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/looks.scss */
+  .look-product img {
+    max-width: 100%;
+    max-height: 175px;
+    margin: 20px 0px;
+  }
+  /* line 36, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/looks.scss */
+  .look-product img:hover {
+    -ms-transform: scale(1.05, 1.05);
+    -webkit-transform: scale(1.05, 1.05);
+    -moz-transform: scale(1.05, 1.05);
+    transition: all 0.25s ease;
+  }
+
+  /* INDEX PAGE */
+  /* line 45, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/looks.scss */
+  .look-row {
+    border-bottom: 1px dotted #f0f0f0;
+    border: 1px solid #f0f0f0;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 0px;
+    text-align: center;
+    width: 300px;
+    overflow: hidden;
+  }
+  /* line 54, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/looks.scss */
+  .look-row .look-image {
+    height: 220px;
+    overflow: hidden;
+  }
+  /* line 58, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/looks.scss */
+  .look-row .look-image img {
+    max-width: 300px;
+  }
+  /* line 61, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/looks.scss */
+  .look-row h1 {
+    margin-top: -150px;
+  }
+
+  /* line 66, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/looks.scss */
+  .look-row-product {
+    text-align: center;
+    margin: 0px 0px 20px 0px;
+  }
+  /* line 69, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/looks.scss */
+  .look-row-product .brand {
+    font-weight: 600;
+    font-style: italic;
+  }
+  /* line 73, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/looks.scss */
+  .look-row-product img {
+    max-width: 60px;
+    max-height: 60px;
+  }
+  /* line 77, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/looks.scss */
+  .look-row-product img:hover {
+    -ms-transform: scale(1.05, 1.05);
+    -webkit-transform: scale(1.05, 1.05);
+    -moz-transform: scale(1.05, 1.05);
+    transition: all 0.25s ease;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 87, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/looks.scss */
+  .look-product {
+    min-height: 280px;
+  }
+  /* line 90, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/looks.scss */
+  .look-product img {
+    max-height: 225px;
+  }
+
+  /* line 97, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/looks.scss */
+  .look .image {
+    height: 150px;
+    overflow: hidden;
+  }
+  /* line 101, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/looks.scss */
+  .look .image img {
+    width: 100%;
+  }
+  /* line 104, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/looks.scss */
+  .look .description {
+    padding-bottom: 0px;
+    border-bottom: 0px;
+  }
+  /* line 108, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/looks.scss */
+  .look .header {
+    padding-bottom: 30px;
+    border-bottom: 1px dotted silver;
+  }
+}
+@media screen and (min-width: 960px) {
+  /* line 116, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/looks.scss */
+  .look-product {
+    min-height: 450px;
+  }
+  /* line 118, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/looks.scss */
+  .look-product img {
+    max-height: 285px;
+  }
+}
+/* line 1, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/pages.scss */
+.login {
+  height: 100%;
+  width: 100%;
+  background: white;
+  /* For non-gradient browsers */
+  background: -webkit-linear-gradient(left, #FEFCFF, white);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #FEFCFF, white);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #FEFCFF, white);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #FEFCFF, white);
+  /* Standard syntax */
+}
+
+/* line 11, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/pages.scss */
+.jumbotron h1 {
+  font-family: 'Questrial', sans-serif;
+  font-weight: 600;
+}
+
+/* line 16, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/pages.scss */
+.invite {
+  font-size: 16px;
+  font-weight: 300;
+  text-align: center;
+}
+/* Custom, iPhone Retina -------------------------------------------------------- */
+@media screen and (min-width: 320px) {
+  /* line 5, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/posts.scss */
+  .post {
+    font-size: 18px;
+  }
+  /* line 7, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/posts.scss */
+  .post .post-image {
+    text-align: center;
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  /* line 15, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/posts.scss */
+  .post .post-image img {
+    border: 1px solid #f0f0f0;
+    margin-top: -20%;
+  }
+  /* line 19, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/posts.scss */
+  .post .post-source {
+    font-style: italic;
+    font-weight: bold;
+  }
+  /* line 23, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/posts.scss */
+  .post .post-title {
+    margin-bottom: 20px;
+    text-decoration: underline;
+  }
+}
+/* Small Devices, Tablets -------------------------------------------------------- */
+@media screen and (min-width: 768px) {
+  /* line 34, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/posts.scss */
+  .post .post-title {
+    height: 65px;
+  }
+
+  /* line 38, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/posts.scss */
+  .post:hover {
+    -ms-transform: scale(1.01, 1.01);
+    -webkit-transform: scale(1.01, 1.01);
+    -moz-transform: scale(1.01, 1.01);
+    transition: all 0.25s ease;
+  }
+}
+/* Custom, iPhone Retina -------------------------------------------------------- */
+@media screen and (min-width: 320px) {
+  /* line 5, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .sorts {
+    padding-bottom: 15px;
+    text-align: right;
+    margin-top: -52px;
+  }
+  /* line 9, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .sorts a {
+    margin-left: 10px;
+    text-decoration: underline;
+  }
+
+  /* line 15, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .add-row {
+    border-bottom: 1px dotted silver;
+  }
+
+  /* line 19, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .buy-button {
+    margin-top: 20px;
+    margin-left: 0px;
+    float: left;
+  }
+
+  /* line 25, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  form#new_product {
+    padding: 30px;
+    box-shadow: 1px 1px 3px silver;
+    border-radius: 10px;
+    display: none;
+  }
+  /* line 30, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  form#new_product .product-form-image-display img {
+    max-height: 300px;
+    max-width: 300px;
+    padding-bottom: 20px;
+  }
+  /* line 35, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  form#new_product input#product_product_brand {
+    background-color: #FDFCFE;
+    border-bottom: 0px;
+    font-weight: 600;
+    box-shadow: none;
+    color: black;
+    font-size: 25px;
+  }
+  /* line 44, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  form#new_product textarea#product_product_name {
+    background-color: #FDFCFE;
+    border-bottom: 0px;
+    font-weight: 500;
+    box-shadow: none;
+    font-style: normal;
+  }
+  /* line 51, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  form#new_product .cancel {
+    float: right;
+  }
+
+  /* line 56, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .image-grid img {
+    max-height: 250px;
+    max-width: 250px;
+    padding: 10px;
+  }
+
+  /* line 61, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .image-grid img:hover {
+    -ms-transform: scale(1.05, 1.05);
+    -webkit-transform: scale(1.05, 1.05);
+    -moz-transform: scale(1.05, 1.05);
+    transition: all 0.25s ease;
+  }
+
+  /* line 68, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .share {
+    text-align: center;
+  }
+
+  /* line 71, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .share-text {
+    display: inline;
+    font-size: 110%;
+    font-weight: 100;
+    opacity: 1;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  }
+
+  /* line 79, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .share-button {
+    display: block;
+    margin: 20px auto;
+  }
+
+  /* line 84, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .fb-button {
+    display: block;
+    margin: 20px auto;
+    background: #3b5998;
+    border-color: #3b5998;
+    color: white;
+  }
+
+  /* line 92, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .fb-button:hover {
+    background: #355088;
+    border-color: #355088;
+    color: white;
+  }
+
+  /* line 98, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-row {
+    margin: 30px 0px 30px 0px;
+    height: 118px;
+    border-bottom: 1px dotted #f0f0f0;
+    overflow: hidden;
+  }
+  /* line 103, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-row .product-image {
+    text-align: left;
+  }
+  /* line 106, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-row .product-image img {
+    max-height: 105px;
+    max-width: 100px;
+  }
+  /* line 110, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-row .product-brand {
+    font-size: 14px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-style: italic;
+  }
+  /* line 116, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-row .product-name {
+    font-size: 14px;
+  }
+  /* line 119, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-row .product-name a {
+    color: #000000;
+  }
+  /* line 122, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-row .user-count {
+    margin-top: 30px;
+    margin-right: 5%;
+    text-align: right;
+  }
+  /* line 126, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-row .user-count .count {
+    display: inline;
+    font-size: 110%;
+  }
+  /* line 131, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-row .user-count img {
+    margin-left: -40px;
+  }
+  /* line 134, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-row .review-info {
+    margin-top: 12px;
+  }
+
+  /* line 139, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-row:last-child {
+    border-bottom: 0px;
+  }
+
+  /* line 144, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-row:hover .product-image {
+    -ms-transform: scale(1.05, 1.05);
+    -webkit-transform: scale(1.05, 1.05);
+    -moz-transform: scale(1.05, 1.05);
+    transition: all 0.25s ease;
+  }
+
+  /* line 152, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-name {
+    display: inline;
+  }
+
+  /* line 156, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .rating {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 160%;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px dotted white;
+    text-align: center;
+    padding-top: 8px;
+    float: right;
+  }
+
+  /* line 170, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .rating-single {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    background-color: white;
+    color: black;
+    font-size: 160%;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px dotted black;
+    text-align: center;
+    padding-top: 8px;
+    float: right;
+  }
+
+  /* line 184, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-show {
+    padding: 30px 0px;
+    border-bottom: 1px dotted silver;
+    height: 100%;
+  }
+  /* line 188, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-show h1 {
+    font-size: 25px;
+    font-style: italic;
+    font-weight: bold;
+  }
+  /* line 193, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-show h2 {
+    font-size: 25px;
+    margin-top: 10px;
+  }
+  /* line 197, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-show .metalinks a {
+    text-decoration: underline;
+  }
+  /* line 200, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-show .ingredients-button {
+    text-decoration: underline;
+    color: black;
+  }
+  /* line 204, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-show .product-show-image {
+    text-align: center;
+  }
+  /* line 207, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-show .product-show-image img {
+    max-width: 55%;
+    max-height: 55%;
+  }
+  /* line 211, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-show .product-show-rating {
+    float: right;
+    padding-top: 32%;
+  }
+  /* line 215, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-show .product-show-use-button {
+    float: left;
+    margin-top: -5px;
+  }
+
+  /* line 221, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .discover-avatar {
+    display: inline;
+  }
+
+  /* line 228, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .want-button {
+    float: left;
+    margin-top: 90px;
+    margin-left: -200px;
+  }
+  /* line 232, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .want-button .want-text {
+    display: none;
+    font-style: italic;
+  }
+
+  /* line 237, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .want-button:hover {
+    -ms-transform: scale(1.12, 1.12);
+    -webkit-transform: scale(1.12, 1.12);
+    -moz-transform: scale(1.12, 1.12);
+    transition: all 0.25s ease;
+  }
+  /* line 242, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .want-button:hover .want-icon {
+    color: #D8137A;
+    background-color: #FEFCFF;
+  }
+  /* line 246, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .want-button:hover .want-text {
+    display: inline;
+    margin-left: 10px;
+  }
+
+  /* line 252, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .use2-button {
+    float: left;
+    margin-top: 90px;
+    margin-left: -200px;
+  }
+  /* line 256, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .use2-button .use2-text {
+    display: none;
+    font-style: italic;
+  }
+
+  /* line 261, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .use2-button:hover {
+    -ms-transform: scale(1.12, 1.12);
+    -webkit-transform: scale(1.12, 1.12);
+    -moz-transform: scale(1.12, 1.12);
+    transition: all 0.25s ease;
+  }
+  /* line 266, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .use2-button:hover .use2-icon {
+    color: #D8137A;
+    background-color: #FEFCFF;
+  }
+  /* line 270, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .use2-button:hover .use2-text {
+    display: inline;
+    margin-left: 10px;
+  }
+
+  /* line 276, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .button-use {
+    text-align: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  /* line 282, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .button-want {
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  /* line 288, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .ingredients-list {
+    font-size: 14px;
+    text-align: left;
+  }
+
+  /* line 293, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .ingredients-button {
+    font-size: 14px;
+    text-align: left;
+    display: inline;
+  }
+
+  /* line 299, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .ingredients-button:hover {
+    text-decoration: underline;
+  }
+
+  /* line 303, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .ingredients {
+    display: none;
+    font-size: 85%;
+    text-align: left;
+    padding-top: 20px;
+  }
+
+  /* line 311, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .reviews .comment {
+    font-weight: 300;
+    font-size: 16px;
+  }
+  /* line 315, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .reviews .reviewer-info {
+    margin-top: 10px;
+    text-align: right;
+    font-size: 90%;
+    font-weight: 200;
+  }
+
+  /* line 323, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .reviews a {
+    color: #000000;
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  /* line 329, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .uses {
+    margin-left: 15px;
+  }
+
+  /* line 333, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .wants {
+    margin-left: 15px;
+  }
+}
+/* Small Devices, Tablets -------------------------------------------------------- */
+@media screen and (min-width: 768px) {
+  /* line 342, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .buy-button {
+    margin-left: 20px;
+    margin-top: 20px;
+    float: left;
+  }
+
+  /* line 348, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .sorts a {
+    margin-left: 15px;
+  }
+
+  /* line 353, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .button-use {
+    text-align: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  /* line 359, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .add-row {
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* line 366, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .share {
+    padding: 3px 0px 3px 15px;
+    text-align: left;
+    padding-bottom: 10px;
+  }
+
+  /* line 372, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .share-button {
+    margin-top: 0px;
+    float: right;
+  }
+
+  /* line 377, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .fb-button {
+    margin-top: 0px;
+    float: right;
+  }
+
+  /* line 382, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .ingredients-list {
+    font-size: 14px;
+    text-align: left;
+  }
+
+  /* line 387, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .ingredients-button {
+    font-size: 14px;
+    text-align: left;
+  }
+
+  /* line 392, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .ingredients {
+    text-align: left;
+  }
+
+  /* line 396, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-list {
+    margin-left: -40px;
+  }
+
+  /* line 400, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .review-info p {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  /* line 405, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .star-rating {
+    text-align: center;
+  }
+
+  /* line 409, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .star-rating img {
+    max-width: 100%;
+  }
+
+  /* line 413, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-row {
+    margin: 30px 0px 30px 0px;
+    height: 118px;
+    overflow: hidden;
+  }
+  /* line 417, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-row .product-image {
+    text-align: left;
+  }
+  /* line 420, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-row .product-image img {
+    max-height: 100px;
+  }
+  /* line 423, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-row .product-brand {
+    font-size: 17px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-style: italic;
+  }
+  /* line 429, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-row .product-name {
+    font-size: 17px;
+  }
+  /* line 432, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-row .product-name a {
+    color: #000000;
+  }
+  /* line 435, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-row .user-count {
+    margin-top: 30px;
+    margin-right: 5%;
+    text-align: right;
+  }
+  /* line 439, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-row .user-count .count {
+    display: inline;
+    font-size: 110%;
+  }
+  /* line 444, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-row .user-count img {
+    margin-left: -40px;
+  }
+  /* line 447, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-row .review-info {
+    margin-top: 20px;
+  }
+
+  /* line 453, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-row:hover .product-image {
+    -ms-transform: scale(1.05, 1.05);
+    -webkit-transform: scale(1.05, 1.05);
+    -moz-transform: scale(1.05, 1.05);
+    transition: all 0.25s ease;
+  }
+
+  /* line 461, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .rating {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 160%;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px dotted white;
+    text-align: center;
+    padding-top: 8px;
+    float: right;
+  }
+
+  /* line 475, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .rating-single {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    background-color: white;
+    color: black;
+    font-size: 160%;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px dotted black;
+    text-align: center;
+    padding-top: 8px;
+    float: right;
+  }
+
+  /* line 489, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-show {
+    padding: 30px 0px;
+    border-bottom: 1px dotted silver;
+    min-height: 400px;
+  }
+  /* line 493, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-show h1 {
+    font-size: 25px;
+    font-style: italic;
+    font-weight: bold;
+  }
+  /* line 498, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-show h2 {
+    font-size: 25px;
+  }
+  /* line 501, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-show .product-show-image {
+    text-align: left;
+  }
+  /* line 504, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-show .product-show-image img {
+    max-width: 100%;
+    max-height: 340px;
+  }
+  /* line 508, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-show .product-show-rating {
+    float: right;
+  }
+  /* line 511, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .product-show .product-show-use-button {
+    float: left;
+    margin-top: -5px;
+  }
+
+  /* line 516, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
+  .use-button, .use-button-logged-out {
+    margin-top: 20px;
+    float: left;
+  }
+}
+/* line 1, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/review.scss */
+.new_review {
+  height: 225px;
+}
+/* line 5, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/review.scss */
+.new_review .review-button {
+  font-style: italic;
+  display: inline;
+  float: right;
+  margin-top: -18px;
+  vertical-align: middle;
+}
+
+/* line 14, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/review.scss */
+.review-card {
+  margin-bottom: 30px;
+}
+/* line 16, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/review.scss */
+.review-card .review-brand {
+  font-weight: bold;
+  font-style: italic;
+  display: inline;
+}
+/* line 21, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/review.scss */
+.review-card .review-name a {
+  text-decoration: underline;
+  display: inline;
+}
+
+/* line 27, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/review.scss */
+.review-row {
+  border-bottom: 1px dotted silver;
+  padding: 15px 0px;
+  display: block;
+}
+/* line 31, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/review.scss */
+.review-row .review-user-info {
+  text-align: left;
+  font-size: 85%;
+}
+/* line 35, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/review.scss */
+.review-row .review-user-info a {
+  text-decoration: underline;
+}
+
+/* line 39, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/review.scss */
+.review-row:last-child {
+  border-bottom: 0px;
+}
+/* Custom, iPhone Retina -------------------------------------------------------- */
+@media screen and (min-width: 320px) {
+  /* line 4, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/search.scss */
+  .nav-search {
+    display: inline;
+  }
+  /* line 6, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/search.scss */
+  .nav-search input#search {
+    width: 90%;
+    height: 36px;
+    font-size: 200%;
+    border: 0;
+    padding-left: 30px;
+    background-color: #FEFCFF;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+    background: FEFCFF;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #EFE8F2, #FEFCFF);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #EFE8F2, #FEFCFF);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #EFE8F2, #FEFCFF);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #EFE8F2, #FEFCFF);
+    /* Standard syntax */
+  }
+  /* line 22, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/search.scss */
+  .nav-search input#search:hover {
+    background-color: #FCF6FF;
+  }
+  /* line 25, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/search.scss */
+  .nav-search input#search:focus {
+    background-color: #FCF6FF;
+  }
+  /* line 28, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/search.scss */
+  .nav-search .nav-search-button {
+    font-style: italic;
+    display: inline;
+    margin-top: -5px;
+    vertical-align: middle;
+    border: none;
+    box-shadow: none;
+  }
+  /* line 35, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/search.scss */
+  .nav-search .nav-search-button .fa-search:before {
+    -webkit-text-stroke: 0px black;
+  }
+
+  /* line 42, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/search.scss */
+  .search {
+    padding-bottom: 20px;
+  }
+  /* line 44, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/search.scss */
+  .search input#search {
+    width: 100%;
+    height: 50px;
+    font-size: 200%;
+    border: 0;
+    border-bottom: 1px solid black;
+    padding-left: 30px;
+    background-color: #FEFCFF;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  /* line 56, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/search.scss */
+  .search input#search:hover {
+    background-color: #FCF6FF;
+  }
+  /* line 59, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/search.scss */
+  .search input#search:focus {
+    background-color: #FCF6FF;
+  }
+  /* line 62, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/search.scss */
+  .search .search-button {
+    font-style: italic;
+    display: inline;
+    float: right;
+    margin-top: -3px;
+    vertical-align: middle;
+  }
+  /* line 69, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/search.scss */
+  .search .guide-text {
+    display: none;
+    text-align: left;
+  }
+  /* line 73, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/search.scss */
+  .search .guide-text a {
+    color: #000000;
+    text-decoration: underline;
+  }
+
+  /* line 79, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/search.scss */
+  .search-fail {
+    font-size: 150%;
+    margin-top: 50px;
+  }
+}
+/* Small Devices, Tablets -------------------------------------------------------- */
+@media screen and (min-width: 768px) {
+  /* line 88, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/search.scss */
+  .nav-search input#search {
+    width: 180px;
+    font-size: 140%;
+    margin-top: 5px;
+    margin-left: 15px;
+  }
+
+  /* line 97, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/search.scss */
+  .search input#search {
+    font-size: 200%;
+  }
+  /* line 100, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/search.scss */
+  .search .guide-text {
+    text-align: left;
+    display: none;
+  }
+}
+@media screen and (min-width: 900px) {
+  /* line 109, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/search.scss */
+  .nav-search input#search {
+    width: 300px;
+    font-size: 165%;
+  }
+}
+@media screen and (min-width: 320px) {
+  /* line 2, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/theme.scss */
+  .theme-row {
+    border-bottom: 1px dotted silver;
+  }
+}
+/* Custom, iPhone Retina -------------------------------------------------------- */
+@media screen and (min-width: 320px) {
+  /* line 5, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .login-box {
+    padding-top: 10%;
+    text-align: center;
+  }
+  /* line 9, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .login-box .login-text h2 {
+    font-size: 300%;
+    font-weight: 600;
+    font-style: italic;
+  }
+  /* line 15, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .login-box .login-image {
+    padding-top: 20px;
+  }
+  /* line 18, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .login-box img {
+    max-height: 300px;
+  }
+  /* line 21, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .login-box .btn-facebook {
+    margin: 10px 0;
+  }
+
+  /* line 26, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .login-layer {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 3;
+    background: white;
+    padding: 30px;
+    box-shadow: 3px 3px 3px silver;
+  }
+  /* line 37, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .login-layer .fa-times {
+    float: right;
+    padding-bottom: 20px;
+    opacity: 0.5;
+  }
+
+  /* line 44, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .user-info {
+    text-align: center;
+    border-bottom: 1px dotted silver;
+    background-color: #FAFFFE;
+    padding: 4% 0% 5% 0%;
+    margin-top: 0px;
+  }
+
+  /* line 52, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .user-edit {
+    float: right;
+    margin-right: 2%;
+    position: relative;
+  }
+
+  /* line 58, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .form-text {
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 30px;
+  }
+
+  /* line 64, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .skin-info {
+    display: inline;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 85%;
+  }
+
+  /* line 71, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .activity-index {
+    border-bottom: 1px dotted silver;
+    padding-bottom: 20px;
+    margin: 5%;
+  }
+
+  /* line 76, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .activity-row {
+    text-align: center;
+    padding-bottom: 20px;
+    text-align: left;
+    position: relative;
+    margin-bottom: 20px;
+    z-index: 0;
+    border: 1px solid #f0f0f0;
+    border-radius: 10px;
+    border-bottom: 1px dotted #f0f0f0;
+    font-size: 17px;
+  }
+  /* line 87, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .activity-row .activity-header {
+    font-size: 17px;
+  }
+  /* line 90, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .activity-row .activity-avatar img {
+    margin-left: 0%;
+    margin-top: 30px;
+  }
+  /* line 94, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .activity-row .user-name {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 17px;
+    display: inline;
+  }
+  /* line 101, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .activity-row .feed-timestamp {
+    font-size: 75%;
+    color: silver;
+    font-style: italic;
+  }
+  /* line 106, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .activity-row .product-brand {
+    font-weight: 500;
+    font-style: italic;
+    display: inline;
+  }
+  /* line 111, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .activity-row .product-name {
+    display: inline;
+    text-decoration: underline;
+  }
+  /* line 115, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .activity-row .activity-image img {
+    float: right;
+    max-height: 110px;
+    max-width: 110px;
+    margin-left: 20px;
+  }
+  /* line 121, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .activity-row .rating {
+    margin-top: -30px;
+    position: relative;
+    z-index: 1;
+  }
+  /* line 126, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .activity-row .rating-single {
+    margin-top: -30px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* line 132, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .activity-row:hover {
+    background: FEFCFF;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #EFE8F2, #FEFCFF);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #EFE8F2, #FEFCFF);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #EFE8F2, #FEFCFF);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #EFE8F2, #FEFCFF);
+    /* Standard syntax */
+  }
+  /* line 139, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .activity-row:hover .activity-avatar img {
+    -ms-transform: scale(1.05, 1.05);
+    /* IE 9 */
+    -webkit-transform: scale(1.05, 1.05);
+    /* Safari */
+    -moz-transform: scale(1.05, 1.05);
+    transition: all 0.25s ease;
+  }
+  /* line 145, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .activity-row:hover .activity-image img {
+    -ms-transform: scale(1.05, 1.05);
+    /* IE 9 */
+    -webkit-transform: scale(1.05, 1.05);
+    /* Safari */
+    -moz-transform: scale(1.05, 1.05);
+    transition: all 0.25s ease;
+  }
+
+  /* line 152, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .activity-row:last-child {
+    border-bottom: 0px;
+  }
+}
+/* Small Devices, Tablets -------------------------------------------------------- */
+@media screen and (min-width: 768px) {
+  /* line 160, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .login-layer {
+    background: #fefcff;
+    width: 400px;
+    height: 650px;
+    border-radius: 15px;
+  }
+
+  /* line 167, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .activity-row {
+    height: 200px;
+  }
+  /* line 169, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .activity-row .activity-image img {
+    max-height: 100px;
+    max-width: 125px;
+    margin-left: 20px;
+  }
+
+  /* line 175, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .activity-row:nth-child(11) {
+    border-bottom: 0px;
+  }
+
+  /* line 178, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .activity-row:nth-child(odd) {
+    border-right: 1px dotted #f0f0f0;
+  }
+}
+/* Medium devices (desktops, 992px and up) ---------------------------------------*/
+@media screen and (min-width: 992px) {
+  /* line 185, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .activity-row {
+    height: 180px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  /* line 191, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .activity-row {
+    height: 180px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  /* line 197, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/users.scss */
+  .activity-row {
+    height: 180px;
+  }
+}
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any styles
+* defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+* file per style scope.
+*
+
+
+*/
+/* line 18, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/application.scss */
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+/* line 24, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/application.scss */
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 26, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/application.scss */
+a, a:hover {
+  color: black;
+}
+
+/*.page {
+  display: none;
+}*/
+/* line 34, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/application.scss */
+.badge {
+  float: right;
+  margin-top: -22px;
+  margin-right: 18px;
+}
+
+/* line 40, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/application.scss */
+.btn-primary {
+  background: #ffffff;
+  color: #000000;
+  border-color: #000000;
+  font-style: italic;
+}
+
+/* line 47, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/application.scss */
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+  background: white;
+  border-color: black;
+  color: black;
+}
+
+/* line 53, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/application.scss */
+.btn-info {
+  background: black;
+  border-color: black;
+  color: white;
+  font-style: italic;
+}
+
+/* line 60, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/application.scss */
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open > .dropdown-toggle.btn-info {
+  background: #D81361;
+  border-color: #D81361;
+  color: white;
+}
+
+/* line 66, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/application.scss */
+.btn-facebook {
+  background: #3b5998;
+  border-color: #3b5998;
+  color: white;
+}
+
+/* line 73, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/application.scss */
+.btn-facebook:hover, .btn-facebook:focus, .btn-facebook:active {
+  background: #4E69A2;
+  border-color: #4E69A2;
+  color: white;
+}
+
+/* line 79, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/application.scss */
+.login-devise {
+  display: none;
+}
+
+/* line 83, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/application.scss */
+input.form-control {
+  width: 100%;
+  height: 75px;
+  font-size: 200%;
+  border: 0;
+  border-bottom: 1px solid black;
+  padding-left: 25px;
+  background-color: #FEFCFF;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+  border-radius: 0px;
+}
+
+/* line 97, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/application.scss */
+input[type="text"]:focus, input[type="file"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
+  outline: 0;
+  border: none;
+  box-shadow: none;
+}
+
+/* line 103, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/application.scss */
+select {
+  width: 100%;
+  height: 75px;
+  font-size: 200%;
+  border: 0;
+  border-bottom: 1px solid black;
+  padding-left: 50px;
+  background-color: #FEFCFF;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+  border-radius: 0px;
+}
+
+/* line 117, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/application.scss */
+textarea.form-control {
+  width: 100%;
+  font-size: 175%;
+  border: 0;
+  border-bottom: 1px solid black;
+  padding-left: 25px;
+  background-color: #FEFCFF;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+  border-radius: 0px;
+}
+
+/* line 130, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/application.scss */
+label {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400;
+  font-size: 100%;
+}
+
+/* line 136, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/application.scss */
+.dropdown-menu li a:hover {
+  background: black;
+  color: white;
+  font-style: italic;
+}
+
+/* line 142, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/application.scss */
+.dropdown-toggle a:active {
+  background: white;
+}
+
+/* line 146, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/application.scss */
+.badge {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  background-color: black;
+  font-weight: Normal;
+}
+
+/* line 152, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/application.scss */
+h1 {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 100;
+  font-size: 250%;
+  font-style: italic;
+}
+
+/* line 159, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/application.scss */
+h3 {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 100;
+  font-size: 180%;
+  font-style: italic;
+}
+
+/* line 166, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/application.scss */
+.fa-search:before {
+  -webkit-text-stroke: 0.75px white;
+}
+
+/* line 170, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/application.scss */
+.fa-search:hover {
+  -ms-transform: scale(1.5, 1.5);
+  -webkit-transform: scale(1.5, 1.5);
+  -moz-transform: scale(1.5, 1.5);
+  transition: all 0.25s ease;
+  color: #13D8C6;
+}
+
+/* line 178, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/application.scss */
+.fa-plus:before {
+  -webkit-text-stroke: 0.75px white;
+}
+
+/* line 182, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/application.scss */
+.fa-plus:hover {
+  -ms-transform: scale(1.5, 1.5);
+  -webkit-transform: scale(1.5, 1.5);
+  -moz-transform: scale(1.5, 1.5);
+  transition: all 0.25s ease;
+  color: #13D8C6;
+}
+
+/* line 190, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/application.scss */
+.floater {
+  position: relative;
+  z-index: 2;
+}
