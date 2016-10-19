@@ -17,7 +17,7 @@
 
     <div class="col-xs-12 col-sm-12">
       <div class="title">Reviewed</div>
-        <% Review.includes(user: :avatar).last(2).each do |review| %>
+        <% Review.includes(user: :avatar).last(30).sample(2).each do |review| %>
           <div class="col-xs-12 col-sm-6 review-card">
             <div class="medium-avatar col-xs-3"><%= link_to image_tag(review.user.pic), review.user %></div>
             <%= truncate(review.comment, length: 120) %><br/>
