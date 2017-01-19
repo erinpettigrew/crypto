@@ -11,6 +11,19 @@
 	}
 }
 
+.review-card {
+	margin-bottom:30px;
+	.review-brand {
+		font-weight: bold;
+		font-style: italic;
+		display:inline;
+	}
+	.review-name a {
+		text-decoration:underline;
+		display:inline;
+	}
+}
+
 .review-row {
 	border-bottom: 1px dotted silver;
   padding: 15px 0px;

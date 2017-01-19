@@ -43,6 +43,24 @@ class Product < ActiveRecord::Base
 		ingredients.select { |ing| !ing.nil? }
 	end
 
+	def self.popular
+		Product.find(Product.joins(:uses).group('products.id').order("count(*) desc").limit(3).ids).shuffle
+	end
+
+	def self.most_wanted
+		Product.find(Product.joins(:wants).group('products.id').order("count(*) desc").limit(3).ids)
+	end
+
+	def self.best
+		best = []
+		Product.all.each do |product|
+			if product.average_rating == 5
+				best << product
+			end
+		end
+		best.take(3).shuffle
+	end
+
 	def recent_reviews
 		reviews.includes(:user => :avatar).order(created_at: :desc)
 	end
