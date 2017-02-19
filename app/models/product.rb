@@ -44,7 +44,7 @@ class Product < ActiveRecord::Base
 	end
 
 	def self.popular
-		Product.find(Product.joins(:uses).group('products.id').order("count(*) desc").limit(3).ids).shuffle
+		Product.find(Product.joins(:uses).group('products.id').order("count(*) desc").limit(10).ids).shuffle
 	end
 
 	def self.most_wanted
