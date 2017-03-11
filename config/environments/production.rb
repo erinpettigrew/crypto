@@ -25,7 +25,7 @@ Rails.application.configure do
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   # add this to fix CSS issue here: http://stackoverflow.com/questions/12719541/css-loading-locally-but-not-in-heroku-for-a-rails-app/18519233#18519233
-  config.serve_static_assets = true
+  config.serve_static_assets = false
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
