@@ -35,6 +35,8 @@
 			<div class="small-avatar" id="<%= user.id %>"><%= link_to image_tag(user.pic), user %></div>
 		<% end %>
 	</div>
+		<div class="title" id="about">About</div>
+		<%= @product.about %>
 		<div class="title" id="posts"><%= pluralize(@product.posts.count, "Video") %></div>
 		<%= render partial: "posts/post_tile", collection: @product.posts.shuffle, as: :post %>
 </div>
