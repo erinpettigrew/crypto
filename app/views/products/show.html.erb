@@ -36,7 +36,7 @@
 		<% end %>
 	</div>
 		<div class="title" id="posts"><%= pluralize(@product.posts.count, "Video") %></div>
-		<%= render partial: "posts/post_tile", collection: @product.posts, as: :post %>
+		<%= render partial: "posts/post_tile", collection: @product.posts.shuffle, as: :post %>
 </div>
 
 <div class="col-xs-12 col-sm-7">
