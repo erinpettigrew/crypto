@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get '/availabilities', to: 'availabilities#show'
   get '/insta', to: 'looks#show', :id => '18'
   get '/sparkle', to: 'looks#show', :id => '6'
