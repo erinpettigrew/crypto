@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160803015241) do
+ActiveRecord::Schema.define(version: 20170311193751) do
 
   create_table "answers", force: :cascade do |t|
     t.string   "content"
@@ -105,6 +105,16 @@ ActiveRecord::Schema.define(version: 20160803015241) do
     t.datetime "updated_at", null: false
     t.string   "source"
   end
+
+  create_table "product_posts", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "post_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "product_posts", ["post_id"], name: "index_product_posts_on_post_id"
+  add_index "product_posts", ["product_id"], name: "index_product_posts_on_product_id"
 
   create_table "products", force: :cascade do |t|
     t.string   "product_brand"
