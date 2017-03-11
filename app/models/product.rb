@@ -13,6 +13,8 @@ class Product < ActiveRecord::Base
 	has_many :wanted_by, through: :wants, source: :user
 	has_many :look_products
 	has_many :looks, through: :look_products
+	has_many :product_posts
+	has_many :posts, through: :product_posts
 	validates :product_brand, :product_name, :image, :category, presence: true
 
 	extend FriendlyId
