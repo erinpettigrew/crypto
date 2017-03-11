@@ -13,7 +13,7 @@
 			<h1><%= link_to @product.product_brand, search_products_path(brand: @product.product_brand) %></h1>
 			<h2><%= @product.product_name %></h2>
 		</div>
-		<div class="col-xs-3 col-sm-1">
+		<div class="hidden-xs col-sm-1">
 			<div class="product-show-rating">
 				<%= render partial: 'rating', locals: { rating: @product.average_rating } %>
 			</div>
