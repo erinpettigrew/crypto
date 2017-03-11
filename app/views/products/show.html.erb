@@ -27,18 +27,19 @@
 </div>
 
 <div class="col-xs-12 col-sm-5 users">
-	<% if @product.used_by.any? %>
-		<div class="title" id="users"><%= pluralize(@product.used_by.count, "User") %></div>
-	<% end %>
-	<div class="user-matrix">
-		<% @product.used_by.includes(:avatar).each do |user| %>
-			<div class="small-avatar" id="<%= user.id %>"><%= link_to image_tag(user.pic), user %></div>
-		<% end %>
-	</div>
 		<div class="title" id="about">About</div>
 		<%= @product.about %>
+		<% if @product.used_by.any? %>
+			<div class="title" id="users"><%= pluralize(@product.used_by.count, "User") %></div>
+		<% end %>
+		<div class="user-matrix">
+			<% @product.used_by.includes(:avatar).each do |user| %>
+				<div class="small-avatar" id="<%= user.id %>"><%= link_to image_tag(user.pic), user %></div>
+			<% end %>
+		</div>
 		<div class="title" id="posts"><%= pluralize(@product.posts.count, "Video") %></div>
 		<%= render partial: "posts/post_tile", collection: @product.posts.shuffle, as: :post %>
+
 </div>
 
 <div class="col-xs-12 col-sm-7">
