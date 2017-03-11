@@ -6,14 +6,14 @@
 <div class="page">
 <div class="product-show">
 	<div class="row">
-		<div class="col-xs-12 col-sm-5">
+		<div class="col-xs-4 col-sm-5">
 			<div class="product-show-image"><%= image_tag @product.image_url %></div>
 		</div>
-		<div class="col-xs-10 col-sm-6">
+		<div class="col-xs-8 col-sm-6">
 			<h1><%= link_to @product.product_brand, search_products_path(brand: @product.product_brand) %></h1>
 			<h2><%= @product.product_name %></h2>
 		</div>
-		<div class="col-xs-2 col-sm-1">
+		<div class="col-xs-3 col-sm-1">
 			<div class="product-show-rating">
 				<%= render partial: 'rating', locals: { rating: @product.average_rating } %>
 			</div>
@@ -21,7 +21,7 @@
 
 	<%= render partial: "metadata", locals: { product: @product } %>
 	<% if @product.ingredients.present? %>
-		<div class="col-xs-12 col-sm-7 ingredients"><%= @product.ingredients.titleize %></p></div>
+		<div class="col-xs-6 col-sm-7 ingredients"><%= @product.ingredients.titleize %></p></div>
 	<% end %>
 	</div>
 </div>
