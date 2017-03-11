@@ -208,8 +208,8 @@ form#new_product {
 			text-align: center;
 		}
 		.product-show-image img {
-			max-width: 55%;
-			max-height: 55%;
+			max-width: 25%;
+			max-height: 25%;
 		}
 		.product-show-rating {
 			float: right;
@@ -343,7 +343,6 @@ form#new_product {
 @media screen and (min-width: 768px) {
 
 	.buy-button {
-		margin-left:20px;
 		margin-top: 20px;
 		float: left;
 	}
@@ -492,7 +491,7 @@ form#new_product {
 				.product-show {
 					padding: 30px 0px;
 					border-bottom: 1px dotted silver;
-					min-height: 400px;
+					min-height: 275px;
 					h1 {
 						font-size: 25px;
 						font-style: italic;
@@ -506,7 +505,7 @@ form#new_product {
 					}
 					.product-show-image img {
 						max-width: 100%;
-						max-height: 340px;
+						max-height: 200px;
 					}
 					.product-show-rating {
 						float: right;

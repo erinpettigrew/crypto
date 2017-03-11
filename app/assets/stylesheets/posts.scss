@@ -1,15 +1,12 @@
 /* Custom, iPhone Retina -------------------------------------------------------- */
 @media screen and (min-width: 320px) {
-
   .post {
+    margin-top:20px;
   }
 }
 
 /* Small Devices, Tablets -------------------------------------------------------- */
 @media screen and (min-width: 768px) {
-
-  .post {
-  }
   .post:hover {
     -ms-transform: scale(1.01, 1.01);
     -webkit-transform: scale(1.01, 1.01);
