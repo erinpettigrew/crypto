@@ -40,6 +40,8 @@
 		<div class="title" id="posts"><%= pluralize(@product.posts.count, "Look") %></div>
 		<%= render partial: "posts/post_tile", collection: @product.posts.shuffle, as: :post %>
 
+		<div class="title" id="related">Also Good</div>
+		<%= render partial: 'product_row', collection: @product.category.products.last(3), as: :product %>
 </div>
 
 <div class="col-xs-12 col-sm-7">
