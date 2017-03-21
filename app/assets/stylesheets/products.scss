@@ -2,10 +2,6 @@
 /* Custom, iPhone Retina -------------------------------------------------------- */
 @media screen and (min-width: 320px) {
 
-	h1,h2 {
-		font-size: 20%;
-	}
-
 	.sorts {
 		padding-bottom: 15px;
 		text-align: right;
@@ -117,7 +113,7 @@ form#new_product {
 			font-style: italic;
 		}
 		.product-name {
-			font-size:1px;
+			font-size:14px;
 		}
 		.product-name a {
 			color: #000000;
