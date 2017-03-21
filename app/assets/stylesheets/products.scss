@@ -2,6 +2,10 @@
 /* Custom, iPhone Retina -------------------------------------------------------- */
 @media screen and (min-width: 320px) {
 
+	h1,h2 {
+		font-size: 20%;
+	}
+
 	.sorts {
 		padding-bottom: 15px;
 		text-align: right;
@@ -17,7 +21,7 @@
 	}
 
 	.buy-button {
-		margin-left: 0px;
+		margin: 10px 20px 0px 0px;
 		float: right;
 	}
 
@@ -113,7 +117,7 @@ form#new_product {
 			font-style: italic;
 		}
 		.product-name {
-			font-size:14px;
+			font-size:1px;
 		}
 		.product-name a {
 			color: #000000;
@@ -167,7 +171,6 @@ form#new_product {
 		border: 1px dotted white;
 		text-align:center;
 		padding-top: 8px;
-		float: right;
 	}
 
 	.rating-single {
@@ -199,6 +202,9 @@ form#new_product {
 			font-size: 25px;
 			margin-top: 10px;
 		}
+		.metalinks {
+			margin-top: 25px;
+		}
 		.metalinks a {
 			text-decoration: underline;
 		}
@@ -214,7 +220,15 @@ form#new_product {
 			max-width: 100%;
 		}
 		.product-show-rating {
-			float: right;
+			margin-top: 20px;
+			margin-left: -20px;
+			.rating {
+				float: left;
+			}
+		}
+		.product-show-rating-text {
+			float: left;
+			margin-top: 25px;
 		}
 		.product-show-use-button {
 			float:left;
@@ -348,15 +362,9 @@ form#new_product {
 
 @media screen and (min-width: 768px) {
 
-	.buy-button {
-		margin-top: 20px;
-		float: left;
-	}
-
 	.sorts a {
 			margin-left: 15px;
 	}
-
 
 	.button-use {
 		text-align:right;
@@ -477,7 +485,6 @@ form#new_product {
 					border: 1px dotted white;
 					text-align:center;
 					padding-top: 8px;
-					float: right;
 				}
 
 				.rating-single {
@@ -518,10 +525,6 @@ form#new_product {
 						max-width: 100%;
 						max-height: 200px;
 						margin-top:20px;
-					}
-					.product-show-rating {
-						float: right;
-						margin-right:20px;
 					}
 					.product-show-use-button {
 						float:left;

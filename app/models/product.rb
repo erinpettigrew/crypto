@@ -76,14 +76,16 @@ class Product < ActiveRecord::Base
 	end
 
 	def average_rating
-		if self.rating.present? && self.rating.blank?
-			joint_rating = reviews.average(:rating).round(2)
-		elsif !self.rating.present?
-			joint_rating = reviews.average(:rating).round(2)
-		else
-			joint_rating = (self.rating + reviews.average(:rating).round(2))/2
+		if self.rating.present? && !self.reviews.any?
+			joint_rating = self.rating
+		elsif !self.rating.present? && self.reviews.any?
+			joint_rating = reviews.average(:rating).round(1)
+		elsif self.rating.present? && self.reviews.any?
+			joint_rating = ((self.rating + reviews.average(:rating))/2).round(1)
+		elsif self.rating.blank?
+			joint_rating = 0
 		end
-		reviews.blank? && self.rating.blank? ? 0 : joint_rating
+		joint_rating
 	end
 
 	def swatches

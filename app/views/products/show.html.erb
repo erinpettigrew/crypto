@@ -13,11 +13,8 @@
 			<h1><%= link_to @product.product_brand, search_products_path(brand: @product.product_brand) %></h1>
 			<h2><%= @product.product_name %></h2>
 		</div>
-		<div class="col-xs-7 col-sm-2">
-			<div class="product-show-rating">
-				<%= render partial: 'rating', locals: { rating: @product.average_rating } %>
-			Average score from Looklove members and 13 beauty sites
-			</div>
+		<div class="hidden-xs col-sm-2">
+			<%= render partial: "buy", locals: { product: @product } %>
 		</div>
 
 	<%= render partial: "metadata", locals: { product: @product } %>
@@ -29,7 +26,9 @@
 
 <div class="col-xs-12 col-sm-5 users">
 	</p></br>
+	<% unless @product.about.blank? %>
 		<%= @product.about.html_safe %>
+	<% end %>
 
 		<!-- <% if @product.used_by.any? %>
 			<div class="title" id="users"><%= pluralize(@product.used_by.count, "User") %></div>
@@ -39,11 +38,15 @@
 				<div class="small-avatar" id="<%= user.id %>"><%= link_to image_tag(user.pic), user %></div>
 			<% end %>
 		</div> -->
-		<div class="title" id="posts"><%= pluralize(@product.swatches.count, "Swatch") %></div>
-		<%= render partial: "posts/post_tile", collection: @product.swatches.shuffle, as: :post %>
+		<% unless @product.swatches.blank? %>
+			<div class="title" id="posts"><%= pluralize(@product.swatches.count, "Swatch") %></div>
+			<%= render partial: "posts/post_tile", collection: @product.swatches.shuffle, as: :post %>
+		<% end %>
 
-		<div class="title"><%= pluralize(@product.tutorials.count, "Tutorial") %></div>
-		<%= render partial: "posts/post_tile", collection: @product.tutorials.shuffle, as: :post %>
+		<% unless @product.tutorials.blank? %>
+			<div class="title"><%= pluralize(@product.tutorials.count, "Tutorial") %></div>
+			<%= render partial: "posts/post_tile", collection: @product.tutorials.shuffle, as: :post %>
+		<% end %>
 
 		<div class="title">More <%= @product.category.name.pluralize %></div>
 		<div class="related">
@@ -62,7 +65,7 @@
 	</div>
 </div>
 </div>
-<!-- <%= render partial: 'admin', locals: { product: @product } %> -->
+
 
 <%= render partial: "devise/sessions/form_layer" %>
 

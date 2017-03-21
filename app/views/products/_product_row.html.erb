@@ -46,7 +46,7 @@
 
       <div class="hidden-xs col-sm-2 review-info">
         <% unless product.average_rating == 0 %>
-          <%= render partial: 'products/rating', locals: {rating: product.average_rating} %>
+          <%= render partial: 'products/rating', locals: {product: product} %>
         <% end %>
       </div>
     </div>
