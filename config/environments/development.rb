@@ -45,7 +45,7 @@ Rails.application.configure do
   #Ensure that mail is sent in development
   config.action_mailer.perform_deliveries = true
 
-    # 
+    #
     # config.after_initialize do
     #   Bullet.enable = true
     #   Bullet.alert = true
