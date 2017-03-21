@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170311230758) do
+ActiveRecord::Schema.define(version: 20170321003027) do
 
   create_table "answers", force: :cascade do |t|
     t.string   "content"
@@ -130,6 +130,7 @@ ActiveRecord::Schema.define(version: 20170311230758) do
     t.string   "link"
     t.integer  "uses_count"
     t.string   "about"
+    t.decimal  "rating"
   end
 
   add_index "products", ["category_id"], name: "index_products_on_category_id"

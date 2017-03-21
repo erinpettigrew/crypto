@@ -76,7 +76,22 @@ class Product < ActiveRecord::Base
 	end
 
 	def average_rating
-		reviews.blank? ? 0 : reviews.average(:rating).round(2)
+		if self.rating.present? && self.rating.blank?
+			joint_rating = reviews.average(:rating).round(2)
+		elsif !self.rating.present?
+			joint_rating = reviews.average(:rating).round(2)
+		else
+			joint_rating = (self.rating + reviews.average(:rating).round(2))/2
+		end
+		reviews.blank? && self.rating.blank? ? 0 : joint_rating
+	end
+
+	def swatches
+		posts.where("url like ?", "%" + "instagram" + "%")
+	end
+
+	def tutorials
+		posts.where("url like ?", "%" + "youtube" + "%")
 	end
 
 end

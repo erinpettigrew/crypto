@@ -9,13 +9,14 @@
 		<div class="col-xs-4 col-sm-5">
 			<div class="product-show-image"><%= image_tag @product.image_url %></div>
 		</div>
-		<div class="col-xs-8 col-sm-6">
+		<div class="col-xs-8 col-sm-5">
 			<h1><%= link_to @product.product_brand, search_products_path(brand: @product.product_brand) %></h1>
 			<h2><%= @product.product_name %></h2>
 		</div>
-		<div class="hidden-xs col-sm-1">
+		<div class="col-xs-7 col-sm-2">
 			<div class="product-show-rating">
 				<%= render partial: 'rating', locals: { rating: @product.average_rating } %>
+			Average score from Looklove members and 13 beauty sites
 			</div>
 		</div>
 
@@ -28,19 +29,23 @@
 
 <div class="col-xs-12 col-sm-5 users">
 	</p></br>
-		<%= @product.about %>
-		<% if @product.used_by.any? %>
+		<%= @product.about.html_safe %>
+
+		<!-- <% if @product.used_by.any? %>
 			<div class="title" id="users"><%= pluralize(@product.used_by.count, "User") %></div>
 		<% end %>
 		<div class="user-matrix">
 			<% @product.used_by.includes(:avatar).each do |user| %>
 				<div class="small-avatar" id="<%= user.id %>"><%= link_to image_tag(user.pic), user %></div>
 			<% end %>
-		</div>
-		<div class="title" id="posts"><%= pluralize(@product.posts.count, "Look") %></div>
-		<%= render partial: "posts/post_tile", collection: @product.posts.shuffle, as: :post %>
+		</div> -->
+		<div class="title" id="posts"><%= pluralize(@product.swatches.count, "Swatch") %></div>
+		<%= render partial: "posts/post_tile", collection: @product.swatches.shuffle, as: :post %>
 
-		<div class="title">Also Good</div>
+		<div class="title"><%= pluralize(@product.tutorials.count, "Tutorial") %></div>
+		<%= render partial: "posts/post_tile", collection: @product.tutorials.shuffle, as: :post %>
+
+		<div class="title">More <%= @product.category.name.pluralize %></div>
 		<div class="related">
 			<%= render partial: 'product_row', collection: @product.category.products.last(3), as: :product %>
 		</div>
