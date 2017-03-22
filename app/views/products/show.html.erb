@@ -25,8 +25,8 @@
 </div>
 
 <div class="col-xs-12 col-sm-5 users">
-	</p></br>
 	<% unless @product.about.blank? %>
+		<div class="title">Guide</div>
 		<%= @product.about.html_safe %>
 	<% end %>
 
