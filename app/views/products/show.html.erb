@@ -30,14 +30,14 @@
 		<%= sanitize @product.about, tags: %w(strong p a href), attributes: %w(href) %>
 	<% end %>
 
-		<!-- <% if @product.used_by.any? %>
+		<% if @product.used_by.any? %>
 			<div class="title" id="users"><%= pluralize(@product.used_by.count, "User") %></div>
 		<% end %>
 		<div class="user-matrix">
 			<% @product.used_by.includes(:avatar).each do |user| %>
 				<div class="small-avatar" id="<%= user.id %>"><%= link_to image_tag(user.pic), user %></div>
 			<% end %>
-		</div> -->
+		</div>
 		<% unless @product.swatches.blank? %>
 			<div class="title" id="posts"><%= pluralize(@product.swatches.count, "Swatch") %></div>
 			<%= render partial: "posts/post_tile", collection: @product.swatches.shuffle, as: :post %>
