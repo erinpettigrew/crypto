@@ -13,7 +13,7 @@
     <% if user_signed_in? %>
       <div class="col-xs-12 col-sm-12">
         <div class="title">Yours</div>
-          <% current_user.used_products.last(10).each do |product| %>
+          <% current_user.used_products.last(10).reverse.each do |product| %>
             <%= render partial: 'product_row', locals: { product: product } %>
           <% end %>
       </div>
