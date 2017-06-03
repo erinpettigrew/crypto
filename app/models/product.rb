@@ -40,7 +40,7 @@ class Product < ActiveRecord::Base
 
 	def self.ingredients
 		ingredients = Product.all.pluck(:ingredients).join
-		ingredients = ingredients.gsub("\n", "").gsub("\r", "")
+		ingredients = ingredients.gsub("\n", "").gsub("\r", "").gsub("*", "").downcase
 		ingredients = ingredients.split(", ").uniq
 		ingredients.select { |ing| !ing.nil? }.sort_by(&:downcase)
 	end
