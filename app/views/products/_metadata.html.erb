@@ -8,12 +8,19 @@
     </div>
     <% end %>
   </div>
-  <div class="rating-container col-xs-8 col-sm-7">
+  <div class="rating-container col-xs-8 col-sm-5">
     <div class="product-show-rating col-xs-4 col-sm-2">
       <%= render partial: "rating", locals: { product: @product } %>
     </div>
     <div class="product-show-rating-text col-xs-8 col-sm-10">
-      Average score from Looklove and 13 beauty sites
+      <% if product.rating.blank? %>
+        Average score from Looklove members
+      <% else %>
+        Average score from Looklove and 13 beauty sites
+      <% end %>
     </div>
+  </div>
+  <div class="col-xs-8 col-sm-5">
+    <%= render partial: "uses/button", locals: { product: @product, user: current_user } %>
   </div>
 </div>
