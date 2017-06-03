@@ -29,7 +29,7 @@
 
   <div class="col-xs-12 col-sm-12">
     <div class="title">Lists</div>
-      <% Look.take(3).each do |look| %>
+      <% Look.all.sample(3).each do |look| %>
         <%= render partial: 'looks/look_row', locals: {look: look} %>
       <% end %>
     </div>
