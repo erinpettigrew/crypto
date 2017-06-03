@@ -27,7 +27,7 @@
 <div class="col-xs-12 col-sm-5 users">
 	<% unless @product.about.blank? %>
 		<div class="title">Guide</div>
-		<%= @product.about.html_safe %>
+		<%= sanitize @product.about, tags: %w(strong p a href), attributes: %w(href) %>
 	<% end %>
 
 		<!-- <% if @product.used_by.any? %>
