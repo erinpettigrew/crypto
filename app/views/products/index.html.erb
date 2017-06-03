@@ -1,4 +1,4 @@
-<% title 'looklove, reviews of new beauty products' %>
+<% title 'Looklove, reviews of new beauty products' %>
 <% description 'Reviews and photos of the best in new skincare and cosmetics products' %>
 <% keywords 'the best beauty products, reviews, community, forum, posts, asian beauty, korean beauty, skincare' %>
 
@@ -13,7 +13,7 @@
     <% if user_signed_in? %>
       <div class="col-xs-12 col-sm-12">
         <div class="title">Yours</div>
-          <% current_user.used_products.last(10).reverse.each do |product| %>
+          <% current_user.used_products.last(5).reverse.each do |product| %>
             <%= render partial: 'product_row', locals: { product: product } %>
           <% end %>
       </div>
@@ -21,11 +21,20 @@
 
     <div class="col-xs-12 col-sm-12">
       <div class="title">Popular</div>
-        <% Product.popular.each do |product| %>
+        <% Product.popular.take(5).each do |product| %>
           <%= render partial: 'product_row', locals: { product: product } %>
         <% end %>
     </div>
-  </div>
+
+
+  <div class="col-xs-12 col-sm-12">
+    <div class="title">Lists</div>
+      <% Look.take(3).each do |look| %>
+        <%= render partial: 'looks/look_row', locals: {look: look} %>
+      <% end %>
+    </div>
+
+</div><!-- /row -->
 
     <div class="category-index">
       <div class="title">Categories</div>
