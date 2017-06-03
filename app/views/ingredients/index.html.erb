@@ -1,0 +1,7 @@
+<div class="title">
+  <%= pluralize(@ingredients.count, "Ingredient") %>
+</div>
+
+<% @ingredients.each do |ingredient| %>
+  <%= link_to ingredient, search_products_path(search: ingredient) %></br>
+<% end %>

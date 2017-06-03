@@ -41,8 +41,8 @@ class Product < ActiveRecord::Base
 	def self.ingredients
 		ingredients = Product.all.pluck(:ingredients).join
 		ingredients = ingredients.gsub("\n", "").gsub("\r", "")
-		ingredients = ingredients.split(", ")
-		ingredients.select { |ing| !ing.nil? }
+		ingredients = ingredients.split(", ").uniq
+		ingredients.select { |ing| !ing.nil? }.sort_by(&:downcase)
 	end
 
 	def self.popular
