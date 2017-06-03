@@ -1,10 +1,10 @@
 <% title 'looklove, reviews of new beauty products' %>
 <% description 'Reviews and photos of the best in new skincare and cosmetics products' %>
 <% keywords 'the best beauty products, reviews, community, forum, posts, asian beauty, korean beauty, skincare' %>
-<!-- render add partial here -->
 
+<%= render 'products/add', locals: { product: @product } %>
+<%= render 'products/form', locals: { product: @product } %>
 <div class="page">
-<!-- <%= render 'products/form', locals: { product: @product } %> -->
 
 <div class="front-page">
 
