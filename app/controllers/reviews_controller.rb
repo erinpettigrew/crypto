@@ -18,10 +18,10 @@ class ReviewsController < ApplicationController
     @review.save
     render json: { review: render_to_string('reviews/_row', layout: false, locals: { review: @review }) }
 
-    $tracker.track(current_user.id, 'Added Review', {
-      'Product ID' => @product.id,
-      'Product Name' => @product.product_brand + " " + @product.product_name
-    })
+    # $tracker.track(current_user.id, 'Added Review', {
+    #   'Product ID' => @product.id,
+    #   'Product Name' => @product.product_brand + " " + @product.product_name
+    # })
   end
 
     def update

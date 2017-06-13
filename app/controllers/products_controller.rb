@@ -63,10 +63,10 @@ class ProductsController < ApplicationController
       current_user.used_products << @product
       redirect_to :back
 
-      $tracker.track(current_user.id, 'Added Use', {
-        'Product ID' => @product.id,
-        'Product Name' => @product.product_brand + " " + @product.product_name
-        })
+      # $tracker.track(current_user.id, 'Added Use', {
+      #   'Product ID' => @product.id,
+      #   'Product Name' => @product.product_brand + " " + @product.product_name
+      #   })
       elsif type == 'unuse'
         current_user.used_products.delete(@product)
         redirect_to :back
@@ -81,10 +81,10 @@ class ProductsController < ApplicationController
         current_user.wanted_products << @product
         redirect_to :back
 
-        $tracker.track(current_user.id, 'Added Want', {
-          'Product ID' => @product.id,
-          'Product Name' => @product.product_brand + " " + @product.product_name
-          })
+        # $tracker.track(current_user.id, 'Added Want', {
+        #   'Product ID' => @product.id,
+        #   'Product Name' => @product.product_brand + " " + @product.product_name
+        #   })
         elsif type == 'unwant'
           current_user.wanted_products.delete(@product)
           redirect_to :back
@@ -107,10 +107,10 @@ class ProductsController < ApplicationController
             format.html { redirect_to @product, notice: 'Product was successfully created.' }
             format.json { render :show, status: :created, location: @product }
 
-            $tracker.track(current_user.id, 'Added Product', {
-              'Product ID' => @product.id,
-              'Product Name' => @product.product_brand + " " + @product.product_name
-              })
+            # $tracker.track(current_user.id, 'Added Product', {
+            #   'Product ID' => @product.id,
+            #   'Product Name' => @product.product_brand + " " + @product.product_name
+            #   })
             else
               format.html { render :new }
               format.json { render json: @product.errors, status: :unprocessable_entity }
