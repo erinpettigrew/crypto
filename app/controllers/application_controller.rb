@@ -10,12 +10,7 @@ protected
 
   # after sign in, retrieves the user's most recent page
 	def after_sign_in_path_for(resource_or_scope)
-    # this is where we're coming after omniauth
-    if current_user.uid.present? && current_user.sign_in_count == 1
-      new_user_profile_path(current_user)
-    else
-		  session["user_return_to"] || root_path
-    end
+    root_path
 	end
 
 	# after sign out, keep user on same page (rather than redirecting away)

@@ -14,7 +14,7 @@ class Product < ActiveRecord::Base
 	has_many :looks, through: :look_products
 	has_many :product_posts
 	has_many :posts, through: :product_posts
-	validates :brand, :name, :image, :category, presence: true
+	validates :name, :category, presence: true
 
 	extend FriendlyId
 	friendly_id :slug_candidates, use: :slugged

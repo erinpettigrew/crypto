@@ -7,8 +7,10 @@ class ProductsController < ApplicationController
 
   def search
       @query = params[:search]
-      @products = Product.search(params[:search], include: [ { uses: { user: :avatar } }, :reviews])
-      @categories = Category.search(params[:search], include: [:products])
+      # @products = Product.search(params[:search], include: [ { uses: { user: :avatar } }, :reviews])
+      @products = Product.search(params[:search])
+      # @categories = Category.search(params[:search], include: [:products])
+      @categories = Category.search(params[:search])
       @default = Category.all.includes(:products)
   end
 
