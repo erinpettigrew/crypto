@@ -1,6 +1,6 @@
-<% title @product.product_brand + ' ' + @product.product_name + ' | Looklove' %>
-<% description 'Real reviews and ratings of ' + @product.product_brand + ' ' + @product.product_name + 'from trusted Looklove members. Get product advice from skincare and beauty enthusiasts.' %>
-<% keywords @product.product_brand + ' ' + @product.product_name + ', ' + @product.category.name + ', reviews, community, forum, posts, asian beauty, skincare, beauty, products, makeup, cosmetics' %>
+<% title @product.product_brand + ' ' + @product.name + ' | Looklove' %>
+<% description 'Real reviews and ratings of ' + @product.product_brand + ' ' + @product.name + 'from trusted Looklove members. Get product advice from skincare and beauty enthusiasts.' %>
+<% keywords @product.product_brand + ' ' + @product.name + ', ' + @product.category.name + ', reviews, community, forum, posts, asian beauty, skincare, beauty, products, makeup, cosmetics' %>
 
 <!-- <%= render 'search' %> -->
 <div class="page">
@@ -11,7 +11,7 @@
 		</div>
 		<div class="col-xs-8 col-sm-5">
 			<h1><%= link_to @product.product_brand, search_products_path(brand: @product.product_brand) %></h1>
-			<h2><%= @product.product_name %></h2>
+			<h2><%= @product.name %></h2>
 		</div>
 		<div class="hidden-xs col-sm-2">
 			<%= render partial: "buy", locals: { product: @product } %>
@@ -83,5 +83,5 @@
 	</script>
 
 	<script>
-	mixpanel.track("Viewed Product", {"Product Name": "<%= @product.product_name %>", "Product ID": <%= @product.id %>});
+	mixpanel.track("Viewed Product", {"Product Name": "<%= @product.name %>", "Product ID": <%= @product.id %>});
 	</script>

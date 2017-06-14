@@ -109,7 +109,7 @@ class ProductImporter
 
   def return_properties
     { product_brand: @brand,
-      product_name: @name,
+      name: @name,
       image: @remote_image,
       category_id: 1,
       link: @link

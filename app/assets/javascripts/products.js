@@ -143,7 +143,7 @@ function parseLink(link) {
     $('input#link').fadeTo(100, 0)
 
     $('input#product_product_brand').val(data.product_brand)
-    $('textarea#product_product_name').val(data.product_name)
+    $('textarea#name').val(data.name)
     $('input#product_link').val(data.link)
     handleImage(data.image)
   })

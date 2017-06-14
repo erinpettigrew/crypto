@@ -65,7 +65,7 @@ class ProductsController < ApplicationController
 
       # $tracker.track(current_user.id, 'Added Use', {
       #   'Product ID' => @product.id,
-      #   'Product Name' => @product.product_brand + " " + @product.product_name
+      #   'Product Name' => @product.product_brand + " " + @product.name
       #   })
       elsif type == 'unuse'
         current_user.used_products.delete(@product)
@@ -83,7 +83,7 @@ class ProductsController < ApplicationController
 
         # $tracker.track(current_user.id, 'Added Want', {
         #   'Product ID' => @product.id,
-        #   'Product Name' => @product.product_brand + " " + @product.product_name
+        #   'Product Name' => @product.product_brand + " " + @product.name
         #   })
         elsif type == 'unwant'
           current_user.wanted_products.delete(@product)
@@ -109,7 +109,7 @@ class ProductsController < ApplicationController
 
             # $tracker.track(current_user.id, 'Added Product', {
             #   'Product ID' => @product.id,
-            #   'Product Name' => @product.product_brand + " " + @product.product_name
+            #   'Product Name' => @product.product_brand + " " + @product.name
             #   })
             else
               format.html { render :new }
@@ -158,7 +158,7 @@ class ProductsController < ApplicationController
         end
 
         def product_params
-          params.require(:product).permit(:product_brand, :product_name, :image, :category_id, :user_id, :ingredients, :about, :theme_id, :link, :rating)
+          params.require(:product).permit(:product_brand, :name, :image, :category_id, :user_id, :ingredients, :about, :theme_id, :link, :rating)
         end
 
       end

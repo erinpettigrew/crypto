@@ -659,7 +659,7 @@
     font-size: 25px;
   }
   /* line 36, /Users/Shared/rails_apps/makeup/app/assets/stylesheets/products.scss */
-  form#new_product textarea#product_product_name {
+  form#new_product textarea#name {
     background-color: #FDFCFE;
     border-bottom: 0px;
     font-weight: 500;

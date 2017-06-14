@@ -11,12 +11,12 @@
       background-color: #FEFCFF;
       font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
       font-weight: 100;
-      font-style: italic;
-      background: FEFCFF; /* For browsers that do not support gradients */
-      background: -webkit-linear-gradient(left, #EFE8F2 , #FEFCFF); /* For Safari 5.1 to 6.0 */
-      background: -o-linear-gradient(right, #EFE8F2, #FEFCFF); /* For Opera 11.1 to 12.0 */
-      background: -moz-linear-gradient(right, #EFE8F2, #FEFCFF); /* For Firefox 3.6 to 15 */
-      background: linear-gradient(to right, #EFE8F2 , #FEFCFF); /* Standard syntax */
+      background: F4FEFE; /* For browsers that do not support gradients */
+      background: -webkit-linear-gradient(left, #D2F6F6 , #F4FEFE); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(right, #D2F6F6, #F4FEFE); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(right, #D2F6F6, #F4FEFE); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(to right, #D2F6F6 , #F4FEFE); /* Standard syntax */
+      border-radius: 5px;
     }
     input#search:hover {
       background-color: #FCF6FF;
@@ -25,7 +25,6 @@
       background-color: #FCF6FF;
     }
     .nav-search-button {
-      font-style: italic;
       display: inline;
       margin-top: -5px;
       vertical-align: middle;
@@ -50,7 +49,6 @@
       background-color: #FEFCFF;
       font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
       font-weight: 100;
-      font-style: italic;
     }
     input#search:hover {
       background-color: #FCF6FF;
@@ -59,7 +57,6 @@
       background-color: #FCF6FF;
     }
     .search-button {
-      font-style: italic;
       display: inline;
       float:right;
       margin-top: -3px;
@@ -107,7 +104,7 @@
   .nav-search {
     input#search {
       width: 300px;
-      font-size: 165%;
+      font-size: 125%;
     }
   }
 }

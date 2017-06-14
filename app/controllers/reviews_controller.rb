@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
 
     # $tracker.track(current_user.id, 'Added Review', {
     #   'Product ID' => @product.id,
-    #   'Product Name' => @product.product_brand + " " + @product.product_name
+    #   'Product Name' => @product.product_brand + " " + @product.name
     # })
   end
 

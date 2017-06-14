@@ -14,6 +14,8 @@
 
 	.add-row {
 		border-bottom: 1px dotted silver;
+		background-color: #5BEFD8;
+		margin-top: 30px;
 	}
 
 	.buy-button {
@@ -40,7 +42,7 @@ form#new_product {
 		font-size: 25px;
 	}
 
-	textarea#product_product_name {
+	textarea#name {
 		background-color: #FDFCFE;
 		border-bottom: 0px;
 		font-weight: 500;
@@ -110,7 +112,6 @@ form#new_product {
 			font-size:14px;
 			margin-top:20px;
 			font-weight: bold;
-			font-style: italic;
 		}
 		.product-name {
 			font-size:14px;
@@ -191,7 +192,6 @@ form#new_product {
 		border-radius:15px;
 		h1 {
 			font-size: 25px;
-			font-style: italic;
 			font-weight: bold;
 		}
 		h2 {
@@ -250,7 +250,6 @@ form#new_product {
 		margin-left: -200px;
 		.want-text {
 			display: none;
-			font-style: italic;
 		}
 	}
 	.want-button:hover {
@@ -274,7 +273,6 @@ form#new_product {
 	margin-left: -200px;
 	.use2-text {
 		display: none;
-		font-style: italic;
 	}
 }
 .use2-button:hover {
@@ -342,7 +340,6 @@ form#new_product {
 	.reviews a {
 		color:#000000;
 		font-weight: 600;
-		font-style: italic;
 	}
 
 	.uses {
@@ -436,7 +433,6 @@ form#new_product {
 						font-size:17px;
 						margin-top:20px;
 						font-weight: bold;
-						font-style: italic;
 					}
 					.product-name {
 						font-size:17px;
@@ -508,7 +504,6 @@ form#new_product {
 					min-height: 275px;
 					h1 {
 						font-size: 25px;
-						font-style: italic;
 						font-weight: bold;
 					}
 					h2 {

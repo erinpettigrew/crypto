@@ -2,8 +2,8 @@
 
 one:
   product_brand: MyString
-  product_name: MyString
+  name: MyString
 
 two:
   product_brand: MyString
-  product_name: MyString
+  name: MyString

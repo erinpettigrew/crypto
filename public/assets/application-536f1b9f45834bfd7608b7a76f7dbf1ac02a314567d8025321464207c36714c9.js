@@ -12591,7 +12591,7 @@ function parseLink(link) {
     $('input#product_image').val(data.image)
 
     $('input#product_product_brand').val(data.product_brand)
-    $('textarea#product_product_name').val(data.product_name)
+    $('textarea#name').val(data.name)
     // $('select#product_category_id').val(1) // Other Products category
 
   })
