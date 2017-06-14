@@ -128,13 +128,6 @@ ActiveRecord::Schema.define(version: 20170614144738) do
   add_index "products", ["slug"], name: "index_products_on_slug", unique: true
   add_index "products", ["theme_id"], name: "index_products_on_theme_id"
 
-  create_table "profiles", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "skin_type_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
   create_table "reviews", force: :cascade do |t|
     t.integer  "rating"
     t.text     "comment"
@@ -146,12 +139,6 @@ ActiveRecord::Schema.define(version: 20170614144738) do
 
   add_index "reviews", ["product_id"], name: "index_reviews_on_product_id"
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
-
-  create_table "skin_types", force: :cascade do |t|
-    t.text     "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "themes", force: :cascade do |t|
     t.text     "name"

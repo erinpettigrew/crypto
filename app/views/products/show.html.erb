@@ -1,6 +1,6 @@
-<% title @product.product_brand + ' ' + @product.name + ' | Looklove' %>
-<% description 'Real reviews and ratings of ' + @product.product_brand + ' ' + @product.name + 'from trusted Looklove members. Get product advice from skincare and beauty enthusiasts.' %>
-<% keywords @product.product_brand + ' ' + @product.name + ', ' + @product.category.name + ', reviews, community, forum, posts, asian beauty, skincare, beauty, products, makeup, cosmetics' %>
+<% title @product.name %>
+<% description 'Real reviews and ratings of ' + @product.name + 'from trusted Looklove members. Get product advice from skincare and beauty enthusiasts.' %>
+<% keywords @product.name + ', ' + @product.category.name + ', reviews, community, forum, posts, asian beauty, skincare, beauty, products, makeup, cosmetics' %>
 
 <!-- <%= render 'search' %> -->
 <div class="page">
@@ -10,7 +10,6 @@
 			<div class="product-show-image"><%= image_tag @product.image_url %></div>
 		</div>
 		<div class="col-xs-8 col-sm-5">
-			<h1><%= link_to @product.product_brand, search_products_path(brand: @product.product_brand) %></h1>
 			<h2><%= @product.name %></h2>
 		</div>
 		<div class="hidden-xs col-sm-2">
@@ -46,7 +45,6 @@
 			<%= render partial: "posts/post_tile", collection: @product.tutorials.shuffle, as: :post %>
 		<% end %>
 
-		<!-- <div class="title">More <%= @product.category.name.pluralize %></div> -->
 		<div class="related">
 			<%= render partial: 'product_row', collection: @product.category.products.sample(0), as: :product %>
 		</div>

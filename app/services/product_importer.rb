@@ -1,7 +1,7 @@
 class ProductImporter
 
   attr_reader :input_url
-  attr_accessor :data, :merchant, :brand, :name, :remote_image, :hosted_image, :canonical_url, :link
+  attr_accessor :data, :merchant, :name, :remote_image, :hosted_image, :canonical_url, :link
 
   def initialize(input_url)
     @input_url = input_url
@@ -75,7 +75,6 @@ class ProductImporter
   def set_amazon_properties
     asin_start = canonical_url.index('/dp/') + 4
     asin = canonical_url.slice(asin_start..-1)
-    @brand = @data.css('#mbc').attribute('data-brand').value
   end
 
   def set_sephora_properties
@@ -108,8 +107,7 @@ class ProductImporter
   end
 
   def return_properties
-    { product_brand: @brand,
-      name: @name,
+    { name: @name,
       image: @remote_image,
       category_id: 1,
       link: @link

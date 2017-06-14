@@ -5,7 +5,6 @@ $(document).on('ready page:load', function () {
   showLoginOnUse();
   showLoginOnReview();
   handleAddProduct();
-  $('.product-form-brand').hide()
   $('.product-form-name').hide()
   $('.product-form-image').hide()
   $('.product-form-category').hide()
@@ -113,7 +112,7 @@ function handleAddProduct() {
       parseLink(link)
     }, 50);
     handleSelection()
-    // retrieve image, product name, product brand from the DOM
+    // retrieve image, product name from the DOM
   })
 }
 
@@ -142,7 +141,6 @@ function parseLink(link) {
     $('.product-form-name').fadeIn(300)
     $('input#link').fadeTo(100, 0)
 
-    $('input#product_product_brand').val(data.product_brand)
     $('textarea#name').val(data.name)
     $('input#product_link').val(data.link)
     handleImage(data.image)

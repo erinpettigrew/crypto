@@ -6,28 +6,19 @@ class ProductsController < ApplicationController
   before_action :set_themes, only: [:new, :edit, :create, :update]
 
   def search
-    if params[:brand]
-      @query = params[:brand]
-      @products = Product.search(@query, fields: [:product_brand], include: [ { uses: { user: :avatar } }, :reviews])
-      @categories = []
-    else
       @query = params[:search]
       @products = Product.search(params[:search], include: [ { uses: { user: :avatar } }, :reviews])
       @categories = Category.search(params[:search], include: [:products])
       @default = Category.all.includes(:products)
-    end
   end
 
   def index
     @product = Product.new
     @rand_categories = Category.all.includes(:products).sample(4)
     @products = Product.take(30).sample(8)
-    @brands = Product.brands.sample(4)
-    # recent_questions = Question.includes( [user: :avatar]).last(4)
     recent_reviews = Review.includes( [user: :avatar], :product).last(12)
     recent_uses = Use.includes( { :user => :avatar }, :product).last(16)
     @activity = (recent_reviews + recent_uses).sort_by(&:created_at).reverse.first(10)
-    # @popular_products = Product.find(Product.joins(:uses).group('products.id').order("count(*) desc").limit(3).ids)
     @recent_posts = Post.all.order(created_at: :desc).includes(user: :avatar).take(3)
   end
 
@@ -65,7 +56,7 @@ class ProductsController < ApplicationController
 
       # $tracker.track(current_user.id, 'Added Use', {
       #   'Product ID' => @product.id,
-      #   'Product Name' => @product.product_brand + " " + @product.name
+      #   'Product Name' => @product.name
       #   })
       elsif type == 'unuse'
         current_user.used_products.delete(@product)
@@ -83,7 +74,7 @@ class ProductsController < ApplicationController
 
         # $tracker.track(current_user.id, 'Added Want', {
         #   'Product ID' => @product.id,
-        #   'Product Name' => @product.product_brand + " " + @product.name
+        #   'Product Name' => @product.name
         #   })
         elsif type == 'unwant'
           current_user.wanted_products.delete(@product)
@@ -109,7 +100,7 @@ class ProductsController < ApplicationController
 
             # $tracker.track(current_user.id, 'Added Product', {
             #   'Product ID' => @product.id,
-            #   'Product Name' => @product.product_brand + " " + @product.name
+            #   'Product Name' => @product.name
             #   })
             else
               format.html { render :new }
@@ -158,7 +149,7 @@ class ProductsController < ApplicationController
         end
 
         def product_params
-          params.require(:product).permit(:product_brand, :name, :image, :category_id, :user_id, :about, :theme_id, :link, :rating)
+          params.require(:product).permit(:name, :image, :category_id, :user_id, :about, :theme_id, :link, :rating)
         end
 
       end

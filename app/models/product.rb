@@ -14,28 +14,24 @@ class Product < ActiveRecord::Base
 	has_many :looks, through: :look_products
 	has_many :product_posts
 	has_many :posts, through: :product_posts
-	validates :product_brand, :name, :image, :category, presence: true
+	validates :brand, :name, :image, :category, presence: true
 
 	extend FriendlyId
 	friendly_id :slug_candidates, use: :slugged
 
 	def slug_candidates
 		[
-			[:product_brand, :name]
+			[:name]
 		]
 	end
 
 	def should_generate_new_friendly_id?
-		product_brand_changed? || name_changed?
+		name_changed?
 	end
 
 	mount_uploader :image, ImageUploader
 
 	searchkick
-
-	def self.brands
-		Product.all.pluck(:product_brand).uniq.sort_by(&:downcase)
-	end
 
 	def self.popular
 		Product.find(Product.joins(:uses).group('products.id').order("count(*) desc").limit(10).ids).shuffle
