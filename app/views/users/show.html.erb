@@ -17,20 +17,6 @@
 		<% end %>
 		<% end %>
 
-		<div class="row">
-			<% if @skin_type.present? %>
-			<% if @user == current_user %>
-			<div class="skin-info"><i class="fa fa-sliders" aria-hidden="true"></i> <%=link_to "#{@skin_type.name.capitalize}", edit_user_profile_path(@user, @user.profile) %></div>
-			<% else %>
-			<div class="skin-info"><i class="fa fa-sliders" aria-hidden="true"></i> <%= @skin_type.name.titleize %></div>
-			<% end %>
-			<% else %>
-			<% if @user == current_user %>
-			<div class="skin-info"><i class="fa fa-sliders" aria-hidden="true"></i> <%=link_to "Add your skin type!", new_user_profile_path(@user) %></div>
-			<% end %>
-			<% end %>
-		</div>
-
 	</div> <!-- .user-info -->
 
 

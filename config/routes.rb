@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get '/products/newadmin', to: 'products#newadmin'
   resources :posts
   resources :themes
-  resources :skin_types
   resources :applicants
   resources :categories
   resources :brands
