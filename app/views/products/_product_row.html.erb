@@ -1,16 +1,2 @@
-      <div class="row product-row">
-        <div class="col-xs-12 col-sm-3 product-image">
-          <%= link_to image_tag(product.image.small_thumb), product %>
-        </div>
-
-        <div class="col-xs-12 col-sm-5">
-          <div class="product-name"><%= link_to product.name, product %></div>
-          <a class="btn btn-lg" href="stuff.com"></div>
-        </div>
-
-        <div class="hidden-xs col-sm-2 review-info">
-          <% unless product.average_rating == 0 %>
-            <%= render partial: 'products/rating', locals: {product: product} %>
-          <% end %>
-        </div>
-      </div>
+<!-- <%= link_to image_tag(product.image.small_thumb), product %> -->
+<%= link_to product.name, product %>

@@ -1,5 +1,5 @@
 <% if !user_signed_in? %>
-  <%= link_to "Add my rating!", new_user_session_path, class: "btn btn-lg btn-info review-button-logged-out" %>
+  <%= link_to "Add my rating", new_user_session_path, class: "btn btn-lg btn-primary review-button-logged-out" %>
 <% else %>
   <%= form_for([@product, @review], remote: true) do |f| %>
   <% if @review.errors.any? %>
@@ -20,7 +20,7 @@
   <div class="form-group">
     <%= f.text_area :comment, placeholder: "How is it?", class: "form-control", rows: "4"%>
   </div>
-  <%= submit_tag "add!", name: nil, class: "btn btn-primary review-button" %>
+  <%= submit_tag "Add your review", name: nil, class: "btn btn-primary review-button" %>
   <% end %>
 <% end %>
 

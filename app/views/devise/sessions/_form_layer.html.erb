@@ -3,17 +3,14 @@
 
 <div class="login-box row">
   <div class="login-text">
-  <h2>Evergreen</h2>
+  <h2>walletthing</h2>
   Share cryptocurrency products that <em>work</em><br/>
-  </div>
-  <div class="col-xs-12 login-image">
-    <%= image_tag("https://s3.amazonaws.com/productbase/assets/looklove-iphone-pink-bg.png") %>
   </div>
   <div class="col-xs-12 login-cta">
 
   <% if devise_mapping.omniauthable? %>
     <% resource_class.omniauth_providers.each do |provider| %>
-      <%= link_to "Login with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: "btn btn-lg btn-facebook" %><br />
+      <%= link_to "Sign In with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: "btn btn-lg btn-facebook" %><br />
     <% end %>
   <% end %>
   Join <%= pluralize(User.count, "member") %> who are

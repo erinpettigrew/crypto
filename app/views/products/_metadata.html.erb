@@ -1,20 +1,2 @@
-<div class="metadata">
-  <div class="metalinks col-xs-4 col-sm-7">
-    in <%= link_to product.category.name.pluralize.titleize, product.category %>
-  </div>
-  <div class="rating-container col-xs-8 col-sm-5">
-    <div class="product-show-rating col-xs-4 col-sm-3">
-      <%= render partial: "rating", locals: { product: @product } %>
-    </div>
-    <div class="product-show-rating-text col-xs-8 col-sm-9">
-      <% if product.rating.blank? %>
-        Average rating from community members
-      <% else %>
-        Average rating from Looklove and 13 beauty sites
-      <% end %>
-    </div>
-  </div>
-    <!-- <div class="col-xs-12 col-sm-5">
-      <%= render partial: "uses/button", locals: { product: @product, user: current_user } %>
-    </div> -->
-</div>
+<!-- in <%= link_to product.category.name.pluralize.titleize, product.category %> -->
+<%= render partial: "rating", locals: { product: @product } %>

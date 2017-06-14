@@ -2,56 +2,24 @@
 <% description 'Real reviews and ratings of ' + @product.name + 'from trusted members. Get product advice from skincare and beauty enthusiasts.' %>
 <% keywords @product.name + ', ' + @product.category.name + ', reviews, community, forum, posts, asian beauty, skincare, beauty, products, makeup, cosmetics' %>
 
-<!-- <%= render 'search' %> -->
-<div class="page">
-<div class="product-show">
-	<div class="row">
-		<div class="col-xs-4 col-sm-5">
-			<div class="product-show-image"><%= image_tag @product.image_url %></div>
-		</div>
-		<div class="col-xs-8 col-sm-5">
-			<h2><%= @product.name %></h2>
-		</div>
-		<div class="hidden-xs col-sm-2">
-			<%= render partial: "buy", locals: { product: @product } %>
-		</div>
 
-	<%= render partial: "metadata", locals: { product: @product } %>
+<!-- <div class="product-show-image"><%= image_tag @product.image_url %></div> -->
 
+<div class="col-xs-12 col-sm-5">
+	<div class="page-header">
+	<h1><%= @product.name %></h1> <%= render partial: "metadata", locals: { product: @product } %>
+	</div>
+	<% if @product.device %>
+		<h3><%= @product.device.capitalize %> wallet</h3>
+	<% end %>
+	<%= @product.about %>
+
+	<div class="related">
+		<%= render partial: 'product_row', collection: @product.category.products.sample(0), as: :product %>
 	</div>
 </div>
 
-<div class="col-xs-12 col-sm-5 users">
-	<% unless @product.about.blank? %>
-		<div class="title">Guide</div>
-		<%= sanitize @product.about, tags: %w(strong p a href), attributes: %w(href) %>
-	<% end %>
-
-		<% if @product.used_by.any? %>
-			<div class="title" id="users"><%= pluralize(@product.used_by.count, "User") %></div>
-		<% end %>
-		<div class="user-matrix">
-			<% @product.used_by.includes(:avatar).each do |user| %>
-				<div class="small-avatar" id="<%= user.id %>"><%= link_to image_tag(user.pic), user %></div>
-			<% end %>
-		</div>
-		<% unless @product.swatches.blank? %>
-			<div class="title" id="posts"><%= pluralize(@product.swatches.count, "Swatch") %></div>
-			<%= render partial: "posts/post_tile", collection: @product.swatches.shuffle, as: :post %>
-		<% end %>
-
-		<% unless @product.tutorials.blank? %>
-			<div class="title"><%= pluralize(@product.tutorials.count, "Tutorial") %></div>
-			<%= render partial: "posts/post_tile", collection: @product.tutorials.shuffle, as: :post %>
-		<% end %>
-
-		<div class="related">
-			<%= render partial: 'product_row', collection: @product.category.products.sample(0), as: :product %>
-		</div>
-</div>
-
 <div class="col-xs-12 col-sm-7">
-	<div class="title" id="ratings"><%= pluralize(@product.reviews.count, "Rating") %></div>
 	<% unless @product.reviews.where(user: current_user).any? %>
 		<%= render partial: "reviews/form" %>
 	<% end %>

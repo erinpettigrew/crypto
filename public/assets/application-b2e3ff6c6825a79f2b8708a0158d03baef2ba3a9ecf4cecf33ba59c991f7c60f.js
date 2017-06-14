@@ -12483,7 +12483,7 @@ function rotateSearchTerms() {
   .delay(1500)
   .queue(function() { $(this).attr('placeholder', 'strobing powder').dequeue()})
   .delay(1500)
-  .queue(function() { $(this).attr('placeholder', 'search all products!')})
+  .queue(function() { $(this).attr('placeholder', 'search all products')})
 }
 
 function handleSearch() {

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170614144507) do
+ActiveRecord::Schema.define(version: 20170614212348) do
 
   create_table "applicants", force: :cascade do |t|
     t.string   "email"
@@ -121,6 +121,8 @@ ActiveRecord::Schema.define(version: 20170614144507) do
     t.integer  "uses_count"
     t.string   "about"
     t.decimal  "rating"
+    t.string   "device"
+    t.string   "platform"
   end
 
   add_index "products", ["category_id"], name: "index_products_on_category_id"

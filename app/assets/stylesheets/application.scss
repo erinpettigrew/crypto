@@ -18,6 +18,13 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.jumbotron {
+  background:none;
+  background: #fcfff4;
+  border: 1px solid #F9FCF0;
+  border-radius: 25px;
+}
+
 html { -webkit-font-smoothing: antialiased; }
 
 a, a:hover {
@@ -30,34 +37,42 @@ a, a:hover {
   margin-right: 18px;
 }
 
+.btn {
+  border-radius:500px;
+}
+//
 .btn-primary {
   background: #ffffff;
   color: #000000;
-  border-color: #000000;
+  border: 0px;
+  border-radius: 500px;
+  background: #09f0f0; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#09f0f0, #09cef0); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#09f0f0, #09cef0); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#09f0f0, #09cef0); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#09f0f0, #09cef0); /* Standard syntax */
+
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-  background: white;
-  border-color: black;
-  color: black;
-}
-
-.btn-info {
-  background: black;
-  border-color: black;
-  color: white;
-}
-
-.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open > .dropdown-toggle.btn-info {
-  background: #D81361;
-  border-color: #D81361;
-  color: white;
+  background: #09f0f0; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#09f0f0, #14dbff); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#09f0f0, #14dbff); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#09f0f0, #14dbff); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#09f0f0, #14dbff); /* Standard syntax */
 }
 
 .btn-facebook {
   background: #3b5998;
   border-color: #3b5998;
   color: white;
+}
+
+.btn-search {
+  background: #ffffff;
+  color: #000000;
+  border-color: #000000;
+  border-radius: 500px;
 }
 
 
@@ -69,6 +84,13 @@ a, a:hover {
 
 .login-devise {
   display:none;
+}
+
+
+.list-group-item {
+  height: 50px;
+  font-size: 110%;
+  padding-top: 15px;
 }
 
 input.form-control {
@@ -107,12 +129,12 @@ textarea.form-control {
   width: 100%;
   font-size: 175%;
   border: 0;
-  border-bottom:1px solid black;
+  border:1px solid grey;
   padding-left: 25px;
-  background-color: #FEFCFF;
+  margin-bottom: 35px;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 100;
-  border-radius: 0px;
+  border-radius: 15px;
 }
 
 label {
@@ -137,9 +159,7 @@ label {
 }
 
 h1 {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 100;
-  font-size: 250%;
+  // font-size: 250%;
 }
 
 h3 {

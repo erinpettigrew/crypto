@@ -14,7 +14,6 @@
 
 	.add-row {
 		border-bottom: 1px dotted silver;
-		background-color: #5BEFD8;
 		margin-top: 30px;
 	}
 
@@ -33,15 +32,6 @@ form#new_product {
 		max-width: 300px;
 		padding-bottom: 20px;
 	}
-	input#product_product_brand {
-		background-color: #FDFCFE;
-		border-bottom: 0px;
-		font-weight: 600;
-		box-shadow:none;
-		color: black;
-		font-size: 25px;
-	}
-
 	textarea#name {
 		background-color: #FDFCFE;
 		border-bottom: 0px;
@@ -165,9 +155,10 @@ form#new_product {
 		height: 50px;
 		width: 50px;
 		border-radius: 50%;
-		border: 1px dotted white;
 		text-align:center;
 		padding-top: 8px;
+		float:right;
+		margin-top: -55px;
 	}
 
 	.rating-single {
@@ -178,10 +169,10 @@ form#new_product {
 		height: 50px;
 		width: 50px;
 		border-radius: 50%;
-		border: 1px dotted black;
 		text-align:center;
 		padding-top: 8px;
 		float: right;
+		border: 1px solid black;
 	}
 
 	.product-show {
@@ -204,22 +195,15 @@ form#new_product {
 		.metalinks a {
 			text-decoration: underline;
 		}
-		.ingredients-button {
-			text-decoration: underline;
-			color: black;
-		}
 		.product-show-image {
 			text-align: center;
 			padding-right:10px;
-		}
-		.product-show-image img {
-			max-width: 100%;
 		}
 		.product-show-rating {
 			margin-top: 20px;
 			margin-left: -20px;
 			.rating {
-				float: left;
+				float: right;
 			}
 		}
 		.product-show-rating-text {
@@ -302,28 +286,6 @@ form#new_product {
 		padding-bottom:10px;
 	}
 
-	.ingredients-list {
-		font-size:14px;
-		text-align:left;
-	}
-
-	.ingredients-button {
-		font-size:14px;
-		text-align:left;
-		display:inline;
-	}
-
-	.ingredients-button:hover {
-		text-decoration:underline;
-	}
-
-	.ingredients {
-		display:none;
-		font-size:85%;
-		text-align:left;
-		padding-top: 20px;
-	}
-
 	.reviews {
 		.comment {
 			font-weight:300;
@@ -388,20 +350,6 @@ form#new_product {
 		float: right;
 	}
 
-	.ingredients-list {
-		font-size:14px;
-		text-align:left;
-	}
-
-	.ingredients-button {
-		font-size:14px;
-		text-align:left;
-	}
-
-	.ingredients {
-		text-align:left;
-	}
-
 	.product-list {
 		margin-left:-40px;
 	}
@@ -428,11 +376,6 @@ form#new_product {
 					}
 					.product-image img {
 						max-height:100px;
-					}
-					.product-brand {
-						font-size:17px;
-						margin-top:20px;
-						font-weight: bold;
 					}
 					.product-name {
 						font-size:17px;
@@ -474,9 +417,9 @@ form#new_product {
 					height: 50px;
 					width: 50px;
 					border-radius: 50%;
-					border: 1px dotted white;
 					text-align:center;
 					padding-top: 8px;
+					float: right;
 				}
 
 				.rating-single {
@@ -487,7 +430,6 @@ form#new_product {
 					height: 50px;
 					width: 50px;
 					border-radius: 50%;
-					border: 1px dotted black;
 					text-align:center;
 					padding-top: 8px;
 					float: right;
