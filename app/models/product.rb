@@ -5,7 +5,6 @@ class Product < ActiveRecord::Base
 	has_many :users, through: :likes
 	has_many :liked_by, through: :likes, source: :user #rename user_id to liked_by in likes table for referencing from products
 	belongs_to :category
-	has_one :ingredient
 	has_many :links
 	has_many :uses, dependent: :destroy
 	has_many :used_by, through: :uses, source: :user #rename user_id to used_by for referencing
@@ -36,13 +35,6 @@ class Product < ActiveRecord::Base
 
 	def self.brands
 		Product.all.pluck(:product_brand).uniq.sort_by(&:downcase)
-	end
-
-	def self.ingredients
-		ingredients = Product.all.pluck(:ingredients).join
-		ingredients = ingredients.gsub("\n", "").gsub("\r", "").gsub("*", "").downcase
-		ingredients = ingredients.split(", ").uniq
-		ingredients.select { |ing| !ing.nil? }.sort_by(&:downcase)
 	end
 
 	def self.popular

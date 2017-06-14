@@ -2,11 +2,6 @@
   <div class="metalinks col-xs-4 col-sm-7">
     by <%= link_to "#{product.product_brand}", search_products_path(brand: @product.product_brand) %></br>
     in <%= link_to product.category.name.pluralize.titleize, product.category %>
-    <br/><% if product.ingredients.present? %>
-    <div class="ingredients-list">
-      see <div class="ingredients-button">Ingredients</div>
-    </div>
-    <% end %>
   </div>
   <div class="rating-container col-xs-8 col-sm-5">
     <div class="product-show-rating col-xs-4 col-sm-3">

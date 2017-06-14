@@ -18,9 +18,7 @@
 		</div>
 
 	<%= render partial: "metadata", locals: { product: @product } %>
-	<% if @product.ingredients.present? %>
-		<div class="col-xs-6 col-sm-7 ingredients"><%= @product.ingredients.titleize %></p></div>
-	<% end %>
+
 	</div>
 </div>
 
@@ -70,9 +68,6 @@
 <%= render partial: "devise/sessions/form_layer" %>
 
 	<script>
-	$(".ingredients-button").click(function(){
-		$(".ingredients").toggle(200);
-	});
 	$('.star-rating').raty({
 		path: 'https://s3.amazonaws.com/productbase/stars',
 		readOnly: true,

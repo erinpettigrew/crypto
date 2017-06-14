@@ -46,13 +46,6 @@
 
 <% if user_signed_in? && current_user.admin? %>
 <div class="form-group">
-  <%= f.label :ingredients %><br>
-  <%= f.text_area :ingredients, class: "form-control", rows: "10", placeholder: "Add ingredients here"%>
-</div>
-<% end %>
-
-<% if user_signed_in? && current_user.admin? %>
-<div class="form-group">
   <%= f.label :about %><br>
   <%= f.text_area :about, class: "form-control", rows: "10", placeholder: "About this product"%>
 </div>
