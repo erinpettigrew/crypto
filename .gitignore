@@ -18,3 +18,6 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore assets in this folder to ensure Heroku updates each time
+/public/assets/**
