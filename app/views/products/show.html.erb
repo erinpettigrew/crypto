@@ -16,6 +16,8 @@
 		<% if @product.device.downcase.include?("offline") %><h5><i class="fa fa-suitcase" aria-hidden="true"></i> &nbsp;Offline wallet</h5><% end %>
 	<% end %>
 	<%= @product.about %>
+</p>
+</br>
 
 	<div class="related">
 		<%= render partial: 'product_row', collection: @product.category.products.sample(0), as: :product %>

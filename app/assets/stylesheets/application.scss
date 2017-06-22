@@ -20,7 +20,7 @@ body {
 
 .jumbotron {
   background:none;
-  background: #fcfff4;
+  background: #F3FAFA;
   border: 1px solid #F9FCF0;
   border-radius: 25px;
 }
@@ -57,19 +57,20 @@ a, a:hover {
   border: 0px;
   border-radius: 500px;
   background: #09f0f0; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(#09f0f0, #09cef0); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#09f0f0, #09cef0); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#09f0f0, #09cef0); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#09f0f0, #09cef0); /* Standard syntax */
+  background: -webkit-linear-gradient(#9de8e8, #88cccc); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#9de8e8, #88cccc); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#9de8e8, #88cccc); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#9de8e8, #88cccc); /* Standard syntax */
 
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-  background: #09f0f0; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(#09f0f0, #14dbff); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#09f0f0, #14dbff); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#09f0f0, #14dbff); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#09f0f0, #14dbff); /* Standard syntax */
+  background: #9de8e8; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#9de8e8, #a6fcfc); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#9de8e8, #a6fcfc); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#9de8e8, #a6fcfc); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#9de8e8, #a6fcfc); /* Standard syntax */
+  color: black;
 }
 
 .btn-facebook {
@@ -101,6 +102,7 @@ a, a:hover {
   height: 50px;
   font-size: 110%;
   padding-top: 15px;
+  border: 1px solid #eeeeee;
 }
 
 input.form-control {
@@ -127,21 +129,18 @@ select {
   border-bottom:1px solid black;
   padding-left: 50px;
   background-color: #FEFCFF;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 100;
   border-radius: 0px;
 }
 
 textarea.form-control {
   width: 100%;
-  font-size: 175%;
-  border: 0;
-  border:1px solid grey;
+  font-size: 140%;
+  border:1px solid #eeeeee;
   padding-left: 25px;
   margin-bottom: 35px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 100;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 label {

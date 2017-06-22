@@ -25,7 +25,7 @@ function rotateSearchTerms() {
   .delay(1500)
   .queue(function() { $(this).attr('placeholder', 'trezor').dequeue()})
   .delay(1500)
-  .queue(function() { $(this).attr('placeholder', 'search all wallets')})
+  .queue(function() { $(this).attr('placeholder', 'search for a wallet')})
 }
 
 function handleSearch() {

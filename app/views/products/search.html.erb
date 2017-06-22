@@ -1,11 +1,10 @@
 <div class="page">
-<div class="page-header">
 <% if @products.empty? %>
-  <h1>Hm, no wallet guides for <strong><%= @query %></strong> yet.</h1>
-  <% else %>
-  <h1><%= @query.titleize %></h1>
-<% end %>
+<div class="page-header">
+  <h1>Hm, no matches for <strong><%= @query %></strong> yet.</h1>
 </div>
+<% end %>
+
 
 <% if @products.any? %>
   <div class="sortable">
