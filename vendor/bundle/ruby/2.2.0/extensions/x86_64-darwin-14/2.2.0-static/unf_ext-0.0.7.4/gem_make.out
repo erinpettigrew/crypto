@@ -1,0 +1,13 @@
+/Users/bond/.rvm/rubies/ruby-2.2.1/bin/ruby -r ./siteconf20170622-56924-348o2f.rb extconf.rb
+checking for main() in -lstdc++... yes
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling unf.cc
+linking shared-object unf_ext.bundle
+ld: warning: directory not found for option '-L/Users/haven/.sm/pkg/active/lib'
+
+make "DESTDIR=" install
+/usr/bin/install -m 0755 unf_ext.bundle ./.gem.20170622-56924-19xkoei

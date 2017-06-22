@@ -1,0 +1,16 @@
+/Users/bond/.rvm/rubies/ruby-2.2.1/bin/ruby -r ./siteconf20170622-56924-1n3j44s.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling bcrypt_ext.c
+compiling crypt.c
+compiling crypt_blowfish.c
+compiling crypt_gensalt.c
+compiling wrapper.c
+linking shared-object bcrypt_ext.bundle
+ld: warning: directory not found for option '-L/Users/haven/.sm/pkg/active/lib'
+
+make "DESTDIR=" install
+/usr/bin/install -m 0755 bcrypt_ext.bundle ./.gem.20170622-56924-s9gdpl
