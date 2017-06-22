@@ -39,8 +39,18 @@ a, a:hover {
 
 .btn {
   border-radius:500px;
+  font-family: "Roboto Condensed";
 }
-//
+
+.btn-default {
+  background:none;
+}
+
+.btn-default:hover {
+  color:#09cef0;
+  background:#e2faff;
+}
+
 .btn-primary {
   background: #ffffff;
   color: #000000;
@@ -98,17 +108,14 @@ input.form-control {
   height: 75px;
   font-size: 200%;
   border: 0;
-  border-bottom:1px solid black;
+  border:1px solid black;
   padding-left: 25px;
-  background-color: #FEFCFF;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 100;
-  border-radius: 0px;
+  border-radius:15px;
 }
 
-input[type="text"]:focus, input[type="file"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
+input[type="username"]:focus, input[type="file"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
   outline: 0;
-  border:none;
   box-shadow:none;
 }
 
@@ -166,6 +173,11 @@ h3 {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 100;
   font-size: 180%;
+}
+
+h5 {
+  text-transform:uppercase;
+  font-family: "Roboto Condensed";
 }
 
 .fa-search:before {

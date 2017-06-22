@@ -74,10 +74,10 @@ form#new_product {
 
 	.fb-button {
 		display: block;
-		margin: 20px auto;
+		margin: 15px auto;
 		background: #3b5998;
-	  border-color: #3b5998;
 	  color: white;
+		width: 250px;
 	}
 
 	.fb-button:hover {
@@ -341,11 +341,6 @@ form#new_product {
 	}
 
 	.share-button {
-		margin-top: 0px;
-		float: right;
-	}
-
-	.fb-button {
 		margin-top: 0px;
 		float: right;
 	}

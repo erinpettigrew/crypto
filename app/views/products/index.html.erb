@@ -7,7 +7,15 @@
   <h4>Research, review, and rate the newest digital coin wallets.</h4>
   <%= render 'products/login', locals: { product: @product } %>
 </div>
-      <!-- <h2>See all wallets</h2> -->
+
+  <div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-default"><i class="fa fa-globe" aria-hidden="true"></i>&nbsp;&nbsp;Web</button>
+    <button type="button" class="btn btn-default"><i class="fa fa-desktop" aria-hidden="true"></i>&nbsp;&nbsp;Desktop</button>
+    <button type="button" class="btn btn-default"><i class="fa fa-mobile" aria-hidden="true"></i>&nbsp;&nbsp;Mobile</button>
+    <button type="button" class="btn btn-default"><i class="fa fa-suitcase" aria-hidden="true"></i>&nbsp;&nbsp;Offline</button>
+  </div>
+
+</p>
       <ul class="list-group">
         <% Product.all.each do |product| %>
         <li class="list-group-item">

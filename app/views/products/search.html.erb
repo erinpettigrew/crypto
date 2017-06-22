@@ -9,20 +9,25 @@
 <% end %>
 </div>
 
-<% if @categories.any? %>
+<!-- <% if @categories.any? %>
   <div class="title"><%= pluralize(@categories.count, "Category") %></div>
   <div class="category-index">
     <div class="row theme-row">
       <%= render partial: "categories/category_row", collection: @categories, as: :category %>
     </div>
   </div>
-<% end %>
+<% end %> -->
 
 <% if @products.any? %>
-  <!-- <div class="title"><%= pluralize(@products.count, "Product") %></div> -->
-  <%= render 'products/sort' %>
+  <!-- <%= render 'products/sort' %> -->
   <div class="sortable">
-    <%= render partial: 'products/product_row', collection: @products, as: :product %>
+    <ul class="list-group">
+      <% Product.all.each do |product| %>
+      <li class="list-group-item">
+      <%= render partial: 'product_row', locals: { product: product } %>
+    </li>
+      <% end %>
+    </ul>
   </div>
 <% end %>
 

@@ -1,9 +1,9 @@
 <div class="row review-row">
   <div class="col-xs-3 col-sm-2 review-user-info">
-    <div class="small-avatar"><%= link_to image_tag(review.user.pic), review.user %></div>
+    <div class="small-avatar"><%= image_tag(review.user.pic) %></div>
   </div>
   <div class="col-xs-6 col-sm-8">
-    <div class="user-name"><%= link_to review.user.user_name, review.user %></div>
+    <div class="user-name"><%= review.user.user_name %></div>
     <%= review.comment %><br>
     <!-- <%= time_ago_in_words(review.created_at).gsub('about','') %> ago -->
   </div>
