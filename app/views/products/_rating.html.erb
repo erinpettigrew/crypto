@@ -1,3 +1,5 @@
-<div class="rating">
-  <%= product.average_rating %>
-</div>
+<% unless @product.average_rating == 0 %>
+  <div class="rating">
+    <%= product.average_rating %>
+  </div>
+<% end %>

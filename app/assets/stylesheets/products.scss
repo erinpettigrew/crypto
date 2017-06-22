@@ -12,6 +12,14 @@
 		}
 	}
 
+	.panel-default {
+		background-color:#F3FAFA;
+	}
+
+	.panel-body {
+		text-align:center;
+	}
+
 	.add-row {
 		border-bottom: 1px dotted silver;
 		margin-top: 30px;
@@ -26,7 +34,6 @@ form#new_product {
 	padding: 30px;
 	box-shadow: 1px 1px 3px silver;
 	border-radius: 10px;
-	display:none;
 	.product-form-image-display img {
 		max-height: 300px;
 		max-width: 300px;

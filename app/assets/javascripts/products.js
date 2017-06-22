@@ -4,12 +4,6 @@ $(document).on('ready page:load', function () {
   autoSizeReviewInput();
   showLoginOnUse();
   showLoginOnReview();
-  handleAddProduct();
-  $('.product-form-name').hide()
-  $('.product-form-image').hide()
-  $('.product-form-category').hide()
-  $('form#new_product').hide()
-
 });
 
 function rotateSearchTerms() {
@@ -96,85 +90,5 @@ function showLoginOnReview() {
       $('.big-search').fadeTo(300, 1)
     })
     event.preventDefault()
-  })
-}
-
-function handleAddProduct() {
-  revealAddProductForm()
-  $('input#link').on('click', clearAddProductForm)
-  $('input#link').on('paste', function() {
-    // ajax get to the url
-
-    setTimeout(function () {
-      var link = $('input#link').val()
-      parseLink(link)
-    }, 50);
-    handleSelection()
-    // retrieve image, product name from the DOM
-  })
-}
-
-function clearAddProductForm() {
-  $('input#link').val('')
-}
-
-function revealAddProductForm() {
-  $('.share-button').on('click', function() {
-    $('form#new_product').slideDown(500)
-    $('.add-row').hide()
-    $('.front-page').fadeTo(500, 0.3)
-    event.preventDefault()
-    handleCancel()
-  })
-}
-
-function parseLink(link) {
-  $.get("/availabilities", {
-    url: link,
-  }).done(function(data) {
-    if (typeof data.image === 'string') {
-      $('.product-form-image-display').html(`<img src='${data.image}'>`)
-    }
-    $('.product-form-brand').fadeIn(300)
-    $('.product-form-name').fadeIn(300)
-    $('input#link').fadeTo(100, 0)
-
-    $('textarea#name').val(data.name)
-    $('input#product_link').val(data.link)
-    handleImage(data.image)
-  })
-}
-
-function handleImage(image) {
-  if (typeof image === 'string') {
-    $('input#product_image').val(image)
-  }
-  else {
-    image.forEach(function(singleImage, i) {
-      renderIfBig(singleImage)
-    })
-  }
-  $('.image-grid').on('click', '*', function() {
-      $('.product-form-image-display').html(this)
-      $('#product_image').val($(this).attr('src'))
-      $('.image-grid').fadeTo(300, 0.5)
-  })
-}
-
-function renderIfBig(image) {
-  var img = new Image()
-  img.src = image
-  img.onload = function(img) {
-    if (this.width > 199) {
-      $('.image-grid').append(this)
-    }
-  }
-}
-
-function handleCancel() {
-  $('.cancel').on('click', function() {
-    $('.add-row').show()
-    $('form#new_product').hide()
-    $('.front-page').fadeTo(200, 1)
   })
 }

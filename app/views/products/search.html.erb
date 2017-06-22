@@ -1,28 +1,16 @@
-
-
 <div class="page">
 <div class="page-header">
-<% if !@products.any? && !@categories.any? %>
-  <h1>No results matching <%= @query %> yet.</h1>
+<% if @products.empty? %>
+  <h1>Hm, no wallet guides for <strong><%= @query %></strong> yet.</h1>
   <% else %>
   <h1><%= @query.titleize %></h1>
 <% end %>
 </div>
 
-<!-- <% if @categories.any? %>
-  <div class="title"><%= pluralize(@categories.count, "Category") %></div>
-  <div class="category-index">
-    <div class="row theme-row">
-      <%= render partial: "categories/category_row", collection: @categories, as: :category %>
-    </div>
-  </div>
-<% end %> -->
-
 <% if @products.any? %>
-  <!-- <%= render 'products/sort' %> -->
   <div class="sortable">
     <ul class="list-group">
-      <% Product.all.each do |product| %>
+      <% @products.each do |product| %>
       <li class="list-group-item">
       <%= render partial: 'product_row', locals: { product: product } %>
     </li>
@@ -30,18 +18,7 @@
     </ul>
   </div>
 <% end %>
-
 </div>
-
-<script>
-  $('.star-rating').raty({
-    path: 'https://s3.amazonaws.com/productbase/stars',
-    readOnly: true,
-    score: function() {
-      return $(this).attr('data-score');
-    }
-  });
-</script>
 
 <script>
   mixpanel.track("Viewed Search Results", {"Search Term": "<%= @query %>"});

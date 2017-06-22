@@ -1,6 +1,4 @@
-<% if !user_signed_in? %>
-  <%= link_to "Add my rating", new_user_session_path, class: "btn btn-lg btn-primary review-button-logged-out" %>
-<% else %>
+<% if user_signed_in? %>
   <%= form_for([@product, @review], remote: true) do |f| %>
   <% if @review.errors.any? %>
   <div id="error_explanation" class= "alert alert-danger alert-dismissable">
@@ -20,7 +18,7 @@
   <div class="form-group">
     <%= f.text_area :comment, placeholder: "What's your experience with this wallet?", class: "form-control", rows: "4"%>
   </div>
-  <%= submit_tag "Add your review", name: nil, class: "btn btn-primary review-button" %>
+  <%= submit_tag "Submit", name: nil, class: "btn btn-primary review-button" %>
   <% end %>
 <% end %>
 

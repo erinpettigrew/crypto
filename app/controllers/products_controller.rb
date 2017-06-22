@@ -10,8 +10,8 @@ class ProductsController < ApplicationController
       # @products = Product.search(params[:search], include: [ { uses: { user: :avatar } }, :reviews])
       @products = Product.search(params[:search])
       # @categories = Category.search(params[:search], include: [:products])
-      @categories = Category.search(params[:search])
-      @default = Category.all.includes(:products)
+      # @categories = Category.search(params[:search])
+      # @default = Category.all.includes(:products)
   end
 
   def index
@@ -30,6 +30,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @product.category_id = 1 #default to category 1 for now
   end
 
   def newadmin
@@ -151,7 +152,7 @@ class ProductsController < ApplicationController
         end
 
         def product_params
-          params.require(:product).permit(:name, :image, :category_id, :user_id, :about, :theme_id, :link, :rating)
+          params.require(:product).permit(:name, :device, :image, :category_id, :user_id, :about, :theme_id, :link, :rating)
         end
 
       end
