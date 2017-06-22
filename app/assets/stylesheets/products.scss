@@ -31,6 +31,10 @@
 		float: right;
 	}
 
+	.star-rating img {
+		border:1px solid red;
+	}
+
 form#new_product {
 	padding: 30px;
 	box-shadow: 1px 1px 3px silver;
@@ -361,14 +365,6 @@ form#new_product {
 			margin:0px;
 			padding:0px;
 		}
-
-			.star-rating {
-				text-align:center;
-			}
-
-			.star-rating img {
-				max-width:100%;
-			}
 
 				.product-row {
 					margin: 30px 0px 30px 0px;

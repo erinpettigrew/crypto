@@ -10,7 +10,6 @@ class User < ActiveRecord::Base
   has_many :wants, dependent: :destroy
   has_many :wanted_products, through: :wants, source: :product
   has_one :profile
-  has_one :skin_type, through: :profiles, source: :skin_type
   has_many :posts
 
   validates :user_name, presence: true, allow_blank: false
@@ -33,6 +32,14 @@ class User < ActiveRecord::Base
         user.avatar.remote_image_url = auth.info.image.gsub('http://','https://') << "?type=large"
         user.save
         user.avatar.save
+      end
+    end
+  end
+
+  def first_name
+    user_name.split('').each_with_index do |letter, index|
+      if letter == " "
+        return user_name[0...index]
       end
     end
   end
