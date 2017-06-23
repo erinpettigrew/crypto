@@ -99,10 +99,23 @@ a, a:hover {
 
 
 .list-group-item {
-  height: 50px;
-  font-size: 110%;
+  height: 100px;
+  font-size: 150%;
   padding-top: 15px;
   border: 1px solid #eeeeee;
+
+  .product-info {
+    margin-left: 25px;
+  }
+}
+
+.list-group-item img {
+  max-height: 90%;
+  margin-left: 5px;
+}
+
+.list-group-item:hover {
+  background:#F3FAFA;
 }
 
 input.form-control {
