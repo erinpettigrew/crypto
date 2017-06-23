@@ -101,18 +101,17 @@ a, a:hover {
 .list-group-item {
   height: 100px;
   font-size: 150%;
-  padding-top: 15px;
   border: 1px solid #eeeeee;
-  .product-pic {
-    max-width:100px;
-  }
+  display:flex;
+  align-items: center;
   .product-info {
     margin-left: 25px;
   }
 }
 
 .list-group-item img {
-  max-height: 90%;
+  max-height: 68px;
+  max-width: 100px;
   margin-left: 5px;
   border-radius: 5px;
 }
