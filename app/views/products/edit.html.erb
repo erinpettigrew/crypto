@@ -1,8 +1,9 @@
 <% nofollow %>
 <% noindex %>
-<h1>Edit this product</h1>
+<h1>Edit  product #<%= @product.id %></h1>
 
 <%= render 'form' %>
+
 
 <%= link_to 'Show', @product, class: "btn btn-link" %> |
 <%= link_to 'Back', products_path, class: "btn btn-link" %>
