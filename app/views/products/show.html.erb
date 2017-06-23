@@ -9,14 +9,18 @@
 	<div class="page-header">
 	<h1><%= @product.name %></h1> <%= render partial: "metadata", locals: { product: @product } %>
 	</div>
-	<% if @product.device.present? %>
-		<% if @product.device.downcase.include?("web") %><h5><i class="fa fa-globe" aria-hidden="true"></i> &nbsp;Web wallet</h5><% end %>
-		<% if @product.device.downcase.include?("mobile") %><h5><i class="fa fa-mobile" aria-hidden="true"></i> &nbsp;Mobile wallet</h5><% end %>
-		<% if @product.device.downcase.include?("desktop") %><h5><i class="fa fa-desktop" aria-hidden="true"></i> &nbsp;Desktop wallet</h5><% end %>
-		<% if @product.device.downcase.include?("offline") %><h5><i class="fa fa-suitcase" aria-hidden="true"></i> &nbsp;Offline wallet</h5><% end %>
+	<% if @product.image? %>
+		<div class = "product-image">
+			<%= image_tag @product.try(:image).try(:med_thumb) %>
+		</div>
+		</br>
 	<% end %>
-</p>
-</br>
+<% if @product.device.present? %>
+	<% if @product.device.downcase.include?("web") %><h5><i class="fa fa-globe" aria-hidden="true"></i> &nbsp;Web wallet</h5><% end %>
+	<% if @product.device.downcase.include?("mobile") %><h5><i class="fa fa-mobile" aria-hidden="true"></i> &nbsp;Mobile wallet</h5><% end %>
+	<% if @product.device.downcase.include?("desktop") %><h5><i class="fa fa-desktop" aria-hidden="true"></i> &nbsp;Desktop wallet</h5><% end %>
+	<% if @product.device.downcase.include?("offline") %><h5><i class="fa fa-suitcase" aria-hidden="true"></i> &nbsp;Offline wallet</h5><% end %>
+<% end %>
 	<%= @product.about %>
 </p>
 </br>
