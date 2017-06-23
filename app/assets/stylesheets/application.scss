@@ -103,7 +103,9 @@ a, a:hover {
   font-size: 150%;
   padding-top: 15px;
   border: 1px solid #eeeeee;
-
+  .product-pic {
+    max-width:100px;
+  }
   .product-info {
     margin-left: 25px;
   }
@@ -112,6 +114,7 @@ a, a:hover {
 .list-group-item img {
   max-height: 90%;
   margin-left: 5px;
+  border-radius: 5px;
 }
 
 .list-group-item:hover {
