@@ -18,8 +18,8 @@
 </p>
       <ul class="list-group">
         <% Product.all.each do |product| %>
-        <li class="list-group-item">
-        <%= render partial: 'product_row', locals: { product: product } %>
+          <li class="list-group-item">
+          <%= render partial: 'product_row', locals: { product: product } %>
       </li>
         <% end %>
       </ul>

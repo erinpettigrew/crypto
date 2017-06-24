@@ -1,2 +1,4 @@
-<%= link_to image_tag(product.image.small_thumb), product, class: "product-pic"%>
+<div class="product-pic">
+  <%= link_to image_tag(product.image.small_thumb), product %>
+</div>
 <%= link_to product.name, product, class: "product-info" %>
