@@ -174,7 +174,6 @@ form#new_product {
 	}
 
 	.rating-single {
-		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 		background-color: white;
 		color: black;
 		font-size: 160%;
@@ -409,18 +408,7 @@ form#new_product {
 					float: right;
 				}
 
-				.rating-single {
-					font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-					background-color: white;
-					color: black;
-					font-size: 160%;
-					height: 50px;
-					width: 50px;
-					border-radius: 50%;
-					text-align:center;
-					padding-top: 8px;
-					float: right;
-				}
+
 
 				.users {
 					min-width:400px;

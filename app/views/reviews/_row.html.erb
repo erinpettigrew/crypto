@@ -1,11 +1,10 @@
 <div class="row review-row">
-  <div class="col-xs-3 col-sm-2 review-user-info">
+  <div class="review-avatar">
     <div class="small-avatar"><%= image_tag(review.user.pic) %></div>
   </div>
-  <div class="col-xs-6 col-sm-8">
+  <div class="review-text">
     <div class="user-name"><%= review.user.first_name %></div>
     <%= review.comment %><br>
-    <!-- <%= time_ago_in_words(review.created_at).gsub('about','') %> ago -->
   </div>
-  <div class="col-xs-3 col-sm-2 review-rating"><%= render partial: 'products/rating_single', locals: { rating: review.rating } %></div>
+  <div class="review-rating"><%= render partial: 'products/rating_single', locals: { rating: review.rating } %></div>
 </div>

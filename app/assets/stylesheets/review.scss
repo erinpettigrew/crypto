@@ -24,14 +24,26 @@
 
 .review-row {
 	border-bottom: 1px dotted silver;
-  padding: 15px 0px;
+  padding: 20px 0px;
 	display: block;
-	.review-user-info {
-		text-align: left;
-		font-size: 85%;
+	.review-avatar {
+		display:inline;
+		float:left;
+		margin-left:15px;
+		width:80px;
 	}
-	.review-user-info a {
-		text-decoration: underline;
+	.review-text {
+		display:inline;
+		float:left;
+		width:55%;
+		.user-name {
+			font-weight:600;
+		}
+	}
+	.review-rating {
+		display:inline;
+		float:right;
+		padding-right:15px;
 	}
 }
 .review-row:last-child {
