@@ -97,12 +97,17 @@ a, a:hover {
   display:none;
 }
 
+.list-group {
+  box-shadow:none;
+  border-radius:10px;
+}
+
 .list-group-item {
   height: 100px;
   font-size: 150%;
   border: 1px solid #eeeeee;
   display:flex;
-  align-items: center;
+  align-items: center;box-shadow:none;
   .product-pic {
     width: 100px;
     text-align:center;
