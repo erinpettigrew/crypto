@@ -41,6 +41,10 @@ class Product < ActiveRecord::Base
 		Product.find(Product.joins(:wants).group('products.id').order("count(*) desc").limit(3).ids)
 	end
 
+	def self.most_reviewed
+		Product.find(Product.joins(:reviews).group('products.id').order("count(*) desc").ids)
+	end
+
 	def self.best
 		best = []
 		Product.all.each do |product|

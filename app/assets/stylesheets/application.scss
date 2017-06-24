@@ -103,14 +103,17 @@ a, a:hover {
   border: 1px solid #eeeeee;
   display:flex;
   align-items: center;
+  .product-pic {
+    width: 100px;
+    text-align:center;
+  }
   .product-info {
     margin-left: 25px;
   }
-}
-
-.product-pic {
-  width: 100px;
-  text-align:center;
+  .device-info {
+    width:100px;
+    font-size:15px;
+  }
 }
 
 .list-group-item img {
@@ -122,6 +125,12 @@ a, a:hover {
 
 .list-group-item:hover {
   background:#F3FAFA;
+}
+
+i.fa.fa-mobile, i.fa.fa-globe {
+    font-size: 119%;
+    bottom: -0.04em;
+    position: relative;
 }
 
 input.form-control {
