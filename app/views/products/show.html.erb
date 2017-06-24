@@ -17,9 +17,11 @@
 	<% if @product.device.downcase.include?("offline") %><h5><i class="fa fa-suitcase" aria-hidden="true"></i> &nbsp;Offline wallet</h5><% end %>
 <% end %>
 
+<h5><i class="fa fa-money" aria-hidden="true"></i> &nbsp;
 <% @product.currencies.each do |currency| %>
-	<h5><i class="fa fa-money" aria-hidden="true"></i> &nbsp;<%= currency.name %></h5>
+	<%= currency.name %>&nbsp;
 <% end %>
+</h5>
 	<%= @product.about %>
 </p>
 </br>
