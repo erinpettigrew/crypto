@@ -14,6 +14,8 @@ class Product < ActiveRecord::Base
 	has_many :looks, through: :look_products
 	has_many :product_posts
 	has_many :posts, through: :product_posts
+	has_many :currency_products
+	has_many :currencies, through: :currency_products
 	validates :name, :category, presence: true
 
 	extend FriendlyId

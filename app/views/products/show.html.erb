@@ -2,13 +2,8 @@
 <% description 'Real reviews and ratings of ' + @product.name + 'from trusted members. Get product advice from skincare and beauty enthusiasts.' %>
 <% keywords @product.name + ', ' + @product.category.name + ', reviews, community, forum, posts, asian beauty, skincare, beauty, products, makeup, cosmetics' %>
 
-
-<!-- <div class="product-show-image"><%= image_tag @product.image_url %></div> -->
-
 <div class="col-xs-12 col-sm-5">
-	<!-- <div class="page-header"> -->
 	<h1><%= @product.name %></h1> <%= render partial: "metadata", locals: { product: @product } %>
-	<!-- </div> -->
 	<% if @product.image? %>
 		<div class = "product-image">
 			<%= image_tag @product.try(:image).try(:med_thumb) %>
@@ -20,6 +15,10 @@
 	<% if @product.device.downcase.include?("mobile") %><h5><i class="fa fa-mobile" aria-hidden="true"></i> &nbsp;Mobile wallet</h5><% end %>
 	<% if @product.device.downcase.include?("desktop") %><h5><i class="fa fa-desktop" aria-hidden="true"></i> &nbsp;Desktop wallet</h5><% end %>
 	<% if @product.device.downcase.include?("offline") %><h5><i class="fa fa-suitcase" aria-hidden="true"></i> &nbsp;Offline wallet</h5><% end %>
+<% end %>
+
+<% @product.currencies.each do |currency| %>
+	<h5><i class="fa fa-money" aria-hidden="true"></i> &nbsp;<%= currency.name %></h5>
 <% end %>
 	<%= @product.about %>
 </p>
