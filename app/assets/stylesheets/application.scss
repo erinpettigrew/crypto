@@ -123,6 +123,12 @@ a, a:hover {
     font-size: 15px;
     text-align: right;
     margin-right: 25px;
+    h5 {
+      display:inline;
+      margin-left: 10px;
+      opacity: 0.75;
+      font-size: 85%;
+    }
   }
   .device-info .fa {
     margin-left: 5px;
