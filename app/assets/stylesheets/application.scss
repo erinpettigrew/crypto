@@ -112,7 +112,7 @@ a, a:hover {
   display:flex;
   align-items: center;box-shadow:none;
   .product-pic {
-    width: 100px;
+    min-width: 100px;
     text-align:center;
   }
   .product-info {
