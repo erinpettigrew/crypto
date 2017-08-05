@@ -1,0 +1,16 @@
+<% title 'Walletthing' %>
+<% description 'The easiest place to compare cryptocurrency wallets' %>
+<% keywords 'cryptocurrency wallets, bitcoin, ethereum, how to buy bitcoin, how to buy ethereum, how to buy ether, how to buy litecoin, how to store cryptocurrency, digital money' %>
+
+<div class="jumbotron">
+  <h2>Walletthing is the easiest place to compare cryptocurrency wallets</h2>
+</div>
+
+</p>
+      <ul class="list-group">
+        <% Currency.all.each do |currency| %>
+          <li class="list-group-item">
+          <%= render partial: 'currency_row', locals: { currency: currency } %>
+      </li>
+        <% end %>
+      </ul>

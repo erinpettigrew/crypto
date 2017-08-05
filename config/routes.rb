@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   resources :themes
   resources :applicants
   resources :categories
-  resources :looks
   resources :currencies
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", sessions: "sessions" }
   resources :users, :only => [:show, :index, :update] do

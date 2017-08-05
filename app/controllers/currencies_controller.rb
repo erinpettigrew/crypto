@@ -22,7 +22,7 @@ class CurrenciesController < ApplicationController
   end
 
   def index
-    @currency = Currency.all
+    @currencies = Currency.all
   end
 
   def show
