@@ -31,8 +31,8 @@ Rails.application.routes.draw do
   get '/thanks', to: 'pages#thanks'
 
   authenticated :user do
-    root to: 'products#index', as: :authenticated_root
+    root to: 'currencies#index', as: :authenticated_root
   end
 
-  root to: 'products#index'
+  root to: 'currencies#index'
 end

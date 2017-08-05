@@ -10,8 +10,6 @@ class Product < ActiveRecord::Base
 	has_many :used_by, through: :uses, source: :user #rename user_id to used_by for referencing
 	has_many :wants, dependent: :destroy
 	has_many :wanted_by, through: :wants, source: :user
-	has_many :look_products
-	has_many :looks, through: :look_products
 	has_many :product_posts
 	has_many :posts, through: :product_posts
 	has_many :currency_products

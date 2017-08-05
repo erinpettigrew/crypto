@@ -1,7 +1,7 @@
 class CurrenciesController < ApplicationController
   before_action :set_currency, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
-  before_action :check_user, except: [:show]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :check_user, except: [:index, :show]
 
   def new
     @currency = Currency.new
@@ -55,7 +55,7 @@ class CurrenciesController < ApplicationController
   end
 
   def currency_params
-    params.require(:currency).permit(:name)
+    params.require(:currency).permit(:name, :image)
   end
 
   def check_user

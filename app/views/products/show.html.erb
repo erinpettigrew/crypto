@@ -20,7 +20,7 @@
 <% if @product.currencies.any? %>
 	<h5><i class="fa fa-money" aria-hidden="true"></i> &nbsp;
 	<% @product.currencies.each do |currency| %>
-		<%= currency.name %>&nbsp;
+		<%= link_to currency.name, currency %>&nbsp;
 	<% end %>
 <% end %>
 </h5>
