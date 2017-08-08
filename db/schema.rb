@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170805152154) do
+ActiveRecord::Schema.define(version: 20170808193610) do
 
   create_table "applicants", force: :cascade do |t|
     t.string   "email"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 20170805152154) do
     t.datetime "updated_at", null: false
     t.string   "slug"
     t.string   "image"
+    t.string   "ticker"
+    t.string   "about"
   end
 
   add_index "currencies", ["slug"], name: "index_currencies_on_slug", unique: true

@@ -55,7 +55,7 @@ class CurrenciesController < ApplicationController
   end
 
   def currency_params
-    params.require(:currency).permit(:name, :image)
+    params.require(:currency).permit(:name, :image, :ticker, :about)
   end
 
   def check_user
