@@ -1,1 +1,13 @@
-<h1><%= @currency.name %></h1>
+<div class="col-xs-12 col-sm-5">
+  <h1><%= @currency.name %></h1>
+  <% if @currency.image? %>
+    <div class = "product-image">
+      <%= image_tag @currency.try(:image).try(:med_thumb) %>
+    </div>
+    </br>
+  <% end %>
+</div>
+
+<div class="col-xs-12 col-sm-7">
+  <div class="panel panel-default">
+</div>

@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   resources :themes
   resources :applicants
   resources :categories
-  resources :looks
   resources :currencies
+  resources :exchanges
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", sessions: "sessions" }
   resources :users, :only => [:show, :index, :update] do
       resources :avatars
@@ -32,8 +32,8 @@ Rails.application.routes.draw do
   get '/thanks', to: 'pages#thanks'
 
   authenticated :user do
-    root to: 'products#index', as: :authenticated_root
+    root to: 'currencies#index', as: :authenticated_root
   end
 
-  root to: 'products#index'
+  root to: 'currencies#index'
 end

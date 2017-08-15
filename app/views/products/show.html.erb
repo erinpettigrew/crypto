@@ -1,6 +1,6 @@
-<% title @product.name %>
-<% description 'Real reviews and ratings of ' + @product.name + 'from trusted members. Get product advice from skincare and beauty enthusiasts.' %>
-<% keywords @product.name + ', ' + @product.category.name + ', reviews, community, forum, posts, asian beauty, skincare, beauty, products, makeup, cosmetics' %>
+<% title @product.name + ' on Walletthing' %>
+<% description 'Reviews, currencies, and how to get started with ' + @product.name %>
+<% keywords 'cryptocurrency wallets, bitcoin, ethereum, how to buy bitcoin, how to buy ethereum, how to buy ether, how to buy litecoin, how to store cryptocurrency, digital money' %>
 
 <div class="col-xs-12 col-sm-5">
 	<h1><%= @product.name %></h1> <%= render partial: "metadata", locals: { product: @product } %>
@@ -17,9 +17,11 @@
 	<% if @product.device.downcase.include?("offline") %><h5><i class="fa fa-suitcase" aria-hidden="true"></i> &nbsp;Offline wallet</h5><% end %>
 <% end %>
 
-<% if @product.currencies.any? %><h5><i class="fa fa-money" aria-hidden="true"></i> &nbsp;<% end %>
-<% @product.currencies.each do |currency| %>
-	<%= currency.name %>&nbsp;
+<% if @product.currencies.any? %>
+	<h5><i class="fa fa-money" aria-hidden="true"></i> &nbsp;
+	<% @product.currencies.each do |currency| %>
+		<%= link_to currency.name, currency %>&nbsp;
+	<% end %>
 <% end %>
 </h5>
 	<%= @product.about %>

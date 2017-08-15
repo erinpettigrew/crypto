@@ -1,7 +1,13 @@
 class CurrenciesController < ApplicationController
   before_action :set_currency, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
-  before_action :check_user, except: [:show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
+  before_action :check_user, except: [:index, :show, :search]
+
+
+  def search
+    @query = params[:search]
+    @currencies = Currency.search(params[:search])
+  end
 
   def new
     @currency = Currency.new
@@ -22,7 +28,7 @@ class CurrenciesController < ApplicationController
   end
 
   def index
-    @currency = Currency.all
+    @currencies = Currency.all
   end
 
   def show
@@ -55,7 +61,7 @@ class CurrenciesController < ApplicationController
   end
 
   def currency_params
-    params.require(:currency).permit(:name)
+    params.require(:currency).permit(:name, :image, :ticker, :about)
   end
 
   def check_user

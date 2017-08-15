@@ -14,4 +14,9 @@ class Currency < ActiveRecord::Base
   def should_generate_new_friendly_id?
     name_changed?
   end
+
+  mount_uploader :image, ImageUploader
+
+  searchkick
+  
 end
