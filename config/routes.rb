@@ -25,12 +25,6 @@ Rails.application.routes.draw do
       resources :photos
     end
 
-  get 'pages/login'
-
-  get '/join', to: 'applicants#new'
-
-  get '/thanks', to: 'pages#thanks'
-
   authenticated :user do
     root to: 'exchanges#index', as: :authenticated_root
   end
