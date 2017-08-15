@@ -1,0 +1,24 @@
+<div class="page">
+<% if @exchanges.empty? %>
+<div class="page-header">
+  <h1>Hm, no matches for <strong><%= @query %></strong> yet.</h1>
+</div>
+<% end %>
+
+
+<% if @exchanges.any? %>
+  <div class="sortable">
+    <ul class="list-group">
+      <% @exchanges.each do |exchange| %>
+      <li class="list-group-item">
+      <%= render partial: 'exchange_row', locals: { exchange: exchange } %>
+    </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+</div>
+
+<script>
+  mixpanel.track("Viewed Search Results", {"Search Term": "<%= @query %>"});
+</script>
