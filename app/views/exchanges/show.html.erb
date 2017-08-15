@@ -7,15 +7,23 @@
     </br>
   <% end %>
 
-<% if @exchange.location? %>
+<% if @exchange.location? || @exchange.founded_date? %>
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Location</h3>
+    <h3 class="panel-title">Company</h3>
   </div>
   <div class="panel-body">
-    <h5><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;
-    <%= @exchange.location %>
-  </h5>
+    <h5>
+      <% if @exchange.location? %>
+        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;
+        <%= @exchange.location %>
+      <% end %>
+    </p>
+    <% if @exchange.founded_date? %>
+      <i class="fa fa-calendar" aria-hidden="true"></i> &nbsp;
+      <%= @exchange.founded_date %>
+      <% end %>
+    </h5>
   </div>
 </div>
 <% end %>
