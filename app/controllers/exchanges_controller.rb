@@ -1,12 +1,7 @@
 class ExchangesController < ApplicationController
   before_action :set_exchange, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show, :search]
-  before_action :check_user, except: [:index, :show, :search]
-
-  def search
-      @query = params[:search]
-      @exchanges = Exchange.search(params[:search])
-  end
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :check_user, except: [:index, :show]
 
   def new
     @exchange = Exchange.new

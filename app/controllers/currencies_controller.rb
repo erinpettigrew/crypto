@@ -1,13 +1,7 @@
 class CurrenciesController < ApplicationController
   before_action :set_currency, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show, :search]
-  before_action :check_user, except: [:index, :show, :search]
-
-
-  def search
-    @query = params[:search]
-    @currencies = Currency.search(params[:search])
-  end
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :check_user, except: [:index, :show]
 
   def new
     @currency = Currency.new

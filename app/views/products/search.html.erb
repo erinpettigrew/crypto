@@ -1,5 +1,5 @@
 <div class="page">
-<% if @products.empty? %>
+<% if @products.empty? && @exchanges.empty? %>
 <div class="page-header">
   <h1>Hm, no matches for <strong><%= @query %></strong> yet.</h1>
 </div>
@@ -17,6 +17,21 @@
     </ul>
   </div>
 <% end %>
+
+<% if @exchanges.any? %>
+  <div class="sortable">
+    <ul class="list-group">
+      <% @exchanges.each do |exchange| %>
+      <li class="list-group-item">
+      <%= render partial: 'exchanges/exchange_row', locals: { exchange: exchange } %>
+    </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+
 </div>
 
 <script>
