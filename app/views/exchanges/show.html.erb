@@ -7,31 +7,54 @@
     </br>
   <% end %>
 
-<% if @exchange.requirements? %>
-	<h5><i class="fa fa-id-card-o" aria-hidden="true"></i> &nbsp;
-	<%= @exchange.requirements %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Location</h3>
+  </div>
+  <div class="panel-body">
+    <h5><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;
+    <%= @exchange.location %>
   </h5>
-<% end %>
-<% if @exchange.location? %>
-  <h5><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;
-  <%= @exchange.location %>
-</h5>
-<% end %>
-<% if @exchange.bank_transfer.present? %>
-  <h5><i class="fa fa-university" aria-hidden="true"></i></i> &nbsp;
-    Bank Transfer
-  </h5>
-<% end %>
-<% if @exchange.credit_card.present? %>
-  <h5><i class="fa fa-credit-card" aria-hidden="true"></i> &nbsp;
-    Credit Card
-  </h5>
-<% end %>
-<% if @exchange.paypal.present? %>
-  <h5><i class="fa fa-paypal" aria-hidden="true"></i></i> &nbsp;
-    Paypal
-  </h5>
-<% end %>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Identification Requirements</h3>
+  </div>
+  <div class="panel-body">
+    <% if @exchange.requirements? %>
+    	<h5><i class="fa fa-id-card-o" aria-hidden="true"></i> &nbsp;
+    	<%= @exchange.requirements %>
+      </h5>
+    <% end %>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Funding Sources</h3>
+  </div>
+  <div class="panel-body">
+
+    <% if @exchange.bank_transfer.present? %>
+      <h5><i class="fa fa-university" aria-hidden="true"></i></i> &nbsp;
+        Bank Transfer
+      </h5>
+    <% end %>
+    <% if @exchange.credit_card.present? %>
+      <h5><i class="fa fa-credit-card" aria-hidden="true"></i> &nbsp;
+        Credit Card
+      </h5>
+    <% end %>
+    <% if @exchange.paypal.present? %>
+      <h5><i class="fa fa-paypal" aria-hidden="true"></i></i> &nbsp;
+        Paypal
+      </h5>
+    <% end %>
+  </div>
+</div>
+
 <%= @exchange.about %>
 </p>
 </br>
