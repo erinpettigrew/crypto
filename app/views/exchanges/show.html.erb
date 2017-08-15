@@ -17,17 +17,17 @@
   <%= @exchange.location %>
 </h5>
 <% end %>
-<% if @exchange.bank_transfer? %>
+<% if @exchange.bank_transfer.present? %>
   <h5><i class="fa fa-university" aria-hidden="true"></i></i> &nbsp;
     Bank Transfer
   </h5>
 <% end %>
-<% if @exchange.credit_card? %>
+<% if @exchange.credit_card.present? %>
   <h5><i class="fa fa-credit-card" aria-hidden="true"></i> &nbsp;
     Credit Card
   </h5>
 <% end %>
-<% if @exchange.paypal? %>
+<% if @exchange.paypal.present? %>
   <h5><i class="fa fa-paypal" aria-hidden="true"></i></i> &nbsp;
     Paypal
   </h5>
