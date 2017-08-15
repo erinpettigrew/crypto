@@ -60,7 +60,7 @@ class ExchangesController < ApplicationController
   end
 
   def exchange_params
-    params.require(:exchange).permit(:name, :image, :about, :requirements)
+    params.require(:exchange).permit(:name, :image, :about, :requirements, :location)
   end
 
   def check_user

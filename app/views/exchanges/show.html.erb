@@ -10,9 +10,11 @@
 <% if @exchange.requirements? %>
 	<h5><i class="fa fa-id-card-o" aria-hidden="true"></i> &nbsp;
 	<%= @exchange.requirements %>
+  </h5>
 <% end %>
-</h5>
-	<%= @exchange.about %>
+<h5><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;
+<%= @exchange.location %>
+<%= @exchange.about %>
 </p>
 </br>
 

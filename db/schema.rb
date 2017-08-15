@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170815023614) do
+ActiveRecord::Schema.define(version: 20170815033516) do
 
   create_table "applicants", force: :cascade do |t|
     t.string   "email"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20170815023614) do
     t.string "requirements"
     t.string "image"
     t.string "slug"
+    t.string "location"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
