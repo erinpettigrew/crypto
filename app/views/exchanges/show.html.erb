@@ -76,5 +76,20 @@
 </div>
 
 <div class="col-xs-12 col-sm-7">
-  <div class="panel panel-default">
+    <% if @exchange.volume? %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Volume</h3>
+      </div>
+      <div class="panel-body">
+        <% if @exchange.volume? %>
+        	<h5><i class="fa fa-bar-chart" aria-hidden="true"></i> &nbsp;
+        	<%= @exchange.volume %>
+          </h5>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+
+
 </div>
