@@ -1,6 +1,6 @@
 class Investor < ActiveRecord::Base
   has_many :investments
-  has_many :exchange, through: :investments
+  has_many :exchanges, through: :investments
 
     extend FriendlyId
     friendly_id :slug_candidates, use: :slugged

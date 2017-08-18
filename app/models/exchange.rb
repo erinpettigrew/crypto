@@ -1,8 +1,6 @@
 class Exchange < ActiveRecord::Base
-  has_many :investors
-  has_many :investments, through: :investors
-
-  accepts_nested_attributes_for :investments, allow_destroy: true
+  has_many :investments
+  has_many :investors, through: :investments
 
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
