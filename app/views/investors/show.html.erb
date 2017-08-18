@@ -1,3 +1,4 @@
 <h1><%= @investor.name %></h1>
-<%= link_to "Edit this investor", edit_investor_path, class: "btn btn-primary" %><br><br>
-<%= link_to "Add new investor", new_investor_path, class: "btn btn-primary" %>
+<%= link_to "Edit", edit_investor_path, class: "btn btn-primary" %><br><br>
+<%= link_to "Add new", new_investor_path, class: "btn btn-primary" %><br><br>
+<%= link_to 'Destroy', @investor, method: :delete, data: { confirm: 'Are you sure?' } %>

@@ -18,35 +18,35 @@ class InvestorsController < ApplicationController
   end
 
   def create
-    @Investor = Investor.new(investor_params)
+    @investor = Investor.new(investor_params)
 
     respond_to do |format|
-      if @Investor.save
-        format.html { redirect_to @Investor, notice: 'investor was successfully created.' }
-        format.json { render :show, status: :created, location: @iInvestor }
+      if @investor.save
+        format.html { redirect_to @investor, notice: 'investor was successfully created.' }
+        format.json { render :show, status: :created, location: @investor }
       else
         format.html { render :new }
-        format.json { render json: @Investor.errors, status: :unprocessable_entity }
+        format.json { render json: @investor.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def update
     respond_to do |format|
-      if @Investor.update(investor_params)
-        format.html { redirect_to @Investor, notice: 'Investor was successfully updated.' }
-        format.json { render :show, status: :ok, location: @Investor }
+      if @investor.update(investor_params)
+        format.html { redirect_to @investor, notice: 'Investor was successfully updated.' }
+        format.json { render :show, status: :ok, location: @investor }
       else
         format.html { render :edit }
-        format.json { render json: @Investor.errors, status: :unprocessable_entity }
+        format.json { render json: @investor.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def destroy
-    @Investor.destroy
+    @investor.destroy
     respond_to do |format|
-      format.html { redirect_to categories_url, notice: 'Investor was successfully destroyed.' }
+      format.html { redirect_to investors_url, notice: 'Investor was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
