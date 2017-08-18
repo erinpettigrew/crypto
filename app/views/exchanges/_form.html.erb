@@ -56,4 +56,6 @@
     <%= f.submit value: "Add!", class: "btn btn-primary btn-lg" %>
   </div>
 
+  <%= f.collection_select :investor_ids, Investor.all, :id, :name %>
+
 <% end %>
