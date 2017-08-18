@@ -1,7 +1,13 @@
-<div class="product-pic">
-  <%= link_to image_tag(currency.image.small_thumb), currency %>
+
+  <div class="product-pic">
+    <%= link_to image_tag(currency.image.small_thumb), currency %>
+  </div>
+  <%= link_to currency.name, currency, class: "product-info" %>
+
+<div class="price">
+  $<%= display_price(currency) %>
 </div>
-<%= link_to currency.name, currency, class: "product-info" %>
-<div class="ticker">
-  <h5><%= currency.ticker %></h5>
-</div>
+
+  <div class="ticker">
+    <h5><%= currency.ticker %></h5>
+  </div>
