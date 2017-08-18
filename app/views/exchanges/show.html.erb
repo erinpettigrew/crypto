@@ -1,0 +1,95 @@
+<div class="col-xs-12 col-sm-5">
+  <h1><%= @exchange.name %></h1>
+  <% if @exchange.image? %>
+    <div class = "product-image">
+      <%= image_tag @exchange.try(:image).try(:med_thumb) %>
+    </div>
+    </br>
+  <% end %>
+
+<% if @exchange.location? || @exchange.founded_date? %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Company</h3>
+  </div>
+  <div class="panel-body">
+    <h5>
+      <% if @exchange.location? %>
+        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;
+        <%= @exchange.location %>
+      <% end %>
+    </p>
+    <% if @exchange.founded_date? %>
+      <i class="fa fa-calendar" aria-hidden="true"></i> &nbsp;
+      <%= @exchange.founded_date %>
+      <% end %>
+    </h5>
+  </div>
+</div>
+<% end %>
+
+<% if @exchange.requirements? %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Requirements</h3>
+  </div>
+  <div class="panel-body">
+    <% if @exchange.requirements? %>
+    	<h5><i class="fa fa-id-card-o" aria-hidden="true"></i> &nbsp;
+    	<%= @exchange.requirements %>
+      </h5>
+    <% end %>
+  </div>
+</div>
+<% end %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Funding</h3>
+  </div>
+  <div class="panel-body">
+    <% if @exchange.bank_transfer.present? %>
+      <h5><i class="fa fa-university" aria-hidden="true"></i> &nbsp;
+        Bank Transfer
+      </h5>
+    <% end %>
+    <% if @exchange.credit_card.present? %>
+      <h5><i class="fa fa-credit-card" aria-hidden="true"></i> &nbsp;
+        Credit Card
+      </h5>
+    <% end %>
+    <% if @exchange.paypal.present? %>
+      <h5><i class="fa fa-paypal" aria-hidden="true"></i> &nbsp;
+        Paypal
+      </h5>
+    <% end %>
+    <h5><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> &nbsp;
+      Cryptocurrency
+    </h5>
+  </div>
+</div>
+
+<%= @exchange.about %>
+</p>
+</br>
+
+</div>
+
+<div class="col-xs-12 col-sm-7">
+    <% if @exchange.volume? %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Volume</h3>
+      </div>
+      <div class="panel-body">
+        <% if @exchange.volume? %>
+        	<h5><i class="fa fa-bar-chart" aria-hidden="true"></i> &nbsp;
+        	<%= @exchange.volume %>
+          </h5>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+
+
+</div>

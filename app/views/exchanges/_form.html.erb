@@ -1,0 +1,59 @@
+<%= form_for(@exchange, :html => { multipart: true }) do |f| %>
+  <% if @exchange.errors.any? %>
+  <div id="error_explanation" class= "alert alert-danger alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <h4><%= pluralize(@exchange.errors.count, "error") %> prohibited this product from being saved:</h4>
+
+    <ul>
+      <% @exchange.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_area :name, placeholder: "Name", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :about %>
+    <%= f.text_field :about, placeholder: "About", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :requirements %>
+    <%= f.text_area :requirements, placeholder: "Requirements", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :location %>
+    <%= f.text_field :location, placeholder: "Location", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :founded_date %>
+    <%= f.text_field :founded_date, placeholder: "Founded year", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :volume %>
+    <%= f.text_field :volume, placeholder: "Volume", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :credit_card %>
+    <%= f.check_box :credit_card, placeholder: "Credit Card?", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :bank_transfer %>
+    <%= f.check_box :bank_transfer, placeholder: "Bank Transfer?", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :paypal %>
+    <%= f.check_box :paypal, placeholder: "Paypal?", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit value: "Add!", class: "btn btn-primary btn-lg" %>
+  </div>
+
+<% end %>

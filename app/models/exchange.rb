@@ -1,6 +1,4 @@
-class Currency < ActiveRecord::Base
-  has_many :currency_products
-  has_many :products, through: :currency_products
+class Exchange < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
@@ -18,5 +16,5 @@ class Currency < ActiveRecord::Base
   mount_uploader :image, ImageUploader
 
   searchkick
-  
+
 end

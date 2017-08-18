@@ -11,14 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170808193610) do
-
-  create_table "applicants", force: :cascade do |t|
-    t.string   "email"
-    t.text     "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20170815183602) do
 
   create_table "avatars", force: :cascade do |t|
     t.integer  "user_id"
@@ -60,6 +53,20 @@ ActiveRecord::Schema.define(version: 20170808193610) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "exchanges", force: :cascade do |t|
+    t.string  "name"
+    t.string  "about"
+    t.string  "requirements"
+    t.string  "image"
+    t.string  "slug"
+    t.string  "location"
+    t.boolean "bank_transfer"
+    t.boolean "credit_card"
+    t.boolean "paypal"
+    t.string  "founded_date"
+    t.string  "volume"
+  end
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
     t.integer  "sluggable_id",              null: false
@@ -84,18 +91,6 @@ ActiveRecord::Schema.define(version: 20170808193610) do
     t.integer "look_id"
     t.integer "product_id"
   end
-
-  create_table "looks", force: :cascade do |t|
-    t.string   "title"
-    t.string   "description"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "slug"
-    t.string   "image"
-  end
-
-  add_index "looks", ["slug"], name: "index_looks_on_slug", unique: true
 
   create_table "photos", force: :cascade do |t|
     t.text     "comment"

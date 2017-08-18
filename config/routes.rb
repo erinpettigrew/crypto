@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   get '/products/newadmin', to: 'products#newadmin'
   resources :posts
   resources :themes
-  resources :applicants
   resources :categories
   resources :currencies
+  resources :exchanges
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", sessions: "sessions" }
   resources :users, :only => [:show, :index, :update] do
       resources :avatars
@@ -24,15 +24,9 @@ Rails.application.routes.draw do
       resources :photos
     end
 
-  get 'pages/login'
-
-  get '/join', to: 'applicants#new'
-
-  get '/thanks', to: 'pages#thanks'
-
   authenticated :user do
-    root to: 'currencies#index', as: :authenticated_root
+    root to: 'exchanges#index', as: :authenticated_root
   end
 
-  root to: 'currencies#index'
+  root to: 'exchanges#index'
 end
