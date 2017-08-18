@@ -59,20 +59,20 @@ a, a:hover {
   color: #000000;
   border: 0px;
   border-radius: 500px;
-  background: #09f0f0; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(#9de8e8, #88cccc); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#9de8e8, #88cccc); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#9de8e8, #88cccc); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#9de8e8, #88cccc); /* Standard syntax */
+  background: #75d1cd; /* For browsers that do not support gradients */
+  // background: -webkit-linear-gradient(#9de8e8, #88cccc); /* For Safari 5.1 to 6.0 */
+  // background: -o-linear-gradient(#9de8e8, #88cccc); /* For Opera 11.1 to 12.0 */
+  // background: -moz-linear-gradient(#9de8e8, #88cccc); /* For Firefox 3.6 to 15 */
+  // background: linear-gradient(#9de8e8, #88cccc); /* Standard syntax */
 
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-  background: #9de8e8; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(#9de8e8, #a6fcfc); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#9de8e8, #a6fcfc); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#9de8e8, #a6fcfc); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#9de8e8, #a6fcfc); /* Standard syntax */
+  background: #6dc4c0; /* For browsers that do not support gradients */
+  // background: -webkit-linear-gradient(#9de8e8, #a6fcfc); /* For Safari 5.1 to 6.0 */
+  // background: -o-linear-gradient(#9de8e8, #a6fcfc); /* For Opera 11.1 to 12.0 */
+  // background: -moz-linear-gradient(#9de8e8, #a6fcfc); /* For Firefox 3.6 to 15 */
+  // background: linear-gradient(#9de8e8, #a6fcfc); /* Standard syntax */
   color: black;
 }
 
