@@ -22,7 +22,7 @@ class ExchangesController < ApplicationController
   end
 
   def index
-    @currencies = Exchange.all
+    @exchanges = Exchange.all.order(:name)
   end
 
   def show

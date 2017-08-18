@@ -3,7 +3,7 @@
 <% keywords 'cryptocurrency wallets, bitcoin, ethereum, how to buy bitcoin, how to buy ethereum, how to buy ether, how to buy litecoin, how to store cryptocurrency, digital money' %>
 
 <div class="jumbotron">
-  <h2>Walletthing is the easiest place to compare cryptocurrency exchanges</h2>
+  <h2>How to buy / store / trade Bitcoin in the US</h2>
 </div>
 
 </p>
@@ -26,7 +26,7 @@
               <th>Incidents</th>
               <th>Investors</th>
           </thead>
-          <% Exchange.all.each do |exchange| %>
+          <% @exchanges.each do |exchange| %>
             <%= render partial: 'exchange_row', locals: { exchange: exchange } %>
           <% end %>
         </table>
