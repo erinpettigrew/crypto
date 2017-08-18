@@ -132,5 +132,12 @@
     </div>
     <% end %>
 
+    <% if !user_signed_in? %>
+    	<div class="panel panel-default panel-default-main">
+    	  <div class="panel-body panel-body-main"><h3>Share your experience with <%= @exchange.name %></h3></div>
+    		<%= render partial: "products/login" %>
+    	</div>
+    <% end %>
+
 
 </div>
