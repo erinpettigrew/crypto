@@ -43,6 +43,32 @@
 </div>
 <% end %>
 
+<% if @exchange.fees? %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Fees</h3>
+  </div>
+  <div class="panel-body">
+    <% if @exchange.fees? %>
+    	<h5><i class="fa fa-money" aria-hidden="true"></i> &nbsp;
+    	<%= @exchange.fees %>
+      </h5>
+    <% end %>
+  </div>
+</div>
+<% end %>
+
+<!-- check if investors -->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Investors</h3>
+  </div>
+  <div class="panel-body">
+    Firstname Lastname
+  </div>
+</div>
+
+
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Funding</h3>
