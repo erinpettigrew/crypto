@@ -1,7 +1,7 @@
 class InvestorsController < ApplicationController
   before_action :set_investor, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
-  before_action :check_user
+  before_action :authenticate_user!, except: [:show, :index]
+  before_action :check_user, except: [:show, :index]
 
   def index
     @investors = Investor.all
