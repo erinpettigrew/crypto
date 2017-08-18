@@ -3,18 +3,18 @@ class InvestorsController < ApplicationController
   before_action :authenticate_user!
   before_action :check_user
 
-  def new
-    @investor = Investor.new
-  end
-
-  def edit
+  def index
+    @investors = Investor.all
   end
 
   def show
   end
 
-  def index
-    @investors = Investor.all
+  def new
+    @investor = Investor.new
+  end
+
+  def edit
   end
 
   def create
