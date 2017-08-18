@@ -111,9 +111,15 @@ a, a:hover {
   border: 1px solid #eee;
 }
 
-.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+.table>thead>tr>td, .table>thead>tr>th {
+  vertical-align: middle;
+  border-bottom: 1px solid #eee;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th {
     vertical-align: middle;
     border-bottom: 1px solid #eee;
+    height: 70px;
     img {
       max-width: 100px;
       max-height: 50px;
