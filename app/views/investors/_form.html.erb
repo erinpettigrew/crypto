@@ -1,0 +1,24 @@
+<%= form_for(@investor, :html => { multipart: true }) do |f| %>
+  <% if @investor.errors.any? %>
+  <div id="error_explanation" class= "alert alert-danger alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <h4><%= pluralize(@investor.errors.count, "error") %> prohibited this investor from being saved:</h4>
+
+    <ul>
+      <% @investor.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_area :name, placeholder: "Name", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit value: "Submit", class: "btn btn-primary btn-lg" %>
+  </div>
+
+<% end %>
