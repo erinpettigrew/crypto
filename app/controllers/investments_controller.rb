@@ -42,6 +42,6 @@ class InvestmentsController < ApplicationController
 
   private
   def use_params
-    params.permit(:product_id, :user_id)
+    params.require(:investment).permit(:exchange_id, :investor_id)
   end
 end

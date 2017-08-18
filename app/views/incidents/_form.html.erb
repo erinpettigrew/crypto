@@ -1,0 +1,40 @@
+<%= form_for(@incident, :html => { multipart: true }) do |f| %>
+  <% if @incident.errors.any? %>
+  <div id="error_explanation" class= "alert alert-danger alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <h4><%= pluralize(@incident.errors.count, "error") %> prohibited this incident from being saved:</h4>
+
+    <ul>
+      <% @incident.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :date %>
+    <%= f.date_field :date, placeholder: "Date", class: "form-control"  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :url %>
+    <%= f.text_area :url, placeholder: "URL", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :amount %>
+    <%= f.text_area :amount, placeholder: "Amount", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :exchanges %>
+    <%= f.collection_check_boxes(:exchange_ids, Exchange.all, :id, :name) do |exchange| %>
+      <br><%= exchange.check_box + " " + exchange.label(:name => exchange.object.name) %>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit value: "Submit", class: "btn btn-primary btn-lg" %>
+  </div>
+
+<% end %>

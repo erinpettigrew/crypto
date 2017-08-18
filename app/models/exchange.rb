@@ -1,6 +1,8 @@
 class Exchange < ActiveRecord::Base
   has_many :investments
   has_many :investors, through: :investments
+  has_many :exchange_incidents
+  has_many :incidents, through: :exchange_incidents
 
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged

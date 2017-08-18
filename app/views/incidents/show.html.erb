@@ -1,0 +1,23 @@
+<h1><%= @incident.name %></h1>
+<%= @incident.date %><br>
+<%= @incident.amount %><br>
+<%= link_to @incident.url, @incident.url, target: "_blank" %>
+
+<% if @incident.exchanges.any? %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Exchange</h3>
+    </div>
+    <div class="panel-body">
+      <% @incident.exchanges.each do |exchange| %>
+        <h5><i class="fa fa-user-o" aria-hidden="true"></i> &nbsp;<%= link_to exchange.name, exchange %></h5>
+        <% end %>
+    </div>
+  </div>
+<% end %>
+<hr>
+<% if current_user.admin? %>
+  <%= link_to "Edit", edit_investor_path, class: "btn btn-primary" %><br><br>
+  <%= link_to "Add new", new_investor_path, class: "btn btn-primary" %><br><br>
+  <%= link_to 'Destroy', @investor, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>

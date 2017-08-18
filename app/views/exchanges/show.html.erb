@@ -71,6 +71,19 @@
   </div>
 <% end %>
 
+<% if @exchange.incidents.any? %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Incidents</h3>
+    </div>
+    <div class="panel-body">
+      <% @exchange.incidents.each do |incident| %>
+        <h5><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> &nbsp;<%= link_to incident.amount, incident.url, target: "_blank" %> - <%= incident.date.strftime("%b %Y") %></h5>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Funding</h3>
