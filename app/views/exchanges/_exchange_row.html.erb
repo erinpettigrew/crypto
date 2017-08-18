@@ -6,6 +6,18 @@
     <%= link_to exchange.name, exchange, class: "product-info" %>
   </td>
   <td>
+    $4,500
+  </td>
+  <td>
     <%= exchange.volume %>
+  </td>
+  <td>
+    <%= exchange.location %>
+  </td>
+  <td>
+    <%= exchange.incidents.count %>
+  </td>
+  <td>
+    <%= exchange.investors.count %>
   </td>
 </tr>

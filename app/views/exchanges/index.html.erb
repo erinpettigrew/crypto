@@ -18,9 +18,13 @@
 
         <table class="table">
           <thead>
-              <th>Name</th>
               <th></th>
+              <th>Name</th>
+              <th>Price</th>
               <th>Volume</th>
+              <th>Location</th>
+              <th>Incidents</th>
+              <th>Investors</th>
           </thead>
           <% Exchange.all.each do |exchange| %>
             <%= render partial: 'exchange_row', locals: { exchange: exchange } %>
