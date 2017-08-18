@@ -58,11 +58,11 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :investors %>
     <%= f.collection_check_boxes(:investor_ids, Investor.all, :id, :name) do |investor| %>
-      <%= investor.label { investor.check_box } %>
+      <br><%= investor.check_box + " " + investor.label(:name => investor.object.name) %>
     <% end %>
   </div>
-
 
   <div class="form-group">
     <%= f.submit value: "Add!", class: "btn btn-primary btn-lg" %>
