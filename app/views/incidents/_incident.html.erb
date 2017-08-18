@@ -1,0 +1,1 @@
+<h3><%= link_to incident.try(:name), incident.url, target: "_blank"  %> - <%= incident.try(:amount) %> - <%= incident.date.try(:strftime, "%b %Y") %></h3>
