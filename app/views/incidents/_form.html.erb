@@ -13,10 +13,13 @@
   <% end %>
 
   <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: "Name", class: "form-control"  %>
+  </div>
+  <div class="form-group">
     <%= f.label :date %>
     <%= f.date_field :date, placeholder: "Date", class: "form-control"  %>
   </div>
-
   <div class="form-group">
     <%= f.label :url %>
     <%= f.text_area :url, placeholder: "URL", class: "form-control" %>
@@ -25,7 +28,6 @@
     <%= f.label :amount %>
     <%= f.text_area :amount, placeholder: "Amount", class: "form-control" %>
   </div>
-
   <div class="form-group">
     <%= f.label :exchanges %>
     <%= f.collection_check_boxes(:exchange_ids, Exchange.all, :id, :name) do |exchange| %>

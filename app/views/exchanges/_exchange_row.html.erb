@@ -1,7 +1,11 @@
-<div class="product-pic">
-  <%= link_to image_tag(exchange.image.small_thumb), exchange %>
-</div>
-<%= link_to exchange.name, exchange, class: "product-info" %>
-<div class="volume">
-  <h5><%= exchange.volume %></h5>
-</div>
+<tr>
+  <td>
+    <%= link_to image_tag(exchange.image.small_thumb), exchange %>
+  </td>
+  <td>
+    <%= link_to exchange.name, exchange, class: "product-info" %>
+  </td>
+  <td>
+    <%= exchange.volume %>
+  </td>
+</tr>

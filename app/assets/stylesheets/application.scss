@@ -16,6 +16,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  background: #fcfcfc;
 }
 
 .jumbotron {
@@ -100,50 +101,65 @@ a, a:hover {
   display:none;
 }
 
-.list-group {
-  box-shadow:none;
-  border-radius:10px;
-}
+// .list-group {
+//   box-shadow:none;
+//   border-radius:10px;
+//   background: white;
+// }
 
-.list-group-item {
-  height: 100px;
-  font-size: 130%;
-  border: 1px solid #eeeeee;
-  display:flex;
-  align-items: center;box-shadow:none;
-  .product-pic {
-    min-width: 100px;
-    text-align:center;
-  }
-  .product-info {
-    margin-left: 25px;
-  }
-  .device-info {
-    width: 100%;
-    font-size: 15px;
-    text-align: right;
-    margin-right: 10px;
-    h5 {
-      margin-left: 10px;
-      opacity: 0.65;
-      font-size: 85%;
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    vertical-align: middle;
+    height: 100px;
+    font-size: 130%;
+    border: 1px solid #eeeeee;
+    background:white;
+    img {
+      max-width: 100px;
+      max-height: 75px;
+      border-radius: 10px;
     }
-  }
-  .device-info .fa {
-    margin-left: 5px;
-  }
 }
 
-.list-group-item img {
-  max-height: 68px;
-  max-width: 100px;
-  margin-left: 5px;
-  border-radius: 5px;
-}
-
-.list-group-item:hover {
-  background:#F3FAFA;
-}
+// .list-group-item {
+//   background: white;
+//   height: 100px;
+//   font-size: 130%;
+//   border: 1px solid #eeeeee;
+//   display:flex;
+//   align-items: center;box-shadow:none;
+//   .product-pic {
+//     min-width: 100px;
+//     text-align:center;
+//   }
+//   .product-info {
+//     margin-left: 25px;
+//   }
+//   .device-info {
+//     width: 100%;
+//     font-size: 15px;
+//     text-align: right;
+//     margin-right: 10px;
+//     h5 {
+//       margin-left: 10px;
+//       opacity: 0.65;
+//       font-size: 85%;
+//     }
+//   }
+//   .device-info .fa {
+//     margin-left: 5px;
+//   }
+// }
+//
+// .list-group-item img {
+//   max-height: 68px;
+//   max-width: 100px;
+//   margin-left: 5px;
+//   border-radius: 5px;
+// }
+//
+// .list-group-item:hover {
+//   background:#F3FAFA;
+// }
 
 i.fa.fa-mobile {
     font-size: 139%;

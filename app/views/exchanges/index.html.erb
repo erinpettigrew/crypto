@@ -7,10 +7,22 @@
 </div>
 
 </p>
-      <ul class="list-group">
+      <!-- <ul class="list-group">
         <% Exchange.all.each do |exchange| %>
           <li class="list-group-item">
           <%= render partial: 'exchange_row', locals: { exchange: exchange } %>
       </li>
         <% end %>
-      </ul>
+      </ul> -->
+
+
+        <table class="table">
+          <thead>
+              <th>Name</th>
+              <th></th>
+              <th>Volume</th>
+          </thead>
+          <% Exchange.all.each do |exchange| %>
+            <%= render partial: 'exchange_row', locals: { exchange: exchange } %>
+          <% end %>
+        </table>
