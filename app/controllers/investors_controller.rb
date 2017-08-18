@@ -13,6 +13,10 @@ class InvestorsController < ApplicationController
   def show
   end
 
+  def index
+    @investors = Investor.all
+  end
+
   def create
     @Investor = Investor.new(investor_params)
 
