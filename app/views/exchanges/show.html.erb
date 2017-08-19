@@ -7,7 +7,7 @@
     </br>
   <% end %>
 
-<% if @exchange.location? || @exchange.founded_date? %>
+<% if @exchange.location? || @exchange.founded_date? || @exchange.ny_permitted %>
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Company</h3>
@@ -22,6 +22,11 @@
     <% if @exchange.founded_date? %>
       <i class="fa fa-calendar" aria-hidden="true"></i> &nbsp;
       <%= @exchange.founded_date %>
+      <% end %>
+    </p>
+      <% if @exchange.ny_permitted? %>
+      <i class="fa fa-certificate" aria-hidden="true"></i> &nbsp;
+        Licensed / chartered in New York State
       <% end %>
     </h5>
   </div>
