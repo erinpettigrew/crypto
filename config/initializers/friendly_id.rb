@@ -17,11 +17,9 @@ FriendlyId.defaults do |config|
   config.use :reserved
 
   config.reserved_words = %w(new edit index session login logout users admin
-    stylesheets assets javascripts images product products regimen regimens 
-    collection collections photo photos image forum comments discussion qna 
-    qa questions talk style styles post blog blogs posts japan korea usa us 
-    america taiwan etudehouse amorepacific mybeautydiary salux laneige group
-    groups love loves lover loving lovers lovely looklove erinpettigrew superfem
+    stylesheets assets javascripts images product products regimen regimens
+    collection collections photo photos image forum comments discussion qna
+    qa questions
     )
 
   #  ## Friendly Finders
