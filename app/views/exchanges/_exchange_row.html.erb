@@ -15,7 +15,9 @@
     <%= exchange.fee_ratio %>
   </td>
   <td>
-    <%= exchange.incidents.count %>
+    <% if exchange.incidents.count > 0 %>
+      <%= exchange.incidents.count %>
+      <% end %>
   </td>
   <td>
     <% if exchange.ny_permitted? %>
