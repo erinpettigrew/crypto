@@ -13,20 +13,20 @@
 </div>
 </p>
 
-<h1>Select a wallet</h1>
-<small>More info on selecting a wallet here</small>
-
+<h2>1. Choose a wallet</h2>
+A wallet is where you'll keep your Bitcoin safe. There are two types: 1) A hardware wallet, kind of like an offline vault 2) A hosted wallet, like online file storage. Hosted wallets are easy to use but can be more vulnerable to theft. Hardware wallets are slightly more complicated and require more attention to detail but are more secure. Be sure to have your wallet ready before you buy your Bitcoin. This way, you can quickly move your Bitcoin into your wallet for safekeeping.
+</p>
 <ul class="list-group">
-  <% Product.take(3) do |product| %>
+  <% Product.take(3).each do |product| %>
     <li class="list-group-item">
       <%= render partial: 'products/product_row', locals: { product: product } %>
     </li>
   <% end %>
 </ul>
 
-<h1>Select an exchange</h1>
-<small>More info on selecting an exchange</small>
-
+<h2>2. Choose an exchange</h2>
+Now that you have your wallet, it's time to choose your exchange. Exchanges let you buy and sell Bitcoin (and other cryptocurrencies). Very few exchanges are both licensted to operate in New York and accept fiat currencies for buying Bitcoin. Pick the one that works best for you.
+</p>
         <table class="table">
           <thead>
               <th></th>
@@ -43,3 +43,6 @@
             <%= render partial: 'exchanges/exchange_row', locals: { exchange: exchange } %>
           <% end %>
         </table>
+
+<h2>3.Buy your Bitcoin</h2>
+Now that you have a wallet and an exchange, you can buy your Bitcoin. Then use the exchange's instructions to send your Bitcoin to your wallet for permanent storage.
