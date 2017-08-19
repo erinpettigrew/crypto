@@ -12,7 +12,7 @@
     <%= exchange.volume %>
   </td>
   <td>
-    Y/N
+    <% if exchange.fiat? %>Y<% end %>
   </td>
   <td>
     <%= exchange.fee_ratio %>
