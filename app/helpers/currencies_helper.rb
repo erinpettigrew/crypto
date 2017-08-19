@@ -1,7 +1,10 @@
 module CurrenciesHelper
-  def display_price(currency)
-    fetcher = PriceFetcher.new(currency)
-    @price_data = fetcher.fetch
-    @price_data["USD"]
+  def display_live_price(currency, exchange)
+    price = PriceFetcher.new(currency,exchange).fetch
+    if price.nil?
+      ""
+    else
+      "$" + number_with_delimiter(price, :delimiter => ',')
+    end
   end
 end

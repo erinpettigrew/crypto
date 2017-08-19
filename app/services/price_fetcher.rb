@@ -1,14 +1,19 @@
 class PriceFetcher
 
-  attr_reader :currency
-  attr_accessor :endpoint
+  attr_accessor :currency, :exchange
 
-  def initialize(currency)
-    @endpoint = "https://min-api.cryptocompare.com/data/price?fsym=" + currency.ticker + "&tsyms=USD"
+  def initialize(currency, exchange)
+    @currency = currency
+    @exchange = exchange
   end
 
   def fetch
-    price_data = HTTParty.get(@endpoint)
+    if @exchange.name == "Coinbase"
+      HTTParty.get("https://api.coinbase.com/v2/prices/" + currency.ticker + "-USD/buy")["data"]["amount"]
+    else
+      nil
+      # HTTParty.get("https://min-api.cryptocompare.com/data/price?fsym=" + currency.ticker + "&tsyms=USD")["USD"]
+    end
   end
 
 end
