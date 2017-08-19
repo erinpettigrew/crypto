@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170819032500) do
+ActiveRecord::Schema.define(version: 20170819040251) do
 
   create_table "avatars", force: :cascade do |t|
     t.integer  "user_id"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20170819032500) do
     t.string  "volume"
     t.string  "fees"
     t.boolean "ny_permitted"
+    t.string  "fee_ratio"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|

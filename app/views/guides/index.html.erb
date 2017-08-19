@@ -13,6 +13,20 @@
 </div>
 </p>
 
+<h1>Select a wallet</h1>
+<small>More info on selecting a wallet here</small>
+
+<ul class="list-group">
+  <% Product.take(3) do |product| %>
+    <li class="list-group-item">
+      <%= render partial: 'products/product_row', locals: { product: product } %>
+    </li>
+  <% end %>
+</ul>
+
+<h1>Select an exchange</h1>
+<small>More info on selecting an exchange</small>
+
         <table class="table">
           <thead>
               <th></th>
