@@ -23,7 +23,6 @@ Rails.application.routes.draw do
           get 'search'
       end
       resources :reviews, except: [:show, :index]
-      resources :photos
     end
 
   authenticated :user do

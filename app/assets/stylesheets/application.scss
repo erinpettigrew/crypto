@@ -21,6 +21,7 @@ body {
 
 .jumbotron {
   background: #F3FAFA;
+    // background: url("http://www.gwlawcareers.org/wp-content/uploads/2017/05/philipp-henzler-411.jpg");
   border: 1px solid #F9FCF0;
   border-radius: 25px;
   h2 {
@@ -128,46 +129,55 @@ a, a:hover {
     }
 }
 
-// .list-group-item {
-//   background: white;
-//   height: 100px;
-//   font-size: 130%;
-//   border: 1px solid #eeeeee;
-//   display:flex;
-//   align-items: center;box-shadow:none;
-//   .product-pic {
-//     min-width: 100px;
-//     text-align:center;
-//   }
-//   .product-info {
-//     margin-left: 25px;
-//   }
-//   .device-info {
-//     width: 100%;
-//     font-size: 15px;
-//     text-align: right;
-//     margin-right: 10px;
-//     h5 {
-//       margin-left: 10px;
-//       opacity: 0.65;
-//       font-size: 85%;
-//     }
-//   }
-//   .device-info .fa {
-//     margin-left: 5px;
-//   }
-// }
-//
-// .list-group-item img {
-//   max-height: 68px;
-//   max-width: 100px;
-//   margin-left: 5px;
-//   border-radius: 5px;
-// }
-//
-// .list-group-item:hover {
-//   background:#F3FAFA;
-// }
+.list-group-item {
+  background: white;
+  height: 100px;
+  font-size: 130%;
+  border: 1px solid #eeeeee;
+  display:flex;
+  align-items: center;box-shadow:none;
+  .product-pic {
+    min-width: 100px;
+    text-align:center;
+  }
+  .product-info {
+    margin-left: 25px;
+  }
+  .device-info {
+    width: 100%;
+    font-size: 15px;
+    text-align: right;
+    margin-right: 10px;
+    h5 {
+      margin-left: 10px;
+      opacity: 0.65;
+      font-size: 85%;
+    }
+  }
+  .device-info .fa {
+    margin-left: 5px;
+  }
+}
+
+.selector {
+  background:white;
+}
+
+.selected {
+  color:#09cef0;
+  background:#e2faff;
+}
+
+.list-group-item img {
+  max-height: 68px;
+  max-width: 100px;
+  margin-left: 5px;
+  border-radius: 5px;
+}
+
+.list-group-item:hover {
+  background:#F3FAFA;
+}
 
 i.fa.fa-mobile {
     font-size: 139%;
