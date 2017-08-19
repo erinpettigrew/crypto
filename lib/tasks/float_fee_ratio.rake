@@ -5,3 +5,10 @@ task :copy_fees => :environment do
     exchange.save
   end
 end
+
+desc 'Convert temp_fee_ratio from string to float, copy into fee_ratio'
+task :convert_fees_to_float => :environment do
+  Exchange.all.each do |exchange|
+    exchange.fee_ratio = exchange.temp_fee_ratio.to_f
+  end
+end
