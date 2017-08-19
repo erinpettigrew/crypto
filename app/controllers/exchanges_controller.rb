@@ -22,9 +22,8 @@ class ExchangesController < ApplicationController
   end
 
   def index
-    @exchanges = Exchange.all.order(ny_permitted: :asc)
-    # @exchanges = Exchange.all
-    # @exchanges.sort_by &:ny_permitted
+    @exchanges = Exchange.all.order(name: :asc)
+    # @exchanges = Exchange.all.sort_by { |e| e.fee_ratio.map(&:to_f) }
   end
 
   def show
