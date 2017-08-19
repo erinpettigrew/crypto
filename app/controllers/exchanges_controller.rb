@@ -22,7 +22,7 @@ class ExchangesController < ApplicationController
   end
 
   def index
-    @exchanges = Exchange.all.order(ny_permitted: :desc)
+    @exchanges = Exchange.all.order(ny_permitted: :asc)
   end
 
   def show
