@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :exchanges
   resources :investors
   resources :incidents
+  resources :guides
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", sessions: "sessions" }
   resources :users, :only => [:show, :index, :update] do
       resources :avatars
