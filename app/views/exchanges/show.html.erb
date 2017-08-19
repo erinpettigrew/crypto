@@ -59,7 +59,7 @@
     <% end %>
     <% if @exchange.fees? %>
     	<h5><i class="fa fa-money" aria-hidden="true"></i> &nbsp;
-    	<%= @exchange.fees %>
+      <%= sanitize @exchange.fees, tags: %w(strong br p a href), attributes: %w(href) %>
       </h5>
     <% end %>
 
