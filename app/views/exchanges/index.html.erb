@@ -21,7 +21,9 @@
               <th>Volume (BTC)</th>
               <th>Fees per $1k</th>
               <th>Reported Thefts</th>
-              <th><i class="fa fa-map-marker" aria-hidden="true"></i></th>
+              <th>Permitted in NY?</th>
+              <th>Location</th>
+              <!-- <th><i class="fa fa-map-marker" aria-hidden="true"></i></th> -->
           </thead>
           <% @exchanges.each do |exchange| %>
             <%= render partial: 'exchange_row', locals: { exchange: exchange } %>

@@ -18,6 +18,11 @@
     <%= exchange.incidents.count %>
   </td>
   <td>
+    <% if exchange.ny_permitted? %>
+      Y
+    <% end %>
+  </td>
+  <td>
     <%= exchange.location %>
   </td>
 </tr>

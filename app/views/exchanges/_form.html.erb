@@ -72,6 +72,11 @@
   </div>
 
   <div class="form-group">
+    <%= f.label "Permitted in New York?" %>
+    <%=f.check_box :ny_permitted, placeholder: "Permitted in New York?", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
     <%= f.submit value: "Add!", class: "btn btn-primary btn-lg" %>
   </div>
 
