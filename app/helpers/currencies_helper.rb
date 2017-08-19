@@ -22,7 +22,7 @@ module CurrenciesHelper
     length = price.length
     decimal_location = price.index('.')
     rounded_price = price
-    
+
     if decimal_location == nil
       rounded_price = price + ".00"
     elsif length - decimal_location > 3
