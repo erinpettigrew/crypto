@@ -17,8 +17,16 @@
     <%= f.text_area :name, placeholder: "Name", class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :name %>
+    <%= f.label :device %>
     <%= f.text_field :device, placeholder: "Web, Desktop, Mobile, Offline", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :location %>
+    <%= f.text_field :location, placeholder: "Location", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :launch_year %>
+    <%= f.text_field :founded_date, placeholder: "Launch year", class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :slug %>

@@ -10,12 +10,50 @@
 		</div>
 		</br>
 	<% end %>
-<% if @product.device.present? %>
-	<% if @product.device.downcase.include?("web") %><h5><i class="fa fa-globe" aria-hidden="true"></i> &nbsp;Web wallet</h5><% end %>
-	<% if @product.device.downcase.include?("mobile") %><h5><i class="fa fa-mobile" aria-hidden="true"></i> &nbsp;Mobile wallet</h5><% end %>
-	<% if @product.device.downcase.include?("desktop") %><h5><i class="fa fa-desktop" aria-hidden="true"></i> &nbsp;Desktop wallet</h5><% end %>
-	<% if @product.device.downcase.include?("offline") %><h5><i class="fa fa-suitcase" aria-hidden="true"></i> &nbsp;Offline wallet</h5><% end %>
-<% end %>
+
+	<% if @product.location? || @product.founded_date? %>
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Company</h3>
+	  </div>
+	  <div class="panel-body">
+	    <h5>
+	      <% if @product.location? %>
+	        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;
+	        <%= @product.location %>
+	      <% end %>
+	    </p>
+	    <% if @product.founded_date? %>
+	      <i class="fa fa-calendar" aria-hidden="true"></i> &nbsp;
+	      <%= @product.founded_date %>
+	      <% end %>
+	    </h5>
+	  </div>
+	</div>
+	<% end %>
+
+	<% if @product.device? || @product.platform? %>
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Specifics</h3>
+	  </div>
+	  <div class="panel-body">
+	    <h5>
+	      <% if @product.device? %>
+					<% if @product.device.downcase.include?("web") %><h5><i class="fa fa-globe" aria-hidden="true"></i> &nbsp;Web wallet</h5><% end %>
+					<% if @product.device.downcase.include?("mobile") %><h5><i class="fa fa-mobile" aria-hidden="true"></i> &nbsp;Mobile wallet</h5><% end %>
+					<% if @product.device.downcase.include?("desktop") %><h5><i class="fa fa-desktop" aria-hidden="true"></i> &nbsp;Desktop wallet</h5><% end %>
+					<% if @product.device.downcase.include?("offline") %><h5><i class="fa fa-suitcase" aria-hidden="true"></i> &nbsp;Offline wallet</h5><% end %>
+	      <% end %>
+	    </p>
+	    <% if @product.platform? %>
+	      <i class="fa fa-calendar" aria-hidden="true"></i> &nbsp;
+	      <%= @product.platform %>
+	      <% end %>
+	    </h5>
+	  </div>
+	</div>
+	<% end %>
 
 <% if @product.currencies.any? %>
 	<h5><i class="fa fa-money" aria-hidden="true"></i> &nbsp;
