@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20170819214520) do
     t.string  "volume"
     t.string  "fees"
     t.boolean "ny_permitted"
-    t.float   "fee_ratio"
+    t.string  "fee_ratio"
     t.boolean "fiat"
     t.string  "temp_fee_ratio"
     t.float   "fees_ratio"
