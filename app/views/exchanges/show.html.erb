@@ -48,7 +48,7 @@
 </div>
 <% end %>
 
-<% if @exchange.fiat? || @exchange.fees? || @exchange.fee_ratio? %>
+<% if @exchange.fiat? || @exchange.fees? || @exchange.fees_ratio? %>
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Transacting</h3>
@@ -63,9 +63,9 @@
       </h5>
     <% end %>
 
-  <% if @exchange.fee_ratio? %>
+  <% if @exchange.fees_ratio? %>
     <h5><i class="fa fa-money" aria-hidden="true"></i> &nbsp;
-    Fee Ratio: <%= @exchange.fee_ratio %>
+    Fee Ratio: $<%= @exchange.fees_ratio.round(2) %>
     </h5>
   <% end %>
     </div>
