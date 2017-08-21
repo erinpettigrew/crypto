@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get '/availabilities', to: 'availabilities#show'
   get '/products/newadmin', to: 'products#newadmin'
+  get '/wallets', to: 'products#index'
   resources :posts
   resources :themes
   resources :categories
