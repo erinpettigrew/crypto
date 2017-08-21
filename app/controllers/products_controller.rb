@@ -16,13 +16,7 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @product = Product.new
-    @rand_categories = Category.all.includes(:products).sample(4)
-    @products = Product.take(30).sample(8)
-    recent_reviews = Review.includes( [user: :avatar], :product).last(12)
-    recent_uses = Use.includes( { :user => :avatar }, :product).last(16)
-    @activity = (recent_reviews + recent_uses).sort_by(&:created_at).reverse.first(10)
-    @recent_posts = Post.all.order(created_at: :desc).includes(user: :avatar).take(3)
+    @products = Product.all
   end
 
   def show

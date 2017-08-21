@@ -12,13 +12,19 @@
 </div>
 
 </p>
-      <ul class="list-group">
-        <% Product.all.each do |product| %>
-          <li class="list-group-item">
-          <%= render partial: 'product_row', locals: { product: product } %>
-      </li>
-        <% end %>
-      </ul>
+              <table class="table">
+                <thead>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Device</th>
+                    <th>Platform</th>
+                    <th>Private Keys?</th>
+                    <th>Location</th>
+                </thead>
+                <% @products.each do |product| %>
+                  <%= render partial: 'product_row', locals: { product: product } %>
+                <% end %>
+              </table>
 
 <script>
 mixpanel.track("Viewed Home");
