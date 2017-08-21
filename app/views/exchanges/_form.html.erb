@@ -21,6 +21,10 @@
     <%= f.file_field :image, class: "form-control" %>
   </div>
   <div class="form-group">
+    <%= f.label :url %>
+    <%= f.text_area :url, placeholder: "URL", class: "form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.label :about %>
     <%= f.text_field :about, placeholder: "About", class: "form-control" %>
   </div>

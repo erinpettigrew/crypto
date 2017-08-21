@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170820221718) do
+ActiveRecord::Schema.define(version: 20170821163425) do
 
   create_table "avatars", force: :cascade do |t|
     t.integer  "user_id"
@@ -72,10 +72,11 @@ ActiveRecord::Schema.define(version: 20170820221718) do
     t.string  "volume"
     t.string  "fees"
     t.boolean "ny_permitted"
-    t.string  "fee_ratio"
+    t.float   "fee_ratio"
     t.boolean "fiat"
     t.string  "temp_fee_ratio"
     t.float   "fees_ratio"
+    t.string  "url"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -168,6 +169,7 @@ ActiveRecord::Schema.define(version: 20170820221718) do
     t.string   "location"
     t.string   "founded_date"
     t.boolean  "access_private_keys"
+    t.string   "url"
   end
 
   add_index "products", ["category_id"], name: "index_products_on_category_id"

@@ -14,6 +14,11 @@
   </div>
   <div class="panel-body">
     <h5>
+      <% if @exchange.url? %>
+        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;
+        <%= link_to "Official Website", @exchange.url %>
+      <% end %>
+    </p>
       <% if @exchange.location? %>
         <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;
         <%= @exchange.location %>

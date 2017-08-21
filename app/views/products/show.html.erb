@@ -39,6 +39,11 @@
 	  </div>
 	  <div class="panel-body">
 	    <h5>
+				<% if @product.url? %>
+					<i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;
+					<%= link_to "Official Website", @product.url %>
+				<% end %>
+			</p>
 	      <% if @product.device? %>
 					<% if @product.device.downcase.include?("web") %><h5><i class="fa fa-globe" aria-hidden="true"></i> &nbsp;Web wallet</h5><% end %>
 					<% if @product.device.downcase.include?("mobile") %><h5><i class="fa fa-mobile" aria-hidden="true"></i> &nbsp;Mobile wallet</h5><% end %>

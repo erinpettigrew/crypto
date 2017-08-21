@@ -56,7 +56,7 @@ class ExchangesController < ApplicationController
   end
 
   def exchange_params
-    params.require(:exchange).permit(:name, :image, :about, :requirements, :location, :fiat, :credit_card, :bank_transfer, :paypal, :founded_date, :volume, :fees, :fees_ratio, :ny_permitted, investor_ids: [], incident_ids: [])
+    params.require(:exchange).permit(:name, :image, :about, :requirements, :location, :fiat, :credit_card, :bank_transfer, :paypal, :founded_date, :volume, :fees, :fees_ratio, :ny_permitted, :url, investor_ids: [], incident_ids: [])
   end
 
   def check_user
