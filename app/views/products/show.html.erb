@@ -89,7 +89,7 @@
 
 <div class="col-xs-12 col-sm-7">
 
-	<% if @product.popular? %>
+	<% if @product.popular? || @product.popular_more %>
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h3 class="panel-title">Discussion</h3>
@@ -103,8 +103,6 @@
 			</p>
 			<% if @product.popular_more? %>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= sanitize @product.popular_more, tags: %w(strong br p a href), attributes: %w(href) %>
-
-
 				<% end %>
 			</h5>
 		</div>
