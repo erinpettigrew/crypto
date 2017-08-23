@@ -22,7 +22,9 @@ class ExchangesController < ApplicationController
   end
 
   def index
-    @exchanges = Exchange.order(fees_ratio: :desc)
+    exchanges_with_fees = Exchange.where("fees_ratio > 0").order(fees_ratio: :asc)
+    exchanges_without_fees = Exchange.where(fees_ratio: 0.0)
+    @exchanges = exchanges_with_fees + exchanges_without_fees
   end
 
   def show
