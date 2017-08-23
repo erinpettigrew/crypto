@@ -81,6 +81,26 @@
 
 <div class="col-xs-12 col-sm-7">
 
+	<% if @product.popular? %>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Discussion</h3>
+		</div>
+		<div class="panel-body">
+			<h5>
+				<% if @product.popular? %>
+					<i class="fa fa-bolt" aria-hidden="true"></i> &nbsp;
+					<%= @product.name %> is popular among experts on BitcoinTalk and Reddit
+				<% end %>
+			</p>
+			<% if @product.popular_more? %>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @product.popular_more %>
+				<% end %>
+			</h5>
+		</div>
+	</div>
+	<% end %>
+
 <% if !user_signed_in? %>
 	<div class="panel panel-default panel-default-main">
 	  <div class="panel-body panel-body-main"><h3>Share your experience with <%= @product.name %></h3></div>
