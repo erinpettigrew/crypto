@@ -43,9 +43,10 @@
 					<i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;
 					<%= link_to "Official Website", @product.url %>
 				<% end %>
+			</p>
 				<% if @product.price? %>
 					<i class="fa fa-usd" aria-hidden="true"></i> &nbsp;
-					<%= product.price %>
+					<%= @product.price %>
 				<% end %>
 			</p>
 	      <% if @product.device? %>
@@ -98,7 +99,7 @@
 				<% end %>
 			</p>
 			<% if @product.popular_more? %>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= sanitize @exchange.popular_more, tags: %w(strong br p a href), attributes: %w(href) %>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= sanitize @product.popular_more, tags: %w(strong br p a href), attributes: %w(href) %>
 
 
 				<% end %>
