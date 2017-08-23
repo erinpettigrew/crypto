@@ -17,11 +17,12 @@
 body {
   font-family: 'Roboto', sans-serif;
   background: #fcfeff;
+  color: #404647
 }
 
 .jumbotron {
   background: #F3FAFA;
-  background-image: image-url("header6.jpg");
+  background-image: image-url("header4.jpg");
   border: 1px solid #F9FCF0;
   border-radius: 25px;
   h2 {
@@ -112,14 +113,16 @@ a, a:hover {
 // }
 
 .table {
-  background:white;
-  border: 1px solid #eee;
+  background:none;
+  border-bottom: 1px solid #eee;
+  margin-top:-20px;
 }
 
 .table>thead>tr>td, .table>thead>tr>th {
   vertical-align: middle;
   border-bottom: 1px solid #eee;
   background:#edf9fc;
+  color: #404647
 }
 
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th {
@@ -162,28 +165,17 @@ a, a:hover {
     margin-left: 5px;
   }
 }
-
 .selector {
-  color:white;
-  border: 1px solid white;
-  padding: 10px 17px 10px 17px;
-}
-
-.selected:hover {
-  border:1px solid white;
-  background:white;
-}
-
-.selector:hover {
-  border:1px solid white;
-  font-weight: bold;
+  background:none;
+  color: white;
+  padding: 10px 15px 10px 15px;
 }
 
 .selected {
   color:#09cef0;
+  background:white;
   border: 1px solid white;
-  font-weight: bold;
-  background: white;
+  font-weight:bold;
 }
 
 .list-group-item img {
