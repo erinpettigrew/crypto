@@ -2,6 +2,9 @@
 <% description 'Reviews, currencies, and how to get started with ' + @product.name %>
 <% keywords 'cryptocurrency wallets, bitcoin, ethereum, how to buy bitcoin, how to buy ethereum, how to buy ether, how to buy litecoin, how to store cryptocurrency, digital money' %>
 
+<i class="fa fa-long-arrow-left" aria-hidden="true"></i>&nbsp;<%= link_to "Back to Wallets", wallets_path %>
+<hr>
+
 <div class="col-xs-12 col-sm-5">
 	<h1><%= @product.name %></h1> <%= render partial: "metadata", locals: { product: @product } %>
 	<% if @product.image? %>
