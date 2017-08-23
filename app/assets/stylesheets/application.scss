@@ -21,11 +21,15 @@ body {
 
 .jumbotron {
   background: #F3FAFA;
-  // background: url("https://i.ytimg.com/vi/Fl7V5dX5IrM/maxresdefault.jpg");
+  background-image: image-url("header4.jpg");
   border: 1px solid #F9FCF0;
   border-radius: 25px;
   h2 {
-    color:#000c0c;
+    color:white;
+    text-shadow: 1px 2px #262626;
+  }
+  h4 {
+    color:white;
   }
 }
 
