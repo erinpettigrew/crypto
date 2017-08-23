@@ -22,8 +22,7 @@ class ExchangesController < ApplicationController
   end
 
   def index
-    @exchanges = Exchange.all.order(name: :asc)
-    # @exchanges = Exchange.all.sort_by { |e| e.fee_ratio.map(&:to_f) }
+    @exchanges = Exchange.order(fees_ratio: :desc)
   end
 
   def show
