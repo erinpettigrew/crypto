@@ -15,7 +15,7 @@
     <% if exchange.fiat? %><i class="fa fa-check" aria-hidden="true"></i><% end %>
   </td>
   <td>
-    <% if exchange.fees_ratio > 0.00 %>$<%= exchange.fees_ratio.round(2) %><% end %>
+    <% if exchange.fees_ratio > 0.00 %>$<%= number_with_precision exchange.fees_ratio, :precision => 2 %><% end %>
   </td>
   <td>
     <% if exchange.incidents.count > 0 %>
