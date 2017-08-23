@@ -43,6 +43,10 @@
 					<i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;
 					<%= link_to "Official Website", @product.url %>
 				<% end %>
+				<% if @product.price? %>
+					<i class="fa fa-usd" aria-hidden="true"></i> &nbsp;
+					<%= product.price %>
+				<% end %>
 			</p>
 	      <% if @product.device? %>
 					<% if @product.device.downcase.include?("web") %><h5><i class="fa fa-globe" aria-hidden="true"></i> &nbsp;Web wallet</h5><% end %>
@@ -94,7 +98,9 @@
 				<% end %>
 			</p>
 			<% if @product.popular_more? %>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @product.popular_more %>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= sanitize @exchange.popular_more, tags: %w(strong br p a href), attributes: %w(href) %>
+
+
 				<% end %>
 			</h5>
 		</div>
