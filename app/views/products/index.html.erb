@@ -6,8 +6,8 @@
   <h2>Get started with Bitcoin in New York</h2>
   <h4>Something something something</h4>
   <div class="btn-group" role="group" aria-label="...">
-    <button type="button" class="btn btn-default selected selector"><i class="fa fa-archive" aria-hidden="true"></i>&nbsp;&nbsp;Select a wallet</button>
-    <button type="button" class="btn btn-default selector"><i class="fa fa-exchange" aria-hidden="true"></i>&nbsp;&nbsp;Select an exchange</button>
+    <%= link_to "Select a Wallet", wallets_path, class: "btn btn-default selector" %>
+    <%= link_to "Select an Exchange", exchanges_path, class: "btn btn-default selector selected" %>
   </div>
 </div>
 
