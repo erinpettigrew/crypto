@@ -2,6 +2,9 @@
 <% description 'Reviews, currencies, and how to get started with ' + @product.name %>
 <% keywords 'cryptocurrency wallets, bitcoin, ethereum, how to buy bitcoin, how to buy ethereum, how to buy ether, how to buy litecoin, how to store cryptocurrency, digital money' %>
 
+<i class="fa fa-long-arrow-left" aria-hidden="true"></i>&nbsp;<%= link_to "Back to Wallets", wallets_path %>
+<hr>
+
 <div class="col-xs-12 col-sm-5">
 	<h1><%= @product.name %></h1> <%= render partial: "metadata", locals: { product: @product } %>
 	<% if @product.image? %>
@@ -11,63 +14,6 @@
 		</br>
 	<% end %>
 
-	<% if @product.location.present? || @product.founded_date.present? %>
-	<div class="panel panel-default">
-	  <div class="panel-heading">
-	    <h3 class="panel-title">Company</h3>
-	  </div>
-	  <div class="panel-body">
-	    <h5>
-	      <% if @product.location? %>
-	        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;
-	        <%= @product.location %>
-	      <% end %>
-	    </p>
-	    <% if @product.founded_date? %>
-	      <i class="fa fa-calendar" aria-hidden="true"></i> &nbsp;
-	      <%= @product.founded_date %>
-	      <% end %>
-	    </h5>
-	  </div>
-	</div>
-	<% end %>
-
-	<% if @product.device? || @product.platform? || @product.access_private_keys? %>
-	<div class="panel panel-default">
-	  <div class="panel-heading">
-	    <h3 class="panel-title">Specs</h3>
-	  </div>
-	  <div class="panel-body">
-	    <h5>
-	      <% if @product.device? %>
-					<% if @product.device.downcase.include?("web") %><h5><i class="fa fa-globe" aria-hidden="true"></i> &nbsp;Web wallet</h5><% end %>
-					<% if @product.device.downcase.include?("mobile") %><h5><i class="fa fa-mobile" aria-hidden="true"></i> &nbsp;Mobile wallet</h5><% end %>
-					<% if @product.device.downcase.include?("desktop") %><h5><i class="fa fa-desktop" aria-hidden="true"></i> &nbsp;Desktop wallet</h5><% end %>
-					<% if @product.device.downcase.include?("offline") %><h5><i class="fa fa-suitcase" aria-hidden="true"></i> &nbsp;Hardware wallet</h5><% end %>
-	      <% end %>
-	    </p>
-	    <% if @product.platform? %>
-	      <h5><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp;</h5>
-	      <%= @product.platform %>
-	    <% end %>
-			<% if @product.access_private_keys? %>
-				<h5><i class="fa fa-key" aria-hidden="true"></i> &nbsp;Private Keys Available</h5>
-			<% end %>
-	    </h5>
-	  </div>
-	</div>
-	<% end %>
-
-<% if @product.currencies.any? %>
-	<h5><i class="fa fa-money" aria-hidden="true"></i> &nbsp;
-	<% @product.currencies.each do |currency| %>
-		<%= link_to currency.name, currency %>&nbsp;
-	<% end %>
-<% end %>
-</h5>
-	<%= @product.about %>
-</p>
-</br>
 
 	<div class="related">
 		<%= render partial: 'product_row', collection: @product.category.products.sample(0), as: :product %>
@@ -75,6 +21,95 @@
 </div>
 
 <div class="col-xs-12 col-sm-7">
+
+
+		<% if @product.location.present? || @product.founded_date.present? %>
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Company</h3>
+		  </div>
+		  <div class="panel-body">
+		    <h5>
+		      <% if @product.location? %>
+		        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;
+		        <%= @product.location %>
+		      <% end %>
+		    </p>
+		    <% if @product.founded_date? %>
+		      <i class="fa fa-calendar" aria-hidden="true"></i> &nbsp;
+		      <%= @product.founded_date %>
+		      <% end %>
+		    </h5>
+		  </div>
+		</div>
+		<% end %>
+
+		<% if @product.device? || @product.platform? || @product.access_private_keys? %>
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Specs</h3>
+		  </div>
+		  <div class="panel-body">
+		    <h5>
+					<% if @product.url? %>
+						<i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;
+						<%= link_to "Official Website", @product.url %>
+					<% end %>
+				</p>
+					<% if @product.price? %>
+						<i class="fa fa-usd" aria-hidden="true"></i> &nbsp;
+						<%= @product.price %>
+					<% end %>
+				</p>
+		      <% if @product.device? %>
+						<% if @product.device.downcase.include?("web") %><h5><i class="fa fa-globe" aria-hidden="true"></i> &nbsp;Web wallet</h5><% end %>
+						<% if @product.device.downcase.include?("mobile") %><h5><i class="fa fa-mobile" aria-hidden="true"></i> &nbsp;Mobile wallet</h5><% end %>
+						<% if @product.device.downcase.include?("desktop") %><h5><i class="fa fa-desktop" aria-hidden="true"></i> &nbsp;Desktop wallet</h5><% end %>
+						<% if @product.device.downcase.include?("offline") %><h5><i class="fa fa-suitcase" aria-hidden="true"></i> &nbsp;Hardware wallet</h5><% end %>
+		      <% end %>
+		    </p>
+		    <% if @product.platform? %>
+		      <h5><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp;</h5>
+		      <%= @product.platform %>
+		    <% end %>
+				<% if @product.access_private_keys? %>
+					<h5><i class="fa fa-key" aria-hidden="true"></i> &nbsp;Private Keys Available</h5>
+				<% end %>
+		    </h5>
+		  </div>
+		</div>
+		<% end %>
+
+	<!-- <% if @product.currencies.any? %>
+		<h5><i class="fa fa-money" aria-hidden="true"></i> &nbsp;
+		<% @product.currencies.each do |currency| %>
+			<%= link_to currency.name, currency %>&nbsp;
+		<% end %>
+	<% end %>
+	</h5>
+		<%= @product.about %>
+	</p>
+	</br> -->
+
+	<% if @product.popular? || @product.popular_more %>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Discussion</h3>
+		</div>
+		<div class="panel-body">
+			<h5>
+				<% if @product.popular? %>
+					<i class="fa fa-bolt" aria-hidden="true"></i> &nbsp;
+					<%= @product.name %> is popular among experts on BitcoinTalk and Reddit
+				<% end %>
+			</p>
+			<% if @product.popular_more? %>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= sanitize @product.popular_more, tags: %w(strong br p a href), attributes: %w(href) %>
+				<% end %>
+			</h5>
+		</div>
+	</div>
+	<% end %>
 
 <% if !user_signed_in? %>
 	<div class="panel panel-default panel-default-main">

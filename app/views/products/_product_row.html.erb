@@ -14,11 +14,9 @@
     <% end %>
   </td>
   <td>
-  </td>
-  <td>
     <% if product.access_private_keys? %><i class="fa fa-check" aria-hidden="true"></i><% end %>
   </td>
   <td>
-    <%= product.location %>
+    <% if product.popular? %><i class="fa fa-check" aria-hidden="true"></i><% end %>
   </td>
 </tr>

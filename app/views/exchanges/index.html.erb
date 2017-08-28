@@ -4,21 +4,20 @@
 
 <div class="jumbotron">
   <h2>Buy your first Bitcoin in New York</h2>
-  <h4>Research exchanges and wallets with NY licensing in mind.</h4>
+  <h4>Simple and reliable information for buying and storing Bitcoin in NYC.</h4>
   <div class="btn-group" role="group" aria-label="...">
-    <!-- <button type="button" class="btn btn-default selector"><i class="fa fa-certificate" aria-hidden="true"></i>&nbsp;&nbsp;Buy your first Bitcoin</button> -->
-    <button type="button" class="btn btn-default selected selector"><i class="fa fa-exchange" aria-hidden="true"></i>&nbsp;&nbsp;View Exchanges</button>
-    <button type="button" class="btn btn-default selector"><i class="fa fa-archive" aria-hidden="true"></i>&nbsp;&nbsp;View Wallets</button>
+    <%= link_to "1. Buy at an exchange", exchanges_path, class: "btn btn-default selector selected" %>
+    <%= link_to "2. Store in a wallet", wallets_path, class: "btn btn-default selector" %>
   </div>
 </div>
 </p>
-
+<div class="table-responsive">
         <table class="table">
           <thead>
-              <th></th>
+              <th>Exchange</th>
               <th>Name</th>
-              <th>Price (BTC)</th>
-              <th>Volume (BTC)</th>
+              <th>Ask Price (BTC)</th>
+              <th>Volume 30D (BTC)</th>
               <th>Buy with USD?</th>
               <th>Fees per $1k</th>
               <th>Reported Thefts</th>
@@ -30,3 +29,4 @@
             <%= render partial: 'exchange_row', locals: { exchange: exchange } %>
           <% end %>
         </table>
+      </div>

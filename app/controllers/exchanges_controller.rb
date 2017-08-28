@@ -22,8 +22,11 @@ class ExchangesController < ApplicationController
   end
 
   def index
-    @exchanges = Exchange.all.order(name: :asc)
-    # @exchanges = Exchange.all.sort_by { |e| e.fee_ratio.map(&:to_f) }
+    exchanges_with_fees = Exchange.where("fees_ratio > 0").order(fees_ratio: :asc, location: :asc)
+    exchanges_with_fees_in_ny = exchanges_with_fees.where(ny_permitted: true)
+    exchanges_with_fees_in_row = exchanges_with_fees.where(ny_permitted: false)
+    exchanges_without_fees = Exchange.where(fees_ratio: 0.0)
+    @exchanges = exchanges_with_fees_in_ny + exchanges_with_fees_in_row + exchanges_without_fees
   end
 
   def show
@@ -56,7 +59,7 @@ class ExchangesController < ApplicationController
   end
 
   def exchange_params
-    params.require(:exchange).permit(:name, :image, :about, :requirements, :location, :fiat, :credit_card, :bank_transfer, :paypal, :founded_date, :volume, :fees, :fees_ratio, :ny_permitted, investor_ids: [], incident_ids: [])
+    params.require(:exchange).permit(:name, :image, :about, :requirements, :location, :fiat, :credit_card, :bank_transfer, :paypal, :founded_date, :volume, :fees, :fees_ratio, :ny_permitted, :url, investor_ids: [], incident_ids: [])
   end
 
   def check_user
